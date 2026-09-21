@@ -1,7 +1,9 @@
 name: VEYRA CI
+
 on:
   push:
   pull_request:
+
 jobs:
   backend:
     runs-on: ubuntu-latest
@@ -10,13 +12,26 @@ jobs:
         working-directory: backend
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
       - run: python -m pip install --upgrade pip
       - run: pip install -r requirements.txt
       - run: python -m compileall -q app
-      - run: PYTHONPATH=. pytest -q tests/test_v40_supply_chain.py tests/test_v39_exposure_validation.py
+      - run: PYTHONPATH=. pytest -q tests/test_v40_supply_chain.py tests/test_v41_supply_chain_runtime.py tests/test_v42_trusted_supply_chain.py tests/test_v39_exposure_validation.py
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install --upgrade pip
+      - run: pip install -r backend/requirements.txt
+      - name: Validate tool documentation
+        run: PYTHONPATH=backend python scripts/validate_tool_documentation.py
+
   frontend:
     runs-on: ubuntu-latest
     defaults:
@@ -24,7 +39,7 @@ jobs:
         working-directory: frontend
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
