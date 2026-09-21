@@ -3,7 +3,7 @@
 **Category:** Security Utilities  
 **Purpose:** Kali security utility: ligolo-ng-common-binaries  
 **VEYRA access:** privileged_admin  
-**Execution boundary:** isolated_worker
+**Execution boundary:** isolated_lab_only
 
 ## What is it?
 Kali security utility: ligolo-ng-common-binaries
