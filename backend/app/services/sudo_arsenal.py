@@ -42,9 +42,11 @@ def arsenal_overview():
 def list_tools(category: str | None = None, privileged_only: bool = False):
     rows = _all_tools()
     if category:
-        rows = [x for x in rows if x.get("category", "").lower() == category.lower()]
+        rows = [x for x in rows if x.get(
+            "category", "").lower() == category.lower()]
     if privileged_only:
-        rows = [x for x in rows if x.get("access_tier") == "privileged_admin" or x.get("privileged_usage")]
+        rows = [x for x in rows if x.get(
+            "access_tier") == "privileged_admin" or x.get("privileged_usage")]
     return rows
 
 
@@ -67,7 +69,7 @@ def tool_detail(tool_id: str):
                     "safe_start": "Prefer the tool's help/version command first; use only the worker-generated command profile for active assessment.",
                     "evidence": "Capture stdout/stderr, exit code, timestamps, target scope, tool version and artifact hashes into the VEYRA evidence bundle.",
                 },
-                "help_boundary": help_meta.get("help_boundary", "No payload delivery, persistence, C2, evasion, credential theft or hack-back instructions."),
+                "help_boundary": help_meta.get("help_boundary", "Governed security operations. VEYRA enables authorized security testing, red-team, blue-team, and defensive work on owned or explicitly permitted targets. Tools are tiered by risk: Standard (discovery, analysis, defensive verification), Privileged (high-impact testing requires privileged_admin and an approved engagement), and Isolated Lab Only (attack-capable tools may only run against lab/sandbox targets). All executions are scope-bound, evidence-captured, and audited. Out-of-scope activity, unowned targets, and unauthorized use are prohibited."),
             }
     return None
 

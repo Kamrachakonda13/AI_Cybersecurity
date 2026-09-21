@@ -60,4 +60,4 @@ Validate the result, map it to VEYRA risk/graph/ATT&CK or ATLAS where applicable
 **One sentence:** gef is used to help the team achieve **Kali security utility: gef** under an approved and auditable VEYRA workflow.
 
 ## Security boundary
-Educational and defensive guidance only; no credential attacks, payloads, persistence, C2, evasion or hack-back instructions.
+Governed security operations. VEYRA enables authorized security testing, red-team, blue-team, and defensive work on owned or explicitly permitted targets. Tools are tiered by risk: Standard (discovery, analysis, defensive verification), Privileged (high-impact testing requires privileged_admin and an approved engagement), and Isolated Lab Only (attack-capable tools may only run against lab/sandbox targets). All executions are scope-bound, evidence-captured, and audited. Out-of-scope activity, unowned targets, and unauthorized use are prohibited.

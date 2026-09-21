@@ -60,4 +60,4 @@ Correlate findings with VEYRA AI Security, Security Graph, OWASP, NIST AI RMF an
 **One sentence:** Traceloop is used to help the team achieve **OpenTelemetry-based LLM observability** under an approved and auditable VEYRA workflow.
 
 ## Security boundary
-Defensive/authorized testing only; no credential theft, payload delivery, persistence, C2, evasion or hack-back instructions.
+Governed security operations. VEYRA enables authorized security testing, red-team, blue-team, and defensive work on owned or explicitly permitted targets. Tools are tiered by risk: Standard (discovery, analysis, defensive verification), Privileged (high-impact testing requires privileged_admin and an approved engagement), and Isolated Lab Only (attack-capable tools may only run against lab/sandbox targets). All executions are scope-bound, evidence-captured, and audited. Out-of-scope activity, unowned targets, and unauthorized use are prohibited.

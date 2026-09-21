@@ -60,4 +60,4 @@ Correlate the finding with VEYRA AI Security, Security Graph, MITRE ATLAS and go
 **One sentence:** ai-soc-copilot is used to help the team achieve **AI-assisted SOC investigation integration** under an approved and auditable VEYRA workflow.
 
 ## Security boundary
-Educational and defensive guidance only. VEYRA does not provide hack-back, unrestricted credential attacks, payload deployment, persistence, C2, evasion or disruptive instructions.
+Governed security operations. VEYRA enables authorized security testing, red-team, blue-team, and defensive work on owned or explicitly permitted targets. Tools are tiered by risk: Standard (discovery, analysis, defensive verification), Privileged (high-impact testing requires privileged_admin and an approved engagement), and Isolated Lab Only (attack-capable tools may only run against lab/sandbox targets). All executions are scope-bound, evidence-captured, and audited. Out-of-scope activity, unowned targets, and unauthorized use are prohibited.

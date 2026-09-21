@@ -798,7 +798,7 @@ def build_tool_help(name: str, category: str, purpose: str, profile: str, privil
         "execution_boundary": profile,
         "common_mistakes": ["Using an asset outside the approved scope", "Treating tool output as proof without validation", "Ignoring evidence provenance or timestamps"],
         "next_step": "Validate the result, map it to VEYRA risk/graph/ATT&CK or ATLAS where applicable, remediate, and verify.",
-        "help_boundary": "Educational and defensive guidance only; no credential attacks, payloads, persistence, C2, evasion or hack-back instructions."
+        "help_boundary": "Governed security operations. VEYRA enables authorized security testing, red-team, blue-team, and defensive work on owned or explicitly permitted targets. Tools are tiered by risk: Standard (discovery, analysis, defensive verification), Privileged (high-impact testing requires privileged_admin and an approved engagement), and Isolated Lab Only (attack-capable tools may only run against lab/sandbox targets). All executions are scope-bound, evidence-captured, and audited. Out-of-scope activity, unowned targets, and unauthorized use are prohibited.",
     }
 
 
