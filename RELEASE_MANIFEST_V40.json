@@ -1,0 +1,28 @@
+{
+  "release": "4.0.0",
+  "name": "VEYRA \u2014 Tool Supply Chain & Autonomous Update Fabric",
+  "branding": "VEYRA \u2014 Autonomous Security Intelligence",
+  "features": [
+    "Tool Supply Chain Control Plane",
+    "Update Scout",
+    "Candidate/Canary/Stable/Extended Stable channels",
+    "Floating/Pinned/Immutable version policy",
+    "Force update",
+    "First-class rollback",
+    "Freeze and quarantine",
+    "Artifact Vault metadata",
+    "Ed25519 worker manifest signing",
+    "Health/regression gate",
+    "Worker receipt acknowledgement",
+    "TUF/Cosign/Syft/Grype verification adapters",
+    "Alembic migration structure",
+    "AI Swarm Containment",
+    "Hydejack-inspired Documentation Hub"
+  ],
+  "security_boundary": "SaaS never executes arbitrary shell, package-manager commands or third-party security binaries; managed workers execute typed signed contracts.",
+  "test_status": {
+    "v40_targeted": "4 passed",
+    "full_suite": "76 passed, 5 pre-existing legacy failures",
+    "frontend_build": "not verified in sandbox because vite was unavailable after npm install transport timeout"
+  }
+}

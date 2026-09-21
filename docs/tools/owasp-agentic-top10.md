@@ -1,0 +1,63 @@
+# owasp-agentic-top10
+
+**Category:** Agent Governance  
+**Purpose:** OWASP Agentic Applications Top 10 mapping  
+**VEYRA access:** admin  
+**Execution boundary:** approved_ai_worker
+
+## What is it?
+OWASP Agentic Applications Top 10 mapping
+
+## Why VEYRA includes it
+Provides a governed, auditable capability with scope and evidence controls.
+
+## When should the team use it?
+Use it when the security objective matches **OWASP Agentic Applications Top 10 mapping** and the target is owned, explicitly authorized, and inside the recorded scope.
+
+## VEYRA UI workflow
+1. Open **Tool Runner / Sudo Security Arsenal**.
+2. Search for **owasp-agentic-top10** and read this guide before execution.
+3. Confirm the target/scope and business purpose.
+4. Confirm the user's entitlement and Sudo/approval requirements.
+5. Select the appropriate managed worker and execution profile.
+6. Run only the approved test; collect normalized evidence.
+7. Review results in the Security Graph/SOC where applicable.
+8. Remediate confirmed issues and schedule revalidation.
+
+## Terminal starting point
+Start with local discovery/help only on an enrolled worker:
+
+```bash
+owasp-agentic-top10 --help
+owasp-agentic-top10 --version
+```
+
+If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.
+
+**Do not substitute arbitrary attack commands for the approved worker profile.** Tool-specific commands that can change security state require explicit authorization, scope and approval.
+
+## Safe workflow
+Select an approved AI asset, define scope, run the governed evaluation on a managed worker, review evidence, then map results to AI security controls.
+
+## Evidence to collect
+- tool output
+- timestamp
+- scope
+- provenance
+
+## How to interpret results
+Treat tool output as a signal or measurement. Confirm affected assets, ownership, scope, timestamps and reproducibility before declaring a security issue. Correlate with other telemetry where possible.
+
+## Remediation and verification
+Correlate the finding with VEYRA AI Security, Security Graph, MITRE ATLAS and governance controls.
+
+## Common mistakes
+- Testing an unapproved model
+- Mixing production secrets into test prompts
+- Treating a benchmark score as proof of security
+
+## Team teaching summary
+**One sentence:** owasp-agentic-top10 is used to help the team achieve **OWASP Agentic Applications Top 10 mapping** under an approved and auditable VEYRA workflow.
+
+## Security boundary
+Educational and defensive guidance only. VEYRA does not provide hack-back, unrestricted credential attacks, payload deployment, persistence, C2, evasion or disruptive instructions.

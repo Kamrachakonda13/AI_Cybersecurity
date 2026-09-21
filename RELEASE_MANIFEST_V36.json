@@ -1,0 +1,64 @@
+{
+  "release": "3.6.0",
+  "tool_count": 588,
+  "documentation_count": 589,
+  "radar_items": 12,
+  "radar": "docs/SECURITY_RADAR_V36.md",
+  "tool_scout": "docs/TOOL_SCOUT_V36.md",
+  "audit": "docs/PRODUCTION_AUDIT_V36.md",
+  "safety": "governed-worker-only; no browser shell; hack-back disabled",
+  "artifacts": {
+    "backend/app/services/ai_cutting_edge_2026.py": {
+      "sha256": "ec9d1d101317b847c8bf7947eea5b085478f19cc3f24dd974016347d518a9d8f",
+      "bytes": 11364
+    },
+    "backend/app/services/v36_security_radar.py": {
+      "sha256": "de1719b831f010fb0cdd3e87a3a780eb290c1a14b7d0d9a2e2c89091f577df3c",
+      "bytes": 4396
+    },
+    "backend/app/api/routes.py": {
+      "sha256": "266a55710ace3866b6dc659eb588779df6ce81b333fafc33be54020eb71f9192",
+      "bytes": 117416
+    },
+    "frontend/src/v36.jsx": {
+      "sha256": "d27e7090bf044e32e5285f79bc83076a0c666ed4c7a999b39a113fc6aaacf5b5",
+      "bytes": 2050
+    },
+    "frontend/src/main.jsx": {
+      "sha256": "29d2ae4a6542c3da8e6f56d67a7eb1d35dbf66e7daa941cd335252b8c51b379c",
+      "bytes": 126235
+    },
+    "frontend/package.json": {
+      "sha256": "2407fc03f5f1d36cd8126ab1cd1d451ba3e4d8d27d82ac88c8cdfee2d3960d53",
+      "bytes": 469
+    },
+    "frontend/package-lock.json": {
+      "sha256": "991d7efc3aab3952475e306bf5b8aa3f76cb1b9e53fa7b37b850b0d5f5defe57",
+      "bytes": 38972
+    },
+    "docs/SECURITY_RADAR_V36.md": {
+      "sha256": "1166c6bec6ed7f1df5c05905b713d1d2697b9fc9640f74f2d767f5eb556cbf65",
+      "bytes": 1687
+    },
+    "docs/TOOL_SCOUT_V36.md": {
+      "sha256": "b1b202132edadf656d11e8269c1603387f24a6a197b7f88ec311dcb9f1c4a7ce",
+      "bytes": 1178
+    },
+    "docs/PRODUCTION_AUDIT_V36.md": {
+      "sha256": "dfb122e0943161ceb2d66e4edce9d837378b4260a9f61583e551e6362be401a8",
+      "bytes": 2043
+    },
+    "docs/TOOL_HELP_INDEX_V36.md": {
+      "sha256": "9fe10c751d49b4adda88fad11f4177bb4f0f1d850935afd9c226a65bc10bf98c",
+      "bytes": 32512
+    },
+    "V36_RELEASE_NOTES.md": {
+      "sha256": "714c3a122d48d0ed352a3dc7f97b1053bf998ceee0d5169e704398e7893b13ec",
+      "bytes": 1173
+    },
+    "VERSION": {
+      "sha256": "138203e3f604a08fad0c4d0a297efe2c486219820dcdd053e72b7d843504c7a1",
+      "bytes": 6
+    }
+  }
+}

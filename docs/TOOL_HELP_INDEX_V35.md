@@ -1,0 +1,584 @@
+# VEYRA v3.5 Tool Help Index
+
+**Documented tools/integrations: 577**
+
+Every registered capability has an individual guide with purpose, UI workflow, terminal starting point, evidence, remediation, verification and security boundaries.
+
+## Tools
+- [A2A Security Test Suite](tools/a2a-security-tests.md) — A2A Security
+- [a2a-security](tools/a2a-security.md) — A2A Security
+- [adaptixc2](tools/adaptixc2.md) — Security Utilities
+- [ADRecon](tools/adrecon.md) — Identity
+- [Adversarial Robustness Toolbox](tools/adversarial-robustness-toolbox.md) — AI Security
+- [agent-identity-broker](tools/agent-identity-broker.md) — Agent Identity
+- [agent-policy-engine](tools/agent-policy-engine.md) — Agent Governance
+- [agent-sandbox](tools/agent-sandbox.md) — Agent Safety
+- [AgentBench](tools/agentbench.md) — Agent Evaluation
+- [AgentDojo](tools/agentdojo.md) — AI Security
+- [agentic-security](tools/agentic-security.md) — Agent Security
+- [AgentWarden](tools/agentwarden.md) — AI Security
+- [ai-egress-gateway](tools/ai-egress-gateway.md) — AI Network Security
+- [ai-incident-response](tools/ai-incident-response.md) — AI Incident Response
+- [ai-kill-switch](tools/ai-kill-switch.md) — Agent Safety
+- [ai-red-team-orchestrator](tools/ai-red-team-orchestrator.md) — AI Red Team
+- [ai-soc-copilot](tools/ai-soc-copilot.md) — AI SOC
+- [AI-SPM Connector](tools/ai-spm-connector.md) — AI Security
+- [aibom-generator](tools/aibom-generator.md) — AI SBOM
+- [Aircrack-ng](tools/aircrack-ng.md) — AI Security
+- [airgeddon](tools/airgeddon.md) — AI Security
+- [Airgeddon](tools/airgeddon-2.md) — AI Security
+- [altdns](tools/altdns.md) — Attack Surface
+- [Amass](tools/amass.md) — Attack Surface
+- [android-sdk](tools/android-sdk.md) — Security Utilities
+- [apple-bleee](tools/apple-bleee.md) — Security Utilities
+- [arjun](tools/arjun.md) — Web/API
+- [Arjun](tools/arjun-2.md) — Web/API
+- [Arkime](tools/arkime.md) — Network Discovery
+- [arp-scan](tools/arp-scan.md) — Network Discovery
+- [arsenal-ng](tools/arsenal-ng.md) — Security Utilities
+- [ART](tools/art.md) — Security Utilities
+- [Assetfinder](tools/assetfinder.md) — Attack Surface
+- [Autopsy](tools/autopsy.md) — DFIR
+- [autorecon](tools/autorecon.md) — Attack Surface
+- [azurehound](tools/azurehound.md) — Cloud
+- [b374k](tools/b374k.md) — Security Utilities
+- [Bandit](tools/bandit.md) — AppSec
+- [berate-ap](tools/berate-ap.md) — Security Utilities
+- [Bettercap](tools/bettercap.md) — Wireless
+- [bettercap-ui](tools/bettercap-ui.md) — Wireless
+- [bing-ip2hosts](tools/bing-ip2hosts.md) — Security Utilities
+- [binwalk](tools/binwalk.md) — Firmware
+- [BloodHound](tools/bloodhound.md) — Identity
+- [bloodhound](tools/bloodhound-2.md) — Identity
+- [BloodHound CE](tools/bloodhound-ce.md) — Identity
+- [bloodhound-ce-python](tools/bloodhound-ce-python.md) — Identity
+- [bloodhound.py](tools/bloodhoundpy.md) — Identity
+- [bloodyad](tools/bloodyad.md) — Identity
+- [BloodyAD](tools/bloodyad-2.md) — Identity
+- [bopscrk](tools/bopscrk.md) — Security Utilities
+- [bpf-linker](tools/bpf-linker.md) — Security Utilities
+- [Braintrust](tools/braintrust.md) — AI Evaluation
+- [bruteforce-luks](tools/bruteforce-luks.md) — Security Utilities
+- [bruteforce-salted-openssl](tools/bruteforce-salted-openssl.md) — Security Utilities
+- [bruteforce-wallet](tools/bruteforce-wallet.md) — Security Utilities
+- [bruteshark](tools/bruteshark.md) — Security Utilities
+- [brutespray](tools/brutespray.md) — Credential Audit
+- [BTLEJack](tools/btlejack.md) — Wireless
+- [Burp Suite](tools/burp-suite.md) — Web/API
+- [caido](tools/caido.md) — AI Security
+- [caido-cli](tools/caido-cli.md) — AI Security
+- [calicoctl](tools/calicoctl.md) — Security Utilities
+- [calypsoai](tools/calypsoai.md) — AI Security
+- [CalypsoAI / F5 AI Security](tools/calypsoai---f5-ai-security.md) — AI Security
+- [capa](tools/capa.md) — Malware
+- [CAPA](tools/capa-2.md) — DFIR
+- [capability-lease-gate](tools/capability-lease-gate.md) — Agent Identity
+- [capstone-tool](tools/capstone-tool.md) — Reverse Engineering
+- [Cartography](tools/cartography.md) — Cloud
+- [certgraph](tools/certgraph.md) — Security Utilities
+- [certi](tools/certi.md) — Security Utilities
+- [Certipy](tools/certipy.md) — Identity
+- [chainsaw](tools/chainsaw.md) — AI Security
+- [Chainsaw](tools/chainsaw-2.md) — AI Security
+- [changeme](tools/changeme.md) — Security Utilities
+- [chaosreader](tools/chaosreader.md) — Security Utilities
+- [Checkov](tools/checkov.md) — IaC
+- [chisel](tools/chisel.md) — Security Utilities
+- [chisel-common-binaries](tools/chisel-common-binaries.md) — Security Utilities
+- [Chroma](tools/chroma.md) — Vector DB Security
+- [chromadb](tools/chromadb.md) — Vector DB
+- [Cilium](tools/cilium.md) — Kubernetes
+- [cilium-cli](tools/cilium-cli.md) — Kubernetes
+- [cisco7crack](tools/cisco7crack.md) — Credential Audit
+- [ClamAV](tools/clamav.md) — Malware
+- [cleverhans](tools/cleverhans.md) — Adversarial ML
+- [Cloud Custodian](tools/cloud-custodian.md) — Cloud
+- [cloud-enum](tools/cloud-enum.md) — Cloud
+- [cloudbrute](tools/cloudbrute.md) — Cloud
+- [CloudFox](tools/cloudfox.md) — Cloud
+- [CloudMapper](tools/cloudmapper.md) — Cloud
+- [CloudQuery](tools/cloudquery.md) — Cloud
+- [CloudSploit](tools/cloudsploit.md) — Cloud
+- [cmseek](tools/cmseek.md) — Security Utilities
+- [cntlm](tools/cntlm.md) — Security Utilities
+- [CodeQL](tools/codeql.md) — AppSec
+- [codeql-ai](tools/codeql-ai.md) — AI AppSec
+- [coercer](tools/coercer.md) — Identity
+- [Coercer](tools/coercer-2.md) — Identity
+- [colly](tools/colly.md) — Security Utilities
+- [Core Impact](tools/core-impact.md) — Exploit Validation
+- [cosign](tools/cosign.md) — Security Utilities
+- [cosign-ml](tools/cosign-ml.md) — AI Supply Chain
+- [Cosign/Sigstore](tools/cosign-ai.md) — AI Supply Chain
+- [Counterfit](tools/counterfit.md) — Adversarial ML
+- [crack](tools/crack.md) — Credential Audit
+- [crackmapexec](tools/crackmapexec.md) — Credential Audit
+- [cri-tools](tools/cri-tools.md) — Security Utilities
+- [crlfuzz](tools/crlfuzz.md) — Security Utilities
+- [crowbar](tools/crowbar.md) — Security Utilities
+- [cupid-hostapd](tools/cupid-hostapd.md) — Wireless
+- [cupid-wpasupplicant](tools/cupid-wpasupplicant.md) — Security Utilities
+- [CyberAgents Exchange AI Inspector](tools/cyberagents-exchange-inspector.md) — Agent Security
+- [CyberSecEval](tools/cyberseceval.md) — AI Security
+- [CycloneDX CLI](tools/cyclonedx-cli.md) — AppSec
+- [Dalfox](tools/dalfox.md) — Web/API
+- [datasheets](tools/datasheets.md) — AI Governance
+- [Datree](tools/datree.md) — Security Utilities
+- [DeepEval](tools/deepeval.md) — AI Security
+- [deepeval-rag](tools/deepeval-rag.md) — RAG Security
+- [DeepTeam](tools/deepteam.md) — LLM Red Team
+- [defectdojo](tools/defectdojo.md) — AppSec
+- [DefectDojo](tools/defectdojo-2.md) — AppSec
+- [Dependency-Track](tools/dependency-track.md) — AppSec
+- [depscan](tools/depscan.md) — AI Supply Chain
+- [detect-it-easy](tools/detect-it-easy.md) — Reverse Engineering
+- [dirbuster](tools/dirbuster.md) — Security Utilities
+- [Dirsearch](tools/dirsearch.md) — Web/API
+- [dislocker](tools/dislocker.md) — Security Utilities
+- [dnscat2](tools/dnscat2.md) — Attack Surface
+- [dnsgen](tools/dnsgen.md) — Attack Surface
+- [dnstwist](tools/dnstwist.md) — Attack Surface
+- [dnsx](tools/dnsx.md) — Attack Surface
+- [donut](tools/donut.md) — Security Utilities
+- [dscan](tools/dscan.md) — Security Utilities
+- [dufflebag](tools/dufflebag.md) — Security Utilities
+- [dumpsterdiver](tools/dumpsterdiver.md) — Security Utilities
+- [dvc](tools/dvc.md) — AI Supply Chain
+- [dwarf2json](tools/dwarf2json.md) — Security Utilities
+- [eaphammer](tools/eaphammer.md) — Security Utilities
+- [eksctl](tools/eksctl.md) — Security Utilities
+- [EleutherAI LM Evaluation Harness](tools/lm-evaluation-harness.md) — LLM Evaluation
+- [email2phonenumber](tools/email2phonenumber.md) — AI Security
+- [emailharvester](tools/emailharvester.md) — AI Security
+- [enum4linux-ng](tools/enum4linux-ng.md) — Security Utilities
+- [Eric Zimmerman Tools](tools/eric-zimmerman-tools.md) — DFIR
+- [evil-ssdp](tools/evil-ssdp.md) — Security Utilities
+- [evil-winrm-py](tools/evil-winrm-py.md) — Security Utilities
+- [evilginx2](tools/evilginx2.md) — Security Utilities
+- [exiflooter](tools/exiflooter.md) — Security Utilities
+- [ExifTool](tools/exiftool.md) — Forensics
+- [exploitdb-bin-sploits](tools/exploitdb-bin-sploits.md) — Exploit Validation
+- [exploitdb-papers](tools/exploitdb-papers.md) — Exploit Validation
+- [Falco](tools/falco.md) — Kubernetes
+- [faraday](tools/faraday.md) — Security Utilities
+- [faraday-agent-dispatcher](tools/faraday-agent-dispatcher.md) — AI Security
+- [faraday-cli](tools/faraday-cli.md) — Security Utilities
+- [fatcat](tools/fatcat.md) — Security Utilities
+- [Feroxbuster](tools/feroxbuster.md) — Web/API
+- [feroxbuster](tools/feroxbuster-2.md) — Web/API
+- [FFUF](tools/ffuf.md) — Web/API
+- [Fickling](tools/fickling.md) — AI Security
+- [finalrecon](tools/finalrecon.md) — Attack Surface
+- [findomain](tools/findomain.md) — AI Security
+- [fluxion](tools/fluxion.md) — Security Utilities
+- [Foolbox](tools/foolbox.md) — Adversarial ML
+- [foremost](tools/foremost.md) — Forensics
+- [freeradius](tools/freeradius.md) — Security Utilities
+- [Garak](tools/garak.md) — AI Security
+- [gdb-peda](tools/gdb-peda.md) — Reverse Engineering
+- [gef](tools/gef.md) — Security Utilities
+- [gemini-cli](tools/gemini-cli.md) — Security Utilities
+- [getallurls](tools/getallurls.md) — Security Utilities
+- [getsploit](tools/getsploit.md) — Security Utilities
+- [Ghidra](tools/ghidra.md) — Reverse Engineering
+- [Giskard](tools/giskard.md) — AI Security
+- [gitguardian](tools/gitguardian.md) — AI Secrets
+- [github-advanced-security](tools/github-advanced-security.md) — AI AppSec
+- [gitleaks](tools/gitleaks.md) — AppSec
+- [Gitleaks](tools/gitleaks-2.md) — AppSec
+- [Gitleaks](tools/gitleaks-ai.md) — AI Secrets
+- [gitxray](tools/gitxray.md) — Security Utilities
+- [GNU Radio](tools/gnu-radio.md) — Security Utilities
+- [Gobuster](tools/gobuster.md) — Web/API
+- [godoh](tools/godoh.md) — Security Utilities
+- [golang-github-binject-go-donut](tools/golang-github-binject-go-donut.md) — Security Utilities
+- [goldeneye](tools/goldeneye.md) — Security Utilities
+- [goofile](tools/goofile.md) — Security Utilities
+- [google-nexus-tools](tools/google-nexus-tools.md) — Security Utilities
+- [goshs](tools/goshs.md) — Security Utilities
+- [gospider](tools/gospider.md) — Security Utilities
+- [gowitness](tools/gowitness.md) — Security Utilities
+- [graudit](tools/graudit.md) — Security Utilities
+- [Grype](tools/grype.md) — Cloud/Container
+- [grype-ml](tools/grype-ml.md) — AI Supply Chain
+- [gsocket](tools/gsocket.md) — Security Utilities
+- [gtkhash](tools/gtkhash.md) — Credential Audit
+- [Guardrails AI](tools/guardrails-ai.md) — AI Security
+- [h8mail](tools/h8mail.md) — AI Security
+- [HackRF tools](tools/hackrf-tools.md) — Wireless
+- [hak5-wifi-coconut](tools/hak5-wifi-coconut.md) — Wireless
+- [Hashcat](tools/hashcat.md) — Credential Audit
+- [hashrat](tools/hashrat.md) — Credential Audit
+- [havoc](tools/havoc.md) — Security Utilities
+- [Hayabusa](tools/hayabusa.md) — DFIR
+- [Haystack](tools/haystack.md) — RAG Security
+- [hb-honeypot](tools/hb-honeypot.md) — Security Utilities
+- [hcxtools](tools/hcxtools.md) — Wireless
+- [hekatomb](tools/hekatomb.md) — Security Utilities
+- [helicone](tools/helicone.md) — AI Observability
+- [HELM](tools/helm.md) — LLM Evaluation
+- [hexstrike-ai](tools/hexstrike-ai.md) — AI Security
+- [hexwalk](tools/hexwalk.md) — Security Utilities
+- [HiddenLayer](tools/hiddenlayer.md) — AI Security
+- [hoaxshell](tools/hoaxshell.md) — Security Utilities
+- [horst](tools/horst.md) — Security Utilities
+- [hostapd-mana](tools/hostapd-mana.md) — Wireless
+- [Hostapd-MANA](tools/hostapd-mana-2.md) — Wireless
+- [hosthunter](tools/hosthunter.md) — Security Utilities
+- [hostsman](tools/hostsman.md) — Security Utilities
+- [htshells](tools/htshells.md) — Security Utilities
+- [httprobe](tools/httprobe.md) — Security Utilities
+- [httpx](tools/httpx.md) — Attack Surface
+- [HTTPX](tools/httpx-2.md) — Web/API
+- [httpx-toolkit](tools/httpx-toolkit.md) — Web/API
+- [hubble](tools/hubble.md) — Kubernetes
+- [Hubble](tools/hubble-2.md) — Kubernetes
+- [humble](tools/humble.md) — Security Utilities
+- [hurl](tools/hurl.md) — Security Utilities
+- [Hydra](tools/hydra.md) — Credential Audit
+- [IAMGraph](tools/iamgraph.md) — Security Utilities
+- [ibombshell](tools/ibombshell.md) — Security Utilities
+- [ident-user-enum](tools/ident-user-enum.md) — Security Utilities
+- [imhex](tools/imhex.md) — Reverse Engineering
+- [Impacket](tools/impacket.md) — Identity/Network
+- [in-toto](tools/in-toto-ai.md) — AI Supply Chain
+- [in-toto](tools/in-toto.md) — AI Supply Chain
+- [Inspect AI](tools/inspect-ai.md) — AI Security
+- [inspect-evals](tools/inspect-evals.md) — LLM Evaluation
+- [inspy](tools/inspy.md) — Security Utilities
+- [instaloader](tools/instaloader.md) — Security Utilities
+- [Interactsh](tools/interactsh.md) — Security Utilities
+- [Invariant](tools/invariant.md) — AI Security
+- [ipv6toolkit](tools/ipv6toolkit.md) — Security Utilities
+- [ismtp](tools/ismtp.md) — Security Utilities
+- [ivre](tools/ivre.md) — Network Discovery
+- [IVRE](tools/ivre-2.md) — Network Discovery
+- [John the Ripper](tools/john-the-ripper.md) — Credential Audit
+- [joplin](tools/joplin.md) — Security Utilities
+- [jsp-file-browser](tools/jsp-file-browser.md) — Security Utilities
+- [kali-community-wallpapers](tools/kali-community-wallpapers.md) — Security Utilities
+- [KAPE](tools/kape.md) — DFIR
+- [Katana](tools/katana.md) — Web/API
+- [kerberoast](tools/kerberoast.md) — Security Utilities
+- [Kerbrute](tools/kerbrute.md) — Identity
+- [KICS](tools/kics.md) — Cloud
+- [Kismet](tools/kismet.md) — Wireless
+- [Kiterunner](tools/kiterunner.md) — Web/API
+- [knocker](tools/knocker.md) — Security Utilities
+- [koadic](tools/koadic.md) — Security Utilities
+- [krbrelayx](tools/krbrelayx.md) — Security Utilities
+- [kube-bench](tools/kube-bench.md) — Kubernetes
+- [kube-hunter](tools/kube-hunter.md) — Kubernetes
+- [kube-score](tools/kube-score.md) — Kubernetes
+- [kubeaudit](tools/kubeaudit.md) — Kubernetes
+- [KubeLinter](tools/kubelinter.md) — Kubernetes
+- [kubernetes-helm](tools/kubernetes-helm.md) — Kubernetes
+- [Kubescape](tools/kubescape.md) — Kubernetes
+- [kustomize](tools/kustomize.md) — Security Utilities
+- [lakefs](tools/lakefs.md) — AI Data Security
+- [Lakera Guard](tools/lakera-guard.md) — Prompt Injection
+- [Lakera Guard / Check Point AI Guardrails](tools/lakera-guard---check-point-ai-guardrails.md) — AI Security
+- [Langfuse](tools/langfuse.md) — AI Security
+- [LangSmith](tools/langsmith.md) — AI Observability
+- [lapsdumper](tools/lapsdumper.md) — Security Utilities
+- [LDAPDomainDump](tools/ldapdomaindump.md) — AI Security
+- [ldeep](tools/ldeep.md) — Security Utilities
+- [legba](tools/legba.md) — Security Utilities
+- [ligolo-mp](tools/ligolo-mp.md) — Security Utilities
+- [ligolo-ng](tools/ligolo-ng.md) — Security Utilities
+- [ligolo-ng-common-binaries](tools/ligolo-ng-common-binaries.md) — Security Utilities
+- [linkedin2username](tools/linkedin2username.md) — Security Utilities
+- [linux-exploit-suggester](tools/linux-exploit-suggester.md) — Exploit Validation
+- [LiteLLM](tools/litellm.md) — AI Gateway
+- [Llama Guard](tools/llama-guard.md) — AI Gateway
+- [LlamaFirewall](tools/llamafirewall.md) — Security Utilities
+- [LlamaFirewall](tools/llama-firewall.md) — AI Gateway
+- [LlamaIndex](tools/llamaindex.md) — RAG Security
+- [llm-firewall](tools/llm-firewall.md) — AI Gateway
+- [llm-guard](tools/llm-guard.md) — AI Gateway
+- [llm-tools-nmap](tools/llm-tools-nmap.md) — AI Security
+- [lm-eval-harness](tools/lm-eval-harness.md) — LLM Evaluation
+- [maltego-teeth](tools/maltego-teeth.md) — Attack Surface
+- [maryam](tools/maryam.md) — Security Utilities
+- [Masscan](tools/masscan.md) — Network Discovery
+- [massdns](tools/massdns.md) — Attack Surface
+- [MCP Inspector](tools/mcp-inspector.md) — MCP Security
+- [MCP Security Scanner](tools/mcp-scanner.md) — MCP Security
+- [mcp-audit](tools/mcp-audit.md) — MCP Security
+- [mcp-guardian](tools/mcp-guardian.md) — MCP Security
+- [mcp-kali-server](tools/mcp-kali-server.md) — Security Utilities
+- [mcp-proxy](tools/mcp-proxy.md) — MCP Security
+- [mcp-security](tools/mcp-security.md) — MCP Security
+- [Medusa](tools/medusa.md) — Credential Audit
+- [memory-firewall](tools/memory-firewall.md) — Agent Memory Security
+- [MemProcFS](tools/memprocfs.md) — DFIR
+- [merlin-agent](tools/merlin-agent.md) — AI Security
+- [merlin-server](tools/merlin-server.md) — Security Utilities
+- [Metasploit Framework](tools/metasploit-framework.md) — Exploit Validation
+- [metasploitmcp](tools/metasploitmcp.md) — Exploit Validation
+- [Milvus](tools/milvus.md) — Vector DB Security
+- [MISP](tools/misp.md) — Threat Intelligence
+- [mitm6](tools/mitm6.md) — Security Utilities
+- [MITRE ATLAS](tools/mitre-atlas.md) — AI Threat Intelligence
+- [mitre-cve-ai](tools/mitre-cve-ai.md) — AI Threat Intelligence
+- [MLflow](tools/mlflow.md) — Security Utilities
+- [model-card-toolkit](tools/model-card-toolkit.md) — AI Governance
+- [model-registry-security](tools/model-registry-security.md) — AI Governance
+- [ModelScan](tools/modelscan.md) — AI Security
+- [ModelScan CLI](tools/modelscan-cli.md) — AI Security
+- [mongo-tools](tools/mongo-tools.md) — Security Utilities
+- [mssqlpwner](tools/mssqlpwner.md) — Security Utilities
+- [multiforcer](tools/multiforcer.md) — Security Utilities
+- [mxcheck](tools/mxcheck.md) — Security Utilities
+- [Naabu](tools/naabu.md) — Network Discovery
+- [naabu](tools/naabu-2.md) — Network Discovery
+- [name-that-hash](tools/name-that-hash.md) — Credential Audit
+- [nbtscan-unixwiz](tools/nbtscan-unixwiz.md) — Security Utilities
+- [NeMo Guardrails](tools/nemo-guardrails.md) — AI Security
+- [nemo-retriever](tools/nemo-retriever.md) — RAG Security
+- [Nessus](tools/nessus.md) — Vulnerability
+- [NetBox](tools/netbox.md) — Network Discovery
+- [Netdisco](tools/netdisco.md) — Network Discovery
+- [Netdiscover](tools/netdiscover.md) — Network Discovery
+- [NetExec](tools/netexec.md) — Identity/Network
+- [netscanner](tools/netscanner.md) — Network Discovery
+- [NeuralTrust](tools/neuraltrust.md) — AI Security
+- [nextnet](tools/nextnet.md) — Security Utilities
+- [Nikto](tools/nikto.md) — Web/API
+- [NIST AI RMF](tools/nist-ai-rmf.md) — AI Governance
+- [Nmap](tools/nmap.md) — Network Discovery
+- [nmapsi4](tools/nmapsi4.md) — Network Discovery
+- [Ntop](tools/ntop.md) — Network Discovery
+- [ntopng](tools/ntopng.md) — Network Discovery
+- [Nuclei](tools/nuclei.md) — Web/API
+- [nuclei](tools/nuclei-2.md) — Web/API
+- [NVIDIA NeMo Safety](tools/nvidia-nemo-safety.md) — AI Security
+- [obsidian](tools/obsidian.md) — Security Utilities
+- [odat](tools/odat.md) — Security Utilities
+- [oletools](tools/oletools.md) — Security Utilities
+- [OpenAI Evals](tools/openai-evals.md) — AI Security
+- [OpenSearch Security Analytics](tools/opensearch-security-analytics.md) — Security Utilities
+- [opentaxii](tools/opentaxii.md) — Threat Intelligence
+- [OpenTelemetry GenAI](tools/opentelemetry-genai.md) — AI Security
+- [OpenVAS/Greenbone](tools/openvas-greenbone.md) — Vulnerability
+- [osquery](tools/osquery.md) — Endpoint
+- [osrframework](tools/osrframework.md) — Security Utilities
+- [OSV-Scanner](tools/osv-scanner.md) — AppSec
+- [OSV-Scanner](tools/osv-scanner-ai.md) — AI Supply Chain
+- [OWASP Agentic Security Initiative Samples](tools/agent-security-initiative-samples.md) — Agent Security
+- [OWASP Agentic Skills Top 10](tools/agentic-skills-top10.md) — Agent Security
+- [OWASP Amass](tools/owasp-amass.md) — Attack Surface
+- [OWASP Dependency-Check](tools/owasp-dependency-check.md) — AppSec
+- [OWASP ZAP](tools/owasp-zap.md) — Web/API
+- [owasp-agentic-top10](tools/owasp-agentic-top10.md) — Agent Governance
+- [owasp-llm-top10](tools/owasp-llm-top10.md) — AI Governance
+- [owl](tools/owl.md) — Security Utilities
+- [pacu](tools/pacu.md) — Cloud
+- [Pacu](tools/pacu-2.md) — Cloud
+- [Parliament](tools/parliament.md) — Cloud
+- [parsero](tools/parsero.md) — Security Utilities
+- [passdetective](tools/passdetective.md) — Security Utilities
+- [patchleaks](tools/patchleaks.md) — Security Utilities
+- [payloadsallthethings](tools/payloadsallthethings.md) — Security Utilities
+- [peirates](tools/peirates.md) — Kubernetes
+- [Peirates](tools/peirates-2.md) — Kubernetes
+- [penelope](tools/penelope.md) — Security Utilities
+- [PetitPotam](tools/petitpotam.md) — Security Utilities
+- [pgvector](tools/pgvector.md) — Vector DB
+- [phishery](tools/phishery.md) — Security Utilities
+- [Phoenix Arize](tools/phoenix-arize.md) — AI Security
+- [photon](tools/photon.md) — Security Utilities
+- [phpggc](tools/phpggc.md) — Security Utilities
+- [phpsploit](tools/phpsploit.md) — Security Utilities
+- [PickleScan](tools/picklescan.md) — Model Security
+- [pinecone](tools/pinecone.md) — Vector DB
+- [PingCastle](tools/pingcastle.md) — Identity
+- [Plaso](tools/plaso.md) — DFIR
+- [pnscan](tools/pnscan.md) — Security Utilities
+- [pocsuite3](tools/pocsuite3.md) — Exploit Validation
+- [Polaris](tools/polaris.md) — Security Utilities
+- [Policy Sentry](tools/policy-sentry.md) — Cloud
+- [pompem](tools/pompem.md) — Security Utilities
+- [Portkey](tools/portkey.md) — AI Gateway
+- [portspoof](tools/portspoof.md) — Security Utilities
+- [poshc2](tools/poshc2.md) — Security Utilities
+- [princeprocessor](tools/princeprocessor.md) — Security Utilities
+- [Principal Mapper](tools/principal-mapper.md) — Cloud
+- [ProjectDiscovery Cloud](tools/projectdiscovery-cloud.md) — Cloud
+- [prompt-provenance](tools/prompt-provenance.md) — Prompt Security
+- [Promptfoo](tools/promptfoo.md) — AI Security
+- [Protect AI](tools/protect-ai.md) — AI Security
+- [protectai-modelscan](tools/protectai-modelscan.md) — AI Supply Chain
+- [Prowler](tools/prowler.md) — Cloud
+- [proxify](tools/proxify.md) — Security Utilities
+- [proximoth](tools/proximoth.md) — Security Utilities
+- [proxmark3](tools/proxmark3.md) — Wireless
+- [Proxmark3](tools/proxmark3-2.md) — Wireless
+- [pskracker](tools/pskracker.md) — Security Utilities
+- [pspy](tools/pspy.md) — Security Utilities
+- [Purple Knight](tools/purple-knight.md) — Identity
+- [pwncat](tools/pwncat.md) — Security Utilities
+- [pyinstxtractor](tools/pyinstxtractor.md) — Security Utilities
+- [PyRIT](tools/pyrit.md) — AI Security
+- [python3-atomic-operator](tools/python3-atomic-operator.md) — Security Utilities
+- [python3-dploot](tools/python3-dploot.md) — Security Utilities
+- [python3-ldapdomaindump](tools/python3-ldapdomaindump.md) — AI Security
+- [python3-pyinstaller](tools/python3-pyinstaller.md) — Security Utilities
+- [python3-wsgidav](tools/python3-wsgidav.md) — Security Utilities
+- [Qdrant](tools/qdrant.md) — Vector DB Security
+- [quark-engine](tools/quark-engine.md) — Security Utilities
+- [radare2](tools/radare2.md) — Reverse Engineering
+- [rag-access-gateway](tools/rag-access-gateway.md) — RAG Security
+- [Ragas](tools/ragas.md) — RAG Security
+- [raven](tools/raven.md) — Security Utilities
+- [rebuff](tools/rebuff.md) — Prompt Injection
+- [rebuffai](tools/rebuffai.md) — Prompt Injection
+- [reconspider](tools/reconspider.md) — Attack Surface
+- [redeye](tools/redeye.md) — Security Utilities
+- [redsnarf](tools/redsnarf.md) — Security Utilities
+- [rev-proxy-grapher](tools/rev-proxy-grapher.md) — Security Utilities
+- [ridenum](tools/ridenum.md) — Security Utilities
+- [Rizin](tools/rizin.md) — Reverse Engineering
+- [rling](tools/rling.md) — Security Utilities
+- [robotstxt](tools/robotstxt.md) — Security Utilities
+- [Robust Intelligence](tools/robust-intelligence.md) — AI Security
+- [RobustBench](tools/robustbench.md) — Adversarial ML
+- [ropper](tools/ropper.md) — Reverse Engineering
+- [routersploit](tools/routersploit.md) — Exploit Validation
+- [rubeus](tools/rubeus.md) — Identity
+- [Rubeus](tools/rubeus-2.md) — Identity
+- [ruby-pedump](tools/ruby-pedump.md) — Security Utilities
+- [RustScan](tools/rustscan.md) — Network Discovery
+- [s3scanner](tools/s3scanner.md) — Attack Surface
+- [Samba-tool](tools/samba-tool.md) — Security Utilities
+- [sara](tools/sara.md) — Security Utilities
+- [Scout Suite](tools/scout-suite.md) — Cloud
+- [ScoutSuite](tools/scoutsuite.md) — Cloud
+- [Security Onion](tools/security-onion.md) — Endpoint
+- [Semgrep](tools/semgrep.md) — AppSec
+- [Semgrep AI rules](tools/semgrep-ai-rules.md) — AI Security
+- [semgrep-ai](tools/semgrep-ai.md) — AI AppSec
+- [sentrypeer](tools/sentrypeer.md) — Security Utilities
+- [sharphound](tools/sharphound.md) — Identity
+- [SharpHound](tools/sharphound-2.md) — Identity
+- [sharpshooter](tools/sharpshooter.md) — Identity
+- [shed](tools/shed.md) — Security Utilities
+- [shell-gpt](tools/shell-gpt.md) — Security Utilities
+- [shellfire](tools/shellfire.md) — Security Utilities
+- [sherlock](tools/sherlock.md) — Attack Surface
+- [sickle-pdk](tools/sickle-pdk.md) — Security Utilities
+- [Sigma](tools/sigma.md) — Detection Engineering
+- [Sigma CLI](tools/sigma-cli-2.md) — Threat Intelligence
+- [sigma-cli](tools/sigma-cli.md) — Threat Intelligence
+- [sigstore](tools/sigstore.md) — AI Supply Chain
+- [silenttrinity](tools/silenttrinity.md) — Security Utilities
+- [sippts](tools/sippts.md) — Security Utilities
+- [skill-manifest-scanner](tools/skill-manifest-scanner.md) — Agent Supply Chain
+- [Sleuth Kit](tools/sleuth-kit.md) — DFIR
+- [slimtoolkit](tools/slimtoolkit.md) — Security Utilities
+- [sliver](tools/sliver.md) — Security Utilities
+- [SLSA](tools/slsa-ai.md) — AI Supply Chain
+- [slsa](tools/slsa.md) — AI Supply Chain
+- [sn0int](tools/sn0int.md) — Security Utilities
+- [snmpenum](tools/snmpenum.md) — Security Utilities
+- [Snort](tools/snort.md) — Network Defense
+- [snowdrop](tools/snowdrop.md) — Security Utilities
+- [Snyk CLI](tools/snyk-cli.md) — AppSec
+- [snyk-ai](tools/snyk-ai.md) — AI AppSec
+- [sparrow-wifi](tools/sparrow-wifi.md) — Wireless
+- [spire](tools/spire.md) — Security Utilities
+- [sploitscan](tools/sploitscan.md) — Security Utilities
+- [spray](tools/spray.md) — Credential Audit
+- [sprayhound](tools/sprayhound.md) — Credential Audit
+- [sprayingtoolkit](tools/sprayingtoolkit.md) — Credential Audit
+- [spraykatz](tools/spraykatz.md) — Credential Audit
+- [SQLMap](tools/sqlmap.md) — Web/API
+- [sqlmc](tools/sqlmc.md) — Security Utilities
+- [sshuttle](tools/sshuttle.md) — Security Utilities
+- [sslstrip](tools/sslstrip.md) — Security Utilities
+- [sstimap](tools/sstimap.md) — Security Utilities
+- [Starboard](tools/starboard.md) — Security Utilities
+- [Steampipe](tools/steampipe.md) — Cloud
+- [stegcracker](tools/stegcracker.md) — Credential Audit
+- [STIX/TAXII](tools/stix-taxii.md) — Threat Intelligence
+- [Stratus Red Team](tools/stratus-red-team.md) — Cloud
+- [Subfinder](tools/subfinder.md) — Attack Surface
+- [subfinder](tools/subfinder-2.md) — Attack Surface
+- [subjack](tools/subjack.md) — Security Utilities
+- [sublist3r](tools/sublist3r.md) — Security Utilities
+- [Suricata](tools/suricata.md) — Network Defense
+- [Syft](tools/syft.md) — Cloud/Container
+- [syft](tools/syft-2.md) — AppSec
+- [Syft AI/SBOM](tools/syft-ai.md) — AI Supply Chain
+- [syft-ml](tools/syft-ml.md) — AI SBOM
+- [Sysmon](tools/sysmon.md) — Endpoint
+- [tailscale](tools/tailscale.md) — AI Security
+- [tango-bench](tools/tango-bench.md) — Agent Evaluation
+- [tcpdump](tools/tcpdump.md) — Network Defense
+- [teamsploit](tools/teamsploit.md) — Security Utilities
+- [terraform](tools/terraform.md) — Security Utilities
+- [Terrascan](tools/terrascan.md) — IaC
+- [testssl.sh](tools/testsslsh.md) — Web/API
+- [tetragon](tools/tetragon.md) — Kubernetes
+- [Tetragon](tools/tetragon-2.md) — Kubernetes
+- [TextAttack](tools/textattack.md) — Adversarial ML
+- [tfsec](tools/tfsec.md) — IaC
+- [The Sleuth Kit](tools/the-sleuth-kit.md) — DFIR
+- [Timesketch](tools/timesketch.md) — DFIR
+- [tinja](tools/tinja.md) — Security Utilities
+- [tookie-osint](tools/tookie-osint.md) — Attack Surface
+- [tool-supply-chain-scanner](tools/tool-supply-chain-scanner.md) — Agent Supply Chain
+- [Traceloop](tools/traceloop.md) — AI Observability
+- [Trivy](tools/trivy.md) — Cloud/Container
+- [trivy](tools/trivy-2.md) — AppSec
+- [TrojAI](tools/trojai.md) — AI Security
+- [trojanvision](tools/trojanvision.md) — Model Security
+- [trufflehog](tools/trufflehog.md) — AppSec
+- [TruffleHog](tools/trufflehog-2.md) — AppSec
+- [TruLens](tools/trulens.md) — RAG Security
+- [tshark](tools/tshark.md) — Network Defense
+- [tundeep](tools/tundeep.md) — Security Utilities
+- [Ubertooth](tools/ubertooth.md) — Wireless
+- [unblob](tools/unblob.md) — Reverse Engineering
+- [unhide.rb](tools/unhiderb.md) — Security Utilities
+- [unicorn-magic](tools/unicorn-magic.md) — Security Utilities
+- [uro](tools/uro.md) — Security Utilities
+- [vectordbbench](tools/vectordbbench.md) — Vector DB Security
+- [Velociraptor](tools/velociraptor.md) — DFIR
+- [Volatility 3](tools/volatility-3.md) — DFIR
+- [vopono](tools/vopono.md) — Security Utilities
+- [vwifi-tool](tools/vwifi-tool.md) — Wireless
+- [wandb](tools/wandb.md) — ML Lifecycle
+- [Wapiti](tools/wapiti.md) — Web/API
+- [waybackpy](tools/waybackpy.md) — Security Utilities
+- [Wazuh](tools/wazuh.md) — Endpoint
+- [Weaviate](tools/weaviate.md) — Vector DB Security
+- [web-cache-vulnerability-scanner](tools/web-cache-vulnerability-scanner.md) — Security Utilities
+- [websploit](tools/websploit.md) — Security Utilities
+- [Weights & Biases Weave](tools/weights-&-biases-weave.md) — AI Security
+- [Weights & Biases Weave](tools/weave.md) — AI Observability
+- [wgetpaste](tools/wgetpaste.md) — Security Utilities
+- [whatmask](tools/whatmask.md) — Security Utilities
+- [WhatWeb](tools/whatweb.md) — Web/API
+- [WiFi Explorer integration](tools/wifi-explorer-integration.md) — Wireless
+- [WiFi Pineapple](tools/wifi-pineapple.md) — Wireless
+- [wifiphisher](tools/wifiphisher.md) — Wireless
+- [wifipumpkin3](tools/wifipumpkin3.md) — Wireless
+- [Wifite2](tools/wifite2.md) — Wireless
+- [wig](tools/wig.md) — Security Utilities
+- [wig-ng](tools/wig-ng.md) — Security Utilities
+- [Wireshark](tools/wireshark.md) — Network Defense
+- [witnessme](tools/witnessme.md) — Security Utilities
+- [wixl](tools/wixl.md) — Security Utilities
+- [wmi-client](tools/wmi-client.md) — Security Utilities
+- [wordlistraider](tools/wordlistraider.md) — AI Security
+- [wotmate](tools/wotmate.md) — Security Utilities
+- [wpa-sycophant](tools/wpa-sycophant.md) — Security Utilities
+- [wpprobe](tools/wpprobe.md) — Security Utilities
+- [xsrfprobe](tools/xsrfprobe.md) — Web/API
+- [xsstrike](tools/xsstrike.md) — Web/API
+- [YARA](tools/yara.md) — Malware
+- [YARA-X](tools/yara-x.md) — DFIR
+- [Zeek](tools/zeek.md) — Network Defense
+- [ZMap](tools/zmap.md) — Network Discovery
+- [zonedb](tools/zonedb.md) — Security Utilities

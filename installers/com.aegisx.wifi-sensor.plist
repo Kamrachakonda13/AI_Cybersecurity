@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>Label</key><string>com.aegisx.wifi-sensor</string>
+<key>ProgramArguments</key><array><string>/Library/Frameworks/Python.framework/Versions/3.14/bin/python3</string><string>/Users/kam/Downloads/AegisX_POC_v2_5_1_WiFi_LAN_Visibility/collectors/endpoint-agent.py</string><string>--sensor</string></array>
+<key>RunAtLoad</key><true/><key>KeepAlive</key><true/>
+</dict></plist>

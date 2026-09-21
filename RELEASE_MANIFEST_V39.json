@@ -1,0 +1,35 @@
+{
+  "release": "3.9.0",
+  "name": "VEYRA Autonomous Exposure Validation Fabric",
+  "focus": ["continuous exposure validation", "rogue AI agent detection", "AI security research", "endpoint and identity correlation", "independent remediation proof"],
+  "platforms": ["Windows", "macOS", "Linux", "Kubernetes", "Cloud", "AI Agent"],
+  "new_apis": [
+    "GET /api/v39/exposure/overview",
+    "GET /api/v39/exposure/validation-matrix",
+    "GET /api/v39/rogue-agents/cases",
+    "POST /api/v39/rogue-agents/investigate"
+  ],
+  "new_ui": "AI Research Lab",
+  "new_services": [
+    "backend/app/services/v39_autonomous_exposure_validation.py"
+  ],
+  "new_docs": [
+    "docs/AUTONOMOUS_EXPOSURE_VALIDATION_V39.md",
+    "docs/ROGUE_AGENT_DETECTION_AND_FORENSICS_V39.md",
+    "docs/AI_RESEARCH_LAB_CONTROL_MODEL_V39.md"
+  ],
+  "safety": {
+    "authorized_targets_only": true,
+    "human_approval_for_high_impact": true,
+    "arbitrary_shell_in_saas": false,
+    "credential_theft": false,
+    "persistence": false,
+    "exploit_delivery": false,
+    "hack_back": false
+  },
+  "validation": {
+    "v39_targeted_tests": "2 passed",
+    "python_compile": "passed",
+    "frontend_build": "not run: Vite dependency not installed in sandbox"
+  }
+}

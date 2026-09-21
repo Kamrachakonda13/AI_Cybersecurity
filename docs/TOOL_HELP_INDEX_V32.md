@@ -1,0 +1,585 @@
+# VEYRA v3.2 — Complete Tool Help Index
+
+**Registered tools/integrations: 577**
+
+Every entry below has an individual Markdown help file under `docs/tools/`. Each page contains purpose, when to use, UI workflow, terminal starting command, permissions, evidence, interpretation, remediation, verification and common mistakes.
+
+## Tool index
+
+- [A2A Security Test Suite](tools/a2a-security-tests.md) — **A2A Security** — Controlled testing of agent-to-agent identity and message trust
+- [a2a-security](tools/a2a-security.md) — **A2A Security** — Agent-to-agent identity and authorization assessment
+- [codeql-ai](tools/codeql-ai.md) — **AI AppSec** — CodeQL security analysis integration
+- [github-advanced-security](tools/github-advanced-security.md) — **AI AppSec** — Code, secret and dependency security connector
+- [semgrep-ai](tools/semgrep-ai.md) — **AI AppSec** — AI-assisted static analysis integration
+- [snyk-ai](tools/snyk-ai.md) — **AI AppSec** — AI/application dependency security connector
+- [lakefs](tools/lakefs.md) — **AI Data Security** — Data versioning and lineage connector
+- [braintrust](tools/braintrust.md) — **AI Evaluation** — LLM evaluation and tracing connector
+- [Llama Guard](tools/llama-guard.md) — **AI Gateway** — Content safety classification and policy enforcement
+- [LlamaFirewall](tools/llama-firewall.md) — **AI Gateway** — Runtime guardrails and policy enforcement for LLM applications
+- [lakera-guard](tools/lakera-guard.md) — **AI Gateway** — Enterprise prompt/data security connector
+- [litellm](tools/litellm.md) — **AI Gateway** — Multi-provider LLM gateway and policy integration
+- [llm-firewall](tools/llm-firewall.md) — **AI Gateway** — LLM request/response policy enforcement integration
+- [llm-guard](tools/llm-guard.md) — **AI Gateway** — Input/output scanners for LLM applications
+- [portkey](tools/portkey.md) — **AI Gateway** — Enterprise AI gateway and guardrail connector
+- [datasheets](tools/datasheets.md) — **AI Governance** — Dataset/data-card governance integration
+- [model-card-toolkit](tools/model-card-toolkit.md) — **AI Governance** — Model-card governance artifacts
+- [model-registry-security](tools/model-registry-security.md) — **AI Governance** — Model registry security and approval workflow
+- [nist-ai-rmf](tools/nist-ai-rmf.md) — **AI Governance** — NIST AI RMF control mapping
+- [owasp-llm-top10](tools/owasp-llm-top10.md) — **AI Governance** — OWASP LLM Top 10 control mapping
+- [ai-incident-response](tools/ai-incident-response.md) — **AI Incident Response** — AI incident evidence/response workflow integration
+- [ai-egress-gateway](tools/ai-egress-gateway.md) — **AI Network Security** — Controlled egress for AI workloads
+- [helicone](tools/helicone.md) — **AI Observability** — LLM gateway observability connector
+- [langsmith](tools/langsmith.md) — **AI Observability** — LLM/agent tracing and evaluation connector
+- [traceloop](tools/traceloop.md) — **AI Observability** — OpenTelemetry-based LLM observability
+- [weave](tools/weave.md) — **AI Observability** — LLM evaluation and tracing connector
+- [ai-red-team-orchestrator](tools/ai-red-team-orchestrator.md) — **AI Red Team** — Governed AI security assessment orchestration
+- [aibom-generator](tools/aibom-generator.md) — **AI SBOM** — AI bill-of-materials generation integration
+- [syft-ml](tools/syft-ml.md) — **AI SBOM** — AI/ML artifact SBOM integration
+- [ai-soc-copilot](tools/ai-soc-copilot.md) — **AI SOC** — AI-assisted SOC investigation integration
+- [gitguardian](tools/gitguardian.md) — **AI Secrets** — Secrets detection connector
+- [gitleaks-ai](tools/gitleaks-ai.md) — **AI Secrets** — Secrets scanning integration
+- [AI-SPM Connector](tools/ai-spm-connector.md) — **AI Security** — Advanced ai security capability: AI-SPM Connector
+- [Adversarial Robustness Toolbox](tools/adversarial-robustness-toolbox.md) — **AI Security** — ML adversarial robustness testing
+- [AgentDojo](tools/agentdojo.md) — **AI Security** — Advanced ai security capability: AgentDojo
+- [AgentWarden](tools/agentwarden.md) — **AI Security** — Advanced ai security capability: AgentWarden
+- [Aircrack-ng](tools/aircrack-ng.md) — **AI Security** — Advanced ai security capability: Aircrack-ng
+- [Airgeddon](tools/airgeddon-2.md) — **AI Security** — Advanced ai security capability: Airgeddon
+- [CalypsoAI / F5 AI Security](tools/calypsoai---f5-ai-security.md) — **AI Security** — Inference-layer AI security and guardrails integration
+- [Chainsaw](tools/chainsaw-2.md) — **AI Security** — Advanced ai security capability: Chainsaw
+- [CyberSecEval](tools/cyberseceval.md) — **AI Security** — Advanced ai security capability: CyberSecEval
+- [DeepEval](tools/deepeval.md) — **AI Security** — Advanced ai security capability: DeepEval
+- [Fickling](tools/fickling.md) — **AI Security** — Advanced ai security capability: Fickling
+- [Garak](tools/garak.md) — **AI Security** — LLM security evaluation
+- [Giskard](tools/giskard.md) — **AI Security** — Advanced ai security capability: Giskard
+- [Guardrails AI](tools/guardrails-ai.md) — **AI Security** — Advanced ai security capability: Guardrails AI
+- [HiddenLayer](tools/hiddenlayer.md) — **AI Security** — AI model security platform integration
+- [Inspect AI](tools/inspect-ai.md) — **AI Security** — Advanced ai security capability: Inspect AI
+- [Invariant](tools/invariant.md) — **AI Security** — Advanced ai security capability: Invariant
+- [LDAPDomainDump](tools/ldapdomaindump.md) — **AI Security** — Advanced ai security capability: LDAPDomainDump
+- [Lakera Guard / Check Point AI Guardrails](tools/lakera-guard---check-point-ai-guardrails.md) — **AI Security** — Prompt injection, jailbreak and data-leakage runtime defense
+- [Langfuse](tools/langfuse.md) — **AI Security** — Advanced ai security capability: Langfuse
+- [ModelScan](tools/modelscan.md) — **AI Security** — Advanced ai security capability: ModelScan
+- [ModelScan CLI](tools/modelscan-cli.md) — **AI Security** — Advanced ai security capability: ModelScan CLI
+- [NVIDIA NeMo Safety](tools/nvidia-nemo-safety.md) — **AI Security** — Advanced ai security capability: NVIDIA NeMo Safety
+- [NeMo Guardrails](tools/nemo-guardrails.md) — **AI Security** — LLM guardrails/policy enforcement
+- [NeuralTrust](tools/neuraltrust.md) — **AI Security** — Agent runtime security, posture and AI red teaming integration
+- [OpenAI Evals](tools/openai-evals.md) — **AI Security** — Advanced ai security capability: OpenAI Evals
+- [OpenTelemetry GenAI](tools/opentelemetry-genai.md) — **AI Security** — Advanced ai security capability: OpenTelemetry GenAI
+- [Phoenix Arize](tools/phoenix-arize.md) — **AI Security** — Advanced ai security capability: Phoenix Arize
+- [Promptfoo](tools/promptfoo.md) — **AI Security** — LLM/agent evaluation
+- [Protect AI](tools/protect-ai.md) — **AI Security** — Advanced ai security capability: Protect AI
+- [PyRIT](tools/pyrit.md) — **AI Security** — Advanced ai security capability: PyRIT
+- [Robust Intelligence](tools/robust-intelligence.md) — **AI Security** — AI security/validation platform integration
+- [Semgrep AI rules](tools/semgrep-ai-rules.md) — **AI Security** — Advanced ai security capability: Semgrep AI rules
+- [TrojAI](tools/trojai.md) — **AI Security** — Model vulnerability and adversarial stress-testing integration
+- [Weights & Biases Weave](tools/weights---biases-weave.md) — **AI Security** — Advanced ai security capability: Weights & Biases Weave
+- [airgeddon](tools/airgeddon.md) — **AI Security** — Kali security utility: airgeddon
+- [caido](tools/caido.md) — **AI Security** — Kali security utility: caido
+- [caido-cli](tools/caido-cli.md) — **AI Security** — Kali security utility: caido-cli
+- [calypsoai](tools/calypsoai.md) — **AI Security** — AI security/governance connector
+- [chainsaw](tools/chainsaw.md) — **AI Security** — Kali security utility: chainsaw
+- [email2phonenumber](tools/email2phonenumber.md) — **AI Security** — Kali security utility: email2phonenumber
+- [emailharvester](tools/emailharvester.md) — **AI Security** — Kali security utility: emailharvester
+- [faraday-agent-dispatcher](tools/faraday-agent-dispatcher.md) — **AI Security** — Kali security utility: faraday-agent-dispatcher
+- [findomain](tools/findomain.md) — **AI Security** — Kali security utility: findomain
+- [h8mail](tools/h8mail.md) — **AI Security** — Kali security utility: h8mail
+- [hexstrike-ai](tools/hexstrike-ai.md) — **AI Security** — Kali security utility: hexstrike-ai
+- [llm-tools-nmap](tools/llm-tools-nmap.md) — **AI Security** — Kali security utility: llm-tools-nmap
+- [merlin-agent](tools/merlin-agent.md) — **AI Security** — Kali security utility: merlin-agent
+- [python3-ldapdomaindump](tools/python3-ldapdomaindump.md) — **AI Security** — Kali security utility: python3-ldapdomaindump
+- [tailscale](tools/tailscale.md) — **AI Security** — Kali security utility: tailscale
+- [wordlistraider](tools/wordlistraider.md) — **AI Security** — Kali security utility: wordlistraider
+- [Cosign/Sigstore](tools/cosign-ai.md) — **AI Supply Chain** — Artifact signing and provenance verification
+- [OSV-Scanner](tools/osv-scanner-ai.md) — **AI Supply Chain** — Dependency vulnerability scanning for AI applications
+- [SLSA](tools/slsa-ai.md) — **AI Supply Chain** — Supply-chain provenance and build integrity controls
+- [Syft AI/SBOM](tools/syft-ai.md) — **AI Supply Chain** — AI artifact and dependency inventory integration
+- [cosign-ml](tools/cosign-ml.md) — **AI Supply Chain** — Signed AI artifact provenance integration
+- [depscan](tools/depscan.md) — **AI Supply Chain** — Dependency/SBOM vulnerability analysis
+- [dvc](tools/dvc.md) — **AI Supply Chain** — Dataset/model versioning and provenance
+- [grype-ml](tools/grype-ml.md) — **AI Supply Chain** — AI artifact vulnerability scanning integration
+- [in-toto](tools/in-toto.md) — **AI Supply Chain** — Software/AI supply-chain attestations
+- [in-toto](tools/in-toto-ai.md) — **AI Supply Chain** — Artifact provenance and supply-chain attestations
+- [picklescan](tools/picklescan.md) — **AI Supply Chain** — Pickle/model artifact security scanning
+- [protectai-modelscan](tools/protectai-modelscan.md) — **AI Supply Chain** — Scan ML model files for unsafe code/components
+- [sigstore](tools/sigstore.md) — **AI Supply Chain** — Keyless artifact signing and verification
+- [slsa](tools/slsa.md) — **AI Supply Chain** — SLSA provenance and build integrity
+- [mitre-atlas](tools/mitre-atlas.md) — **AI Threat Intelligence** — MITRE ATLAS technique mapping
+- [mitre-cve-ai](tools/mitre-cve-ai.md) — **AI Threat Intelligence** — AI-specific vulnerability intelligence mapping
+- [cleverhans](tools/cleverhans.md) — **Adversarial ML** — Adversarial machine-learning research framework
+- [counterfit](tools/counterfit.md) — **Adversarial ML** — Microsoft AI security assessment toolkit
+- [foolbox](tools/foolbox.md) — **Adversarial ML** — Adversarial attack/robustness evaluation library
+- [robustbench](tools/robustbench.md) — **Adversarial ML** — Robustness benchmark integration candidate
+- [textattack](tools/textattack.md) — **Adversarial ML** — NLP adversarial testing framework
+- [agentbench](tools/agentbench.md) — **Agent Evaluation** — Agent capability/security benchmark integration candidate
+- [tango-bench](tools/tango-bench.md) — **Agent Evaluation** — Agent/tool-use benchmark integration candidate
+- [agent-policy-engine](tools/agent-policy-engine.md) — **Agent Governance** — Deterministic agent/tool policy enforcement
+- [owasp-agentic-top10](tools/owasp-agentic-top10.md) — **Agent Governance** — OWASP Agentic Applications Top 10 mapping
+- [agent-identity-broker](tools/agent-identity-broker.md) — **Agent Identity** — Short-lived agent identity and capability broker
+- [capability-lease-gate](tools/capability-lease-gate.md) — **Agent Identity** — Invocation-scoped capability lease enforcement
+- [memory-firewall](tools/memory-firewall.md) — **Agent Memory Security** — Agent memory policy and provenance enforcement
+- [agent-sandbox](tools/agent-sandbox.md) — **Agent Safety** — Isolated agent execution environment integration
+- [ai-kill-switch](tools/ai-kill-switch.md) — **Agent Safety** — Emergency agent disablement / circuit-breaker control
+- [CyberAgents Exchange AI Inspector](tools/cyberagents-exchange-inspector.md) — **Agent Security** — Security review integration for community AI components
+- [OWASP Agentic Security Initiative Samples](tools/agent-security-initiative-samples.md) — **Agent Security** — Controlled vulnerable-agent security training corpus
+- [OWASP Agentic Skills Top 10](tools/agentic-skills-top10.md) — **Agent Security** — Risk taxonomy and assessment guidance for agent skills
+- [agentic-security](tools/agentic-security.md) — **Agent Security** — Agent identity, tool authorization and runtime policy checks
+- [skill-manifest-scanner](tools/skill-manifest-scanner.md) — **Agent Supply Chain** — Agent skill/package manifest security checks
+- [tool-supply-chain-scanner](tools/tool-supply-chain-scanner.md) — **Agent Supply Chain** — Scan skills, MCP servers and tool definitions for risk
+- [Bandit](tools/bandit.md) — **AppSec** — Python security analysis
+- [CodeQL](tools/codeql.md) — **AppSec** — Code security analysis
+- [CycloneDX CLI](tools/cyclonedx-cli.md) — **AppSec** — Advanced appsec capability: CycloneDX CLI
+- [DefectDojo](tools/defectdojo-2.md) — **AppSec** — Advanced appsec capability: DefectDojo
+- [Dependency-Track](tools/dependency-track.md) — **AppSec** — Advanced appsec capability: Dependency-Track
+- [Gitleaks](tools/gitleaks-2.md) — **AppSec** — Advanced appsec capability: Gitleaks
+- [OSV-Scanner](tools/osv-scanner.md) — **AppSec** — Advanced appsec capability: OSV-Scanner
+- [OWASP Dependency-Check](tools/owasp-dependency-check.md) — **AppSec** — Advanced appsec capability: OWASP Dependency-Check
+- [Semgrep](tools/semgrep.md) — **AppSec** — SAST/security rules
+- [Snyk CLI](tools/snyk-cli.md) — **AppSec** — Advanced appsec capability: Snyk CLI
+- [TruffleHog](tools/trufflehog-2.md) — **AppSec** — Advanced appsec capability: TruffleHog
+- [defectdojo](tools/defectdojo.md) — **AppSec** — Kali security utility: defectdojo
+- [gitleaks](tools/gitleaks.md) — **AppSec** — Kali security utility: gitleaks
+- [syft](tools/syft-2.md) — **AppSec** — Kali security utility: syft
+- [trivy](tools/trivy-2.md) — **AppSec** — Kali security utility: trivy
+- [trufflehog](tools/trufflehog.md) — **AppSec** — Kali security utility: trufflehog
+- [Amass](tools/amass.md) — **Attack Surface** — Asset/domain discovery
+- [Assetfinder](tools/assetfinder.md) — **Attack Surface** — Passive asset discovery
+- [OWASP Amass](tools/owasp-amass.md) — **Attack Surface** — Advanced attack surface capability: OWASP Amass
+- [Subfinder](tools/subfinder.md) — **Attack Surface** — Passive subdomain discovery
+- [altdns](tools/altdns.md) — **Attack Surface** — Kali security utility: altdns
+- [autorecon](tools/autorecon.md) — **Attack Surface** — Kali security utility: autorecon
+- [dnscat2](tools/dnscat2.md) — **Attack Surface** — Kali security utility: dnscat2
+- [dnsgen](tools/dnsgen.md) — **Attack Surface** — Kali security utility: dnsgen
+- [dnstwist](tools/dnstwist.md) — **Attack Surface** — Kali security utility: dnstwist
+- [dnsx](tools/dnsx.md) — **Attack Surface** — DNS validation
+- [finalrecon](tools/finalrecon.md) — **Attack Surface** — Kali security utility: finalrecon
+- [httpx](tools/httpx.md) — **Attack Surface** — HTTP service inventory
+- [maltego-teeth](tools/maltego-teeth.md) — **Attack Surface** — Kali security utility: maltego-teeth
+- [massdns](tools/massdns.md) — **Attack Surface** — Kali security utility: massdns
+- [reconspider](tools/reconspider.md) — **Attack Surface** — Kali security utility: reconspider
+- [s3scanner](tools/s3scanner.md) — **Attack Surface** — Kali security utility: s3scanner
+- [sherlock](tools/sherlock.md) — **Attack Surface** — Kali security utility: sherlock
+- [subfinder](tools/subfinder-2.md) — **Attack Surface** — Kali security utility: subfinder
+- [tookie-osint](tools/tookie-osint.md) — **Attack Surface** — Kali security utility: tookie-osint
+- [Cartography](tools/cartography.md) — **Cloud** — Advanced cloud capability: Cartography
+- [Cloud Custodian](tools/cloud-custodian.md) — **Cloud** — Advanced cloud capability: Cloud Custodian
+- [CloudFox](tools/cloudfox.md) — **Cloud** — Advanced cloud capability: CloudFox
+- [CloudMapper](tools/cloudmapper.md) — **Cloud** — Advanced cloud capability: CloudMapper
+- [CloudQuery](tools/cloudquery.md) — **Cloud** — Advanced cloud capability: CloudQuery
+- [CloudSploit](tools/cloudsploit.md) — **Cloud** — Cloud configuration assessment
+- [KICS](tools/kics.md) — **Cloud** — Advanced cloud capability: KICS
+- [Pacu](tools/pacu-2.md) — **Cloud** — Advanced cloud capability: Pacu
+- [Parliament](tools/parliament.md) — **Cloud** — Advanced cloud capability: Parliament
+- [Policy Sentry](tools/policy-sentry.md) — **Cloud** — Advanced cloud capability: Policy Sentry
+- [Principal Mapper](tools/principal-mapper.md) — **Cloud** — Advanced cloud capability: Principal Mapper
+- [ProjectDiscovery Cloud](tools/projectdiscovery-cloud.md) — **Cloud** — Advanced cloud capability: ProjectDiscovery Cloud
+- [Prowler](tools/prowler.md) — **Cloud** — CSPM/security auditing
+- [Scout Suite](tools/scout-suite.md) — **Cloud** — Multi-cloud security auditing
+- [ScoutSuite](tools/scoutsuite.md) — **Cloud** — Advanced cloud capability: ScoutSuite
+- [Steampipe](tools/steampipe.md) — **Cloud** — Advanced cloud capability: Steampipe
+- [Stratus Red Team](tools/stratus-red-team.md) — **Cloud** — Advanced cloud capability: Stratus Red Team
+- [azurehound](tools/azurehound.md) — **Cloud** — Kali security utility: azurehound
+- [cloud-enum](tools/cloud-enum.md) — **Cloud** — Kali security utility: cloud-enum
+- [cloudbrute](tools/cloudbrute.md) — **Cloud** — Kali security utility: cloudbrute
+- [pacu](tools/pacu.md) — **Cloud** — Kali security utility: pacu
+- [Grype](tools/grype.md) — **Cloud/Container** — SBOM/image vulnerability scanning
+- [Syft](tools/syft.md) — **Cloud/Container** — SBOM generation
+- [Trivy](tools/trivy.md) — **Cloud/Container** — Container/Kubernetes/package security
+- [Hashcat](tools/hashcat.md) — **Credential Audit** — Authorized password-strength auditing
+- [Hydra](tools/hydra.md) — **Credential Audit** — Authorized authentication testing
+- [John the Ripper](tools/john-the-ripper.md) — **Credential Audit** — Authorized password-strength auditing
+- [Medusa](tools/medusa.md) — **Credential Audit** — Authorized authentication testing
+- [brutespray](tools/brutespray.md) — **Credential Audit** — Kali security utility: brutespray
+- [cisco7crack](tools/cisco7crack.md) — **Credential Audit** — Kali security utility: cisco7crack
+- [crack](tools/crack.md) — **Credential Audit** — Kali security utility: crack
+- [crackmapexec](tools/crackmapexec.md) — **Credential Audit** — Kali security utility: crackmapexec
+- [gtkhash](tools/gtkhash.md) — **Credential Audit** — Kali security utility: gtkhash
+- [hashrat](tools/hashrat.md) — **Credential Audit** — Kali security utility: hashrat
+- [name-that-hash](tools/name-that-hash.md) — **Credential Audit** — Kali security utility: name-that-hash
+- [spray](tools/spray.md) — **Credential Audit** — Kali security utility: spray
+- [sprayhound](tools/sprayhound.md) — **Credential Audit** — Kali security utility: sprayhound
+- [sprayingtoolkit](tools/sprayingtoolkit.md) — **Credential Audit** — Kali security utility: sprayingtoolkit
+- [spraykatz](tools/spraykatz.md) — **Credential Audit** — Kali security utility: spraykatz
+- [stegcracker](tools/stegcracker.md) — **Credential Audit** — Kali security utility: stegcracker
+- [Autopsy](tools/autopsy.md) — **DFIR** — Disk forensics
+- [CAPA](tools/capa-2.md) — **DFIR** — Advanced dfir capability: CAPA
+- [Eric Zimmerman Tools](tools/eric-zimmerman-tools.md) — **DFIR** — Advanced dfir capability: Eric Zimmerman Tools
+- [Hayabusa](tools/hayabusa.md) — **DFIR** — Advanced dfir capability: Hayabusa
+- [KAPE](tools/kape.md) — **DFIR** — Advanced dfir capability: KAPE
+- [MemProcFS](tools/memprocfs.md) — **DFIR** — Advanced dfir capability: MemProcFS
+- [Plaso](tools/plaso.md) — **DFIR** — Advanced dfir capability: Plaso
+- [Sleuth Kit](tools/sleuth-kit.md) — **DFIR** — Filesystem forensics
+- [The Sleuth Kit](tools/the-sleuth-kit.md) — **DFIR** — Advanced dfir capability: The Sleuth Kit
+- [Timesketch](tools/timesketch.md) — **DFIR** — Advanced dfir capability: Timesketch
+- [Velociraptor](tools/velociraptor.md) — **DFIR** — Endpoint investigation
+- [Volatility 3](tools/volatility-3.md) — **DFIR** — Memory forensics
+- [YARA-X](tools/yara-x.md) — **DFIR** — Advanced dfir capability: YARA-X
+- [Sigma](tools/sigma.md) — **Detection Engineering** — Portable detection rules
+- [Security Onion](tools/security-onion.md) — **Endpoint** — Advanced endpoint capability: Security Onion
+- [Sysmon](tools/sysmon.md) — **Endpoint** — Windows endpoint telemetry
+- [Wazuh](tools/wazuh.md) — **Endpoint** — Advanced endpoint capability: Wazuh
+- [osquery](tools/osquery.md) — **Endpoint** — Endpoint telemetry/query
+- [Core Impact](tools/core-impact.md) — **Exploit Validation** — Authorized penetration testing
+- [Metasploit Framework](tools/metasploit-framework.md) — **Exploit Validation** — Authorized vulnerability validation
+- [exploitdb-bin-sploits](tools/exploitdb-bin-sploits.md) — **Exploit Validation** — Kali security utility: exploitdb-bin-sploits
+- [exploitdb-papers](tools/exploitdb-papers.md) — **Exploit Validation** — Kali security utility: exploitdb-papers
+- [linux-exploit-suggester](tools/linux-exploit-suggester.md) — **Exploit Validation** — Kali security utility: linux-exploit-suggester
+- [metasploitmcp](tools/metasploitmcp.md) — **Exploit Validation** — Kali security utility: metasploitmcp
+- [pocsuite3](tools/pocsuite3.md) — **Exploit Validation** — Kali security utility: pocsuite3
+- [routersploit](tools/routersploit.md) — **Exploit Validation** — Kali security utility: routersploit
+- [binwalk](tools/binwalk.md) — **Firmware** — Firmware/file analysis
+- [ExifTool](tools/exiftool.md) — **Forensics** — Metadata extraction
+- [foremost](tools/foremost.md) — **Forensics** — File carving
+- [Checkov](tools/checkov.md) — **IaC** — Infrastructure-as-code security
+- [Terrascan](tools/terrascan.md) — **IaC** — Infrastructure-as-code security
+- [tfsec](tools/tfsec.md) — **IaC** — Terraform security analysis
+- [ADRecon](tools/adrecon.md) — **Identity** — Advanced identity capability: ADRecon
+- [BloodHound](tools/bloodhound.md) — **Identity** — Identity attack-path analysis
+- [BloodHound CE](tools/bloodhound-ce.md) — **Identity** — Advanced identity capability: BloodHound CE
+- [BloodyAD](tools/bloodyad-2.md) — **Identity** — Advanced identity capability: BloodyAD
+- [Certipy](tools/certipy.md) — **Identity** — AD CS security assessment
+- [Coercer](tools/coercer-2.md) — **Identity** — Advanced identity capability: Coercer
+- [Kerbrute](tools/kerbrute.md) — **Identity** — Kerberos identity assessment
+- [PingCastle](tools/pingcastle.md) — **Identity** — Advanced identity capability: PingCastle
+- [Purple Knight](tools/purple-knight.md) — **Identity** — Advanced identity capability: Purple Knight
+- [Rubeus](tools/rubeus-2.md) — **Identity** — Advanced identity capability: Rubeus
+- [SharpHound](tools/sharphound-2.md) — **Identity** — Advanced identity capability: SharpHound
+- [bloodhound](tools/bloodhound-2.md) — **Identity** — Kali security utility: bloodhound
+- [bloodhound-ce-python](tools/bloodhound-ce-python.md) — **Identity** — Kali security utility: bloodhound-ce-python
+- [bloodhound.py](tools/bloodhoundpy.md) — **Identity** — Kali security utility: bloodhound.py
+- [bloodyad](tools/bloodyad.md) — **Identity** — Kali security utility: bloodyad
+- [coercer](tools/coercer.md) — **Identity** — Kali security utility: coercer
+- [rubeus](tools/rubeus.md) — **Identity** — Kali security utility: rubeus
+- [sharphound](tools/sharphound.md) — **Identity** — Kali security utility: sharphound
+- [sharpshooter](tools/sharpshooter.md) — **Identity** — Kali security utility: sharpshooter
+- [Impacket](tools/impacket.md) — **Identity/Network** — Authorized protocol/security assessment
+- [NetExec](tools/netexec.md) — **Identity/Network** — Authorized Windows/network assessment
+- [Cilium](tools/cilium.md) — **Kubernetes** — Advanced kubernetes capability: Cilium
+- [Falco](tools/falco.md) — **Kubernetes** — Runtime detection
+- [Hubble](tools/hubble-2.md) — **Kubernetes** — Advanced kubernetes capability: Hubble
+- [KubeLinter](tools/kubelinter.md) — **Kubernetes** — Advanced kubernetes capability: KubeLinter
+- [Kubescape](tools/kubescape.md) — **Kubernetes** — Kubernetes posture/security
+- [Peirates](tools/peirates-2.md) — **Kubernetes** — Advanced kubernetes capability: Peirates
+- [Tetragon](tools/tetragon-2.md) — **Kubernetes** — Advanced kubernetes capability: Tetragon
+- [cilium-cli](tools/cilium-cli.md) — **Kubernetes** — Kali security utility: cilium-cli
+- [hubble](tools/hubble.md) — **Kubernetes** — Kali security utility: hubble
+- [kube-bench](tools/kube-bench.md) — **Kubernetes** — CIS benchmark checks
+- [kube-hunter](tools/kube-hunter.md) — **Kubernetes** — Kubernetes security assessment
+- [kube-score](tools/kube-score.md) — **Kubernetes** — Advanced kubernetes capability: kube-score
+- [kubeaudit](tools/kubeaudit.md) — **Kubernetes** — Advanced kubernetes capability: kubeaudit
+- [kubernetes-helm](tools/kubernetes-helm.md) — **Kubernetes** — Kali security utility: kubernetes-helm
+- [peirates](tools/peirates.md) — **Kubernetes** — Kali security utility: peirates
+- [tetragon](tools/tetragon.md) — **Kubernetes** — Kali security utility: tetragon
+- [EleutherAI LM Evaluation Harness](tools/lm-evaluation-harness.md) — **LLM Evaluation** — Standardized model evaluation harness
+- [helm](tools/helm.md) — **LLM Evaluation** — Holistic language model evaluation
+- [inspect-evals](tools/inspect-evals.md) — **LLM Evaluation** — Reusable Inspect evaluation suites
+- [lm-eval-harness](tools/lm-eval-harness.md) — **LLM Evaluation** — Large-language-model evaluation harness
+- [deepteam](tools/deepteam.md) — **LLM Red Team** — LLM security and vulnerability testing framework
+- [mcp-audit](tools/mcp-audit.md) — **MCP Security** — MCP configuration and audit integration candidate
+- [mcp-guardian](tools/mcp-guardian.md) — **MCP Security** — MCP runtime governance integration candidate
+- [mcp-inspector](tools/mcp-inspector.md) — **MCP Security** — MCP server inspection and debugging
+- [mcp-proxy](tools/mcp-proxy.md) — **MCP Security** — Policy enforcement/proxy integration for MCP traffic
+- [mcp-scanner](tools/mcp-scanner.md) — **MCP Security** — MCP server/tool security scanning integration
+- [mcp-security](tools/mcp-security.md) — **MCP Security** — MCP policy, tool and transport security integration
+- [wandb](tools/wandb.md) — **ML Lifecycle** — ML experiment/model governance connector
+- [ClamAV](tools/clamav.md) — **Malware** — Malware scanning
+- [YARA](tools/yara.md) — **Malware** — Static malware classification
+- [capa](tools/capa.md) — **Malware** — Capability identification
+- [trojanvision](tools/trojanvision.md) — **Model Security** — Neural network backdoor/trojan research toolkit
+- [Snort](tools/snort.md) — **Network Defense** — IDS/NSM
+- [Suricata](tools/suricata.md) — **Network Defense** — IDS/NSM
+- [Wireshark](tools/wireshark.md) — **Network Defense** — Packet analysis
+- [Zeek](tools/zeek.md) — **Network Defense** — Network security monitoring
+- [tcpdump](tools/tcpdump.md) — **Network Defense** — Packet capture
+- [tshark](tools/tshark.md) — **Network Defense** — Packet analysis
+- [Arkime](tools/arkime.md) — **Network Discovery** — Advanced network discovery capability: Arkime
+- [IVRE](tools/ivre-2.md) — **Network Discovery** — Advanced network discovery capability: IVRE
+- [Masscan](tools/masscan.md) — **Network Discovery** — High-speed exposure inventory
+- [Naabu](tools/naabu.md) — **Network Discovery** — Port discovery
+- [NetBox](tools/netbox.md) — **Network Discovery** — Advanced network discovery capability: NetBox
+- [Netdisco](tools/netdisco.md) — **Network Discovery** — Advanced network discovery capability: Netdisco
+- [Netdiscover](tools/netdiscover.md) — **Network Discovery** — LAN discovery
+- [Nmap](tools/nmap.md) — **Network Discovery** — Asset/service discovery
+- [Ntop](tools/ntop.md) — **Network Discovery** — Advanced network discovery capability: Ntop
+- [RustScan](tools/rustscan.md) — **Network Discovery** — Fast port inventory
+- [ZMap](tools/zmap.md) — **Network Discovery** — Advanced network discovery capability: ZMap
+- [arp-scan](tools/arp-scan.md) — **Network Discovery** — Local network discovery
+- [ivre](tools/ivre.md) — **Network Discovery** — Kali security utility: ivre
+- [naabu](tools/naabu-2.md) — **Network Discovery** — Kali security utility: naabu
+- [netscanner](tools/netscanner.md) — **Network Discovery** — Kali security utility: netscanner
+- [nmapsi4](tools/nmapsi4.md) — **Network Discovery** — Kali security utility: nmapsi4
+- [ntopng](tools/ntopng.md) — **Network Discovery** — Advanced network discovery capability: ntopng
+- [rebuff](tools/rebuff.md) — **Prompt Injection** — Prompt-injection detection integration candidate
+- [rebuffai](tools/rebuffai.md) — **Prompt Injection** — Prompt-injection detection integration candidate
+- [prompt-provenance](tools/prompt-provenance.md) — **Prompt Security** — Prompt/context provenance and integrity tracking
+- [deepeval-rag](tools/deepeval-rag.md) — **RAG Security** — RAG metrics/evaluation integration
+- [haystack](tools/haystack.md) — **RAG Security** — RAG pipeline security/evaluation integration
+- [llamaindex](tools/llamaindex.md) — **RAG Security** — RAG/application framework integration
+- [nemo-retriever](tools/nemo-retriever.md) — **RAG Security** — Retrieval security integration candidate
+- [rag-access-gateway](tools/rag-access-gateway.md) — **RAG Security** — Authorization-aware retrieval gateway
+- [ragas](tools/ragas.md) — **RAG Security** — RAG evaluation and groundedness testing
+- [trulens](tools/trulens.md) — **RAG Security** — LLM/RAG evaluation and feedback
+- [Ghidra](tools/ghidra.md) — **Reverse Engineering** — Static reverse engineering
+- [Rizin](tools/rizin.md) — **Reverse Engineering** — Static reverse engineering
+- [capstone-tool](tools/capstone-tool.md) — **Reverse Engineering** — Kali security utility: capstone-tool
+- [detect-it-easy](tools/detect-it-easy.md) — **Reverse Engineering** — Kali security utility: detect-it-easy
+- [gdb-peda](tools/gdb-peda.md) — **Reverse Engineering** — Kali security utility: gdb-peda
+- [imhex](tools/imhex.md) — **Reverse Engineering** — Kali security utility: imhex
+- [radare2](tools/radare2.md) — **Reverse Engineering** — Static reverse engineering
+- [ropper](tools/ropper.md) — **Reverse Engineering** — Kali security utility: ropper
+- [unblob](tools/unblob.md) — **Reverse Engineering** — Kali security utility: unblob
+- [ART](tools/art.md) — **Security Utilities** — Advanced security utilities capability: ART
+- [Datree](tools/datree.md) — **Security Utilities** — Advanced security utilities capability: Datree
+- [GNU Radio](tools/gnu-radio.md) — **Security Utilities** — Advanced security utilities capability: GNU Radio
+- [IAMGraph](tools/iamgraph.md) — **Security Utilities** — Advanced security utilities capability: IAMGraph
+- [Interactsh](tools/interactsh.md) — **Security Utilities** — Advanced security utilities capability: Interactsh
+- [LlamaFirewall](tools/llamafirewall.md) — **Security Utilities** — Advanced security utilities capability: LlamaFirewall
+- [MLflow](tools/mlflow.md) — **Security Utilities** — Advanced security utilities capability: MLflow
+- [OpenSearch Security Analytics](tools/opensearch-security-analytics.md) — **Security Utilities** — Advanced security utilities capability: OpenSearch Security Analytics
+- [PetitPotam](tools/petitpotam.md) — **Security Utilities** — Advanced security utilities capability: PetitPotam
+- [Polaris](tools/polaris.md) — **Security Utilities** — Advanced security utilities capability: Polaris
+- [Samba-tool](tools/samba-tool.md) — **Security Utilities** — Advanced security utilities capability: Samba-tool
+- [Starboard](tools/starboard.md) — **Security Utilities** — Advanced security utilities capability: Starboard
+- [adaptixc2](tools/adaptixc2.md) — **Security Utilities** — Kali security utility: adaptixc2
+- [android-sdk](tools/android-sdk.md) — **Security Utilities** — Kali security utility: android-sdk
+- [apple-bleee](tools/apple-bleee.md) — **Security Utilities** — Kali security utility: apple-bleee
+- [arsenal-ng](tools/arsenal-ng.md) — **Security Utilities** — Kali security utility: arsenal-ng
+- [b374k](tools/b374k.md) — **Security Utilities** — Kali security utility: b374k
+- [berate-ap](tools/berate-ap.md) — **Security Utilities** — Kali security utility: berate-ap
+- [bing-ip2hosts](tools/bing-ip2hosts.md) — **Security Utilities** — Kali security utility: bing-ip2hosts
+- [bopscrk](tools/bopscrk.md) — **Security Utilities** — Kali security utility: bopscrk
+- [bpf-linker](tools/bpf-linker.md) — **Security Utilities** — Kali security utility: bpf-linker
+- [bruteforce-luks](tools/bruteforce-luks.md) — **Security Utilities** — Kali security utility: bruteforce-luks
+- [bruteforce-salted-openssl](tools/bruteforce-salted-openssl.md) — **Security Utilities** — Kali security utility: bruteforce-salted-openssl
+- [bruteforce-wallet](tools/bruteforce-wallet.md) — **Security Utilities** — Kali security utility: bruteforce-wallet
+- [bruteshark](tools/bruteshark.md) — **Security Utilities** — Kali security utility: bruteshark
+- [calicoctl](tools/calicoctl.md) — **Security Utilities** — Kali security utility: calicoctl
+- [certgraph](tools/certgraph.md) — **Security Utilities** — Kali security utility: certgraph
+- [certi](tools/certi.md) — **Security Utilities** — Kali security utility: certi
+- [changeme](tools/changeme.md) — **Security Utilities** — Kali security utility: changeme
+- [chaosreader](tools/chaosreader.md) — **Security Utilities** — Kali security utility: chaosreader
+- [chisel](tools/chisel.md) — **Security Utilities** — Kali security utility: chisel
+- [chisel-common-binaries](tools/chisel-common-binaries.md) — **Security Utilities** — Kali security utility: chisel-common-binaries
+- [cmseek](tools/cmseek.md) — **Security Utilities** — Kali security utility: cmseek
+- [cntlm](tools/cntlm.md) — **Security Utilities** — Kali security utility: cntlm
+- [colly](tools/colly.md) — **Security Utilities** — Kali security utility: colly
+- [cosign](tools/cosign.md) — **Security Utilities** — Kali security utility: cosign
+- [cri-tools](tools/cri-tools.md) — **Security Utilities** — Kali security utility: cri-tools
+- [crlfuzz](tools/crlfuzz.md) — **Security Utilities** — Kali security utility: crlfuzz
+- [crowbar](tools/crowbar.md) — **Security Utilities** — Kali security utility: crowbar
+- [cupid-wpasupplicant](tools/cupid-wpasupplicant.md) — **Security Utilities** — Kali security utility: cupid-wpasupplicant
+- [dirbuster](tools/dirbuster.md) — **Security Utilities** — Kali security utility: dirbuster
+- [dislocker](tools/dislocker.md) — **Security Utilities** — Kali security utility: dislocker
+- [donut](tools/donut.md) — **Security Utilities** — Kali security utility: donut
+- [dscan](tools/dscan.md) — **Security Utilities** — Kali security utility: dscan
+- [dufflebag](tools/dufflebag.md) — **Security Utilities** — Kali security utility: dufflebag
+- [dumpsterdiver](tools/dumpsterdiver.md) — **Security Utilities** — Kali security utility: dumpsterdiver
+- [dwarf2json](tools/dwarf2json.md) — **Security Utilities** — Kali security utility: dwarf2json
+- [eaphammer](tools/eaphammer.md) — **Security Utilities** — Kali security utility: eaphammer
+- [eksctl](tools/eksctl.md) — **Security Utilities** — Kali security utility: eksctl
+- [enum4linux-ng](tools/enum4linux-ng.md) — **Security Utilities** — Kali security utility: enum4linux-ng
+- [evil-ssdp](tools/evil-ssdp.md) — **Security Utilities** — Kali security utility: evil-ssdp
+- [evil-winrm-py](tools/evil-winrm-py.md) — **Security Utilities** — Kali security utility: evil-winrm-py
+- [evilginx2](tools/evilginx2.md) — **Security Utilities** — Kali security utility: evilginx2
+- [exiflooter](tools/exiflooter.md) — **Security Utilities** — Kali security utility: exiflooter
+- [faraday](tools/faraday.md) — **Security Utilities** — Kali security utility: faraday
+- [faraday-cli](tools/faraday-cli.md) — **Security Utilities** — Kali security utility: faraday-cli
+- [fatcat](tools/fatcat.md) — **Security Utilities** — Kali security utility: fatcat
+- [fluxion](tools/fluxion.md) — **Security Utilities** — Kali security utility: fluxion
+- [freeradius](tools/freeradius.md) — **Security Utilities** — Kali security utility: freeradius
+- [gef](tools/gef.md) — **Security Utilities** — Kali security utility: gef
+- [gemini-cli](tools/gemini-cli.md) — **Security Utilities** — Kali security utility: gemini-cli
+- [getallurls](tools/getallurls.md) — **Security Utilities** — Kali security utility: getallurls
+- [getsploit](tools/getsploit.md) — **Security Utilities** — Kali security utility: getsploit
+- [gitxray](tools/gitxray.md) — **Security Utilities** — Kali security utility: gitxray
+- [godoh](tools/godoh.md) — **Security Utilities** — Kali security utility: godoh
+- [golang-github-binject-go-donut](tools/golang-github-binject-go-donut.md) — **Security Utilities** — Kali security utility: golang-github-binject-go-donut
+- [goldeneye](tools/goldeneye.md) — **Security Utilities** — Kali security utility: goldeneye
+- [goofile](tools/goofile.md) — **Security Utilities** — Kali security utility: goofile
+- [google-nexus-tools](tools/google-nexus-tools.md) — **Security Utilities** — Kali security utility: google-nexus-tools
+- [goshs](tools/goshs.md) — **Security Utilities** — Kali security utility: goshs
+- [gospider](tools/gospider.md) — **Security Utilities** — Kali security utility: gospider
+- [gowitness](tools/gowitness.md) — **Security Utilities** — Kali security utility: gowitness
+- [graudit](tools/graudit.md) — **Security Utilities** — Kali security utility: graudit
+- [gsocket](tools/gsocket.md) — **Security Utilities** — Kali security utility: gsocket
+- [havoc](tools/havoc.md) — **Security Utilities** — Kali security utility: havoc
+- [hb-honeypot](tools/hb-honeypot.md) — **Security Utilities** — Kali security utility: hb-honeypot
+- [hekatomb](tools/hekatomb.md) — **Security Utilities** — Kali security utility: hekatomb
+- [hexwalk](tools/hexwalk.md) — **Security Utilities** — Kali security utility: hexwalk
+- [hoaxshell](tools/hoaxshell.md) — **Security Utilities** — Kali security utility: hoaxshell
+- [horst](tools/horst.md) — **Security Utilities** — Kali security utility: horst
+- [hosthunter](tools/hosthunter.md) — **Security Utilities** — Kali security utility: hosthunter
+- [hostsman](tools/hostsman.md) — **Security Utilities** — Kali security utility: hostsman
+- [htshells](tools/htshells.md) — **Security Utilities** — Kali security utility: htshells
+- [httprobe](tools/httprobe.md) — **Security Utilities** — Kali security utility: httprobe
+- [humble](tools/humble.md) — **Security Utilities** — Kali security utility: humble
+- [hurl](tools/hurl.md) — **Security Utilities** — Kali security utility: hurl
+- [ibombshell](tools/ibombshell.md) — **Security Utilities** — Kali security utility: ibombshell
+- [ident-user-enum](tools/ident-user-enum.md) — **Security Utilities** — Kali security utility: ident-user-enum
+- [inspy](tools/inspy.md) — **Security Utilities** — Kali security utility: inspy
+- [instaloader](tools/instaloader.md) — **Security Utilities** — Kali security utility: instaloader
+- [ipv6toolkit](tools/ipv6toolkit.md) — **Security Utilities** — Kali security utility: ipv6toolkit
+- [ismtp](tools/ismtp.md) — **Security Utilities** — Kali security utility: ismtp
+- [joplin](tools/joplin.md) — **Security Utilities** — Kali security utility: joplin
+- [jsp-file-browser](tools/jsp-file-browser.md) — **Security Utilities** — Kali security utility: jsp-file-browser
+- [kali-community-wallpapers](tools/kali-community-wallpapers.md) — **Security Utilities** — Kali security utility: kali-community-wallpapers
+- [kerberoast](tools/kerberoast.md) — **Security Utilities** — Kali security utility: kerberoast
+- [knocker](tools/knocker.md) — **Security Utilities** — Kali security utility: knocker
+- [koadic](tools/koadic.md) — **Security Utilities** — Kali security utility: koadic
+- [krbrelayx](tools/krbrelayx.md) — **Security Utilities** — Kali security utility: krbrelayx
+- [kustomize](tools/kustomize.md) — **Security Utilities** — Kali security utility: kustomize
+- [lapsdumper](tools/lapsdumper.md) — **Security Utilities** — Kali security utility: lapsdumper
+- [ldeep](tools/ldeep.md) — **Security Utilities** — Kali security utility: ldeep
+- [legba](tools/legba.md) — **Security Utilities** — Kali security utility: legba
+- [ligolo-mp](tools/ligolo-mp.md) — **Security Utilities** — Kali security utility: ligolo-mp
+- [ligolo-ng](tools/ligolo-ng.md) — **Security Utilities** — Kali security utility: ligolo-ng
+- [ligolo-ng-common-binaries](tools/ligolo-ng-common-binaries.md) — **Security Utilities** — Kali security utility: ligolo-ng-common-binaries
+- [linkedin2username](tools/linkedin2username.md) — **Security Utilities** — Kali security utility: linkedin2username
+- [maryam](tools/maryam.md) — **Security Utilities** — Kali security utility: maryam
+- [mcp-kali-server](tools/mcp-kali-server.md) — **Security Utilities** — Kali security utility: mcp-kali-server
+- [merlin-server](tools/merlin-server.md) — **Security Utilities** — Kali security utility: merlin-server
+- [mitm6](tools/mitm6.md) — **Security Utilities** — Kali security utility: mitm6
+- [mongo-tools](tools/mongo-tools.md) — **Security Utilities** — Kali security utility: mongo-tools
+- [mssqlpwner](tools/mssqlpwner.md) — **Security Utilities** — Kali security utility: mssqlpwner
+- [multiforcer](tools/multiforcer.md) — **Security Utilities** — Kali security utility: multiforcer
+- [mxcheck](tools/mxcheck.md) — **Security Utilities** — Kali security utility: mxcheck
+- [nbtscan-unixwiz](tools/nbtscan-unixwiz.md) — **Security Utilities** — Kali security utility: nbtscan-unixwiz
+- [nextnet](tools/nextnet.md) — **Security Utilities** — Kali security utility: nextnet
+- [obsidian](tools/obsidian.md) — **Security Utilities** — Kali security utility: obsidian
+- [odat](tools/odat.md) — **Security Utilities** — Kali security utility: odat
+- [oletools](tools/oletools.md) — **Security Utilities** — Kali security utility: oletools
+- [osrframework](tools/osrframework.md) — **Security Utilities** — Kali security utility: osrframework
+- [owl](tools/owl.md) — **Security Utilities** — Kali security utility: owl
+- [parsero](tools/parsero.md) — **Security Utilities** — Kali security utility: parsero
+- [passdetective](tools/passdetective.md) — **Security Utilities** — Kali security utility: passdetective
+- [patchleaks](tools/patchleaks.md) — **Security Utilities** — Kali security utility: patchleaks
+- [payloadsallthethings](tools/payloadsallthethings.md) — **Security Utilities** — Kali security utility: payloadsallthethings
+- [penelope](tools/penelope.md) — **Security Utilities** — Kali security utility: penelope
+- [phishery](tools/phishery.md) — **Security Utilities** — Kali security utility: phishery
+- [photon](tools/photon.md) — **Security Utilities** — Kali security utility: photon
+- [phpggc](tools/phpggc.md) — **Security Utilities** — Kali security utility: phpggc
+- [phpsploit](tools/phpsploit.md) — **Security Utilities** — Kali security utility: phpsploit
+- [pnscan](tools/pnscan.md) — **Security Utilities** — Kali security utility: pnscan
+- [pompem](tools/pompem.md) — **Security Utilities** — Kali security utility: pompem
+- [portspoof](tools/portspoof.md) — **Security Utilities** — Kali security utility: portspoof
+- [poshc2](tools/poshc2.md) — **Security Utilities** — Kali security utility: poshc2
+- [princeprocessor](tools/princeprocessor.md) — **Security Utilities** — Kali security utility: princeprocessor
+- [proxify](tools/proxify.md) — **Security Utilities** — Kali security utility: proxify
+- [proximoth](tools/proximoth.md) — **Security Utilities** — Kali security utility: proximoth
+- [pskracker](tools/pskracker.md) — **Security Utilities** — Kali security utility: pskracker
+- [pspy](tools/pspy.md) — **Security Utilities** — Kali security utility: pspy
+- [pwncat](tools/pwncat.md) — **Security Utilities** — Kali security utility: pwncat
+- [pyinstxtractor](tools/pyinstxtractor.md) — **Security Utilities** — Kali security utility: pyinstxtractor
+- [python3-atomic-operator](tools/python3-atomic-operator.md) — **Security Utilities** — Kali security utility: python3-atomic-operator
+- [python3-dploot](tools/python3-dploot.md) — **Security Utilities** — Kali security utility: python3-dploot
+- [python3-pyinstaller](tools/python3-pyinstaller.md) — **Security Utilities** — Kali security utility: python3-pyinstaller
+- [python3-wsgidav](tools/python3-wsgidav.md) — **Security Utilities** — Kali security utility: python3-wsgidav
+- [quark-engine](tools/quark-engine.md) — **Security Utilities** — Kali security utility: quark-engine
+- [raven](tools/raven.md) — **Security Utilities** — Kali security utility: raven
+- [redeye](tools/redeye.md) — **Security Utilities** — Kali security utility: redeye
+- [redsnarf](tools/redsnarf.md) — **Security Utilities** — Kali security utility: redsnarf
+- [rev-proxy-grapher](tools/rev-proxy-grapher.md) — **Security Utilities** — Kali security utility: rev-proxy-grapher
+- [ridenum](tools/ridenum.md) — **Security Utilities** — Kali security utility: ridenum
+- [rling](tools/rling.md) — **Security Utilities** — Kali security utility: rling
+- [robotstxt](tools/robotstxt.md) — **Security Utilities** — Kali security utility: robotstxt
+- [ruby-pedump](tools/ruby-pedump.md) — **Security Utilities** — Kali security utility: ruby-pedump
+- [sara](tools/sara.md) — **Security Utilities** — Kali security utility: sara
+- [sentrypeer](tools/sentrypeer.md) — **Security Utilities** — Kali security utility: sentrypeer
+- [shed](tools/shed.md) — **Security Utilities** — Kali security utility: shed
+- [shell-gpt](tools/shell-gpt.md) — **Security Utilities** — Kali security utility: shell-gpt
+- [shellfire](tools/shellfire.md) — **Security Utilities** — Kali security utility: shellfire
+- [sickle-pdk](tools/sickle-pdk.md) — **Security Utilities** — Kali security utility: sickle-pdk
+- [silenttrinity](tools/silenttrinity.md) — **Security Utilities** — Kali security utility: silenttrinity
+- [sippts](tools/sippts.md) — **Security Utilities** — Kali security utility: sippts
+- [slimtoolkit](tools/slimtoolkit.md) — **Security Utilities** — Kali security utility: slimtoolkit
+- [sliver](tools/sliver.md) — **Security Utilities** — Kali security utility: sliver
+- [sn0int](tools/sn0int.md) — **Security Utilities** — Kali security utility: sn0int
+- [snmpenum](tools/snmpenum.md) — **Security Utilities** — Kali security utility: snmpenum
+- [snowdrop](tools/snowdrop.md) — **Security Utilities** — Kali security utility: snowdrop
+- [spire](tools/spire.md) — **Security Utilities** — Kali security utility: spire
+- [sploitscan](tools/sploitscan.md) — **Security Utilities** — Kali security utility: sploitscan
+- [sqlmc](tools/sqlmc.md) — **Security Utilities** — Kali security utility: sqlmc
+- [sshuttle](tools/sshuttle.md) — **Security Utilities** — Kali security utility: sshuttle
+- [sslstrip](tools/sslstrip.md) — **Security Utilities** — Kali security utility: sslstrip
+- [sstimap](tools/sstimap.md) — **Security Utilities** — Kali security utility: sstimap
+- [subjack](tools/subjack.md) — **Security Utilities** — Kali security utility: subjack
+- [sublist3r](tools/sublist3r.md) — **Security Utilities** — Kali security utility: sublist3r
+- [teamsploit](tools/teamsploit.md) — **Security Utilities** — Kali security utility: teamsploit
+- [terraform](tools/terraform.md) — **Security Utilities** — Kali security utility: terraform
+- [tinja](tools/tinja.md) — **Security Utilities** — Kali security utility: tinja
+- [tundeep](tools/tundeep.md) — **Security Utilities** — Kali security utility: tundeep
+- [unhide.rb](tools/unhiderb.md) — **Security Utilities** — Kali security utility: unhide.rb
+- [unicorn-magic](tools/unicorn-magic.md) — **Security Utilities** — Kali security utility: unicorn-magic
+- [uro](tools/uro.md) — **Security Utilities** — Kali security utility: uro
+- [vopono](tools/vopono.md) — **Security Utilities** — Kali security utility: vopono
+- [waybackpy](tools/waybackpy.md) — **Security Utilities** — Kali security utility: waybackpy
+- [web-cache-vulnerability-scanner](tools/web-cache-vulnerability-scanner.md) — **Security Utilities** — Kali security utility: web-cache-vulnerability-scanner
+- [websploit](tools/websploit.md) — **Security Utilities** — Kali security utility: websploit
+- [wgetpaste](tools/wgetpaste.md) — **Security Utilities** — Kali security utility: wgetpaste
+- [whatmask](tools/whatmask.md) — **Security Utilities** — Kali security utility: whatmask
+- [wig](tools/wig.md) — **Security Utilities** — Kali security utility: wig
+- [wig-ng](tools/wig-ng.md) — **Security Utilities** — Kali security utility: wig-ng
+- [witnessme](tools/witnessme.md) — **Security Utilities** — Kali security utility: witnessme
+- [wixl](tools/wixl.md) — **Security Utilities** — Kali security utility: wixl
+- [wmi-client](tools/wmi-client.md) — **Security Utilities** — Kali security utility: wmi-client
+- [wotmate](tools/wotmate.md) — **Security Utilities** — Kali security utility: wotmate
+- [wpa-sycophant](tools/wpa-sycophant.md) — **Security Utilities** — Kali security utility: wpa-sycophant
+- [wpprobe](tools/wpprobe.md) — **Security Utilities** — Kali security utility: wpprobe
+- [zonedb](tools/zonedb.md) — **Security Utilities** — Kali security utility: zonedb
+- [MISP](tools/misp.md) — **Threat Intelligence** — IOC exchange
+- [STIX/TAXII](tools/stix-taxii.md) — **Threat Intelligence** — Threat-intel transport
+- [Sigma CLI](tools/sigma-cli-2.md) — **Threat Intelligence** — Advanced threat intelligence capability: Sigma CLI
+- [opentaxii](tools/opentaxii.md) — **Threat Intelligence** — Kali security utility: opentaxii
+- [sigma-cli](tools/sigma-cli.md) — **Threat Intelligence** — Kali security utility: sigma-cli
+- [chromadb](tools/chromadb.md) — **Vector DB** — Vector database security connector
+- [milvus](tools/milvus.md) — **Vector DB** — Vector database security connector
+- [pgvector](tools/pgvector.md) — **Vector DB** — PostgreSQL vector storage integration
+- [pinecone](tools/pinecone.md) — **Vector DB** — Managed vector database security connector
+- [qdrant](tools/qdrant.md) — **Vector DB** — Vector database security connector
+- [weaviate](tools/weaviate.md) — **Vector DB** — Vector database security connector
+- [Chroma](tools/chroma.md) — **Vector DB Security** — Vector store integration and retrieval security testing
+- [vectordbbench](tools/vectordbbench.md) — **Vector DB Security** — Vector database performance/security test harness
+- [Nessus](tools/nessus.md) — **Vulnerability** — Vulnerability assessment/import
+- [OpenVAS/Greenbone](tools/openvas-greenbone.md) — **Vulnerability** — Vulnerability assessment
+- [Arjun](tools/arjun-2.md) — **Web/API** — Advanced web/api capability: Arjun
+- [Burp Suite](tools/burp-suite.md) — **Web/API** — Web application security assessment
+- [Dalfox](tools/dalfox.md) — **Web/API** — Advanced web/api capability: Dalfox
+- [Dirsearch](tools/dirsearch.md) — **Web/API** — Content discovery
+- [FFUF](tools/ffuf.md) — **Web/API** — Web content/fuzzing assessment
+- [Feroxbuster](tools/feroxbuster.md) — **Web/API** — Content discovery
+- [Gobuster](tools/gobuster.md) — **Web/API** — Content discovery
+- [HTTPX](tools/httpx-2.md) — **Web/API** — Advanced web/api capability: HTTPX
+- [Katana](tools/katana.md) — **Web/API** — Advanced web/api capability: Katana
+- [Kiterunner](tools/kiterunner.md) — **Web/API** — Advanced web/api capability: Kiterunner
+- [Nikto](tools/nikto.md) — **Web/API** — Web server posture assessment
+- [Nuclei](tools/nuclei.md) — **Web/API** — Template-based vulnerability assessment
+- [OWASP ZAP](tools/owasp-zap.md) — **Web/API** — Web application security assessment
+- [SQLMap](tools/sqlmap.md) — **Web/API** — Authorized SQL injection assessment
+- [Wapiti](tools/wapiti.md) — **Web/API** — Web vulnerability assessment
+- [WhatWeb](tools/whatweb.md) — **Web/API** — Technology fingerprinting
+- [arjun](tools/arjun.md) — **Web/API** — Kali security utility: arjun
+- [feroxbuster](tools/feroxbuster-2.md) — **Web/API** — Kali security utility: feroxbuster
+- [httpx-toolkit](tools/httpx-toolkit.md) — **Web/API** — Kali security utility: httpx-toolkit
+- [nuclei](tools/nuclei-2.md) — **Web/API** — Kali security utility: nuclei
+- [testssl.sh](tools/testsslsh.md) — **Web/API** — Kali security utility: testssl.sh
+- [xsrfprobe](tools/xsrfprobe.md) — **Web/API** — Kali security utility: xsrfprobe
+- [xsstrike](tools/xsstrike.md) — **Web/API** — Kali security utility: xsstrike
+- [BTLEJack](tools/btlejack.md) — **Wireless** — Advanced wireless capability: BTLEJack
+- [Bettercap](tools/bettercap.md) — **Wireless** — Advanced wireless capability: Bettercap
+- [HackRF tools](tools/hackrf-tools.md) — **Wireless** — Advanced wireless capability: HackRF tools
+- [Hostapd-MANA](tools/hostapd-mana-2.md) — **Wireless** — Advanced wireless capability: Hostapd-MANA
+- [Kismet](tools/kismet.md) — **Wireless** — Advanced wireless capability: Kismet
+- [Proxmark3](tools/proxmark3-2.md) — **Wireless** — Advanced wireless capability: Proxmark3
+- [Ubertooth](tools/ubertooth.md) — **Wireless** — Advanced wireless capability: Ubertooth
+- [WiFi Explorer integration](tools/wifi-explorer-integration.md) — **Wireless** — Advanced wireless capability: WiFi Explorer integration
+- [WiFi Pineapple](tools/wifi-pineapple.md) — **Wireless** — Advanced wireless capability: WiFi Pineapple
+- [Wifite2](tools/wifite2.md) — **Wireless** — Advanced wireless capability: Wifite2
+- [bettercap-ui](tools/bettercap-ui.md) — **Wireless** — Kali security utility: bettercap-ui
+- [cupid-hostapd](tools/cupid-hostapd.md) — **Wireless** — Kali security utility: cupid-hostapd
+- [hak5-wifi-coconut](tools/hak5-wifi-coconut.md) — **Wireless** — Kali security utility: hak5-wifi-coconut
+- [hcxtools](tools/hcxtools.md) — **Wireless** — Kali security utility: hcxtools
+- [hostapd-mana](tools/hostapd-mana.md) — **Wireless** — Kali security utility: hostapd-mana
+- [proxmark3](tools/proxmark3.md) — **Wireless** — Kali security utility: proxmark3
+- [sparrow-wifi](tools/sparrow-wifi.md) — **Wireless** — Kali security utility: sparrow-wifi
+- [vwifi-tool](tools/vwifi-tool.md) — **Wireless** — Kali security utility: vwifi-tool
+- [wifiphisher](tools/wifiphisher.md) — **Wireless** — Kali security utility: wifiphisher
+- [wifipumpkin3](tools/wifipumpkin3.md) — **Wireless** — Kali security utility: wifipumpkin3

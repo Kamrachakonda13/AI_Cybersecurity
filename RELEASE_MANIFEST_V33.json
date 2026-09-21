@@ -1,0 +1,13 @@
+{
+  "release": "3.3.0",
+  "name": "VEYRA Security Readiness Center",
+  "documentation_contract": "automated",
+  "ai_control_baseline": [
+    "OWASP GenAI LLM Top 10 2026",
+    "OWASP Top 10 for Agentic Applications 2026",
+    "OWASP Agent Control Standard",
+    "NIST AI RMF",
+    "NIST GenAI Profile"
+  ],
+  "safety_boundary": "governed defensive validation; no hack-back or unrestricted offensive execution"
+}

@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: aegisx
+      POSTGRES_USER: aegisx
+      POSTGRES_PASSWORD: aegisx
+    ports: ["5432:5432"]
+    volumes:
+      - aegisx_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aegisx -d aegisx"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://aegisx:aegisx@postgres:5432/aegisx
+      CORS_ORIGINS: http://localhost:3000
+      COLLECTOR_TOKEN: ${COLLECTOR_TOKEN:-}
+      NVD_API_KEY: ${NVD_API_KEY:-}
+      THREATINTEL_AUTO_REFRESH: ${THREATINTEL_AUTO_REFRESH:-false}
+      AEGISX_SUDO_USERNAME: ${AEGISX_SUDO_USERNAME:?Set AEGISX_SUDO_USERNAME in .env}
+      AEGISX_SUDO_PASSWORD: ${AEGISX_SUDO_PASSWORD:?Set AEGISX_SUDO_PASSWORD in .env}
+      AEGISX_SESSION_HOURS: ${AEGISX_SESSION_HOURS:-8}
+      AEGISX_ADMIN_EMAIL: ${AEGISX_ADMIN_EMAIL:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+      SMTP_TLS: ${SMTP_TLS:-true}
+    ports: ["8000:8000"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+  frontend:
+    build: ./frontend
+    environment:
+      VITE_API_URL: http://localhost:8000
+    ports: ["3000:3000"]
+    depends_on: [backend]
+    restart: unless-stopped
+volumes:
+  aegisx_pg:

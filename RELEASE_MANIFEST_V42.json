@@ -1,0 +1,8 @@
+{
+  "product": "VEYRA",
+  "release": "4.2.0",
+  "codename": "Trusted Supply Chain Fabric",
+  "trust_invariant": "No tool, model, agent, MCP server, artifact or update becomes trusted merely because it exists. It must establish identity, provenance, integrity, policy compliance, validation, controlled deployment and observable runtime behavior.",
+  "features": ["trusted attestation registry", "canary cohort controller", "AI/MCP/A2A supply-chain inventory", "agent circuit breaker", "fixed verifier worker", "TUF/Cosign/Syft/Grype/SLSA integration contracts"],
+  "execution_boundary": "SaaS never executes arbitrary shell or package-manager commands; fixed verification programs run only on managed workers."
+}

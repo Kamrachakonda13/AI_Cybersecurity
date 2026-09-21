@@ -1,0 +1,13 @@
+{
+  "policy": "Signals are advisory; releases are deployable only after immutable artifact verification.",
+  "sources": [
+    {"id":"cisa-kev","url":"https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json","cadence":"continuous/daily"},
+    {"id":"nvd","url":"https://services.nvd.nist.gov/rest/json/cves/2.0","cadence":"daily"},
+    {"id":"osv","url":"https://api.osv.dev/v1/query","cadence":"daily"},
+    {"id":"github-advisories","url":"https://github.com/advisories","cadence":"daily"},
+    {"id":"github-releases","url":"https://api.github.com/repos/{owner}/{repo}/releases","cadence":"daily"},
+    {"id":"vendor-advisories","url":"operator-configured","cadence":"daily"},
+    {"id":"approved-package-registries","url":"operator-configured","cadence":"daily"},
+    {"id":"approved-container-registries","url":"operator-configured","cadence":"daily"}
+  ]
+}

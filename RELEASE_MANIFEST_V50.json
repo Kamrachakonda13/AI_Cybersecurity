@@ -1,0 +1,64 @@
+{
+  "release": "VEYRA v5.0 Autonomous Security Control Plane",
+  "version": "5.0.0",
+  "previous_release": "4.2.0",
+  "consolidates": [
+    "4.0.0",
+    "4.1.0",
+    "4.2.0",
+    "4.3 capability set",
+    "4.4 capability set"
+  ],
+  "brand": "VEYRA \u2014 Autonomous Security Intelligence",
+  "invariant": "No tool, model, agent, MCP server, artifact or update becomes trusted merely because it exists.",
+  "trust_gates": 11,
+  "capabilities": [
+    "Tool Supply Chain",
+    "Verified Worker Runtime",
+    "Trusted Supply Chain Fabric",
+    "AI/Agent Supply Chain",
+    "AIBOM",
+    "MCP/A2A Trust",
+    "Runtime Attestation",
+    "Trajectory Assurance",
+    "Continuous Trust Graph",
+    "Trust Decisions",
+    "Circuit Breaker Readiness"
+  ],
+  "safety_boundary": [
+    "no arbitrary shell",
+    "no hack-back",
+    "no persistence",
+    "no C2",
+    "no unrestricted credential attacks",
+    "approval-gated high-impact actions"
+  ],
+  "production_dependencies": [
+    "TUF",
+    "Sigstore/Cosign",
+    "SLSA/in-toto",
+    "Syft",
+    "Grype",
+    "SPIFFE/SPIRE",
+    "immutable storage",
+    "managed workers",
+    "network/identity enforcement"
+  ],
+  "release_name": "VEYRA v5.0 Enterprise Complete Autonomous Security Control Plane",
+  "completion_layer": [
+    "Agent Identity & Authority Plane",
+    "Agent Gateway",
+    "Policy-as-Code / Agent Control",
+    "MCP Rug-Pull Detection",
+    "Agent Memory Security",
+    "Transaction Security",
+    "Agent Behavioral DNA",
+    "AI Security Digital Twin"
+  ],
+  "research_alignment": [
+    "NIST AI Agent Standards Initiative 2026",
+    "NIST Agent Identity and Authorization 2026",
+    "OWASP Agent Control Standard 2026",
+    "OWASP MCP Security Guidance 2026"
+  ]
+}

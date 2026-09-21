@@ -1,0 +1,8 @@
+{
+  "version": "3.8.0",
+  "name": "VEYRA Security Posture Time Machine & AI Endpoint Intelligence",
+  "features": ["temporal-posture","drift-detection","remediation-proof","ai-provider-radar","windows-endpoint-radar","macos-endpoint-radar","linux-endpoint-radar"],
+  "security_boundary": "read-only analytics plus governed snapshot capture; no arbitrary command execution",
+  "research_date": "2026-09-11",
+  "docs": ["docs/SECURITY_POSTURE_TIME_MACHINE_V38.md","docs/AI_PROVIDER_AND_ENDPOINT_RADAR_V38.md"]
+}
