@@ -68,3 +68,5 @@ project_snapshot.txt
 data/
 artifacts/
 tmp/
+VEYRA_v*_FINAL.sha256
+VEYRA_v*_FINAL.zip

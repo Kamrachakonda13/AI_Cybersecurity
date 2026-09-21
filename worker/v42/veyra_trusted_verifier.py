@@ -15,7 +15,17 @@ import hashlib
 import json
 import shutil
 import subprocess
+import warnings as _warnings
 from pathlib import Path
+
+_warnings.warn(
+    "worker/v42/veyra_trusted_verifier.py is deprecated as of VEYRA v5.0. "
+    "Migrate to worker/v50/veyra_trust_verifier.py. "
+    "See DEPRECATION.md for the migration guide. "
+    "v4.2 will be removed in VEYRA v6.0.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
 TOOLS = {
     "cosign": "cosign",
