@@ -76,12 +76,12 @@ def seed_identity(db):
     from .auth import hash_password
     from ..models import UserAccount
     if db.query(UserAccount).count(): return
-    username=os.getenv("AEGISX_SUDO_USERNAME", "").strip()
-    password=os.getenv("AEGISX_SUDO_PASSWORD", "")
+    username=os.getenv("VEYRA_SUDO_USERNAME", "").strip()
+    password=os.getenv("VEYRA_SUDO_PASSWORD", "")
     if not username or not password:
         return
     if len(password) < 12:
-        raise RuntimeError("AEGISX_SUDO_PASSWORD must be at least 12 characters")
+        raise RuntimeError("VEYRA_SUDO_PASSWORD must be at least 12 characters")
     db.add(UserAccount(username=username, display_name="Sudo Administrator", password_hash=hash_password(password), role="sudo", status="active", mfa_required=True, must_change_password=True))
     db.add(AuditEvent(actor="system", action="bootstrap_sudo_account", target=username, outcome="success"))
     db.commit()

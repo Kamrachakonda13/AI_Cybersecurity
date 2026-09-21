@@ -9,7 +9,7 @@ from fastapi import HTTPException, Request
 from sqlalchemy.orm import Session
 from ..models import UserAccount, UserToolPermission, UserSession
 
-SESSION_HOURS = int(os.getenv("AEGISX_SESSION_HOURS", "8"))
+SESSION_HOURS = int(os.getenv("VEYRA_SESSION_HOURS", "8"))
 PBKDF2_ROUNDS = 310_000
 
 def hash_password(password: str) -> str:

@@ -4,7 +4,7 @@ from app.main import app
 
 
 def test_execution_plane_admin_lifecycle(monkeypatch):
-    monkeypatch.setenv("AEGISX_ADMIN_TOKEN", "secret")
+    monkeypatch.setenv("VEYRA_ADMIN_TOKEN", "secret")
     c = TestClient(app)
     h={"X-AegisX-Admin-Token":"secret"}
     r=c.post('/api/admin/ethical-hacking/jobs',headers=h,json={
@@ -23,6 +23,6 @@ def test_execution_plane_admin_lifecycle(monkeypatch):
 
 
 def test_execution_plane_non_admin(monkeypatch):
-    monkeypatch.setenv("AEGISX_ADMIN_TOKEN", "secret")
+    monkeypatch.setenv("VEYRA_ADMIN_TOKEN", "secret")
     c=TestClient(app)
     assert c.get('/api/admin/ethical-hacking/jobs').status_code==403

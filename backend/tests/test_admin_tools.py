@@ -4,7 +4,7 @@ from app.main import app
 
 
 def test_admin_tools_require_admin(monkeypatch):
-    monkeypatch.setenv("AEGISX_ADMIN_TOKEN", "secret")
+    monkeypatch.setenv("VEYRA_ADMIN_TOKEN", "secret")
     c = TestClient(app)
     assert c.get("/api/admin/ethical-hacking/tools").status_code == 403
     r = c.get("/api/admin/ethical-hacking/tools", headers={"X-AegisX-Admin-Token":"secret"})
@@ -17,7 +17,7 @@ def test_admin_tools_require_admin(monkeypatch):
 
 
 def test_worker_requires_auth(monkeypatch):
-    monkeypatch.setenv('AEGISX_WORKER_TOKEN','worker-secret')
+    monkeypatch.setenv('VEYRA_WORKER_TOKEN','worker-secret')
     from app.db import Base, engine
     Base.metadata.create_all(bind=engine)
     c=TestClient(app)
@@ -26,8 +26,8 @@ def test_worker_requires_auth(monkeypatch):
 
 
 def test_privileged_tool_requires_second_admin_gate(monkeypatch):
-    monkeypatch.setenv("AEGISX_ADMIN_TOKEN", "admin")
-    monkeypatch.setenv("AEGISX_PRIVILEGED_ADMIN_TOKEN", "priv")
+    monkeypatch.setenv("VEYRA_ADMIN_TOKEN", "admin")
+    monkeypatch.setenv("VEYRA_PRIVILEGED_ADMIN_TOKEN", "priv")
     from app.db import Base, engine
     Base.metadata.create_all(bind=engine)
     c = TestClient(app)

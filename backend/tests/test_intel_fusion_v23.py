@@ -4,7 +4,7 @@ from fastapi.testclient import TestClient
 from app.main import app
 from app.db import SessionLocal, Base, engine
 from app.models import UnifiedSecurityEvent, ThreatIntel, InvestigationCase
-os.environ.setdefault("AEGISX_ADMIN_TOKEN","test-admin")
+os.environ.setdefault("VEYRA_ADMIN_TOKEN","test-admin")
 
 def _seed_case():
     Base.metadata.create_all(bind=engine)

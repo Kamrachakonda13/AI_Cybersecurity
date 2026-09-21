@@ -2,7 +2,7 @@
 import os
 from fastapi.testclient import TestClient
 from app.main import app
-os.environ.setdefault("AEGISX_ADMIN_TOKEN","test-admin")
+os.environ.setdefault("VEYRA_ADMIN_TOKEN","test-admin")
 os.environ.setdefault("COLLECTOR_TOKEN","test-collector")
 
 def test_detection_mesh_overview_and_rules():

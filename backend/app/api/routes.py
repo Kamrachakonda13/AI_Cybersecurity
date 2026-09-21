@@ -40,7 +40,7 @@ router = APIRouter(prefix="/api")
 
 def require_admin(request: Request):
     """Accept legacy admin token or an authenticated console role with admin capability."""
-    expected = _os.getenv("AEGISX_ADMIN_TOKEN", "")
+    expected = _os.getenv("VEYRA_ADMIN_TOKEN", "")
     supplied = request.headers.get("X-AegisX-Admin-Token", "")
     if expected and supplied and supplied == expected:
         return True
@@ -59,7 +59,7 @@ def require_admin(request: Request):
 def require_privileged_admin(request: Request):
     """Second gate for high-impact security tooling; use PAM/MFA in production."""
     require_admin(request)
-    expected = _os.getenv("AEGISX_PRIVILEGED_ADMIN_TOKEN", "")
+    expected = _os.getenv("VEYRA_PRIVILEGED_ADMIN_TOKEN", "")
     supplied = request.headers.get("X-AegisX-Privileged-Admin-Token", "")
     if not expected or not supplied or supplied != expected:
         raise HTTPException(403, "Privileged administrator authorization required")
@@ -336,7 +336,7 @@ def require_collector(request: Request):
 
 
 def require_ai_gateway(request: Request):
-    expected = _os.getenv("AEGISX_AI_GATEWAY_TOKEN", "")
+    expected = _os.getenv("VEYRA_AI_GATEWAY_TOKEN", "")
     supplied = request.headers.get("X-AegisX-AI-Token", "")
     if not expected or not supplied or supplied != expected:
         raise HTTPException(403, "Authenticated AI gateway client required")
@@ -1298,7 +1298,7 @@ class WorkerEvidenceRequest(BaseModel):
 
 
 def require_worker(request: Request):
-    expected = _os.getenv("AEGISX_WORKER_TOKEN", "")
+    expected = _os.getenv("VEYRA_WORKER_TOKEN", "")
     supplied = request.headers.get("X-AegisX-Worker-Token", "")
     if not expected or not supplied or supplied != expected:
         raise HTTPException(403, "Authenticated isolated worker required")
@@ -1314,7 +1314,7 @@ def worker_next_job(db: Session = Depends(get_db), _: bool = Depends(require_wor
     if not tool: raise HTTPException(409,"Registered tool definition missing")
     contract={"job_id":row.job_id,"tool":row.tool,"tool_id":tool["id"],"execution_profile":tool["execution_profile"],"target":row.target,"scope":json.loads(row.scope or "[]"),"approval_ticket":row.approval_ticket,"environment":row.environment,"purpose":row.purpose,"actor":row.actor,"created_at":row.created_at.isoformat() if row.created_at else "","execution":"not_started","browser_shell":False,"contract_sha256":row.contract_sha256}
     from ..services.execution_plane import hmac, hashlib
-    secret=_os.getenv("AEGISX_WORKER_SIGNING_SECRET","")
+    secret=_os.getenv("VEYRA_WORKER_SIGNING_SECRET","")
     if not secret: raise HTTPException(503,"Worker signing secret is not configured")
     contract["contract_signature"]=hmac.new(secret.encode(),row.contract_sha256.encode(),hashlib.sha256).hexdigest()
     row.status="worker_claimed"

@@ -7,15 +7,15 @@ import os
 import sys
 import requests
 
-BASE = os.getenv("AEGISX_URL", "http://localhost:8000")
-AGENT_ID = os.getenv("AEGISX_AGENT_ID", "internal-soc-agent")
+BASE = os.getenv("VEYRA_URL", "http://localhost:8000")
+AGENT_ID = os.getenv("VEYRA_AGENT_ID", "internal-soc-agent")
 
 # Require the token from the environment. Never hardcode it.
-TOKEN = os.getenv("AEGISX_TOKEN")
+TOKEN = os.getenv("VEYRA_TOKEN")
 if not TOKEN:
     sys.exit(
-        "AEGISX_TOKEN is not set. Export it before running this example:\n"
-        "    export AEGISX_TOKEN='<your-workload-token>'"
+        "VEYRA_TOKEN is not set. Export it before running this example:\n"
+        "    export VEYRA_TOKEN='<your-workload-token>'"
     )
 
 payload = {

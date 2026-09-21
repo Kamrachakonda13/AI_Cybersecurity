@@ -3,8 +3,8 @@ from fastapi.testclient import TestClient
 import os
 from app.main import app
 
-os.environ["AEGISX_ADMIN_TOKEN"]="test-admin"
-os.environ["AEGISX_AI_GATEWAY_TOKEN"]="test-ai"
+os.environ["VEYRA_ADMIN_TOKEN"]="test-admin"
+os.environ["VEYRA_AI_GATEWAY_TOKEN"]="test-ai"
 client=TestClient(app)
 
 def test_gateway_requires_token():

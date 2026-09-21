@@ -15,7 +15,7 @@ log = logging.getLogger("aegisx.notify")
 
 
 def admin_email() -> str:
-    return os.getenv("AEGISX_ADMIN_EMAIL", "").strip()
+    return os.getenv("VEYRA_ADMIN_EMAIL", "").strip()
 
 
 def _smtp_config() -> dict:

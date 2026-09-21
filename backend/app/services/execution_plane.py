@@ -50,7 +50,7 @@ def make_job_contract(tool: dict, target: str, scope: list[str], approval_ticket
     contract["contract_sha256"] = hashlib.sha256(
         json.dumps(contract, sort_keys=True, separators=(",", ":")).encode()
     ).hexdigest()
-    secret = os.getenv("AEGISX_WORKER_SIGNING_SECRET", "")
+    secret = os.getenv("VEYRA_WORKER_SIGNING_SECRET", "")
     if secret:
         contract["contract_signature"] = hmac.new(secret.encode(), contract["contract_sha256"].encode(), hashlib.sha256).hexdigest()
     else:
@@ -58,7 +58,7 @@ def make_job_contract(tool: dict, target: str, scope: list[str], approval_ticket
     return contract
 
 def verify_contract_signature(contract_sha256: str, signature: str) -> bool:
-    secret = os.getenv("AEGISX_WORKER_SIGNING_SECRET", "")
+    secret = os.getenv("VEYRA_WORKER_SIGNING_SECRET", "")
     if not secret or not signature:
         return False
     expected = hmac.new(secret.encode(), contract_sha256.encode(), hashlib.sha256).hexdigest()
