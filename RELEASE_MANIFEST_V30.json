@@ -633,7 +633,7 @@
       "bytes": 1052
     },
     {
-      "path": "installers/com.aegisx.wifi-sensor.plist",
+      "path": "installers/com.veyra.wifi-sensor.plist",
       "sha256": "dc4292e38061e0c291a982b4b866fcdf2e81f991964e2111cf67e4274dbf95f7",
       "bytes": 548
     },

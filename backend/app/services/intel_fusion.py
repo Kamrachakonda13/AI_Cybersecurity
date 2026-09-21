@@ -1,4 +1,4 @@
-"""AegisX v2.3 Threat Intelligence + DFIR fusion.
+"""VEYRA v2.3 Threat Intelligence + DFIR fusion.
 
 This service is evidence-first: it correlates normalized telemetry with the
 locally ingested threat-intelligence corpus and deterministic ATT&CK/ATLAS

@@ -1,4 +1,4 @@
-# AegisX backend image: Python 3.12-slim + requirements → uvicorn app.main:app:8000.
+# VEYRA backend image: Python 3.12-slim + requirements → uvicorn app.main:app:8000.
 # Help: rebuild after ANY backend change (`docker compose up --build`). Tests ship
 # inside (`COPY tests`) but run outside Docker via `python3 -m pytest tests`.
 FROM python:3.12-slim

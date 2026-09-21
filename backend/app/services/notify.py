@@ -11,7 +11,7 @@ import os
 import smtplib
 from email.message import EmailMessage
 
-log = logging.getLogger("aegisx.notify")
+log = logging.getLogger("veyra.notify")
 
 
 def admin_email() -> str:
@@ -33,7 +33,7 @@ def send_access_request_email(to_email: str, username: str, tool_name: str,
                               level: str, duration_hours: float, reason: str,
                               request_id: str) -> tuple[str, str]:
     """Returns (channel, status): channel is 'email' or 'log'."""
-    subject = f"[AegisX] Tool access request: {username} → {tool_name} ({level})"
+    subject = f"[VEYRA] Tool access request: {username} → {tool_name} ({level})"
     body = (
         f"User '{username}' requests '{level}' access to {tool_name}.\n\n"
         f"Requested window: {duration_hours:g} hour(s)\n"

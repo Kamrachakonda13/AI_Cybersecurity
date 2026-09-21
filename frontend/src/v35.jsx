@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {Panel} from './v29_components.jsx';
 const API=import.meta.env.VITE_API_URL||'http://localhost:8000';
-const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('aegisx_user_token')}`});
+const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('VEYRA_user_token')}`});
 const get=p=>fetch(`${API}${p}`,{headers:auth()}).then(r=>{if(!r.ok)throw new Error(String(r.status));return r.json()});
 export function V35SecurityLifecycleView(){
  const [o,setO]=useState(null),[p,setP]=useState(null);

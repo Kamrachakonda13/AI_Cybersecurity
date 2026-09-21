@@ -21,9 +21,9 @@ cp backend/.env.example backend/.env
 # 1b. Set the sudo bootstrap login (12+ char password).
 #     These seed the single `sudo` account on FIRST startup only.
 #     Never commit real credentials to Git or package them in a ZIP.
-grep -E "AEGISX_SUDO" backend/.env
-# AEGISX_SUDO_USERNAME=sudo.admin
-# AEGISX_SUDO_PASSWORD=<strong-12+-character-secret>
+grep -E "VEYRA_SUDO" backend/.env
+# VEYRA_SUDO_USERNAME=sudo.admin
+# VEYRA_SUDO_PASSWORD=<strong-12+-character-secret>
 
 # 1c. Verify docker is up
 docker --version && docker compose version
@@ -83,9 +83,9 @@ curl -s http://127.0.0.1:8765/health
 curl -s "http://127.0.0.1:8765/wifi/scan" | python3 -m json.tool | head -n 20
 
 # 4c. Permanent install — auto-start at every login (already done on this Mac)
-cp installers/com.aegisx.wifi-sensor.plist ~/Library/LaunchAgents/com.aegisx.wifi-sensor.plist
-launchctl load ~/Library/LaunchAgents/com.aegisx.wifi-sensor.plist
-launchctl list | grep aegisx   # → com.aegisx.wifi-sensor running
+cp installers/com.veyra.wifi-sensor.plist ~/Library/LaunchAgents/com.veyra.wifi-sensor.plist
+launchctl load ~/Library/LaunchAgents/com.veyra.wifi-sensor.plist
+launchctl list | grep veyra   # → com.veyra.wifi-sensor running
 curl -s http://127.0.0.1:8765/health
 
 # 4d. Then in console: Network → Scan nearby Wi-Fi
@@ -179,8 +179,8 @@ curl -s -X POST $API/api/ai/investigate \
   -H "Content-Type: application/json" \
   -d '{"question":"Investigate the latest critical finding"}' | head -c 500; echo
 
-# Local agent gateway example (needs AEGISX_AI_GATEWAY_TOKEN env)
-AEGISX_AI_GATEWAY_TOKEN=change-me-ai-gateway AEGISX_URL=http://localhost:8000 \
+# Local agent gateway example (needs VEYRA_AI_GATEWAY_TOKEN env)
+VEYRA_AI_GATEWAY_TOKEN=change-me-ai-gateway VEYRA_URL=http://localhost:8000 \
   python3 examples/local_agent_gateway.py
 ```
 
@@ -201,8 +201,8 @@ docker compose logs -f backend # follow backend logs
 | `Bind for 0.0.0.0:5432 failed` | Another stack holds the ports: `docker ps`, then `docker compose down` in the OLD project dir (or `docker stop <name>`) |
 | Backend `failed to resolve host 'postgres'` / containers lose network | `docker compose down && docker compose up --build -d` (Docker Desktop network glitch) |
 | Frontend blank + `vite:oxc ... already been declared` | Duplicate icon import in `frontend/src/main.jsx` — remove the dup, `docker compose up --build -d frontend` |
-| `SENSOR OFFLINE` / empty Wi-Fi list | Sensor not running: §4 (`launchctl list \| grep aegisx`, else manual run) |
-| `Invalid username or password` on fresh DB | Backend missing sudo env: check `AEGISX_SUDO_*` in `docker-compose.yml` + `backend/.env`, then `docker compose up -d backend` (seeds only when `user_accounts` is empty) |
+| `SENSOR OFFLINE` / empty Wi-Fi list | Sensor not running: §4 (`launchctl list \| grep veyra`, else manual run) |
+| `Invalid username or password` on fresh DB | Backend missing sudo env: check `VEYRA_SUDO_*` in `docker-compose.yml` + `backend/.env`, then `docker compose up -d backend` (seeds only when `user_accounts` is empty) |
 | Wi-Fi rows without names | Needs Xcode CLT (`xcode-select --install`); sensor uses `collectors/wifi-scan-jit.swift` via `/usr/bin/swift` |
 | LAN devices all `host-...` | Router has no local DNS; mDNS/NetBIOS auto-tried on sweep — phones may never answer; identify + Trust manually |
 | BSSID column `—` | Withheld by macOS without a persisting Location grant; SSIDs are unaffected |
@@ -282,15 +282,15 @@ For source-code explanations, symbol-by-symbol responsibilities, and the feature
 ### Inspect AI ecosystem
 
 ```bash
-curl -H "Authorization: Bearer $AEGISX_SESSION_TOKEN" http://localhost:8000/api/ai-ecosystem/overview
-curl -H "Authorization: Bearer $AEGISX_SESSION_TOKEN" http://localhost:8000/api/ai-ecosystem/tools
+curl -H "Authorization: Bearer $VEYRA_SESSION_TOKEN" http://localhost:8000/api/ai-ecosystem/overview
+curl -H "Authorization: Bearer $VEYRA_SESSION_TOKEN" http://localhost:8000/api/ai-ecosystem/tools
 ```
 
 ### Register a development worker
 
 ```bash
 curl -X POST http://localhost:8000/api/workers/register \
-  -H "Authorization: Bearer $AEGISX_SESSION_TOKEN" \
+  -H "Authorization: Bearer $VEYRA_SESSION_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"worker_id":"kali-lab-01","name":"Kali Lab Worker","kind":"kali","platform":"kali-linux-amd64","capabilities":["security-tools","ai-security","dfir","network"]}'
 ```
@@ -298,8 +298,8 @@ curl -X POST http://localhost:8000/api/workers/register \
 ### Worker inventory
 
 ```bash
-curl -H "Authorization: Bearer $AEGISX_SESSION_TOKEN" http://localhost:8000/api/workers
-curl -H "Authorization: Bearer $AEGISX_SESSION_TOKEN" http://localhost:8000/api/workers/kali-lab-01/tools
+curl -H "Authorization: Bearer $VEYRA_SESSION_TOKEN" http://localhost:8000/api/workers
+curl -H "Authorization: Bearer $VEYRA_SESSION_TOKEN" http://localhost:8000/api/workers/kali-lab-01/tools
 ```
 
 These are POC control-plane APIs. Production worker authentication must use short-lived workload identity and signed messages.

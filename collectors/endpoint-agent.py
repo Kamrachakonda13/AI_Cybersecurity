@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AegisX endpoint agent — consented heartbeat sync for YOUR managed/lab hosts.
+"""VEYRA endpoint agent — consented heartbeat sync for YOUR managed/lab hosts.
 
 Help — what it does, dependencies, safety:
 - Collects (stdlib only): hostname, IPs, MAC, OS, listening ports
@@ -476,12 +476,12 @@ def run_sensor(host="127.0.0.1", port=8765):
             blob=json.dumps(payload).encode(); self.send_response(status); self.send_header("Content-Type","application/json"); self.send_header("Content-Length",str(len(blob))); self.send_header("Access-Control-Allow-Origin", "*"); self.send_header("Access-Control-Allow-Methods","GET,OPTIONS"); self.end_headers(); self.wfile.write(blob)
         def do_OPTIONS(self): self._json({"ok":True})
         def do_GET(self):
-            if self.path.startswith("/health"): return self._json({"ok":True,"sensor":"aegisx-local-wifi","platform":platform.system()})
+            if self.path.startswith("/health"): return self._json({"ok":True,"sensor":"veyra-local-wifi","platform":platform.system()})
             if self.path.startswith("/wifi/current"): return self._json(wifi_current())
             if self.path.startswith("/wifi/scan"): return self._json({"networks":wifi_scan(),"current":wifi_current()})
             return self._json({"error":"not found"},404)
         def log_message(self,*args): pass
-    print(f"AegisX local Wi-Fi sensor listening on http://{host}:{port}")
+    print(f"VEYRA local Wi-Fi sensor listening on http://{host}:{port}")
     ThreadingHTTPServer((host,port),Handler).serve_forever()
 
 if __name__ == "__main__":

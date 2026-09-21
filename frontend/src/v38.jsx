@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {Panel} from './v29_components.jsx';
 const API=import.meta.env.VITE_API_URL||'http://localhost:8000';
-const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('aegisx_user_token')}`});
+const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('VEYRA_user_token')}`});
 export function V38PostureTimeMachineView(){
  const [d,setD]=useState(null),[h,setH]=useState(null),[dr,setDr]=useState(null),[radar,setRadar]=useState(null),[msg,setMsg]=useState('');
  const load=()=>Promise.all([

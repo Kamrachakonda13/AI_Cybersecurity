@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {Panel} from './v29_components.jsx';
 const API=import.meta.env.VITE_API_URL||'http://localhost:8000';
-const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('aegisx_user_token')}`,'Content-Type':'application/json'});
+const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('VEYRA_user_token')}`,'Content-Type':'application/json'});
 export function V39AutonomousExposureValidationView(){
  const [d,setD]=useState(null),[cases,setCases]=useState([]),[agent,setAgent]=useState(''),[result,setResult]=useState(null),[msg,setMsg]=useState('');
  const load=()=>Promise.all([fetch(`${API}/api/v39/exposure/overview`,{headers:auth()}).then(r=>r.json()),fetch(`${API}/api/v39/rogue-agents/cases`,{headers:auth()}).then(r=>r.json())]).then(([a,b])=>{setD(a);setCases(b.cases||[])}).catch(e=>setMsg(e.message));

@@ -1,7 +1,7 @@
-"""AegisX v3.6 Security Radar and Tool Scout.
+"""VEYRA v3.6 Security Radar and Tool Scout.
 
 Separates verified catalog entries from emerging/experimental recommendations.
-Radar items are advisory metadata; execution remains governed by AegisX workers.
+Radar items are advisory metadata; execution remains governed by VEYRA workers.
 """
 from __future__ import annotations
 from datetime import datetime, timezone

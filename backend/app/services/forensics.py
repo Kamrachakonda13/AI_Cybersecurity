@@ -1,4 +1,4 @@
-"""AegisX lawful forensics & reverse-engineering — STATIC ANALYSIS ONLY.
+"""VEYRA lawful forensics & reverse-engineering — STATIC ANALYSIS ONLY.
 
 Lawful-defensive scope:
 - Analyze artifacts YOU own (lab binaries, quarantined attachments, local PCAP-derived
@@ -23,28 +23,28 @@ MAX_BYTES = 5 * 1024 * 1024  # 5 MB hard cap
 
 KALI_FORENSICS_CATALOG = [
     {"kali_tool": "sha256sum / hashdeep", "category": "identify",
-     "aegisx": "Hash + file-type header shown for every upload",
+     "veyra": "Hash + file-type header shown for every upload",
      "safety": "Read-only hashing. Safe."},
     {"kali_tool": "strings / binwalk -E", "category": "static-strings",
-     "aegisx": "Printable-string extraction (≥4 chars, capped sample)",
+     "veyra": "Printable-string extraction (≥4 chars, capped sample)",
      "safety": "No execution. Safe."},
     {"kali_tool": "YARA / ClamAV", "category": "signatures",
-     "aegisx": "Built-in heuristic rules (suspicious keywords, reverse-shell patterns)",
+     "veyra": "Built-in heuristic rules (suspicious keywords, reverse-shell patterns)",
      "safety": "String matching only — not a full AV verdict."},
     {"kali_tool": "Ghidra / radare2 / objdump", "category": "reverse-engineering",
-     "aegisx": "Header + section hints (ELF/PE); full disassembly happens on analyst workstation",
+     "veyra": "Header + section hints (ELF/PE); full disassembly happens on analyst workstation",
      "safety": "API never disassembles/executes; open copies in Ghidra locally."},
     {"kali_tool": "Wireshark / tshark / tcpdump", "category": "network-forensics",
-     "aegisx": "Map extracted IPs/URLs to Security Graph + flows (`/api/graph/answer?kind=connection_owner`)",
+     "veyra": "Map extracted IPs/URLs to Security Graph + flows (`/api/graph/answer?kind=connection_owner`)",
      "safety": "Analyze captures you own; never sniff third-party networks."},
     {"kali_tool": "Volatility / Autopsy / Sleuth Kit / foremost", "category": "host-disk-memory",
-     "aegisx": "Correlate hostname/user/process via Endpoint + Identity views",
+     "veyra": "Correlate hostname/user/process via Endpoint + Identity views",
      "safety": "Run against forensic IMAGES of your own lab hosts with write-blockers."},
     {"kali_tool": "exiftool / file", "category": "metadata",
-     "aegisx": "Magic-number type detection (ELF, PE, PDF, ZIP/APK/JAR, PNG, JPEG)",
+     "veyra": "Magic-number type detection (ELF, PE, PDF, ZIP/APK/JAR, PNG, JPEG)",
      "safety": "Header read only. Safe."},
     {"kali_tool": "Metasploit / Burp-active / exploit-db", "category": "offensive-DISABLED",
-     "aegisx": "NOT exposed. Findings record what the attacker likely used; no replay.",
+     "veyra": "NOT exposed. Findings record what the attacker likely used; no replay.",
      "safety": "Disabled by design — analysis, not retaliation."},
 ]
 

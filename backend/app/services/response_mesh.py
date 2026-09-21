@@ -1,4 +1,4 @@
-"""AegisX v2.2 Continuous Detection & Response Mesh.
+"""VEYRA v2.2 Continuous Detection & Response Mesh.
 
 This service is deliberately deterministic at the enforcement boundary. It can
 normalize alerts, match fixed detection rules, open investigations and create

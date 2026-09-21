@@ -2,21 +2,21 @@ services:
   postgres:
     image: postgres:17-alpine
     environment:
-      POSTGRES_DB: aegisx
-      POSTGRES_USER: aegisx
-      POSTGRES_PASSWORD: aegisx
+      POSTGRES_DB: veyra
+      POSTGRES_USER: veyra
+      POSTGRES_PASSWORD: veyra
     ports: ["5432:5432"]
     volumes:
       - aegisx_pg:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U aegisx -d aegisx"]
+      test: ["CMD-SHELL", "pg_isready -U veyra -d veyra"]
       interval: 5s
       timeout: 5s
       retries: 10
   backend:
     build: ./backend
     environment:
-      DATABASE_URL: postgresql+psycopg://aegisx:aegisx@postgres:5432/aegisx
+      DATABASE_URL: postgresql+psycopg://veyra:veyra@postgres:5432/veyra
       CORS_ORIGINS: http://localhost:3000
       COLLECTOR_TOKEN: ${COLLECTOR_TOKEN:-}
       NVD_API_KEY: ${NVD_API_KEY:-}

@@ -1,4 +1,4 @@
-"""AegisX v3.5 Security Lifecycle orchestration.
+"""VEYRA v3.5 Security Lifecycle orchestration.
 
 This service turns the product philosophy into a deterministic lifecycle model.
 It creates plans, readiness scores and evidence requirements only. It never

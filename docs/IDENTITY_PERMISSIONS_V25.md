@@ -24,7 +24,7 @@ Passwords are stored as salted PBKDF2-HMAC-SHA256 hashes in this POC. Password c
 The backend rejects creation or promotion of a second sudo account and prevents disabling the sole sudo account. This rule is enforced server-side, not only by the UI.
 
 ## Bootstrap
-Set `AEGISX_SUDO_USERNAME` and `AEGISX_SUDO_PASSWORD` for first startup. After the account is created, remove bootstrap credentials from deployment configuration and manage the account through the identity UI.
+Set `VEYRA_SUDO_USERNAME` and `VEYRA_SUDO_PASSWORD` for first startup. After the account is created, remove bootstrap credentials from deployment configuration and manage the account through the identity UI.
 
 ---
 

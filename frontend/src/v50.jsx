@@ -6,7 +6,7 @@ const gates=['identity','provenance','integrity','policy_compliance','validation
 export function V50AutonomousSecurityControlPlane(){
  const [o,setO]=useState(null),[assets,setAssets]=useState([]),[decisions,setDecisions]=useState([]),[msg,setMsg]=useState('');
  const [asset,setAsset]=useState({asset_id:'demo-agent',asset_type:'agent',name:'Demo Agent',version:'1.0.0',digest:'',publisher:'',provenance_uri:'',policy_status:'pending',validation_status:'pending',deployment_status:'pending',behavior_baseline:'',trajectory_policy:'',evidence_sha256:''});
- const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('aegisx_user_token')}`,'Content-Type':'application/json'});
+ const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('VEYRA_user_token')}`,'Content-Type':'application/json'});
  const load=async()=>{const [a,b,c]=await Promise.all([fetch(`${API}/api/v50/overview`,{headers:auth()}),fetch(`${API}/api/v50/ai-assets`,{headers:auth()}),fetch(`${API}/api/v50/decisions`,{headers:auth()})]);if(a.ok)setO(await a.json());if(b.ok)setAssets(await b.json());if(c.ok)setDecisions(await c.json())};
  useEffect(()=>{load()},[]);
  const register=async()=>{setMsg('');const r=await fetch(`${API}/api/v50/ai-assets/register`,{method:'POST',headers:auth(),body:JSON.stringify(asset)});const j=await r.json();setMsg(r.ok?`Asset ${j.asset} → ${j.evaluation.status} (${j.evaluation.score}%). Missing: ${j.evaluation.missing.join(', ')||'none'}`:(j.detail||'Registration failed'));load()};

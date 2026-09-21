@@ -1,4 +1,4 @@
-"""AegisX AI/agent security control catalog and safe assessment primitives."""
+"""VEYRA AI/agent security control catalog and safe assessment primitives."""
 from __future__ import annotations
 from datetime import datetime, timezone
 

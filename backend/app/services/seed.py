@@ -1,4 +1,4 @@
-"""AegisX demo-data seeder (idempotent).
+"""VEYRA demo-data seeder (idempotent).
 
 Help — what it does and what it depends on:
 - `seed(db)`: populates a fresh database with a coherent mini-enterprise
@@ -67,7 +67,7 @@ def seed(db: Session):
         AIAsset(name="Security Analyst Agent", asset_type="agent", provider="Internal", owner="SOC", exposure="internal", risk_score=58, approval_boundary=True),
         AIAsset(name="Production RAG Vector Store", asset_type="vector database", provider="Qdrant", owner="Data Platform", exposure="internal", risk_score=71, approval_boundary=True),
     ])
-    db.add(AuditEvent(actor="system", action="seed_demo_environment", target="aegisx", outcome="success"))
+    db.add(AuditEvent(actor="system", action="seed_demo_environment", target="veyra", outcome="success"))
     db.commit()
 
 # v2.5 bootstrap: create the single sudo account from environment variables.

@@ -1,4 +1,4 @@
-"""AegisX v3.9 — Autonomous Exposure Validation Fabric.
+"""VEYRA v3.9 — Autonomous Exposure Validation Fabric.
 
 This service is intentionally an analysis/validation planner. It correlates
 managed endpoint, identity, network, finding, AI-agent and evidence telemetry;

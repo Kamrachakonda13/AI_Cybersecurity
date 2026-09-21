@@ -1,4 +1,4 @@
-"""AegisX v2.9 adversary-intelligence and wireless-defense composition layer.
+"""VEYRA v2.9 adversary-intelligence and wireless-defense composition layer.
 
 This layer intentionally composes existing telemetry into investigation views.
 It does not execute wireless attacks, hack back, deploy persistence, or expose

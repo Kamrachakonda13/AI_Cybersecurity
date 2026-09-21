@@ -1,4 +1,4 @@
-"""AegisX v3.4 Security Intelligence & Continuous Control Validation.
+"""VEYRA v3.4 Security Intelligence & Continuous Control Validation.
 
 Read-only orchestration metadata. It does not execute security tools or perform
 intrusion/hack-back. It turns existing telemetry/control-plane data into a

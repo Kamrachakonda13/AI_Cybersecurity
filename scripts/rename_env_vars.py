@@ -20,8 +20,8 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 
-EXTS = {".py", ".jsx", ".js", ".ts", ".tsx",
-        ".yml", ".yaml", ".env", ".cfg", ".ini"}
+EXTS = {".py", ".jsx", ".js", ".ts", ".tsx", ".yml",
+        ".yaml", ".env", ".cfg", ".ini", ".md", ".json"}
 EXTRA_NAMES = {".env.example", ".env.sample",
                "Dockerfile", "docker-compose.yml"}
 
@@ -39,7 +39,9 @@ SKIP_FILES = {"rename_env_vars.py", "rebrand_aegisx_to_veyra.py"}
 #   "AEGISX_ADMIN_TOKEN"
 #   `AEGISX_ADMIN_TOKEN` (bash-style)
 # The regex requires an uppercase identifier after the underscore.
-ENV_RE = re.compile(r"\bAEGISX_([A-Z][A-Z0-9_]*)\b")
+# Match AEGISX_*, aegisx_*, and AegisX_* prefixes, all case variants.
+# Group 1 captures the tail (e.g. "USER_TOKEN") so we can preserve or lower it.
+ENV_RE = re.compile(r"\b(AEGISX|AegisX|aegisx)_([A-Za-z][A-Za-z0-9_]*)")
 
 
 def iter_files():
@@ -55,8 +57,27 @@ def iter_files():
         yield p
 
 
+# Preserved identifiers — do not rename (persistence semantics)
+PRESERVED_IDS = {"aegisx_pg"}
+
+
 def rewrite(text: str) -> tuple[str, int]:
-    new, n = ENV_RE.subn(r"VEYRA_\1", text)
+    # First, temporarily protect preserved IDs
+    placeholders = {}
+    for i, pid in enumerate(PRESERVED_IDS):
+        token = f"__PRESERVED_{i}__"
+        placeholders[token] = pid
+        text = text.replace(pid, token)
+
+    def _repl(m):
+        prefix, tail = m.group(1), m.group(2)
+        return f"VEYRA_{tail}"
+
+    new, n = ENV_RE.subn(_repl, text)
+
+    # Restore preserved IDs
+    for token, pid in placeholders.items():
+        new = new.replace(token, pid)
     return new, n
 
 

@@ -1,4 +1,4 @@
-"""AegisX v3.8 — Security Posture Time Machine + AI/Endpoint Exposure Intelligence.
+"""VEYRA v3.8 — Security Posture Time Machine + AI/Endpoint Exposure Intelligence.
 
 Design law: deterministic telemetry and evidence are authoritative. AI may rank,
 summarize and propose hypotheses, but never writes policy or executes remediation.

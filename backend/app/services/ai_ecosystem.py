@@ -1,7 +1,7 @@
-"""AegisX cutting-edge AI security ecosystem catalog.
+"""VEYRA cutting-edge AI security ecosystem catalog.
 
 This is metadata and governance only. It does not install packages or execute tools.
-Each entry describes a security capability AegisX can expose through a managed worker.
+Each entry describes a security capability VEYRA can expose through a managed worker.
 The catalog deliberately includes both open-source and commercial/connector candidates;
 availability and licensing are verified by the worker/marketplace before installation.
 """
@@ -142,13 +142,13 @@ def registry():
             "privileged_usage": privileged,
             "execution_profile": "isolated_ai_worker" if privileged else "approved_ai_worker",
             "status": "cataloged",
-            "source": "aegisx-ai-ecosystem-2026",
+            "source": "veyra-ai-ecosystem-2026",
             "help": {
                 "what_it_does": purpose,
                 "safe_workflow": "Select an approved AI asset, define scope, run the governed evaluation on a managed worker, review evidence, then map results to AI security controls.",
                 "evidence": ["model/agent identifier", "test case", "policy decision", "trace ID", "artifact hash", "timestamp"],
                 "common_mistakes": ["Testing an unapproved model", "Mixing production secrets into test prompts", "Treating a benchmark score as proof of security"],
-                "next_step": "Correlate the finding with AegisX AI Security, Security Graph, MITRE ATLAS and governance controls.",
+                "next_step": "Correlate the finding with VEYRA AI Security, Security Graph, MITRE ATLAS and governance controls.",
             },
         })
     return out

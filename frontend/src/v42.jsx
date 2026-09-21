@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {Panel} from './v29_components.jsx';
 const API=import.meta.env.VITE_API_URL||'http://localhost:8000';
-const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('aegisx_user_token')}`,'Content-Type':'application/json'});
+const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('VEYRA_user_token')}`,'Content-Type':'application/json'});
 export function V42TrustedSupplyChainView(){
  const [o,setO]=useState(null),[assets,setAssets]=useState([]),[breakers,setBreakers]=useState([]),[msg,setMsg]=useState('');
  const [agent,setAgent]=useState(''),[reason,setReason]=useState(''),[ai,setAi]=useState({asset_id:'',asset_type:'model',name:'',version:'',digest:'',source_uri:'',provenance_uri:'',sbom_uri:''});

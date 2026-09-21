@@ -1,4 +1,4 @@
-"""AegisX deterministic, explainable risk engine.
+"""VEYRA deterministic, explainable risk engine.
 
 Help — formula, dependencies, dependents:
 - `calculate_risk(...)`: weighted sum capped at 100.0, rounded to 1 decimal:

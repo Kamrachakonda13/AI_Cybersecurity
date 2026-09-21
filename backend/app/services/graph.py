@@ -1,4 +1,4 @@
-"""AegisX v1.2 Security Graph.
+"""VEYRA v1.2 Security Graph.
 
 Builds an in-memory directed graph from persisted telemetry:
   Assets, Services, Identities, Sessions, NetworkFlows, CloudResources, AIAssets, Findings.

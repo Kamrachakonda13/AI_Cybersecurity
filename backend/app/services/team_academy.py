@@ -1,4 +1,4 @@
-"""AegisX v3.2 Team Academy and documentation index.
+"""VEYRA v3.2 Team Academy and documentation index.
 
 Read-only metadata. This service does not execute security tools.
 """

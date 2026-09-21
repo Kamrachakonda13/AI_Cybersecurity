@@ -5,7 +5,7 @@ It is intentionally separate from the normal SOC/operator experience.
 
 ## Access model
 
-The POC uses `AEGISX_ADMIN_TOKEN` and the `X-AegisX-Admin-Token` header. The
+The POC uses `VEYRA_ADMIN_TOKEN` and the `X-VEYRA-Admin-Token` header. The
 frontend stores the token only in session storage. This is a development gate,
 not production identity management. Production should replace it with OIDC/SSO,
 MFA, RBAC/ABAC and a privileged-access workflow.
@@ -88,7 +88,7 @@ rate limits, signed/provenance-aware results and immutable audit events.
 
 ## Privileged tooling tier
 
-All ethical-hacking tools are hidden behind the administrator control plane. VEYRA v2.4 also classifies high-impact tools as `privileged_admin`; these require a second `X-AegisX-Privileged-Admin-Token` gate in addition to the normal admin token. This tier includes exploit frameworks, credential-audit/authentication-testing tools, SQLMap, high-speed scanners and active fuzzing/discovery tools. Staging, approval and dispatch of these jobs require the privileged gate. Production should replace POC tokens with SSO/OIDC, MFA and PAM/JIT elevation.
+All ethical-hacking tools are hidden behind the administrator control plane. VEYRA v2.4 also classifies high-impact tools as `privileged_admin`; these require a second `X-VEYRA-Privileged-Admin-Token` gate in addition to the normal admin token. This tier includes exploit frameworks, credential-audit/authentication-testing tools, SQLMap, high-speed scanners and active fuzzing/discovery tools. Staging, approval and dispatch of these jobs require the privileged gate. Production should replace POC tokens with SSO/OIDC, MFA and PAM/JIT elevation.
 
 ---
 

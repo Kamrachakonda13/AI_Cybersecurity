@@ -20,7 +20,7 @@
 1. Open a read-only tool → pick level (View/Plan/Request execution) +
    window + business reason → **Ask sudo admin for approval**.
 2. Backend creates a `pending` request, emails the pre-configured sudo inbox
-   (`AEGISX_ADMIN_EMAIL` + `SMTP_*`; without SMTP it lands in
+   (`VEYRA_ADMIN_EMAIL` + `SMTP_*`; without SMTP it lands in
    **Tool Runner → Approval inbox** and the backend log) and stores an
    `AdminNotification` copy either way.
 3. Sudo approves with 2h/5h/24h/custom (or denies) in the Approval inbox or
@@ -43,7 +43,7 @@ values into the job contract and rejects policy violations (e.g. only
 
 The API never executes tool commands. Runs create signed job contracts
 consumed by a separately authenticated isolated worker
-(`AEGISX_WORKER_TOKEN`, contract HMAC). Exploit replay, credential attacks,
+(`VEYRA_WORKER_TOKEN`, contract HMAC). Exploit replay, credential attacks,
 payload delivery, persistence, C2 and hack-back remain outside the
 browser/API by design — see `docs/TOOLING_MATRIX.md`.
 

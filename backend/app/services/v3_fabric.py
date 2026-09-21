@@ -1,4 +1,4 @@
-"""AegisX v3.0 Full Security Operations Fabric.
+"""VEYRA v3.0 Full Security Operations Fabric.
 
 This module is an orchestration/read-model layer over existing telemetry. It does not
 execute offensive commands or containment actions. High-impact response is represented

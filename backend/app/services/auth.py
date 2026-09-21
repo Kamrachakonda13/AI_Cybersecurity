@@ -1,4 +1,4 @@
-"""AegisX identity, session and per-tool authorization helpers.
+"""VEYRA identity, session and per-tool authorization helpers.
 
 POC uses PBKDF2-HMAC-SHA256 for password storage and opaque bearer sessions.
 Production should use an enterprise IdP (OIDC/SAML), MFA/WebAuthn and PAM.

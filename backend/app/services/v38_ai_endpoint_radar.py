@@ -1,4 +1,4 @@
-"""Curated AI-provider and endpoint security radar for AegisX v3.8."""
+"""Curated AI-provider and endpoint security radar for VEYRA v3.8."""
 from .v38_posture_time_machine import AI_PROVIDER_RADAR, ENDPOINT_RELEASES
 
 def overview():

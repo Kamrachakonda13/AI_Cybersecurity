@@ -1,4 +1,4 @@
-"""AegisX REST API router (mounted as `/api/*` by `app.main`).
+"""VEYRA REST API router (mounted as `/api/*` by `app.main`).
 
 Help — structure, dependencies, endpoint groups:
 - `clean(obj)`: strips SQLAlchemy state for JSON responses (used by list endpoints).
@@ -41,7 +41,7 @@ router = APIRouter(prefix="/api")
 def require_admin(request: Request):
     """Accept legacy admin token or an authenticated console role with admin capability."""
     expected = _os.getenv("VEYRA_ADMIN_TOKEN", "")
-    supplied = request.headers.get("X-AegisX-Admin-Token", "")
+    supplied = request.headers.get("X-VEYRA-Admin-Token", "")
     if expected and supplied and supplied == expected:
         return True
     auth = request.headers.get("Authorization", "")
@@ -60,7 +60,7 @@ def require_privileged_admin(request: Request):
     """Second gate for high-impact security tooling; use PAM/MFA in production."""
     require_admin(request)
     expected = _os.getenv("VEYRA_PRIVILEGED_ADMIN_TOKEN", "")
-    supplied = request.headers.get("X-AegisX-Privileged-Admin-Token", "")
+    supplied = request.headers.get("X-VEYRA-Privileged-Admin-Token", "")
     if not expected or not supplied or supplied != expected:
         raise HTTPException(403, "Privileged administrator authorization required")
     return True
@@ -298,7 +298,7 @@ class PentestPlanRequest(BaseModel):
 @router.get("/pentest-agents/catalog")
 def pentest_agent_catalog(_: bool = Depends(require_admin)):
     from ..services.pentest_agents import SAFE_CHAIN_LIBRARY, TOOL_AI_FEATURES
-    return {"agents":[{"id":"aegisx-pentest-agent","mode":"plan_only","capabilities":["chain planning","tool-result triage","evidence summarization"]}], "chains":SAFE_CHAIN_LIBRARY, "ai_enhanced_tools":TOOL_AI_FEATURES, "safety":"No browser shell, credential attacks, exploit replay, payload delivery, persistence, C2 or hack-back."}
+    return {"agents":[{"id":"veyra-pentest-agent","mode":"plan_only","capabilities":["chain planning","tool-result triage","evidence summarization"]}], "chains":SAFE_CHAIN_LIBRARY, "ai_enhanced_tools":TOOL_AI_FEATURES, "safety":"No browser shell, credential attacks, exploit replay, payload delivery, persistence, C2 or hack-back."}
 
 @router.post("/pentest-agents/plans")
 def create_pentest_agent_plan(req: PentestPlanRequest, db: Session = Depends(get_db), _: bool = Depends(require_admin)):
@@ -337,7 +337,7 @@ def require_collector(request: Request):
 
 def require_ai_gateway(request: Request):
     expected = _os.getenv("VEYRA_AI_GATEWAY_TOKEN", "")
-    supplied = request.headers.get("X-AegisX-AI-Token", "")
+    supplied = request.headers.get("X-VEYRA-AI-Token", "")
     if not expected or not supplied or supplied != expected:
         raise HTTPException(403, "Authenticated AI gateway client required")
     return True
@@ -385,7 +385,7 @@ def ai_gateway_evaluate(req: AIGatewayRequest, db: Session = Depends(get_db), _:
     from ..services.ai_gateway import decide, trace_id, event_hash, utc
     row=db.query(AgentPolicy).filter(AgentPolicy.agent_id==req.agent_id, AgentPolicy.enabled.is_(True)).first()
     if not row:
-        raise HTTPException(403,"Agent is not enrolled in the AegisX AI gateway")
+        raise HTTPException(403,"Agent is not enrolled in the VEYRA AI gateway")
     policy={"allowed_tools":json.loads(row.allowed_tools or "[]"),"allowed_operations":json.loads(row.allowed_operations or "[]"),"max_risk_score":row.max_risk_score,"require_human_approval":row.require_human_approval}
     decision=decide(req.model_dump(),policy)
     tid=trace_id()
@@ -394,7 +394,7 @@ def ai_gateway_evaluate(req: AIGatewayRequest, db: Session = Depends(get_db), _:
     db.add(AgentRuntimeEvent(trace_id=tid,agent_id=req.agent_id,operation=req.operation,provider=req.provider,model=req.model,tool_name=req.tool_name,policy_decision=decision["decision"],risk_score=decision["risk_score"],event_json=json.dumps(event,default=str)))
     db.add(AuditEvent(actor=req.agent_id, action="ai_gateway_decision", target=req.operation, outcome=decision["decision"]))
     db.commit()
-    return {**event,"side_effect_executed":False,"message":"Policy decision recorded; AegisX does not execute the requested model/tool side effect."}
+    return {**event,"side_effect_executed":False,"message":"Policy decision recorded; VEYRA does not execute the requested model/tool side effect."}
 
 @router.get("/ai-gateway/traces/{trace_id}")
 def ai_gateway_trace(trace_id: str, db: Session = Depends(get_db), _: bool = Depends(require_admin)):
@@ -1259,7 +1259,7 @@ def discovery_summary(db: Session = Depends(get_db)):
 @router.get("/ai-security/catalog")
 def ai_security_catalog():
     from ..services.ai_security import catalog
-    return {"tools": catalog(), "source": "AegisX curated integration registry"}
+    return {"tools": catalog(), "source": "VEYRA curated integration registry"}
 
 @router.get("/ai-security/controls")
 def ai_security_controls():
@@ -1299,7 +1299,7 @@ class WorkerEvidenceRequest(BaseModel):
 
 def require_worker(request: Request):
     expected = _os.getenv("VEYRA_WORKER_TOKEN", "")
-    supplied = request.headers.get("X-AegisX-Worker-Token", "")
+    supplied = request.headers.get("X-VEYRA-Worker-Token", "")
     if not expected or not supplied or supplied != expected:
         raise HTTPException(403, "Authenticated isolated worker required")
     return True
@@ -1650,7 +1650,7 @@ def users_create(req: UserCreateRequest, request: Request, db: Session=Depends(g
     if req.role not in VALID_ROLES: raise HTTPException(400,"Invalid role")
     levels=_validate_permissions(req.tool_permissions)
     if req.role == "sudo" and db.query(UserAccount).filter(UserAccount.role=="sudo").count():
-        raise HTTPException(409,"AegisX allows exactly one sudo account")
+        raise HTTPException(409,"VEYRA allows exactly one sudo account")
     if db.query(UserAccount).filter(UserAccount.username==req.username).first(): raise HTTPException(409,"Username already exists")
     from ..services.auth import hash_password
     u=UserAccount(username=req.username,display_name=req.display_name,email=req.email,password_hash=hash_password(req.password),role=req.role,mfa_required=req.mfa_required,must_change_password=True)
@@ -1667,7 +1667,7 @@ def users_update(user_id:int, req: UserUpdateRequest, request: Request, db: Sess
     if not u: raise HTTPException(404,"User not found")
     if req.role is not None:
         if req.role not in VALID_ROLES: raise HTTPException(400,"Invalid role")
-        if req.role=="sudo" and u.role!="sudo" and db.query(UserAccount).filter(UserAccount.role=="sudo").count(): raise HTTPException(409,"AegisX allows exactly one sudo account")
+        if req.role=="sudo" and u.role!="sudo" and db.query(UserAccount).filter(UserAccount.role=="sudo").count(): raise HTTPException(409,"VEYRA allows exactly one sudo account")
         u.role=req.role
     if req.display_name is not None:u.display_name=req.display_name
     if req.email is not None:u.email=req.email
@@ -1939,7 +1939,7 @@ def security_tool_academy():
         x=dict(t); x["learning_guide"]=guidance.get(t["category"],"Define explicit scope, use an approved worker or connector, review evidence, and record provenance before taking action.")
         x["recommended_learning_order"]=["Understand purpose","Define authorized scope","Run/observe in approved environment","Review evidence","Map findings to risk","Remediate and verify"]
         out.append(x)
-    return {"tools":out,"count":len(out),"note":"Educational guidance is intentionally command-free. AegisX does not expose arbitrary shell execution."}
+    return {"tools":out,"count":len(out),"note":"Educational guidance is intentionally command-free. VEYRA does not expose arbitrary shell execution."}
 
 
 # ---------------------------------------------------------------------------

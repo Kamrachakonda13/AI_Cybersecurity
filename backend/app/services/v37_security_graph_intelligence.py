@@ -1,4 +1,4 @@
-"""AegisX v3.7 Security Graph Intelligence.
+"""VEYRA v3.7 Security Graph Intelligence.
 
 Read-only correlation layer over the existing Security Graph. It adds a
 control/evidence view, graph risk hotspots, AI-agent relationships and drift

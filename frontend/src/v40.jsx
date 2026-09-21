@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {Panel} from './v29_components.jsx';
 const API=import.meta.env.VITE_API_URL||'http://localhost:8000';
-const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('aegisx_user_token')}`,'Content-Type':'application/json'});
+const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('VEYRA_user_token')}`,'Content-Type':'application/json'});
 
 export function V40ToolSupplyChainView(){
  const [o,setO]=useState(null),[scout,setScout]=useState([]),[deps,setDeps]=useState([]),[health,setHealth]=useState([]),[msg,setMsg]=useState('');

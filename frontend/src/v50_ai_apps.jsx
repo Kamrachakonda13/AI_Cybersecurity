@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import {Brain,Search,ShieldAlert,BarChart3,FileSearch,GitBranch,CheckCircle2} from 'lucide-react';
 const API=import.meta.env.VITE_API_URL||'http://localhost:8000';
 function Panel({title,children}){return <section className="panel"><div className="panelhead"><b>{title}</b><Brain size={16}/></div>{children}</section>}
-const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('aegisx_user_token')}`,'Content-Type':'application/json'});
+const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('VEYRA_user_token')}`,'Content-Type':'application/json'});
 export function V50AIApplicationsView(){
  const [apps,setApps]=useState([]),[tab,setTab]=useState('cybsoc_rag'),[q,setQ]=useState('Investigate failed logins followed by suspicious PowerShell execution'),[out,setOut]=useState(null),[busy,setBusy]=useState(false),[msg,setMsg]=useState('');
  useEffect(()=>{fetch(`${API}/api/v50/ai-applications/catalog`,{headers:auth()}).then(r=>r.ok?r.json():{applications:[]}).then(j=>setApps(j.applications||[])).catch(()=>{})},[]);

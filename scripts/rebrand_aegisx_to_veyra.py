@@ -43,6 +43,8 @@ SKIP_FILES = {
     "MIGRATION.md",
     "HISTORY.md",
     "rebrand_aegisx_to_veyra.py",
+    "rename_env_vars.py",
+    "project_snapshot.txt",
 }
 
 RULES = [

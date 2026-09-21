@@ -1,7 +1,7 @@
-"""AegisX lab target: intentionally misconfigured Flask app (TRAINING ONLY).
+"""VEYRA lab target: intentionally misconfigured Flask app (TRAINING ONLY).
 
 Help: routes (/, /admin exposed, /robots.txt, /api/users reflected input,
-/ai/chat naive echo + injection logger) mirror exactly what the AegisX passive
+/ai/chat naive echo + injection logger) mirror exactly what the VEYRA passive
 assessment checks (headers/TLS/banner/robots). Runs as `nobody` in Docker
 (see `lab/vulnerable-web/Dockerfile` + `docker-compose.lab.yml` guardrails).
 Never expose to the internet; red team scans THIS host only.
@@ -11,13 +11,13 @@ from flask import Flask, request, jsonify, Response
 app = Flask(__name__)
 
 # Intentionally misconfigured lab app — DO NOT expose to internet.
-# Mirrors the exact issues AegisX passive checks look for.
+# Mirrors the exact issues VEYRA passive checks look for.
 
 @app.route("/")
 def index():
     # Missing HSTS/CSP/X-Frame etc. on purpose; verbose Server banner set below.
     return jsonify({
-        "app": "AegisX Lab — Vulnerable Web (intentional)",
+        "app": "VEYRA Lab — Vulnerable Web (intentional)",
         "routes": ["/", "/admin (exposed)", "/robots.txt", "/api/users?name=", "/ai/chat"],
         "note": "Local training target only. Scan only this host."
     })
@@ -33,7 +33,7 @@ def robots():
 
 @app.route("/api/users")
 def users():
-    # Intentional: reflected input + verbose error (for safe manual review, no exploitation in AegisX)
+    # Intentional: reflected input + verbose error (for safe manual review, no exploitation in VEYRA)
     name = request.args.get("name", "guest")
     return jsonify({"hello": name, "role": "user", "debug": "Lab: reflects input; test with safe strings only"})
 
@@ -50,7 +50,7 @@ def ai_chat():
 @app.after_request
 def banner(resp):
     # Intentional verbose banner for blue-team banner-grab demo
-    resp.headers["Server"] = "AegisX-Lab/1.0 (Apache/2.4.1 Ubuntu)"
+    resp.headers["Server"] = "VEYRA-Lab/1.0 (Apache/2.4.1 Ubuntu)"
     return resp
 
 if __name__ == "__main__":

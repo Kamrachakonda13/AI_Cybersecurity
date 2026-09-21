@@ -1,4 +1,4 @@
-"""AegisX AI Security Gateway: deterministic policy + telemetry boundary.
+"""VEYRA AI Security Gateway: deterministic policy + telemetry boundary.
 
 This is a control-plane reference gateway, not a model provider. It evaluates
 requests from approved internal agents before model/tool/memory side effects.

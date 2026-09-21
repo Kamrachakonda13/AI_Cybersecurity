@@ -1129,7 +1129,7 @@ Project support/resource file.
 
 Markdown documentation.
 
-### `installers/com.aegisx.wifi-sensor.plist`
+### `installers/com.veyra.wifi-sensor.plist`
 
 Project support/resource file.
 

@@ -1,4 +1,4 @@
-"""AegisX model re-exports.
+"""VEYRA model re-exports.
 
 Help: importing anything from `app.models` first executes `entities.py`, which
 registers all tables on `app.db.Base`. That is why `app.main` does

@@ -1,9 +1,9 @@
-"""AegisX database session layer (SQLAlchemy 2.0).
+"""VEYRA database session layer (SQLAlchemy 2.0).
 
 Help — what this file does and what depends on it:
 - `DATABASE_URL`: read from env; Docker Compose supplies
-  `postgresql+psycopg://aegisx:aegisx@postgres:5432/aegisx`, otherwise falls back
-  to local `sqlite:///./aegisx.db` (with `check_same_thread=False`).
+  `postgresql+psycopg://veyra:veyra@postgres:5432/veyra`, otherwise falls back
+  to local `sqlite:///./veyra.db` (with `check_same_thread=False`).
 - `engine` / `SessionLocal`: shared connection pool + session factory used by
   every route via the `get_db` dependency and by `app.main.lifespan` for seeding.
 - `Base` (DeclarativeBase): every model in `app.models.entities` subclasses it,
@@ -16,7 +16,7 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./aegisx.db")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./veyra.db")
 connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
 engine = create_engine(DATABASE_URL, future=True, pool_pre_ping=True, connect_args=connect_args)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False, future=True)

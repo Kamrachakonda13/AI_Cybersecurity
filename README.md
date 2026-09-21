@@ -321,7 +321,7 @@ packet analysis, vulnerability management, AppSec/IaC, cloud/Kubernetes,
 endpoint/DFIR, malware/reverse engineering, threat intelligence, detection
 engineering and AI security.
 
-The admin APIs are protected by `AEGISX_ADMIN_TOKEN` in this POC. High-impact pentest tools additionally require `AEGISX_PRIVILEGED_ADMIN_TOKEN` (second gate; production should use PAM/MFA). Non-admin users
+The admin APIs are protected by `VEYRA_ADMIN_TOKEN` in this POC. High-impact pentest tools additionally require `VEYRA_PRIVILEGED_ADMIN_TOKEN` (second gate; production should use PAM/MFA). Non-admin users
 are not shown the Ethical Hacking section and are rejected by the backend with
 HTTP 403. Production must replace the POC token with OIDC/SSO + MFA + RBAC/ABAC
 and privileged-access management.
@@ -363,7 +363,7 @@ The architecture aligns to the current **OWASP GenAI LLM Top 10 2026, OWASP Agen
 
 ### v1.8 worker boundary
 
-The governed execution plane now has a separate worker-to-control-plane boundary. Worker authentication uses `AEGISX_WORKER_TOKEN`; job contracts can be signed with `AEGISX_WORKER_SIGNING_SECRET`. The API accepts normalized evidence rather than arbitrary commands. Production workers should run in isolated infrastructure with network egress controls, ephemeral credentials, resource limits and independent authorization.
+The governed execution plane now has a separate worker-to-control-plane boundary. Worker authentication uses `VEYRA_WORKER_TOKEN`; job contracts can be signed with `VEYRA_WORKER_SIGNING_SECRET`. The API accepts normalized evidence rather than arbitrary commands. Production workers should run in isolated infrastructure with network egress controls, ephemeral credentials, resource limits and independent authorization.
 
 ## v1.9 — AI Security Gateway & Agent Runtime
 
@@ -402,7 +402,7 @@ See `docs/INTEL_FUSION_V23.md`.
 
 ## v2.4 — Autonomous Pentesting Agents & AI Tooling
 
-VEYRA v2.4 introduces a governed AI pentest-planning layer. The `aegisx-pentest-agent` converts an authorized natural-language objective into a deterministic tool chain, records explicit scope and approval metadata, and hands the plan to an isolated worker boundary. It does not expose arbitrary shell execution or automatic exploit/WAF-bypass payload generation.
+VEYRA v2.4 introduces a governed AI pentest-planning layer. The `veyra-pentest-agent` converts an authorized natural-language objective into a deterministic tool chain, records explicit scope and approval metadata, and hands the plan to an isolated worker boundary. It does not expose arbitrary shell execution or automatic exploit/WAF-bypass payload generation.
 
 AI-enhanced traditional tooling covers result triage, evidence correlation, finding clustering, malware-analysis summarization and next-step planning. See `docs/PENTEST_AGENTS_V24.md`.
 

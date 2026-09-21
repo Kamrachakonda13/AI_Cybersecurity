@@ -8,17 +8,17 @@ Check off as you go. Items are ordered by priority. Commands assume project root
 - [ ] **Set the admin email + SMTP** so tool-approval requests arrive by email.
   Without this, requests only land in Tool Runner → Approval inbox + backend log.
   Edit project `.env`, then `docker compose up -d`:
-  `AEGISX_ADMIN_EMAIL`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`,
+  `VEYRA_ADMIN_EMAIL`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`,
   `SMTP_PASSWORD`, `SMTP_FROM`, `SMTP_TLS`
 - [ ] **Rotate the sudo bootstrap credentials.** First login forces a password
-  change (My Password) — after that, remove/rotate `AEGISX_SUDO_USERNAME` /
-  `AEGISX_SUDO_PASSWORD` from deployment config per
+  change (My Password) — after that, remove/rotate `VEYRA_SUDO_USERNAME` /
+  `VEYRA_SUDO_PASSWORD` from deployment config per
   `docs/IDENTITY_PERMISSIONS_V25.md`.
 - [ ] **Rotate placeholder secrets** (still `change-me-*` defaults — fine for
   local laptop use, mandatory before any shared/production use):
-  `AEGISX_ADMIN_TOKEN`, `AEGISX_PRIVILEGED_ADMIN_TOKEN`,
-  `AEGISX_WORKER_TOKEN`, `AEGISX_WORKER_SIGNING_SECRET`,
-  `AEGISX_AI_GATEWAY_TOKEN` (in `backend/.env`).
+  `VEYRA_ADMIN_TOKEN`, `VEYRA_PRIVILEGED_ADMIN_TOKEN`,
+  `VEYRA_WORKER_TOKEN`, `VEYRA_WORKER_SIGNING_SECRET`,
+  `VEYRA_AI_GATEWAY_TOKEN` (in `backend/.env`).
 - [ ] **Set `COLLECTOR_TOKEN`** (backend env + compose) so ingest endpoints are
   token-gated instead of open.
 
@@ -85,8 +85,8 @@ Per `README.md` + `docs/PRODUCTION_GUIDE.md` — still open by design:
 - Project running (`docker compose up --build -d`); frontend :3000,
   backend :8000, postgres healthy.
 - Frontend duplicate-import crash fixed (`KeyRound`).
-- Sudo account `Kam` seeded; compose forwards `AEGISX_SUDO_*`.
-- Wi-Fi sensor permanent via LaunchAgent (`com.aegisx.wifi-sensor`);
+- Sudo account `Kam` seeded; compose forwards `VEYRA_SUDO_*`.
+- Wi-Fi sensor permanent via LaunchAgent (`com.veyra.wifi-sensor`);
   SSID scan via `collectors/wifi-scan-jit.swift`.
 - LAN discovery with mDNS/NetBIOS naming (7 devices, baseline started).
 - Tool Runner: sudo one-click runs, per-tool forms, approval inbox,

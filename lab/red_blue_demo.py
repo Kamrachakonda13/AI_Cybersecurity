@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AegisX red vs blue demo — runs ENTIRELY against local lab + local API.
+"""VEYRA red vs blue demo — runs ENTIRELY against local lab + local API.
 Red: passive posture assessment of lab target (approval-governed).
 Blue: ingest synthetic attack telemetry, then verify graph/attack-path/audit.
 

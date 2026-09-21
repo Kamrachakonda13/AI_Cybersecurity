@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AegisX consented device collector — READ-ONLY by default.
+"""VEYRA consented device collector — READ-ONLY by default.
 
 Collects devices YOU own for the Endpoint inventory:
   - passive: parses local `arp -a` neighbour table (no packets sent)

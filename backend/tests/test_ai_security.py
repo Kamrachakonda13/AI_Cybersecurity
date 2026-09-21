@@ -1,4 +1,4 @@
-"""AegisX source module `backend/tests/test_ai_security.py`. See `docs/CODEBASE_GUIDE_V27.md` for the module purpose, symbols, dependencies, and maintenance guidance."""
+"""VEYRA source module `backend/tests/test_ai_security.py`. See `docs/CODEBASE_GUIDE_V27.md` for the module purpose, symbols, dependencies, and maintenance guidance."""
 from fastapi.testclient import TestClient
 from app.main import app
 

@@ -1,4 +1,4 @@
-"""AegisX SQLAlchemy entity models (table definitions).
+"""VEYRA SQLAlchemy entity models (table definitions).
 
 Help — how this file fits together:
 - Every class subclasses `Base` from `app.db`; `now()` stamps UTC datetimes.
@@ -353,7 +353,7 @@ class AgentPolicy(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
 
 class UnifiedSecurityEvent(Base):
-    """Cross-plane normalized event used by the AegisX Security Fabric."""
+    """Cross-plane normalized event used by the VEYRA Security Fabric."""
     __tablename__ = "unified_security_events"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     event_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
@@ -580,7 +580,7 @@ class WifiNetwork(Base):
     observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
 
 class WorkerNode(Base):
-    """Managed security worker registered to an AegisX tenant.
+    """Managed security worker registered to an VEYRA tenant.
 
     A worker is the only place where third-party security binaries are installed or
     executed. The SaaS API exchanges signed job/install contracts with workers and

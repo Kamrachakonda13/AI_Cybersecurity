@@ -1,4 +1,4 @@
-"""Central AegisX help registry.
+"""Central VEYRA help registry.
 
 The UI can progressively move from scattered inline help to this machine-readable
 registry. Content is defensive: it explains purpose, evidence, safe operation and
@@ -39,6 +39,6 @@ HELP = {
     "tooling": {
         "title": "Security Tooling",
         "purpose": "Catalog and govern security tools used by authorized red/blue teams.",
-        "rule": "AegisX is the control plane; dangerous execution remains isolated and approval-gated.",
+        "rule": "VEYRA is the control plane; dangerous execution remains isolated and approval-gated.",
     },
 }

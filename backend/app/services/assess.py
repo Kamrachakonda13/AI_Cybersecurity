@@ -1,4 +1,4 @@
-"""AegisX v1.2 authorized assessment service — SAFE subset only.
+"""VEYRA v1.2 authorized assessment service — SAFE subset only.
 
 Safety boundary (deliberate):
 - NO port scanning of arbitrary hosts, NO exploitation (Metasploit), NO active
@@ -189,7 +189,7 @@ async def assess_web_posture(url: str) -> dict:
     after `validate_target` + approval gate + `check_cooldown` pass in the route.
     """
     async with httpx.AsyncClient(timeout=8.0, follow_redirects=True, max_redirects=3,
-                                 headers={"User-Agent": "AegisX-PostureCheck/1.2 (authorized assessment)"}) as c:
+                                 headers={"User-Agent": "VEYRA-PostureCheck/1.2 (authorized assessment)"}) as c:
         r = await c.get(url)
         headers = dict(r.headers)
         hs = score_headers(headers)

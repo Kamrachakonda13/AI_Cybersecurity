@@ -1,6 +1,6 @@
 """Minimal organization-owned/local agent integration example.
 
-This example only asks AegisX for a policy decision. It does not execute tools.
+This example only asks VEYRA for a policy decision. It does not execute tools.
 Replace the placeholder token with a workload identity mechanism in production.
 """
 import os

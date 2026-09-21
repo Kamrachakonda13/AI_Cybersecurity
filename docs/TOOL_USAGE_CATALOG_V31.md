@@ -39,7 +39,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Asset/service discovery
 **Access:** Admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -78,7 +78,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** High-speed exposure inventory
 **Access:** Sudo / privileged admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -117,7 +117,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Fast port inventory
 **Access:** Sudo / privileged admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -156,7 +156,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Port discovery
 **Access:** Sudo / privileged admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -195,7 +195,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Local network discovery
 **Access:** Admin  
 **Worker:** `own_network`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -234,7 +234,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** LAN discovery
 **Access:** Admin  
 **Worker:** `own_network`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -275,7 +275,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Asset/domain discovery
 **Access:** Admin  
 **Worker:** `approved_scope`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -314,7 +314,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Passive subdomain discovery
 **Access:** Admin  
 **Worker:** `approved_scope`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -353,7 +353,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Passive asset discovery
 **Access:** Admin  
 **Worker:** `approved_scope`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -392,7 +392,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** DNS validation
 **Access:** Admin  
 **Worker:** `approved_scope`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -431,7 +431,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** HTTP service inventory
 **Access:** Admin  
 **Worker:** `approved_scope`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -472,7 +472,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Web application security assessment
 **Access:** Admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -511,7 +511,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Web application security assessment
 **Access:** Admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -550,7 +550,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Template-based vulnerability assessment
 **Access:** Admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -589,7 +589,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Web server posture assessment
 **Access:** Admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -628,7 +628,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Content discovery
 **Access:** Sudo / privileged admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -667,7 +667,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Content discovery
 **Access:** Sudo / privileged admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -706,7 +706,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Web content/fuzzing assessment
 **Access:** Sudo / privileged admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -745,7 +745,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Content discovery
 **Access:** Sudo / privileged admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -784,7 +784,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Web vulnerability assessment
 **Access:** Sudo / privileged admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -823,7 +823,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Technology fingerprinting
 **Access:** Admin  
 **Worker:** `approved_scope`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -862,7 +862,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Authorized SQL injection assessment
 **Access:** Sudo / privileged admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -903,7 +903,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Authorized vulnerability validation
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_lab_only`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -942,7 +942,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Authorized penetration testing
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_lab_only`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -983,7 +983,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Authorized protocol/security assessment
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_lab_only`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1022,7 +1022,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Authorized Windows/network assessment
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_lab_only`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1063,7 +1063,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Identity attack-path analysis
 **Access:** Admin  
 **Worker:** `approved_scope`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1102,7 +1102,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** AD CS security assessment
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_lab_only`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1141,7 +1141,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Kerberos identity assessment
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_lab_only`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1182,7 +1182,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Authorized password-strength auditing
 **Access:** Sudo / privileged admin  
 **Worker:** `offline_audit_only`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1221,7 +1221,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Authorized password-strength auditing
 **Access:** Sudo / privileged admin  
 **Worker:** `offline_audit_only`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1260,7 +1260,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Authorized authentication testing
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_lab_only`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1299,7 +1299,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Authorized authentication testing
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_lab_only`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1340,7 +1340,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Packet analysis
 **Access:** Admin  
 **Worker:** `analyst_workstation`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1379,7 +1379,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Packet analysis
 **Access:** Admin  
 **Worker:** `analyst_workstation`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1418,7 +1418,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Packet capture
 **Access:** Admin  
 **Worker:** `own_network`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1457,7 +1457,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Network security monitoring
 **Access:** Admin  
 **Worker:** `sensor`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1496,7 +1496,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** IDS/NSM
 **Access:** Admin  
 **Worker:** `sensor`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1535,7 +1535,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** IDS/NSM
 **Access:** Admin  
 **Worker:** `sensor`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1576,7 +1576,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Vulnerability assessment
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1615,7 +1615,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Vulnerability assessment/import
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1656,7 +1656,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Container/Kubernetes/package security
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1695,7 +1695,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** SBOM/image vulnerability scanning
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1734,7 +1734,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** SBOM generation
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1775,7 +1775,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** SAST/security rules
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1814,7 +1814,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Python security analysis
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1853,7 +1853,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Code security analysis
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1894,7 +1894,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Infrastructure-as-code security
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1933,7 +1933,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Infrastructure-as-code security
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -1972,7 +1972,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Terraform security analysis
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2013,7 +2013,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** CSPM/security auditing
 **Access:** Admin  
 **Worker:** `read_only_cloud`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2052,7 +2052,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Multi-cloud security auditing
 **Access:** Admin  
 **Worker:** `read_only_cloud`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2091,7 +2091,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Cloud configuration assessment
 **Access:** Admin  
 **Worker:** `read_only_cloud`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2132,7 +2132,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Kubernetes posture/security
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2171,7 +2171,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** CIS benchmark checks
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2210,7 +2210,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Kubernetes security assessment
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_lab_only`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2249,7 +2249,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Runtime detection
 **Access:** Admin  
 **Worker:** `sensor`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2290,7 +2290,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Endpoint telemetry/query
 **Access:** Admin  
 **Worker:** `endpoint_agent`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2329,7 +2329,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Windows endpoint telemetry
 **Access:** Admin  
 **Worker:** `endpoint_agent`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2370,7 +2370,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Endpoint investigation
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2409,7 +2409,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Memory forensics
 **Access:** Admin  
 **Worker:** `isolated_analysis_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2448,7 +2448,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Disk forensics
 **Access:** Admin  
 **Worker:** `analyst_workstation`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2487,7 +2487,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Filesystem forensics
 **Access:** Admin  
 **Worker:** `isolated_analysis_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2528,7 +2528,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Static malware classification
 **Access:** Admin  
 **Worker:** `isolated_analysis_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2567,7 +2567,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Malware scanning
 **Access:** Admin  
 **Worker:** `isolated_analysis_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2606,7 +2606,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Capability identification
 **Access:** Admin  
 **Worker:** `isolated_analysis_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2647,7 +2647,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Static reverse engineering
 **Access:** Admin  
 **Worker:** `isolated_analysis_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2686,7 +2686,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Static reverse engineering
 **Access:** Admin  
 **Worker:** `isolated_analysis_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2725,7 +2725,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Static reverse engineering
 **Access:** Admin  
 **Worker:** `isolated_analysis_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2766,7 +2766,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Firmware/file analysis
 **Access:** Admin  
 **Worker:** `isolated_analysis_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2807,7 +2807,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** File carving
 **Access:** Admin  
 **Worker:** `isolated_analysis_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2846,7 +2846,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** Metadata extraction
 **Access:** Admin  
 **Worker:** `isolated_analysis_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2887,7 +2887,7 @@ VEYRA does not expose an unrestricted browser shell. Commands in this document a
 **Why VEYRA uses it:** IOC exchange
 **Access:** Admin  
 **Worker:** `approved_connector`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2926,7 +2926,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Threat-intel transport
 **Access:** Admin  
 **Worker:** `approved_connector`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -2967,7 +2967,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Portable detection rules
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3008,7 +3008,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Agent runtime security, posture and AI red teaming integration
 **Access:** Admin  
 **Worker:** `approved_connector`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3047,7 +3047,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Prompt injection, jailbreak and data-leakage runtime defense
 **Access:** Admin  
 **Worker:** `approved_connector`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3086,7 +3086,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Model vulnerability and adversarial stress-testing integration
 **Access:** Admin  
 **Worker:** `approved_connector`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3125,7 +3125,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Inference-layer AI security and guardrails integration
 **Access:** Admin  
 **Worker:** `approved_connector`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3164,7 +3164,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** LLM security evaluation
 **Access:** Admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3203,7 +3203,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** LLM/agent evaluation
 **Access:** Admin  
 **Worker:** `lab_or_approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3242,7 +3242,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** ML adversarial robustness testing
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3281,7 +3281,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** LLM guardrails/policy enforcement
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3320,7 +3320,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI security/validation platform integration
 **Access:** Admin  
 **Worker:** `approved_connector`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3359,7 +3359,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI model security platform integration
 **Access:** Admin  
 **Worker:** `approved_connector`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3400,7 +3400,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: adaptixc2
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3441,7 +3441,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: airgeddon
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3482,7 +3482,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: altdns
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3523,7 +3523,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: android-sdk
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3562,7 +3562,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: apple-bleee
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3603,7 +3603,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: arjun
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3644,7 +3644,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: arsenal-ng
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3685,7 +3685,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: autorecon
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3726,7 +3726,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: azurehound
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3767,7 +3767,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: b374k
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3806,7 +3806,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: berate-ap
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3847,7 +3847,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bettercap-ui
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3888,7 +3888,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bing-ip2hosts
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3929,7 +3929,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bloodhound
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -3968,7 +3968,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bloodhound-ce-python
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4007,7 +4007,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bloodhound.py
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4046,7 +4046,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bloodyad
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4087,7 +4087,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bopscrk
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4126,7 +4126,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bpf-linker
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4165,7 +4165,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bruteforce-luks
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4204,7 +4204,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bruteforce-salted-openssl
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4243,7 +4243,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bruteforce-wallet
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4282,7 +4282,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: bruteshark
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4323,7 +4323,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: brutespray
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4364,7 +4364,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: caido
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4403,7 +4403,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: caido-cli
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4444,7 +4444,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: calicoctl
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4485,7 +4485,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: capstone-tool
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4526,7 +4526,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: certgraph
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4565,7 +4565,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: certi
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4606,7 +4606,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: chainsaw
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4647,7 +4647,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: changeme
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4686,7 +4686,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: chaosreader
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4725,7 +4725,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: chisel
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4764,7 +4764,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: chisel-common-binaries
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4805,7 +4805,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: cilium-cli
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4846,7 +4846,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: cisco7crack
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4887,7 +4887,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: cloud-enum
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4926,7 +4926,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: cloudbrute
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -4967,7 +4967,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: cmseek
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5006,7 +5006,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: cntlm
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5047,7 +5047,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: coercer
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5088,7 +5088,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: colly
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5127,7 +5127,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: cosign
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5168,7 +5168,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: crack
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5207,7 +5207,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: crackmapexec
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5248,7 +5248,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: cri-tools
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5287,7 +5287,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: crlfuzz
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5326,7 +5326,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: crowbar
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5367,7 +5367,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: cupid-hostapd
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5408,7 +5408,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: cupid-wpasupplicant
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5449,7 +5449,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: defectdojo
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5490,7 +5490,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: detect-it-easy
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5531,7 +5531,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: dirbuster
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5570,7 +5570,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: dislocker
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5611,7 +5611,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: dnscat2
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5650,7 +5650,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: dnsgen
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5689,7 +5689,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: dnstwist
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5730,7 +5730,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: donut
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5769,7 +5769,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: dscan
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5808,7 +5808,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: dufflebag
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5847,7 +5847,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: dumpsterdiver
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5886,7 +5886,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: dwarf2json
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5925,7 +5925,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: eaphammer
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -5964,7 +5964,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: eksctl
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6005,7 +6005,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: email2phonenumber
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6044,7 +6044,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: emailharvester
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6085,7 +6085,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: enum4linux-ng
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6124,7 +6124,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: evil-ssdp
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6163,7 +6163,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: evil-winrm-py
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6202,7 +6202,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: evilginx2
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6241,7 +6241,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: exiflooter
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6282,7 +6282,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: exploitdb-bin-sploits
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6321,7 +6321,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: exploitdb-papers
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6362,7 +6362,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: faraday
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6403,7 +6403,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: faraday-agent-dispatcher
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6444,7 +6444,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: faraday-cli
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6483,7 +6483,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: fatcat
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6524,7 +6524,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: feroxbuster
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6565,7 +6565,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: finalrecon
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6606,7 +6606,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: findomain
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6647,7 +6647,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: fluxion
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6686,7 +6686,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: freeradius
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6727,7 +6727,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: gdb-peda
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6768,7 +6768,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: gef
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6807,7 +6807,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: gemini-cli
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6846,7 +6846,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: getallurls
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6885,7 +6885,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: getsploit
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6926,7 +6926,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: gitleaks
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -6967,7 +6967,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: gitxray
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7006,7 +7006,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: godoh
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7045,7 +7045,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: golang-github-binject-go-donut
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7084,7 +7084,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: goldeneye
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7123,7 +7123,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: goofile
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7162,7 +7162,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: google-nexus-tools
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7201,7 +7201,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: goshs
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7240,7 +7240,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: gospider
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7279,7 +7279,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: gowitness
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7318,7 +7318,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: graudit
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7357,7 +7357,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: gsocket
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7398,7 +7398,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: gtkhash
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7439,7 +7439,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: h8mail
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7480,7 +7480,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hak5-wifi-coconut
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7521,7 +7521,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hashrat
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7562,7 +7562,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: havoc
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7601,7 +7601,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hb-honeypot
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7642,7 +7642,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hcxtools
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7683,7 +7683,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hekatomb
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7724,7 +7724,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hexstrike-ai
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7765,7 +7765,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hexwalk
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7804,7 +7804,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hoaxshell
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7843,7 +7843,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: horst
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7884,7 +7884,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hostapd-mana
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7925,7 +7925,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hosthunter
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -7964,7 +7964,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hostsman
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8003,7 +8003,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: htshells
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8042,7 +8042,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: httprobe
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8083,7 +8083,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: httpx-toolkit
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8124,7 +8124,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hubble
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8165,7 +8165,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: humble
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8204,7 +8204,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: hurl
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8243,7 +8243,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ibombshell
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8282,7 +8282,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ident-user-enum
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8323,7 +8323,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: imhex
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8364,7 +8364,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: inspy
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8403,7 +8403,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: instaloader
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8442,7 +8442,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ipv6toolkit
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8481,7 +8481,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ismtp
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8522,7 +8522,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ivre
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8563,7 +8563,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: joplin
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8602,7 +8602,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: jsp-file-browser
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8641,7 +8641,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: kali-community-wallpapers
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8680,7 +8680,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: kerberoast
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8719,7 +8719,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: knocker
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8758,7 +8758,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: koadic
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8797,7 +8797,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: krbrelayx
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8838,7 +8838,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: kubernetes-helm
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8879,7 +8879,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: kustomize
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8918,7 +8918,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: lapsdumper
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8957,7 +8957,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ldeep
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -8996,7 +8996,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: legba
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9035,7 +9035,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ligolo-mp
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9074,7 +9074,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ligolo-ng
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9113,7 +9113,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ligolo-ng-common-binaries
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9152,7 +9152,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: linkedin2username
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9193,7 +9193,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: linux-exploit-suggester
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9234,7 +9234,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: llm-tools-nmap
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9275,7 +9275,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: maltego-teeth
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9316,7 +9316,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: maryam
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9357,7 +9357,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: massdns
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9398,7 +9398,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: mcp-kali-server
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9439,7 +9439,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: merlin-agent
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9480,7 +9480,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: merlin-server
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9521,7 +9521,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: metasploitmcp
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9562,7 +9562,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: mitm6
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9601,7 +9601,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: mongo-tools
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9640,7 +9640,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: mssqlpwner
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9679,7 +9679,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: multiforcer
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9718,7 +9718,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: mxcheck
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9759,7 +9759,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: naabu
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9800,7 +9800,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: name-that-hash
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9841,7 +9841,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: nbtscan-unixwiz
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9882,7 +9882,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: netscanner
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9923,7 +9923,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: nextnet
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -9964,7 +9964,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: nmapsi4
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10005,7 +10005,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: nuclei
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10046,7 +10046,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: obsidian
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10085,7 +10085,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: odat
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10124,7 +10124,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: oletools
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10165,7 +10165,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: opentaxii
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10206,7 +10206,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: osrframework
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10245,7 +10245,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: owl
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10286,7 +10286,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: pacu
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10327,7 +10327,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: parsero
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10366,7 +10366,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: passdetective
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10405,7 +10405,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: patchleaks
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10444,7 +10444,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: payloadsallthethings
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10485,7 +10485,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: peirates
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10526,7 +10526,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: penelope
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10565,7 +10565,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: phishery
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10604,7 +10604,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: photon
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10643,7 +10643,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: phpggc
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10682,7 +10682,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: phpsploit
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10721,7 +10721,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: pnscan
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10762,7 +10762,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: pocsuite3
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10803,7 +10803,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: pompem
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10842,7 +10842,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: portspoof
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10881,7 +10881,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: poshc2
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10920,7 +10920,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: princeprocessor
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10959,7 +10959,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: proxify
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -10998,7 +10998,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: proximoth
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11039,7 +11039,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: proxmark3
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11080,7 +11080,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: pskracker
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11119,7 +11119,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: pspy
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11158,7 +11158,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: pwncat
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11197,7 +11197,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: pyinstxtractor
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11236,7 +11236,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: python3-atomic-operator
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11275,7 +11275,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: python3-dploot
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11316,7 +11316,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: python3-ldapdomaindump
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11357,7 +11357,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: python3-pyinstaller
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11396,7 +11396,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: python3-wsgidav
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11435,7 +11435,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: quark-engine
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11474,7 +11474,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: raven
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11515,7 +11515,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: reconspider
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11556,7 +11556,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: redeye
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11595,7 +11595,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: redsnarf
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11634,7 +11634,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: rev-proxy-grapher
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11673,7 +11673,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ridenum
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11712,7 +11712,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: rling
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11751,7 +11751,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: robotstxt
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11792,7 +11792,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ropper
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11833,7 +11833,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: routersploit
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11874,7 +11874,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: rubeus
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11915,7 +11915,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: ruby-pedump
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11956,7 +11956,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: s3scanner
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -11997,7 +11997,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sara
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12036,7 +12036,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sentrypeer
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12077,7 +12077,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sharphound
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12116,7 +12116,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sharpshooter
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12157,7 +12157,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: shed
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12196,7 +12196,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: shell-gpt
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12235,7 +12235,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: shellfire
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12276,7 +12276,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sherlock
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12317,7 +12317,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sickle-pdk
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12358,7 +12358,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sigma-cli
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12399,7 +12399,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: silenttrinity
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12438,7 +12438,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sippts
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12477,7 +12477,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: slimtoolkit
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12516,7 +12516,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sliver
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12555,7 +12555,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sn0int
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12594,7 +12594,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: snmpenum
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12633,7 +12633,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: snowdrop
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12674,7 +12674,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sparrow-wifi
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12715,7 +12715,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: spire
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12754,7 +12754,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sploitscan
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12795,7 +12795,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: spray
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12834,7 +12834,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sprayhound
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12873,7 +12873,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sprayingtoolkit
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12912,7 +12912,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: spraykatz
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12953,7 +12953,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sqlmc
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -12992,7 +12992,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sshuttle
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13031,7 +13031,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sslstrip
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13070,7 +13070,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sstimap
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13111,7 +13111,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: stegcracker
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13152,7 +13152,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: subfinder
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13193,7 +13193,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: subjack
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13232,7 +13232,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: sublist3r
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13273,7 +13273,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: syft
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13314,7 +13314,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: tailscale
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13355,7 +13355,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: teamsploit
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13394,7 +13394,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: terraform
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13435,7 +13435,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: testssl.sh
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13476,7 +13476,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: tetragon
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13517,7 +13517,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: tinja
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13558,7 +13558,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: tookie-osint
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13599,7 +13599,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: trivy
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13638,7 +13638,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: trufflehog
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13679,7 +13679,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: tundeep
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13720,7 +13720,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: unblob
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13761,7 +13761,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: unhide.rb
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13800,7 +13800,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: unicorn-magic
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13839,7 +13839,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: uro
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13878,7 +13878,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: vopono
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13919,7 +13919,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: vwifi-tool
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13960,7 +13960,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: waybackpy
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -13999,7 +13999,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: web-cache-vulnerability-scanner
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14038,7 +14038,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: websploit
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14077,7 +14077,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: wgetpaste
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14116,7 +14116,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: whatmask
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14157,7 +14157,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: wifiphisher
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14196,7 +14196,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: wifipumpkin3
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14237,7 +14237,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: wig
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14276,7 +14276,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: wig-ng
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14315,7 +14315,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: witnessme
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14354,7 +14354,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: wixl
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14393,7 +14393,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: wmi-client
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14434,7 +14434,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: wordlistraider
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14475,7 +14475,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: wotmate
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14514,7 +14514,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: wpa-sycophant
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14553,7 +14553,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: wpprobe
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14594,7 +14594,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: xsrfprobe
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14633,7 +14633,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: xsstrike
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14674,7 +14674,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Kali security utility: zonedb
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14715,7 +14715,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced identity capability: ADRecon
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14756,7 +14756,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: AI-SPM Connector
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14797,7 +14797,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: ART
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14838,7 +14838,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: AgentDojo
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14877,7 +14877,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: AgentWarden
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14916,7 +14916,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Aircrack-ng
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14955,7 +14955,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Airgeddon
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -14996,7 +14996,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced web/api capability: Arjun
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15037,7 +15037,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced network discovery capability: Arkime
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15078,7 +15078,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced wireless capability: BTLEJack
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15117,7 +15117,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced wireless capability: Bettercap
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15158,7 +15158,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced identity capability: BloodHound CE
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15197,7 +15197,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced identity capability: BloodyAD
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15238,7 +15238,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced dfir capability: CAPA
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15279,7 +15279,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: Cartography
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15320,7 +15320,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Chainsaw
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15361,7 +15361,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced kubernetes capability: Cilium
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15402,7 +15402,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: Cloud Custodian
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15441,7 +15441,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: CloudFox
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15480,7 +15480,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: CloudMapper
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15519,7 +15519,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: CloudQuery
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15560,7 +15560,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced identity capability: Coercer
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15601,7 +15601,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: CyberSecEval
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15642,7 +15642,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced appsec capability: CycloneDX CLI
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15683,7 +15683,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced web/api capability: Dalfox
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15724,7 +15724,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: Datree
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15765,7 +15765,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: DeepEval
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15806,7 +15806,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced appsec capability: DefectDojo
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15845,7 +15845,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced appsec capability: Dependency-Track
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15886,7 +15886,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced dfir capability: Eric Zimmerman Tools
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15927,7 +15927,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Fickling
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -15968,7 +15968,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: GNU Radio
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16009,7 +16009,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Giskard
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16050,7 +16050,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced appsec capability: Gitleaks
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16091,7 +16091,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Guardrails AI
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16132,7 +16132,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced web/api capability: HTTPX
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16173,7 +16173,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced wireless capability: HackRF tools
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16214,7 +16214,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced dfir capability: Hayabusa
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16255,7 +16255,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced wireless capability: Hostapd-MANA
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16296,7 +16296,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced kubernetes capability: Hubble
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16337,7 +16337,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: IAMGraph
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16378,7 +16378,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced network discovery capability: IVRE
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16419,7 +16419,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Inspect AI
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16460,7 +16460,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: Interactsh
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16501,7 +16501,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Invariant
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16542,7 +16542,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced dfir capability: KAPE
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16583,7 +16583,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: KICS
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16624,7 +16624,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced web/api capability: Katana
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16665,7 +16665,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced wireless capability: Kismet
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16706,7 +16706,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced web/api capability: Kiterunner
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16747,7 +16747,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced kubernetes capability: KubeLinter
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16788,7 +16788,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: LDAPDomainDump
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16827,7 +16827,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Langfuse
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16868,7 +16868,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: LlamaFirewall
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16907,7 +16907,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: MLflow
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16948,7 +16948,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced dfir capability: MemProcFS
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -16989,7 +16989,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: ModelScan
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17028,7 +17028,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: ModelScan CLI
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17067,7 +17067,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: NVIDIA NeMo Safety
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17108,7 +17108,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced network discovery capability: NetBox
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17147,7 +17147,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced network discovery capability: Netdisco
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17186,7 +17186,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced network discovery capability: Ntop
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17227,7 +17227,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced appsec capability: OSV-Scanner
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17268,7 +17268,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced attack surface capability: OWASP Amass
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17309,7 +17309,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced appsec capability: OWASP Dependency-Check
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17350,7 +17350,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: OpenAI Evals
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17391,7 +17391,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: OpenSearch Security Analytics
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17432,7 +17432,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: OpenTelemetry GenAI
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17473,7 +17473,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: Pacu
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17512,7 +17512,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: Parliament
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17553,7 +17553,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced kubernetes capability: Peirates
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17594,7 +17594,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: PetitPotam
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17635,7 +17635,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Phoenix Arize
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17676,7 +17676,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced identity capability: PingCastle
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17717,7 +17717,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced dfir capability: Plaso
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17758,7 +17758,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: Polaris
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17799,7 +17799,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: Policy Sentry
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17838,7 +17838,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: Principal Mapper
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17877,7 +17877,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: ProjectDiscovery Cloud
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17918,7 +17918,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Protect AI
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -17959,7 +17959,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced wireless capability: Proxmark3
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18000,7 +18000,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced identity capability: Purple Knight
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18041,7 +18041,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: PyRIT
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18082,7 +18082,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced identity capability: Rubeus
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18123,7 +18123,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: Samba-tool
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18164,7 +18164,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: ScoutSuite
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18205,7 +18205,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced endpoint capability: Security Onion
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18246,7 +18246,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Semgrep AI rules
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18287,7 +18287,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced identity capability: SharpHound
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18328,7 +18328,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced threat intelligence capability: Sigma CLI
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18369,7 +18369,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced appsec capability: Snyk CLI
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18410,7 +18410,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced security utilities capability: Starboard
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18451,7 +18451,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: Steampipe
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18490,7 +18490,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced cloud capability: Stratus Red Team
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18531,7 +18531,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced kubernetes capability: Tetragon
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18572,7 +18572,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced dfir capability: The Sleuth Kit
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18611,7 +18611,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced dfir capability: Timesketch
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18652,7 +18652,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced appsec capability: TruffleHog
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18693,7 +18693,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced wireless capability: Ubertooth
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18734,7 +18734,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced endpoint capability: Wazuh
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18775,7 +18775,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced ai security capability: Weights & Biases Weave
 **Access:** Admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18816,7 +18816,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced wireless capability: WiFi Explorer integration
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18855,7 +18855,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced wireless capability: WiFi Pineapple
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18894,7 +18894,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced wireless capability: Wifite2
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18935,7 +18935,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced dfir capability: YARA-X
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -18976,7 +18976,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced network discovery capability: ZMap
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -19017,7 +19017,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced kubernetes capability: kube-score
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -19056,7 +19056,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced kubernetes capability: kubeaudit
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -19097,7 +19097,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Advanced network discovery capability: ntopng
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `kali-2026.3.2-or-aegisx-extension`
+**Source:** `kali-2026.3.2-or-veyra-extension`
 
 **Use from the VEYRA UI**
 
@@ -19138,7 +19138,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Reusable Inspect evaluation suites
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19181,7 +19181,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** LLM security and vulnerability testing framework
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19224,7 +19224,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Large-language-model evaluation harness
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19265,7 +19265,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Holistic language model evaluation
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19308,7 +19308,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Agent/tool-use benchmark integration candidate
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19349,7 +19349,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Agent capability/security benchmark integration candidate
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19392,7 +19392,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Input/output scanners for LLM applications
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19435,7 +19435,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Prompt-injection detection integration candidate
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19476,7 +19476,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Prompt-injection detection integration candidate
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19519,7 +19519,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Scan ML model files for unsafe code/components
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19560,7 +19560,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Pickle/model artifact security scanning
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19603,7 +19603,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** NLP adversarial testing framework
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19644,7 +19644,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Adversarial attack/robustness evaluation library
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19685,7 +19685,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Adversarial machine-learning research framework
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19726,7 +19726,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Robustness benchmark integration candidate
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19769,7 +19769,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Neural network backdoor/trojan research toolkit
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19812,7 +19812,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Microsoft AI security assessment toolkit
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19855,7 +19855,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** MCP server/tool security scanning integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19896,7 +19896,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** MCP server inspection and debugging
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19937,7 +19937,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** MCP policy, tool and transport security integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -19978,7 +19978,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** MCP runtime governance integration candidate
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20019,7 +20019,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Policy enforcement/proxy integration for MCP traffic
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20060,7 +20060,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** MCP configuration and audit integration candidate
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20103,7 +20103,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Agent-to-agent identity and authorization assessment
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20146,7 +20146,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Agent identity, tool authorization and runtime policy checks
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20189,7 +20189,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** LLM request/response policy enforcement integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20230,7 +20230,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Enterprise prompt/data security connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20273,7 +20273,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI security/governance connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20316,7 +20316,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** OpenTelemetry-based LLM observability
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20359,7 +20359,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** ML experiment/model governance connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20402,7 +20402,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** LLM evaluation and tracing connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20443,7 +20443,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** LLM gateway observability connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20486,7 +20486,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Multi-provider LLM gateway and policy integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20527,7 +20527,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Enterprise AI gateway and guardrail connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20570,7 +20570,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** LLM evaluation and tracing connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20613,7 +20613,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** LLM/agent tracing and evaluation connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20656,7 +20656,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** RAG evaluation and groundedness testing
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20697,7 +20697,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** RAG metrics/evaluation integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20738,7 +20738,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** LLM/RAG evaluation and feedback
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20779,7 +20779,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** RAG/application framework integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20820,7 +20820,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** RAG pipeline security/evaluation integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20861,7 +20861,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Retrieval security integration candidate
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20904,7 +20904,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Vector database performance/security test harness
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20947,7 +20947,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** PostgreSQL vector storage integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -20988,7 +20988,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Vector database security connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21029,7 +21029,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Vector database security connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21070,7 +21070,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Vector database security connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21111,7 +21111,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Vector database security connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21152,7 +21152,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Managed vector database security connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21195,7 +21195,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Dataset/data-card governance integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21238,7 +21238,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Dataset/model versioning and provenance
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21281,7 +21281,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Data versioning and lineage connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21324,7 +21324,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI/ML artifact SBOM integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21367,7 +21367,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI artifact vulnerability scanning integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21408,7 +21408,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Signed AI artifact provenance integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21449,7 +21449,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Software/AI supply-chain attestations
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21490,7 +21490,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** SLSA provenance and build integrity
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21531,7 +21531,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Keyless artifact signing and verification
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21572,7 +21572,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Dependency/SBOM vulnerability analysis
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21615,7 +21615,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI-assisted static analysis integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21656,7 +21656,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** CodeQL security analysis integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21697,7 +21697,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI/application dependency security connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21738,7 +21738,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Code, secret and dependency security connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21781,7 +21781,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Secrets detection connector
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21822,7 +21822,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Secrets scanning integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21865,7 +21865,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** NIST AI RMF control mapping
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21906,7 +21906,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** OWASP LLM Top 10 control mapping
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21949,7 +21949,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** OWASP Agentic Applications Top 10 mapping
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -21992,7 +21992,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** MITRE ATLAS technique mapping
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22033,7 +22033,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI-specific vulnerability intelligence mapping
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22076,7 +22076,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Model-card governance artifacts
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22119,7 +22119,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI incident evidence/response workflow integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22162,7 +22162,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Governed AI security assessment orchestration
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22205,7 +22205,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI-assisted SOC investigation integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22248,7 +22248,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Deterministic agent/tool policy enforcement
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22291,7 +22291,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Short-lived agent identity and capability broker
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22332,7 +22332,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Invocation-scoped capability lease enforcement
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22375,7 +22375,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Emergency agent disablement / circuit-breaker control
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22416,7 +22416,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Isolated agent execution environment integration
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22459,7 +22459,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Controlled egress for AI workloads
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22502,7 +22502,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Prompt/context provenance and integrity tracking
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22545,7 +22545,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Agent memory policy and provenance enforcement
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22588,7 +22588,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Authorization-aware retrieval gateway
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22631,7 +22631,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Scan skills, MCP servers and tool definitions for risk
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22672,7 +22672,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Agent skill/package manifest security checks
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22715,7 +22715,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Model registry security and approval workflow
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22758,7 +22758,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI bill-of-materials generation integration
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-ecosystem-2026`
+**Source:** `veyra-ai-ecosystem-2026`
 
 **Use from the VEYRA UI**
 
@@ -22801,7 +22801,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Standardized model evaluation harness
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -22844,7 +22844,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Controlled vulnerable-agent security training corpus
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_lab_only`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -22885,7 +22885,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Risk taxonomy and assessment guidance for agent skills
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -22926,7 +22926,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Security review integration for community AI components
 **Access:** Admin  
 **Worker:** `approved_connector`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -22969,7 +22969,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Controlled testing of agent-to-agent identity and message trust
 **Access:** Sudo / privileged admin  
 **Worker:** `isolated_lab_only`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -23012,7 +23012,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Runtime guardrails and policy enforcement for LLM applications
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -23053,7 +23053,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Content safety classification and policy enforcement
 **Access:** Admin  
 **Worker:** `approved_ai_worker`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -23096,7 +23096,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Vector store integration and retrieval security testing
 **Access:** Admin  
 **Worker:** `approved_connector`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -23139,7 +23139,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** AI artifact and dependency inventory integration
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -23180,7 +23180,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Artifact signing and provenance verification
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -23221,7 +23221,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Supply-chain provenance and build integrity controls
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -23262,7 +23262,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Artifact provenance and supply-chain attestations
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 
@@ -23303,7 +23303,7 @@ No direct local CLI is assumed. Configure the approved VEYRA connector/worker in
 **Why VEYRA uses it:** Dependency vulnerability scanning for AI applications
 **Access:** Admin  
 **Worker:** `approved_worker`  
-**Source:** `aegisx-ai-cutting-edge-2026`
+**Source:** `veyra-ai-cutting-edge-2026`
 
 **Use from the VEYRA UI**
 

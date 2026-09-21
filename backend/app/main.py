@@ -1,7 +1,7 @@
-"""AegisX FastAPI application entrypoint.
+"""VEYRA FastAPI application entrypoint.
 
 Help — what this file does and what it depends on:
-- Builds the FastAPI `app` (title "AegisX Security Platform") and mounts the
+- Builds the FastAPI `app` (title "VEYRA Security Platform") and mounts the
   API `router` from `app.api.routes` (all `/api/*` endpoints) plus `GET /health`.
 - `lifespan`: on startup creates every table via `Base.metadata.create_all`
   (models register themselves on `Base` in `app.db` when `app.models` is

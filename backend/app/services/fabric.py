@@ -1,4 +1,4 @@
-"""AegisX Security Fabric: normalize and correlate security planes.
+"""VEYRA Security Fabric: normalize and correlate security planes.
 
 The fabric is deliberately deterministic: it correlates persisted telemetry and
 produces explainable paths/risk. LLMs may summarize the output but do not alter

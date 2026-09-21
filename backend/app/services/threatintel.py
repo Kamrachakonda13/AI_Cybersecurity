@@ -21,7 +21,7 @@ import io
 import logging
 import time
 
-log = logging.getLogger("aegisx.threatintel")
+log = logging.getLogger("veyra.threatintel")
 
 CISA_KEV_CSV = "https://www.cisa.gov/sites/default/files/csv/known_exploited_vulnerabilities.csv"
 NVD_API = "https://services.nvd.nist.gov/rest/json/cves/2.0"

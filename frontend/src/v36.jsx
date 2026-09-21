@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {Panel} from './v29_components.jsx';
 const API=import.meta.env.VITE_API_URL||'http://localhost:8000';
-const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('aegisx_user_token')}`});
+const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('VEYRA_user_token')}`});
 export function V36SecurityRadarView(){
  const [data,setData]=useState(null);
  useEffect(()=>{fetch(`${API}/api/v36/security-radar`,{headers:auth()}).then(r=>r.json()).then(setData).catch(()=>{})},[]);

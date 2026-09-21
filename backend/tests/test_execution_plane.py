@@ -1,4 +1,4 @@
-"""AegisX source module `backend/tests/test_execution_plane.py`. See `docs/CODEBASE_GUIDE_V27.md` for the module purpose, symbols, dependencies, and maintenance guidance."""
+"""VEYRA source module `backend/tests/test_execution_plane.py`. See `docs/CODEBASE_GUIDE_V27.md` for the module purpose, symbols, dependencies, and maintenance guidance."""
 from fastapi.testclient import TestClient
 from app.main import app
 
@@ -6,7 +6,7 @@ from app.main import app
 def test_execution_plane_admin_lifecycle(monkeypatch):
     monkeypatch.setenv("VEYRA_ADMIN_TOKEN", "secret")
     c = TestClient(app)
-    h={"X-AegisX-Admin-Token":"secret"}
+    h={"X-VEYRA-Admin-Token":"secret"}
     r=c.post('/api/admin/ethical-hacking/jobs',headers=h,json={
         "tool":"Nmap","target":"lab-vulnerable-web","scope":["lab-vulnerable-web"],
         "approval_ticket":"APP-100","environment":"lab","purpose":"authorized lab assessment"})

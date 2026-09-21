@@ -1,4 +1,4 @@
-"""AegisX source module `backend/tests/test_intel_fusion_v23.py`. See `docs/CODEBASE_GUIDE_V27.md` for the module purpose, symbols, dependencies, and maintenance guidance."""
+"""VEYRA source module `backend/tests/test_intel_fusion_v23.py`. See `docs/CODEBASE_GUIDE_V27.md` for the module purpose, symbols, dependencies, and maintenance guidance."""
 import os
 from fastapi.testclient import TestClient
 from app.main import app
@@ -19,9 +19,9 @@ def _seed_case():
 def test_fusion_produces_intel_attack_mapping_and_hypotheses():
     case_id=_seed_case()
     with TestClient(app) as c:
-        r=c.post(f'/api/intel-fusion/cases/{case_id}/enrich',headers={'X-AegisX-Admin-Token':'test-admin'}); assert r.status_code==200, r.text
+        r=c.post(f'/api/intel-fusion/cases/{case_id}/enrich',headers={'X-VEYRA-Admin-Token':'test-admin'}); assert r.status_code==200, r.text
         j=r.json(); assert j['intel_matches']; assert any(x['framework']=='MITRE ATT&CK' for x in j['techniques']); assert j['attribution_hypotheses']
-        r=c.get('/api/intel-fusion/hypotheses',headers={'X-AegisX-Admin-Token':'test-admin'}); assert r.status_code==200; assert any(x['case_id']==case_id for x in r.json())
+        r=c.get('/api/intel-fusion/hypotheses',headers={'X-VEYRA-Admin-Token':'test-admin'}); assert r.status_code==200; assert any(x['case_id']==case_id for x in r.json())
 
 def test_fusion_is_hypothesis_only():
     with TestClient(app) as c:

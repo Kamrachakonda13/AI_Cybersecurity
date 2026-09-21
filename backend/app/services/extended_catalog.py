@@ -1,4 +1,4 @@
-"""Extended AegisX security-tool catalog.
+"""Extended VEYRA security-tool catalog.
 Generated from the current Kali 2026.3.2 tool/metapackage inventory plus a curated
 AI/cloud/AppSec/DFIR extension set. This module is catalog metadata only: it never
 executes installation or tool commands.
@@ -790,13 +790,13 @@ def build_tool_help(name: str, category: str, purpose: str, profile: str, privil
     }
     return {
         "summary": purpose,
-        "why_aegisx": "Provides a governed, auditable entry point with role-based access, scope controls and normalized evidence.",
+        "why_veyra": "Provides a governed, auditable entry point with role-based access, scope controls and normalized evidence.",
         "safe_workflow": workflow.get(category, workflow["Security Utilities"]),
         "expected_evidence": evidence.get(category, ["tool output", "target/scope", "timestamp", "provenance"]),
         "access": "Privileged Admin" if privileged else "Admin",
         "execution_boundary": profile,
         "common_mistakes": ["Using an asset outside the approved scope", "Treating tool output as proof without validation", "Ignoring evidence provenance or timestamps"],
-        "next_step": "Validate the result, map it to AegisX risk/graph/ATT&CK or ATLAS where applicable, remediate, and verify.",
+        "next_step": "Validate the result, map it to VEYRA risk/graph/ATT&CK or ATLAS where applicable, remediate, and verify.",
         "help_boundary": "Educational and defensive guidance only; no credential attacks, payloads, persistence, C2, evasion or hack-back instructions."
     }
 
@@ -829,7 +829,7 @@ def extended_registry():
             "privileged_usage": name in privileged,
             "browser_shell": False,
             "status": "cataloged",
-            "source": "kali-2026.3.2-or-aegisx-extension",
+            "source": "kali-2026.3.2-or-veyra-extension",
             "help": build_tool_help(name, category, purpose, profile, name in privileged),
         })
     return out
@@ -838,7 +838,7 @@ def extended_registry():
 def install_manifest(tool: dict) -> dict:
     """Produce a managed-worker installation plan; does not install anything."""
     name = tool.get("name", "")
-    # AegisX uses package/artifact identifiers, not arbitrary user commands.
+    # VEYRA uses package/artifact identifiers, not arbitrary user commands.
     package = name.lower().replace(" ", "-").replace("/", "-").replace("_", "-")
     return {
         "tool_id": tool.get("id"),
@@ -851,5 +851,5 @@ def install_manifest(tool: dict) -> dict:
         "requires_privileged_admin": bool(tool.get("privileged_usage")),
         "signed_artifact_required": True,
         "verification": ["source provenance", "artifact signature/hash", "version pin", "SBOM"],
-        "note": "Installation is a worker-side operation. AegisX SaaS never runs apt/pip/shell directly."
+        "note": "Installation is a worker-side operation. VEYRA SaaS never runs apt/pip/shell directly."
     }

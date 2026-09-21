@@ -1,4 +1,4 @@
-"""AegisX v3.3 Security Readiness and Continuous Validation.
+"""VEYRA v3.3 Security Readiness and Continuous Validation.
 
 Read-only control-plane metadata plus documentation/readiness validation.
 No security tool execution occurs in this service.

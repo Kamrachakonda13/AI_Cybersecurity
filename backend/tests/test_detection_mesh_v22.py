@@ -1,4 +1,4 @@
-"""AegisX source module `backend/tests/test_detection_mesh_v22.py`. See `docs/CODEBASE_GUIDE_V27.md` for the module purpose, symbols, dependencies, and maintenance guidance."""
+"""VEYRA source module `backend/tests/test_detection_mesh_v22.py`. See `docs/CODEBASE_GUIDE_V27.md` for the module purpose, symbols, dependencies, and maintenance guidance."""
 import os
 from fastapi.testclient import TestClient
 from app.main import app

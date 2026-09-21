@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {Panel} from './v29_components.jsx';
 const API=import.meta.env.VITE_API_URL||'http://localhost:8000';
-const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('aegisx_user_token')}`});
+const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('VEYRA_user_token')}`});
 export function V37SecurityGraphIntelligenceView(){
  const [d,setD]=useState(null),[ev,setEv]=useState(null),[tab,setTab]=useState('overview');
  useEffect(()=>{Promise.all([fetch(`${API}/api/v37/security-graph/intelligence`,{headers:auth()}).then(r=>r.json()),fetch(`${API}/api/v37/security-graph/control-evidence`,{headers:auth()}).then(r=>r.json())]).then(([a,b])=>{setD(a);setEv(b)}).catch(()=>{})},[]);

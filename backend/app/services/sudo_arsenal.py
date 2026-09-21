@@ -1,4 +1,4 @@
-"""AegisX v3.1 Sudo Security Arsenal and Adversary Trace metadata.
+"""VEYRA v3.1 Sudo Security Arsenal and Adversary Trace metadata.
 
 This module is a policy/read-model layer. It never executes third-party security
 commands. Actual tooling remains on authenticated, isolated managed workers.
@@ -33,7 +33,7 @@ def arsenal_overview():
         "privileged_count": sum(1 for t in tools if t.get("access_tier") == "privileged_admin" or t.get("privileged_usage")),
         "categories": dict(sorted(categories.items())),
         "execution_model": ["scope", "authorization", "approval", "managed worker", "evidence", "audit"],
-        "terminal_policy": "Terminal access is worker-local and policy-bound; AegisX SaaS does not expose an arbitrary browser shell.",
+        "terminal_policy": "Terminal access is worker-local and policy-bound; VEYRA SaaS does not expose an arbitrary browser shell.",
         "hack_back": "disabled",
         "attribution": "hypothesis_and_evidence_based",
     }
@@ -63,9 +63,9 @@ def tool_detail(tool_id: str):
                 },
                 "terminal_usage": {
                     "first_check": f"sudo -n {tool_id} --help",
-                    "policy": "Run only from an enrolled AegisX managed worker against an explicitly authorized scope.",
+                    "policy": "Run only from an enrolled VEYRA managed worker against an explicitly authorized scope.",
                     "safe_start": "Prefer the tool's help/version command first; use only the worker-generated command profile for active assessment.",
-                    "evidence": "Capture stdout/stderr, exit code, timestamps, target scope, tool version and artifact hashes into the AegisX evidence bundle.",
+                    "evidence": "Capture stdout/stderr, exit code, timestamps, target scope, tool version and artifact hashes into the VEYRA evidence bundle.",
                 },
                 "help_boundary": help_meta.get("help_boundary", "No payload delivery, persistence, C2, evasion, credential theft or hack-back instructions."),
             }

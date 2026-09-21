@@ -1,4 +1,4 @@
-"""AegisX v2.1 Autonomous Security Operations Fabric.
+"""VEYRA v2.1 Autonomous Security Operations Fabric.
 
 AI is advisory: it can summarize, correlate and propose hypotheses. Deterministic
 state transitions, evidence provenance, authorization and human approval are

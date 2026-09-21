@@ -1,6 +1,6 @@
-"""Curated 2026 AI/agent security tool extensions for AegisX.
+"""Curated 2026 AI/agent security tool extensions for VEYRA.
 
-Metadata only. AegisX never executes these tools from the SaaS API; execution is
+Metadata only. VEYRA never executes these tools from the SaaS API; execution is
 performed by enrolled, isolated, policy-bound workers/connectors.
 """
 
@@ -94,13 +94,13 @@ def registry():
             "id": tid, "name": name, "category": cat, "purpose": purpose,
             "execution_profile": worker, "admin_only": True, "access_tier": "admin",
             "privileged_usage": worker in {"isolated_lab_only","isolated_analysis_worker"},
-            "browser_shell": False, "status": "cataloged", "source": "aegisx-ai-cutting-edge-2026",
+            "browser_shell": False, "status": "cataloged", "source": "veyra-ai-cutting-edge-2026",
             "help": {
                 "summary": purpose,
-                "safe_workflow": "Define an approved AI asset/test scope, run the evaluation or inspection on a managed worker or approved connector, review evidence, then map findings to AegisX controls.",
+                "safe_workflow": "Define an approved AI asset/test scope, run the evaluation or inspection on a managed worker or approved connector, review evidence, then map findings to VEYRA controls.",
                 "evidence": ["asset/model/agent identifier", "test or inspection context", "policy decision", "trace ID", "artifact hash", "timestamp"],
                 "common_mistakes": ["Testing production secrets or unapproved models", "Treating one benchmark as proof of security", "Failing to preserve model/tool/config versions"],
-                "next_step": "Correlate findings with AegisX AI Security, Security Graph, OWASP, NIST AI RMF and MITRE ATLAS controls.",
+                "next_step": "Correlate findings with VEYRA AI Security, Security Graph, OWASP, NIST AI RMF and MITRE ATLAS controls.",
                 "help_boundary": "Defensive/authorized testing only; no credential theft, payload delivery, persistence, C2, evasion or hack-back instructions."
             }
         })

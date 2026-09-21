@@ -38,11 +38,11 @@ Open **Security Lifecycle** in the VEYRA console. Review the stage status and cu
 The lifecycle API is intentionally plan-only. Use it to inspect readiness from an authenticated administration environment:
 
 ```bash
-curl -H "Authorization: Bearer $AEGISX_TOKEN" \
-  "$AEGISX_URL/api/v35/lifecycle/overview"
+curl -H "Authorization: Bearer $VEYRA_TOKEN" \
+  "$VEYRA_URL/api/v35/lifecycle/overview"
 
-curl -H "Authorization: Bearer $AEGISX_TOKEN" \
-  "$AEGISX_URL/api/v35/lifecycle/plan?focus=validate"
+curl -H "Authorization: Bearer $VEYRA_TOKEN" \
+  "$VEYRA_URL/api/v35/lifecycle/plan?focus=validate"
 ```
 
 Actual security-tool commands remain worker-local and must follow the individual tool's Markdown guide, authorized scope, approval and evidence requirements.

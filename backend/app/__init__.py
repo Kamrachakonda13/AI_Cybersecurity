@@ -1,1 +1,1 @@
-"""AegisX backend package marker. It intentionally contains no runtime logic."""
+"""VEYRA backend package marker. It intentionally contains no runtime logic."""

@@ -124,7 +124,7 @@ CATEGORY_PLAYBOOKS = {
 RED_TEAM = {
     "mission": "Emulate the attacker against lab targets ONLY, so blue can rehearse. Written scope + approval for every run.",
     "rules": ["Lab hostnames only (vulnerable-web, *.lab, localhost). Never external.",
-              "Passive/safe checks from AegisX; heavier tools only in isolated lab with approval.",
+              "Passive/safe checks from VEYRA; heavier tools only in isolated lab with approval.",
               "Stop on first unintentional impact; log everything as audit notes.",
               "Hand every finding to blue with evidence — the goal is detection, not damage."],
     "tool_families": [
@@ -132,7 +132,7 @@ RED_TEAM = {
          "lab": "Service discovery vs vulnerable-web; results reconciled with /api/network/ports baseline.",
          "spot": "UNEXPECTED port rows + connection bursts in flows."},
         {"name": "Nuclei / Nikto / OWASP ZAP", "use": "Template/proxy web checks.",
-         "lab": "Safe header/TLS templates via AegisX assessment; full scans only approved + isolated.",
+         "lab": "Safe header/TLS templates via VEYRA assessment; full scans only approved + isolated.",
          "spot": "Header/banner findings + robots/admin probing in audit."},
         {"name": "Burp Suite (manual proxy)", "use": "Inspect/modify own lab traffic.",
          "lab": "Route lab browser via proxy; export findings for import — no active scan from UI.",
@@ -141,7 +141,7 @@ RED_TEAM = {
          "lab": "Only against seeded lab accounts with approval; every run pre-registered as an exercise.",
          "spot": "Login summary candidate + WAF/validation findings."},
         {"name": "Metasploit / Cobalt Strike / Meterpreter", "use": "Real adversaries' exploitation + C2 (NOT used here).",
-         "lab": "DISABLED in AegisX. Study indicators (process, beacon DNS) so blue can recognise them.",
+         "lab": "DISABLED in VEYRA. Study indicators (process, beacon DNS) so blue can recognise them.",
          "spot": "Reverse-shell forensics flags + beacon-like DNS + privileged sessions."},
         {"name": "Mimikatz / BloodHound / NetExec", "use": "Credential theft + AD mapping in intrusions.",
          "lab": "Discuss indicators only; never run against real directories.",
@@ -165,15 +165,15 @@ RED_TEAM = {
 }
 
 BLUE_TEAM = {
-    "mission": "Detect, contain and recover on YOUR estate using AegisX evidence. Human approval before high-impact response.",
+    "mission": "Detect, contain and recover on YOUR estate using VEYRA evidence. Human approval before high-impact response.",
     "tools": [
-        {"name": "AegisX Security Graph", "use": "Internet→data paths, port/process ownership, identity reach."},
+        {"name": "VEYRA Security Graph", "use": "Internet→data paths, port/process ownership, identity reach."},
         {"name": "SIEM (Splunk/Elastic) forwarding", "use": "Audit + findings export for retention and correlation."},
         {"name": "IDS/NSM (Suricata/Zeek/Snort)", "use": "Flow + DNS telemetry feeding ingest endpoints."},
         {"name": "EDR + firewall/WAF", "use": "Contain host, block IP/domain at YOUR perimeter."},
         {"name": "CSPM (Wiz/Prowler/Scout) + IaC (Trivy/Checkov)", "use": "Close cloud_public findings in code."},
         {"name": "Vault + MFA/SSO", "use": "Fix privilege/mfa findings; break-glass with alerting."},
-        {"name": "Forensics (Volatility/Autopsy/Wireshark/Ghidra)", "use": "Workstation deep-dives; AegisX gives static triage."},
+        {"name": "Forensics (Volatility/Autopsy/Wireshark/Ghidra)", "use": "Workstation deep-dives; VEYRA gives static triage."},
         {"name": "AI guardrails (NeMo-style policy, output redaction)", "use": "Fix ai_internet findings; audit retrieval."},
     ],
     "techniques": ["Triage (severity playbooks) → Contain (revoke/block at own perimeter) → "

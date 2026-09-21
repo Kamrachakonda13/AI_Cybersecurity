@@ -20,8 +20,8 @@ Visible only after administrator authorization. Suitable for governed security a
 ### PRIVILEGED_ADMIN
 
 Requires both:
-- `X-AegisX-Admin-Token`
-- `X-AegisX-Privileged-Admin-Token`
+- `X-VEYRA-Admin-Token`
+- `X-VEYRA-Privileged-Admin-Token`
 
 The privileged tier is used for high-impact offensive or credential-related tooling. A valid privileged token is still not sufficient to execute a tool: scope, environment, approval ticket, job state and isolated-worker controls remain required.
 

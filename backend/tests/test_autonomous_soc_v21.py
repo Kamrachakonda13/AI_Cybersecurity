@@ -1,4 +1,4 @@
-"""AegisX source module `backend/tests/test_autonomous_soc_v21.py`. See `docs/CODEBASE_GUIDE_V27.md` for the module purpose, symbols, dependencies, and maintenance guidance."""
+"""VEYRA source module `backend/tests/test_autonomous_soc_v21.py`. See `docs/CODEBASE_GUIDE_V27.md` for the module purpose, symbols, dependencies, and maintenance guidance."""
 from app.models import UnifiedSecurityEvent, InvestigationCase
 from app.services.autonomous_soc import investigate_event, request_containment, decide_approval
 from app.db import SessionLocal
