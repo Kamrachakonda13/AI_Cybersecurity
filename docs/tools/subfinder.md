@@ -1,22 +1,22 @@
-# Subfinder
+# subfinder
 
 **Category:** Attack Surface  
-**Purpose:** Passive subdomain discovery  
+**Purpose:** Kali security utility: subfinder  
 **VEYRA access:** admin  
-**Execution boundary:** approved_scope
+**Execution boundary:** approved_worker
 
 ## What is it?
-Passive subdomain discovery
+Kali security utility: subfinder
 
 ## Why VEYRA includes it
 Provides a governed, auditable entry point with role-based access, scope controls and normalized evidence.
 
 ## When should the team use it?
-Use it when the security objective matches **Passive subdomain discovery** and the target is owned, explicitly authorized, and inside the recorded scope.
+Use it when the security objective matches **Kali security utility: subfinder** and the target is owned, explicitly authorized, and inside the recorded scope.
 
 ## VEYRA UI workflow
 1. Open **Tool Runner / Sudo Security Arsenal**.
-2. Search for **Subfinder** and read this guide before execution.
+2. Search for **subfinder** and read this guide before execution.
 3. Confirm the target/scope and business purpose.
 4. Confirm the user's entitlement and Sudo/approval requirements.
 5. Select the appropriate managed worker and execution profile.
@@ -57,7 +57,7 @@ Validate the result, map it to VEYRA risk/graph/ATT&CK or ATLAS where applicable
 - Ignoring evidence provenance or timestamps
 
 ## Team teaching summary
-**One sentence:** Subfinder is used to help the team achieve **Passive subdomain discovery** under an approved and auditable VEYRA workflow.
+**One sentence:** subfinder is used to help the team achieve **Kali security utility: subfinder** under an approved and auditable VEYRA workflow.
 
 ## Security boundary
 Governed security operations. VEYRA enables authorized security testing, red-team, blue-team, and defensive work on owned or explicitly permitted targets. Tools are tiered by risk: Standard (discovery, analysis, defensive verification), Privileged (high-impact testing requires privileged_admin and an approved engagement), and Isolated Lab Only (attack-capable tools may only run against lab/sandbox targets). All executions are scope-bound, evidence-captured, and audited. Out-of-scope activity, unowned targets, and unauthorized use are prohibited.

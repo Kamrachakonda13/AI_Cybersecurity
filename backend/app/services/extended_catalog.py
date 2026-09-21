@@ -435,6 +435,8 @@ EXTENDED_TOOL_REGISTRY = [
      'Kali security utility: sstimap', 'approved_worker'),
     ('stegcracker', 'Credential Audit',
      'Kali security utility: stegcracker', 'approved_worker'),
+    ('subfinder-feature', 'Attack Surface',
+     'Passive subdomain discovery', 'approved_scope'),
     ('subfinder', 'Attack Surface',
      'Kali security utility: subfinder', 'approved_worker'),
     ('subjack', 'Security Utilities',

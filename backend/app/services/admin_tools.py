@@ -18,7 +18,6 @@ TOOL_REGISTRY = [
     ("arp-scan", "Network Discovery", "Local network discovery", "own_network"),
     ("Netdiscover", "Network Discovery", "LAN discovery", "own_network"),
     ("Amass", "Attack Surface", "Asset/domain discovery", "approved_scope"),
-    ("Subfinder", "Attack Surface", "Passive subdomain discovery", "approved_scope"),
     ("Assetfinder", "Attack Surface", "Passive asset discovery", "approved_scope"),
     ("dnsx", "Attack Surface", "DNS validation", "approved_scope"),
     ("httpx", "Attack Surface", "HTTP service inventory", "approved_scope"),
