@@ -5,6 +5,7 @@ executes installation or tool commands.
 """
 from __future__ import annotations
 from .admin_tools import TOOL_REGISTRY, PRIVILEGED_ADMIN_TOOLS
+from app.services.slug import slugify
 
 EXTENDED_TOOL_REGISTRY = [
 
@@ -811,7 +812,7 @@ def extended_registry():
     used_ids = set()
     out = []
     for name, category, purpose, profile in rows:
-        base_id = name.lower().replace("/", "-").replace(" ", "-").replace(".", "")
+        base_id = slugify(name)
         tool_id = base_id
         suffix = 2
         while tool_id in used_ids:
@@ -839,7 +840,7 @@ def install_manifest(tool: dict) -> dict:
     """Produce a managed-worker installation plan; does not install anything."""
     name = tool.get("name", "")
     # VEYRA uses package/artifact identifiers, not arbitrary user commands.
-    package = name.lower().replace(" ", "-").replace("/", "-").replace("_", "-")
+    package = slugify(name)
     return {
         "tool_id": tool.get("id"),
         "tool": name,
