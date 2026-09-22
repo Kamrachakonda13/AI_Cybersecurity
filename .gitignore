@@ -82,3 +82,6 @@ backend-sbom.json
 frontend-sbom.json
 sbom/
 *-sbom.json
+
+# SLSA outputs
+*.intoto.jsonl
