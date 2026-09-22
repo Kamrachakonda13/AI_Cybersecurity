@@ -14,6 +14,9 @@ omit =
 [report]
 # Show lines that weren't covered (helps identify gaps)
 show_missing = True
+# Enforce a coverage floor: CI fails if total coverage drops below this.
+# Current baseline: ~75%. Floor leaves headroom for normal variation.
+fail_under = 70
 
 # Strip project root from paths in the report
 [html]
