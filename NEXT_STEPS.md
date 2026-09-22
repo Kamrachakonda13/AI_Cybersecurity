@@ -632,3 +632,46 @@ If the deprecation warning ever becomes a strict contract, revisit this decision
 | P4-3 | ~~Push to GitHub~~ | — | ✅ Completed |
 | P4-4 | Container/infra review of `worker/v50/` | 30 min | Isolation, resource limits, network policy |
 | P4-5 | ~~Update NEXT_STEPS.md~~ | — | ✅ In progress (this section) |
+
+---
+
+## ✅ P4 Session Recap (2026-09-22 — continued)
+
+**P4 completed.** All sub-phases delivered.
+
+| Item | Commit | Summary |
+|---|---|---|
+| **P4-1** | `9b9e5ed`..`3953ff6` | 100% backend service coverage — +144 tests across 7 services |
+| **P4-2** | `91c269f` | Frontend test infrastructure — vitest + testing-library, 17 smoke tests, CI step |
+| **P4-4** | `f2fdce2` | Hardened worker/v50 deployment — Dockerfile, SECURITY.md, docker-compose overlay |
+| **P4-6** | `6ed9036` | Frontend ↔ backend contract audit doc (deferred from P2-0) |
+| **P4-7** | `0abe403` | Extended validator — checks all doc section content against catalog help dict |
+| **P4-8** | `ff97af3` | Coverage reporting — pytest-cov (backend 75%), @vitest/coverage-v8 (frontend) |
+| **P4-9** | (this) | NEXT_STEPS recap |
+
+**Session outcome:**
+- Tests: 221 → **382** (+161)
+- Commits: 29 → **40**
+- Frontend tests: 0 → **17**
+- Backend service coverage: ~82% → **100%** (all services have tests)
+- Backend line coverage: **75%** (measured, no threshold enforced yet)
+- Frontend test infra: **complete** (vitest + testing-library + coverage)
+- Worker deployment: **documented and validated** (image builds, hardening flags verified)
+- Docs: **587/587 verified** including section content
+
+**Phase 4 is complete.** All planned sub-phases (P4-1 through P4-9) delivered.
+
+## Phase 5 candidates
+
+| # | Item | Effort | Priority |
+|---|---|---|---|
+| P5-1 | Frontend component tests (raise coverage above 0%) | 2-4 hr | 🟠 |
+| P5-2 | Backend coverage threshold (enforce 70% floor in CI) | 15 min | 🟡 |
+| P5-3 | Extract `main.jsx` helpers into testable modules | 2 hr | 🟡 |
+| P5-4 | Coverage badge in README | 15 min | 🟢 |
+| P5-5 | Raise `fabric.py` coverage (currently 28%) | 45 min | 🟠 |
+| P5-6 | Remove deprecated v4.1/v4.2 workers (v6.0 goal) | 30 min | 🟢 |
+| P5-7 | GitHub Actions artifact upload for coverage reports | 20 min | 🟢 |
+| P5-8 | SBOM generation for backend + frontend | 30 min | 🟡 |
+| P5-9 | SLSA provenance attestation | 1 hr | 🟡 |
+| P5-10 | Add `docs/tools/README.md` to handoff docs | 5 min | 🟢 |
