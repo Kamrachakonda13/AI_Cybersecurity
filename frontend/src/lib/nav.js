@@ -60,4 +60,89 @@ export const NAV = [
   ['VEYRA AI Applications', Brain],
   ['VEYRA v5 Control Plane', ShieldCheck],
 ];
+
+// Grouped by the 8 CISSP-style security domains (user request) + Platform/AI/Supply Chain
+export const GROUPED_NAV = [
+  ['PLATFORM', [
+    ['Overview', LayoutDashboard],
+    ['Domains & Tools', Globe],
+    ['Agents', Bot],
+    ['Checklist Library', ScrollText],
+    ['Live Operations', Radio],
+    ['Team Dashboards', Users],
+    ['Trends', Activity],
+  ]],
+  ['1. Network Security', [
+    ['Network', Network],
+    ['Wireless Defense', Radio],
+    ['Security Fabric', GitBranch],
+    ['Full Security Fabric', Shield],
+    ['Security Graph', GitBranch],
+    ['Unified Security Graph', GitBranch],
+    ['Graph Intelligence', GitBranch],
+  ]],
+  ['2. Identity & Access Management', [
+    ['Identity', Users],
+    ['User & Permissions', UserCog],
+    ['Sudo Security Arsenal', ShieldCheck],
+    ['My Password', KeyRound],
+  ]],
+  ['3. Application Security', [
+    ['Offensive Security', Search],
+    ['Pentest Agents', Bot],
+    ['Tool Runner', TerminalSquare],
+    ['Adversary Trace', Search],
+    ['Continuous Validation', ShieldCheck],
+    ['Security Radar', Search],
+    ['Posture Time Machine', Activity],
+  ]],
+  ['4. Cloud Security', [
+    ['Cloud', Cloud],
+    ['Update Center', PackageOpen],
+  ]],
+  ['5. Endpoint Security', [
+    ['Endpoint', Server],
+  ]],
+  ['6. SecOps & Incident Response', [
+    ['Security Operations', TriangleAlert],
+    ['Autonomous SOC', Activity],
+    ['Detection Mesh', TriangleAlert],
+    ['Intel Fusion', Globe],
+    ['Forensics', Globe],
+    ['Adversary Intelligence', Globe],
+    ['Attack Timeline', Activity],
+    ['Infrastructure Investigation', Network],
+    ['Attribution & Evidence', ShieldCheck],
+    ['Governed Response & Recovery', ShieldCheck],
+    ['Red Team', Radio],
+    ['Blue Team', Shield],
+  ]],
+  ['7. Data Security & Cryptography', [
+    ['Data Security', Database],
+  ]],
+  ['8. Governance, Risk & Compliance', [
+    ['Governance', ScrollText],
+    ['Security Readiness', ShieldCheck],
+    ['Security Lifecycle', Activity],
+    ['Team Security Academy', Brain],
+    ['Documentation Hub', ScrollText],
+  ]],
+  ['AI & Automation', [
+    ['AI Security', Brain],
+    ['AI Ecosystem', Brain],
+    ['VEYRA AI Applications', Brain],
+    ['AI Research Lab', Bot],
+    ['AI Attack Reconstruction', Activity],
+    ['AI SOC Investigator', Brain],
+    ['Agent Swarm Defense', Bot],
+    ['VEYRA v5 Control Plane', ShieldCheck],
+  ]],
+  ['Supply Chain & Workers', [
+    ['Supply Chain Runtime', ShieldCheck],
+    ['Trusted Supply Chain', ShieldCheck],
+    ['Tool Academy', Brain],
+    ['Tool Marketplace', PackageOpen],
+    ['Security Workers', Server],
+  ]],
+];
 export default NAV;
