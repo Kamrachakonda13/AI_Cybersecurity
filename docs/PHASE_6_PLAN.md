@@ -1,9 +1,23 @@
 # VEYRA Phase 6 — "One-Stop Security Operations Shop"
 
-**Status:** Planned
-**Start date:** TBD
+**Status:** In Progress (P6-A foundation partially delivered as P4-3)
+**Start date:** 2026-09-22
 **Estimated total effort:** 25-35 hours across multiple sessions
-**Depends on:** P0-P5 complete (all CI green, 561 tests passing)
+**Depends on:** P0-P5 complete (all CI green, 61 commits, P5 closed with 61 total)
+**Current baseline (2026-09-22):** 421 backend tests passing, 75.42% line coverage (70% floor enforced), frontend 73.64% coverage, `npm run build` green (1865 modules, 431 kB)
+
+## Progress Tracker
+
+| Sub-phase | Status | Commits | Notes |
+|---|---|---|---|
+| **P6-A** Checklist Registry | ✅ Partial — P4-3 delivered | `2cb5699`, `4692c1c`, `bfda286` | 61 checklists across 11 domains, runner stub, 36 tests, `docs/CHECKLISTS.md`. Remaining: API routes + model entities |
+| **P6-B** Live Sensors + Baseline + Drop Diagnosis | ⬜ Not started | — | — |
+| **P6-C** Status Chip + Chart Library | ⬜ Not started | — | — |
+| **P6-D** Team Dashboards | ⬜ Not started | — | — |
+| **P6-E** Live Monitoring + Checklist Library UI | ⬜ Not started | — | — |
+| **P6-F** Checklist Runner UI | ⬜ Not started | — | — |
+| **P6-G** Alerts + Notifications | ⬜ Not started | — | — |
+| **P6-H** Trends + Historical View | ⬜ Not started | — | — |
 
 ## Vision
 
@@ -71,15 +85,22 @@ where the team can:
 ## Sub-Phases
 
 ### P6-A — Checklist Registry (foundation)
-**Effort:** 3-4 hr | **Files:** backend services, models, API, tests, docs
+**Effort:** 3-4 hr | **Files:** backend services, models, API, tests, docs | **Status:** 🟡 Partial — registry + runner + tests + docs done as P4-3
 
-- `backend/app/services/checklist_registry.py` — ~80 checklists across all domains
-- `backend/app/services/checklist_runner.py` — execute + evidence capture + receipt
-- `backend/app/models/entities.py` — extend with `ChecklistDefinition`, `ChecklistRun`, `ChecklistResult`, `ChecklistReceipt`
-- `backend/app/api/routes.py` — 4 new routes under `/api/v60/`
-- `backend/tests/test_checklist_registry.py` — ~30 tests
-- `docs/CHECKLISTS.md` — human-readable index
-- CI: extend docs-drift validator to cover checklists
+- [x] `backend/app/services/checklist_registry.py` — 61 checklists across 11 domains (P4-3a `2cb5699`, P4-3b `4692c1c`)
+- [x] `backend/app/services/checklist_runner.py` — governed stub (validate + surface metadata, no execution) (P4-3c `bfda286`)
+- [x] `backend/tests/services/test_checklist_registry.py` — 21 tests (P4-3a/b)
+- [x] `backend/tests/services/test_checklist_runner.py` — 15 tests (P4-3c)
+- [x] `docs/CHECKLISTS.md` — human-readable index (61 checklists, 11 domains)
+- [ ] `backend/app/models/entities.py` — extend with `ChecklistDefinition`, `ChecklistRun`, `ChecklistResult`, `ChecklistReceipt` _(deferred to P6-A completion)_
+- [ ] `backend/app/api/routes.py` — 4 new routes under `/api/v60/` _(next — see P6-A remaining)_
+- [ ] CI: extend docs-drift validator to cover `docs/CHECKLISTS.md` drift against `checklist_registry.py`
+
+**P6-A remaining (next session, ~45 min):**
+1. Add API routes: `GET /api/v60/checklists`, `GET /api/v60/checklists/{id}`, `POST /api/v60/checklists/{id}/run`, `GET /api/v60/checklists/domains` (all read-only / stub execution, under existing `require_admin` gate where appropriate).
+2. Add DB models only if persistence is needed; otherwise keep runner stateless and defer `entities.py` to P6-F (governed worker wiring).
+3. Add `scripts/validate_checklists.py` or extend `scripts/validate_tool_documentation.py` to cross-check `docs/CHECKLISTS.md` against `CHECKLISTS` (counts per domain, IDs).
+4. Add `docs-drift` CI step for `docs/CHECKLISTS.md`.
 
 ### P6-B — Live Sensors + Baseline + Drop Diagnosis (foundation)
 **Effort:** 4-6 hr
@@ -242,30 +263,21 @@ docs/
 - Frontend coverage extended to cover new components
 - All CI jobs green
 
-Part 2 — Full End-to-End Verification
-Before writing any P6 code, verify the current project is 100% healthy. This is your ask and it's the right call — a clean baseline makes P6 easier.
+## Verification Baseline (2026-09-22 — before P6-B)
 
-I'll give you a comprehensive audit script that checks:
+Run as a suite of targeted commands before starting P6-B:
 
-Project structure integrity
+| Check | Command | Expected |
+|---|---|---|
+| Project structure | `ls backend/app/services/ | wc -l` | 50+ modules |
+| All imports resolve | `python -m compileall -q backend/app` | zero errors |
+| Tests pass | `pytest -q` (from `backend/`) | 421 passed |
+| Frontend build | `npm run build` (from `frontend/`) | 1865 modules, 431 kB |
+| Frontend tests | `npm run test:coverage` | 73.64% Stmts, green |
+| Validators | `PYTHONPATH=backend python scripts/validate_tool_documentation.py` | 587/587 verified |
+| No duplicate declarations | `npm run build` catches `PARSE_ERROR: Identifier already declared` | green |
+| CI workflows parse | `python -c "import yaml; yaml.safe_load(open('.github/workflows/ci.yml'))"` | valid YAML |
+| Untracked files | `git status` | only `docs/CHECKLISTS.md` (now tracked) |
 
-All imports resolve
-
-No broken references
-
-Tests pass
-
-Build passes
-
-Validators pass
-
-No stale files
-
-No duplicate declarations
-
-CI workflows parse
-
-Documentation consistency
-
-Let's run it as a suite of targeted commands. Here's the plan:
+**2026-09-22 result:** all checks green. Backend 421 tests (75.42% coverage, 70% floor enforced), frontend build green, validators green, all 4 CI jobs parse. No stale files. `docs/CHECKLISTS.md` was untracked — committed as part of this doc fix.
 

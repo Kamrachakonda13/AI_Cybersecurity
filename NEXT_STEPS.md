@@ -743,7 +743,22 @@ Frontend component tests found the same React `useEffect(load, [])` bug in **fou
 | After v38/v39 | 71.42% | 143 |
 | After lib extraction | **~75%+** | **176** |
 
-### What's next — Phase 6 candidates
+### What's next — Phase 6 (authoritative plan: `docs/PHASE_6_PLAN.md`)
+
+Phase 6 is the **One-Stop Security Operations Shop** (P6-A through P6-H). The infra candidates below are now tracked as P6 backlog items within that plan — not a separate phase.
+
+| # | Phase 6 sub-phase | Effort | Notes |
+|---|---|---|---|
+| **P6-A** | Checklist Registry (foundation) | 3-4 hr | 61 checklists done as P4-3; remaining: API routes + drift validator |
+| **P6-B** | Live Sensors + Baseline + Drop Diagnosis | 4-6 hr | `live_sensor_ingest`, `baseline_engine`, `drop_diagnosis`, `wifi_sensor.py` |
+| **P6-C** | Status Chip + Chart Component Library | 2-3 hr | `StatusChip`, `StatusPie`, `Sparkline`, `DropTimeline` (pure SVG) |
+| **P6-D** | Team Dashboards | 4-6 hr | `v62_team_dash.jsx` |
+| **P6-E** | Live Monitoring + Checklist Library UI | 3-4 hr | `v60_checklists.jsx`, `v61_live_ops.jsx` |
+| **P6-F** | Checklist Runner UI (governed workers) | 3-4 hr | Evidence + receipts + approval gates |
+| **P6-G** | Alerts + Notifications | 2-3 hr | Chip degradation + drop → notify |
+| **P6-H** | Trends + Historical View | 2-3 hr | Posture over time, MTTR, coverage |
+
+**P6 backlog (infra, from earlier P6-1..9 — do after P6-A/B):**
 
 | # | Item | Effort | Notes |
 |---|---|---|---|
@@ -758,3 +773,39 @@ Frontend component tests found the same React `useEffect(load, [])` bug in **fou
 | P6-9 | Branch protection + required reviews | 15 min | Before making repo private |
 
 **Deferred to end-of-project (unchanged):** frontend contract audit doc, historical-snapshot notes, removal of one-off scripts, end-to-end docs polish.
+
+---
+
+## ✅ P6-A Foundation — Checklist Registry (2026-09-22 — delivered as P4-3)
+
+**Phase 6 sub-phase P6-A was delivered early as P4-3 (three sub-commits) so the operations-shop has a real foundation.**
+
+| Item | Commit | Summary |
+|---|---|---|
+| **P4-3a** | `2cb5699` | Checklist registry — 40 checklists across 7 domains + schema tests |
+| **P4-3b** | `4692c1c` | Complete registry — 61 checklists across 11 domains + `docs/CHECKLISTS.md` |
+| **P4-3c** | `bfda286` | Checklist runner stub — governs execution (no shell/network/DB), immutable `ChecklistRun` |
+
+**Artifacts:**
+- `backend/app/services/checklist_registry.py` — 61 checklists, 11 domains, `DOMAINS`/`OWNER_ROLES`/`CADENCES`/`TIERS` enums
+- `backend/app/services/checklist_runner.py` — `list_checklists()`, `get_checklist()`, `run_checklist()`, `runnable_ids()`; unknown IDs rejected, boundary surfaced, frozen dataclass
+- `docs/CHECKLISTS.md` — 61-checklist human-readable index (domain-grouped, owner/cadence/tier)
+- `backend/tests/services/test_checklist_registry.py` — 21 tests (uniqueness, schema, chip states, domain snapshot)
+- `backend/tests/services/test_checklist_runner.py` — 15 tests (validation, immutability, UTC, guardrails)
+
+**Session outcome (updates P5 metrics):**
+- Tests: 385 → **421** (+36 from P4-3)
+- Total tests (backend + frontend): 561 → **~597** (421 backend + 176 frontend)
+- Backend coverage: **75.42%** (70% floor enforced)
+- Frontend coverage: **73.64% Stmts / 66.24% Branch** (no floor yet)
+- Commits: 61 → **64** (after P4-3c)
+- CI: 9 jobs, 4 workflows — all green
+- `docs/PHASE_6_PLAN.md` updated: P6-A marked partial, progress tracker added, verification baseline refreshed
+- `docs/CHECKLISTS.md` — was untracked (gap), now committed
+
+**P6-A remaining (next, ~45 min):**
+1. `GET /api/v60/checklists`, `GET /api/v60/checklists/{id}`, `POST /api/v60/checklists/{id}/run`, `GET /api/v60/checklists/domains` in `backend/app/api/routes.py`
+2. `scripts/validate_checklists.py` or extended validator — cross-check `docs/CHECKLISTS.md` vs `CHECKLISTS`
+3. `docs-drift` CI step for `docs/CHECKLISTS.md`
+
+**Next phase:** P6-B (Live Sensors + Baseline + Drop Diagnosis) — see `docs/PHASE_6_PLAN.md` P6-B.

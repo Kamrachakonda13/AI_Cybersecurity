@@ -2581,6 +2581,86 @@ def v41_rollback_on_failure(deployment_id: str, payload: dict, request: Request,
     except ValueError as exc:
         raise HTTPException(400, str(exc))
 
+# ---------------------------------------------------------------------------
+# VEYRA v6.0 — Checklist Registry (P6-A foundation)
+# ---------------------------------------------------------------------------
+class ChecklistRunRequest(BaseModel):
+    parameters: dict = Field(default_factory=dict)
+    notes: str = Field(default="", max_length=2000)
+
+
+@router.get("/v60/checklists")
+def v60_list_checklists(domain: str | None = Query(None, max_length=64), tier: str | None = Query(None, max_length=32)):
+    """List all registered checklists. Filter by domain or tier when supplied."""
+    from ..services.checklist_registry import CHECKLISTS
+
+    items = CHECKLISTS
+    if domain:
+        items = [c for c in items if c["domain"] == domain]
+    if tier:
+        items = [c for c in items if c["tier"] == tier]
+    return {"total": len(items), "checklists": items}
+
+
+@router.get("/v60/checklists/domains")
+def v60_checklist_domains():
+    """Domain summary — counts per domain plus tier breakdown."""
+    from ..services.checklist_registry import CHECKLISTS, DOMAINS
+    from collections import Counter
+
+    by_domain = Counter(c["domain"] for c in CHECKLISTS)
+    by_tier = Counter(c["tier"] for c in CHECKLISTS)
+    return {"domains": DOMAINS, "per_domain": dict(by_domain), "per_tier": dict(by_tier), "total": len(CHECKLISTS)}
+
+
+@router.get("/v60/checklists/{checklist_id}")
+def v60_get_checklist(checklist_id: str):
+    """Single checklist definition by id."""
+    from ..services.checklist_runner import get_checklist, UnknownChecklistError
+
+    try:
+        return get_checklist(checklist_id)
+    except UnknownChecklistError:
+        raise HTTPException(404, f"Checklist '{checklist_id}' not found")
+
+
+@router.post("/v60/checklists/{checklist_id}/run")
+def v60_run_checklist(checklist_id: str, req: ChecklistRunRequest, request: Request, db: Session = Depends(get_db)):
+    """Govern a checklist run (P6-A stub: validates, returns a signed run receipt).
+
+    No actions are executed — the runner returns status `not_implemented`.
+    Real execution (worker wiring, evidence capture) lands in P6-F.
+    """
+    from ..services.checklist_runner import UnknownChecklistError, run_checklist
+
+    _auth_user(request, db)
+    try:
+        run = run_checklist(checklist_id, parameters=req.parameters)
+    except UnknownChecklistError:
+        raise HTTPException(404, f"Checklist '{checklist_id}' not found")
+    # Merge caller notes without mutating the frozen dataclass (return shape carries it)
+    notes = req.notes.strip() or run.notes
+    payload = {
+        "checklist_id": run.checklist_id,
+        "domain": run.domain,
+        "category": run.category,
+        "name": run.name,
+        "owner_role": run.owner_role,
+        "cadence": run.cadence,
+        "tier": run.tier,
+        "scope": run.scope,
+        "evidence_expected": list(run.evidence_expected),
+        "boundary": run.boundary,
+        "status": run.status,
+        "requested_at": run.requested_at.isoformat(),
+        "parameters": run.parameters,
+        "notes": notes,
+    }
+    db.add(AuditEvent(actor="console-user", action="checklist_run_requested", target=checklist_id, outcome=run.status))
+    db.commit()
+    return payload
+
+
 @router.get("/v40/docs/index")
 def v40_docs_index(request: Request, db: Session = Depends(get_db)):
     """Hydejack-inspired documentation index: markdown-first, searchable, printable."""
