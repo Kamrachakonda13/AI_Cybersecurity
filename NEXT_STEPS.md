@@ -603,3 +603,32 @@ If the deprecation warning ever becomes a strict contract, revisit this decision
 | P4-2 | Frontend test infrastructure | 1-2 hr | Zero frontend tests today; add vitest + testing-library + smoke tests |
 | P4-3 | Push to GitHub | 15 min | Never pushed; four CI jobs would run end-to-end |
 | P4-4 | Container/infra review of `worker/v50/` | 30 min | Isolation, resource limits, network policy |
+
+
+---
+
+## ✅ P4-1 Session Recap (2026-09-22)
+
+**P4-1 completed backend test coverage for all remaining untested service modules.**
+
+| Item | Commit | Tests | Summary |
+|---|---|---|---|
+| **P4-1a** | `9b9e5ed` | 41 | `v38_ai_endpoint_radar.py`, `v36_security_radar.py`, `ai_cutting_edge_2026.py` |
+| **P4-1b** | `9eb36b1` | 16 | `notify.py` — SMTP config, send flow, log fallback |
+| **P4-1c** | `5a114ac` | 41 | `tool_forms.py` — field schemas, get_form, contract folding |
+| **P4-1d** | `3953ff6` | 46 | `response_mesh.py`, `v29_adversary.py` — DB-driven services |
+
+**Session outcome:**
+- Tests: 221 → **365** (+144)
+- Commits: 29 → **33**
+- **100% backend service coverage** — every module in `backend/app/services/` has direct tests
+- All changes pushed to GitHub; CI green (7/7 jobs)
+
+**Remaining P4 candidates:**
+
+| # | Item | Effort | Notes |
+|---|---|---|---|
+| P4-2 | Frontend test infrastructure | 1-2 hr | Zero frontend tests today; add vitest + testing-library + smoke tests |
+| P4-3 | ~~Push to GitHub~~ | — | ✅ Completed |
+| P4-4 | Container/infra review of `worker/v50/` | 30 min | Isolation, resource limits, network policy |
+| P4-5 | ~~Update NEXT_STEPS.md~~ | — | ✅ In progress (this section) |
