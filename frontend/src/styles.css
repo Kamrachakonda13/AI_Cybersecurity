@@ -3,6 +3,23 @@
 .clickable{cursor:pointer;transition:border-color .15s,background .15s}.card.clickable:hover{border-color:#397de0;background:#0e1622}.card.clickable.active{border-color:#4d91ff;box-shadow:0 0 0 1px #4d91ff}.row.clickable:hover,.finding.clickable:hover{background:#0e1622}.panelhead span.clickable{cursor:pointer;color:#7fb4ff}.helpbar{display:flex;gap:8px;align-items:flex-start;margin:14px 0;padding:10px 12px;background:#0c1624;border:1px solid #1d2f47;border-radius:8px;color:#9eb8d4;font-size:10px;line-height:1.5}.overlay{position:fixed;inset:0;background:rgba(3,6,10,.7);display:grid;place-items:center;z-index:50;padding:20px}.modal{width:min(720px,100%);max-height:85vh;overflow:auto;background:#0c121b;border:1px solid #2a3a4f;border-radius:12px;padding:0}.modalhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:16px 18px;border-bottom:1px solid #1d2734}.modalhead small{color:#718094;font-size:10px;display:block;margin-top:6px;line-height:1.5}.modalbody{padding:8px 0 16px}.modalbody p{font-size:11px;color:#b9c5d4;padding:8px 18px;margin:0;line-height:1.55}.modalbody .badge{margin:10px 18px 0}.modal .primary{margin:0 18px 18px}.xbtn{background:transparent;border:0;color:#8c99aa;cursor:pointer}
 .wifi{grid-template-columns:1.4fr 1fr 1.2fr .8fr .6fr}.wifithead{display:grid;grid-template-columns:1.4fr 1fr 1.2fr .8fr .6fr;padding:10px 17px;color:#56667a;font-size:8px;letter-spacing:1px}
 .brand-mark{width:42px;height:42px;object-fit:cover;object-position:center;border-radius:10px;box-shadow:0 0 22px #247cff33;background:#07111f}.hero-brand{display:flex;align-items:center;gap:22px;min-width:0}.hero-brand>img{width:min(430px,42vw);height:auto;max-height:145px;object-fit:contain;object-position:center;filter:drop-shadow(0 8px 28px #0008)}.hero-brand>div{min-width:0}.hero-brand .eyebrow{margin-top:2px}@media(max-width:1000px){.hero-brand{gap:14px}.hero-brand>img{width:260px;max-height:110px}}@media(max-width:700px){.hero-brand{display:block}.hero-brand>img{width:100%;max-width:380px;margin-bottom:12px}.brand-mark{width:38px;height:38px}}
+/* privileged vs sudo distinction — light purple for privileged admin */
+.content.privileged-admin{background:linear-gradient(180deg,#faf5ff 0%,#f5f3ff 100%);border-radius:14px;border:1px solid #e9d5ff}
+.content.privileged-admin .panel{border-color:#e9d5ff;background:#ffffff}
+.content.privileged-admin .panelhead{background:#faf5ff;border-bottom-color:#e9d5ff}
+.content.privileged-admin .sectionintro .eyebrow{color:#7c3aed}
+.content.privileged-admin h2{color:#4c1d95}
+.content.privileged-admin .callout{background:#f5f3ff;border-color:#ddd6fe;color:#5b21b6}
+.content.privileged-admin .row{border-bottom-color:#ede9fe}
+.content.privileged-admin .badge{filter:saturate(1.2)}
+.privileged-banner{display:flex;align-items:center;gap:10px;padding:10px 14px;margin-bottom:14px;background:linear-gradient(90deg,#ede9fe,#f5f3ff);border:1px solid #ddd6fe;border-radius:10px;color:#6d28d9;font-size:11px;font-weight:600;letter-spacing:0.3px}
+.privileged-banner span{font-size:16px}
+.content.sudo-admin{background:linear-gradient(180deg,#eff6ff 0%,#f0f9ff 100%);border-radius:14px;border:1px solid #bfdbfe}
+.content.sudo-admin .panel{border-color:#bfdbfe;background:#ffffff}
+.content.sudo-admin .panelhead{background:#eff6ff;border-bottom-color:#bfdbfe}
+.content.sudo-admin .sectionintro .eyebrow{color:#1d4ed8}
+.content.sudo-admin h2{color:#1e3a8a}
+.content.sudo-admin .callout{background:#eff6ff;border-color:#bfdbfe;color:#1e40af}
 
 /* v4.0 documentation / Hydejack-inspired print surface */
 @media print {
