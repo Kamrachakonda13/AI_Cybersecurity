@@ -28,8 +28,8 @@ Use it when the security objective matches **Asset/service discovery** and the t
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-nmap --help
-nmap --version
+Nmap --help
+Nmap --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

@@ -9,7 +9,7 @@
 Security review integration for community AI components
 
 ## Why VEYRA includes it
-Provides a governed, auditable capability with scope and evidence controls.
+Provides a governed, auditable entry point with role-based access, scope controls and normalized evidence.
 
 ## When should the team use it?
 Use it when the security objective matches **Security review integration for community AI components** and the target is owned, explicitly authorized, and inside the recorded scope.
@@ -28,8 +28,8 @@ Use it when the security objective matches **Security review integration for com
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-cyberagents-exchange-inspector --help
-cyberagents-exchange-inspector --version
+CyberAgents Exchange AI Inspector --help
+CyberAgents Exchange AI Inspector --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.
@@ -41,8 +41,8 @@ Define an approved AI asset/test scope, run the evaluation or inspection on a ma
 
 ## Evidence to collect
 - tool output
+- target/scope
 - timestamp
-- scope
 - provenance
 
 ## How to interpret results

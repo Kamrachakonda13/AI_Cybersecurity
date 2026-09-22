@@ -28,8 +28,8 @@ Use it when the security objective matches **Authorized penetration testing** an
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-core-impact --help
-core-impact --version
+Core Impact --help
+Core Impact --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

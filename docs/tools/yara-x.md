@@ -28,8 +28,8 @@ Use it when the security objective matches **Advanced dfir capability: YARA-X** 
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-yara-x --help
-yara-x --version
+YARA-X --help
+YARA-X --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

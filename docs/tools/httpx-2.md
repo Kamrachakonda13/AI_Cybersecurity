@@ -28,8 +28,8 @@ Use it when the security objective matches **Advanced web/api capability: HTTPX*
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-httpx-2 --help
-httpx-2 --version
+HTTPX --help
+HTTPX --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

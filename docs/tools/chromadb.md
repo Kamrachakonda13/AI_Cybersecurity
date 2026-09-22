@@ -9,7 +9,7 @@
 Vector database security connector
 
 ## Why VEYRA includes it
-Provides a governed, auditable capability with scope and evidence controls.
+Provides a governed, auditable entry point with role-based access, scope controls and normalized evidence.
 
 ## When should the team use it?
 Use it when the security objective matches **Vector database security connector** and the target is owned, explicitly authorized, and inside the recorded scope.
@@ -41,8 +41,8 @@ Select an approved AI asset, define scope, run the governed evaluation on a mana
 
 ## Evidence to collect
 - tool output
+- target/scope
 - timestamp
-- scope
 - provenance
 
 ## How to interpret results

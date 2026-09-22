@@ -28,8 +28,8 @@ Use it when the security objective matches **Malware scanning** and the target i
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-clamav --help
-clamav --version
+ClamAV --help
+ClamAV --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

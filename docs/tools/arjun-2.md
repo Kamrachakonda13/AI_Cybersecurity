@@ -28,8 +28,8 @@ Use it when the security objective matches **Advanced web/api capability: Arjun*
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-arjun-2 --help
-arjun-2 --version
+Arjun --help
+Arjun --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

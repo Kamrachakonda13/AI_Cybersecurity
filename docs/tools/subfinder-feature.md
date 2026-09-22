@@ -16,7 +16,7 @@ Use it when the security objective matches **Passive subdomain discovery** and t
 
 ## VEYRA UI workflow
 1. Open **Tool Runner / Sudo Security Arsenal**.
-2. Search for **Subfinder** and read this guide before execution.
+2. Search for **subfinder-feature** and read this guide before execution.
 3. Confirm the target/scope and business purpose.
 4. Confirm the user's entitlement and Sudo/approval requirements.
 5. Select the appropriate managed worker and execution profile.
@@ -28,8 +28,8 @@ Use it when the security objective matches **Passive subdomain discovery** and t
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-subfinder --help
-subfinder --version
+subfinder-feature --help
+subfinder-feature --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.
@@ -57,7 +57,7 @@ Validate the result, map it to VEYRA risk/graph/ATT&CK or ATLAS where applicable
 - Ignoring evidence provenance or timestamps
 
 ## Team teaching summary
-**One sentence:** Subfinder is used to help the team achieve **Passive subdomain discovery** under an approved and auditable VEYRA workflow.
+**One sentence:** subfinder-feature is used to help the team achieve **Passive subdomain discovery** under an approved and auditable VEYRA workflow.
 
 ## Security boundary
 Governed security operations. VEYRA enables authorized security testing, red-team, blue-team, and defensive work on owned or explicitly permitted targets. Tools are tiered by risk: Standard (discovery, analysis, defensive verification), Privileged (high-impact testing requires privileged_admin and an approved engagement), and Isolated Lab Only (attack-capable tools may only run against lab/sandbox targets). All executions are scope-bound, evidence-captured, and audited. Out-of-scope activity, unowned targets, and unauthorized use are prohibited.

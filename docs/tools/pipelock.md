@@ -1,56 +1,63 @@
 # Pipelock
 
+**Category:** AI Network Security  
+**Purpose:** AI-agent egress firewall for MCP, A2A and mediated network traffic  
+**VEYRA access:** admin  
+**Execution boundary:** experimental_worker
+
 ## What is it?
 AI-agent egress firewall for MCP, A2A and mediated network traffic
 
 ## Why VEYRA includes it
-It extends VEYRA coverage for current AI-native, cloud-native or supply-chain security concerns.
+Provides a governed, auditable entry point with role-based access, scope controls and normalized evidence.
 
 ## When should the team use it?
-Use it when the relevant asset, cluster, agent, repository or supply-chain scope is explicitly enrolled and authorized.
-
-## Who can use it?
-Administrative/security users through the governed worker model. Experimental tools require an isolated worker and explicit approval.
+Use it when the security objective matches **AI-agent egress firewall for MCP, A2A and mediated network traffic** and the target is owned, explicitly authorized, and inside the recorded scope.
 
 ## VEYRA UI workflow
-1. Open the Security Radar or Tool Academy.
-2. Confirm provenance, maturity, version and worker compatibility.
-3. Select an approved scope.
-4. Request the governed worker job; privileged or experimental use requires the appropriate approval/Sudo gate.
-5. Review normalized evidence, provenance and policy decisions.
+1. Open **Tool Runner / Sudo Security Arsenal**.
+2. Search for **Pipelock** and read this guide before execution.
+3. Confirm the target/scope and business purpose.
+4. Confirm the user's entitlement and Sudo/approval requirements.
+5. Select the appropriate managed worker and execution profile.
+6. Run only the approved test; collect normalized evidence.
+7. Review results in the Security Graph/SOC where applicable.
+8. Remediate confirmed issues and schedule revalidation.
 
 ## Terminal starting point
+Start with local discovery/help only on an enrolled worker:
+
 ```bash
-pipelock --help
+Pipelock --help
+Pipelock --version
 ```
-Run only from an enrolled VEYRA managed worker. Prefer help/version first and use only VEYRA-generated approved command profiles for active assessment.
+
+If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.
+
+**Do not substitute arbitrary attack commands for the approved worker profile.** Tool-specific commands that can change security state require explicit authorization, scope and approval.
 
 ## Safe workflow
-Start with read-only inventory or policy evaluation. Do not test production secrets, credentials, unrelated tenants or unapproved targets.
+Define an approved AI asset/test scope, run the evaluation or inspection on a managed worker or approved connector, review evidence, then map findings to VEYRA controls.
 
 ## Evidence to collect
-- target/asset/cluster/agent identifier
-- scope and authorization
-- tool version and worker identity
-- configuration/policy revision
-- timestamps and trace ID
-- stdout/stderr or connector response
-- artifact hash/SBOM where applicable
+- tool output
+- target/scope
+- timestamp
+- provenance
 
-## How to interpret the result
-Treat a finding as evidence requiring correlation with VEYRA assets, identities, controls, Security Graph and threat intelligence. A benchmark or single alert is not proof of compromise or security.
+## How to interpret results
+Treat tool output as a signal or measurement. Confirm affected assets, ownership, scope, timestamps and reproducibility before declaring a security issue. Correlate with other telemetry where possible.
 
 ## Remediation and verification
-Create a governed remediation plan, apply the smallest safe change, record the change and rerun the same control/test to verify closure and detect drift.
+Correlate findings with VEYRA AI Security, Security Graph, OWASP, NIST AI RMF and MITRE ATLAS controls.
 
 ## Common mistakes
-- promoting an experimental tool directly to production
-- skipping provenance/version pinning
-- treating a policy violation as proof of exploitation
-- running against assets outside the approved scope
-
-## Security boundary
-VEYRA does not expose arbitrary browser shell access, hack-back, credential theft, persistence, C2, destructive disruption or unauthorized testing. Execution is restricted to authorized managed workers with RBAC/Sudo, scope, approval and evidence controls.
+- Testing production secrets or unapproved models
+- Treating one benchmark as proof of security
+- Failing to preserve model/tool/config versions
 
 ## Team teaching summary
-Use Pipelock as one evidence-producing control in the lifecycle: **Discover → Understand → Validate → Investigate → Correlate → Contain → Recover → Prove → Learn → Continuously revalidate.**
+**One sentence:** Pipelock is used to help the team achieve **AI-agent egress firewall for MCP, A2A and mediated network traffic** under an approved and auditable VEYRA workflow.
+
+## Security boundary
+Governed security operations. VEYRA enables authorized security testing, red-team, blue-team, and defensive work on owned or explicitly permitted targets. Tools are tiered by risk: Standard (discovery, analysis, defensive verification), Privileged (high-impact testing requires privileged_admin and an approved engagement), and Isolated Lab Only (attack-capable tools may only run against lab/sandbox targets). All executions are scope-bound, evidence-captured, and audited. Out-of-scope activity, unowned targets, and unauthorized use are prohibited.

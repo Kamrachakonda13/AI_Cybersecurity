@@ -28,8 +28,8 @@ Use it when the security objective matches **Memory forensics** and the target i
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-volatility-3 --help
-volatility-3 --version
+Volatility 3 --help
+Volatility 3 --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

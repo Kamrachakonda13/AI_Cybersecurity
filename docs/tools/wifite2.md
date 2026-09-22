@@ -28,8 +28,8 @@ Use it when the security objective matches **Advanced wireless capability: Wifit
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-wifite2 --help
-wifite2 --version
+Wifite2 --help
+Wifite2 --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

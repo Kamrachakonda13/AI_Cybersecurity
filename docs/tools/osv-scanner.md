@@ -28,8 +28,8 @@ Use it when the security objective matches **Advanced appsec capability: OSV-Sca
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-osv-scanner --help
-osv-scanner --version
+OSV-Scanner --help
+OSV-Scanner --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

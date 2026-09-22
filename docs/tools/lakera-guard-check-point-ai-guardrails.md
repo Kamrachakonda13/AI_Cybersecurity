@@ -28,8 +28,8 @@ Use it when the security objective matches **Prompt injection, jailbreak and dat
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-lakera-guard---check-point-ai-guardrails --help
-lakera-guard---check-point-ai-guardrails --version
+Lakera Guard / Check Point AI Guardrails --help
+Lakera Guard / Check Point AI Guardrails --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

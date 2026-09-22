@@ -28,8 +28,8 @@ Use it when the security objective matches **Advanced appsec capability: Gitleak
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-gitleaks-2 --help
-gitleaks-2 --version
+Gitleaks --help
+Gitleaks --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

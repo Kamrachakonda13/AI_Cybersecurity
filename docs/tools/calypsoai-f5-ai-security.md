@@ -28,8 +28,8 @@ Use it when the security objective matches **Inference-layer AI security and gua
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-calypsoai---f5-ai-security --help
-calypsoai---f5-ai-security --version
+CalypsoAI / F5 AI Security --help
+CalypsoAI / F5 AI Security --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

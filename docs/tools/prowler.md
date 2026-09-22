@@ -28,8 +28,8 @@ Use it when the security objective matches **CSPM/security auditing** and the ta
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-prowler --help
-prowler --version
+Prowler --help
+Prowler --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

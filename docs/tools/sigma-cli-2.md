@@ -28,8 +28,8 @@ Use it when the security objective matches **Advanced threat intelligence capabi
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-sigma-cli-2 --help
-sigma-cli-2 --version
+Sigma CLI --help
+Sigma CLI --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

@@ -28,8 +28,8 @@ Use it when the security objective matches **Advanced web/api capability: Kiteru
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-kiterunner --help
-kiterunner --version
+Kiterunner --help
+Kiterunner --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

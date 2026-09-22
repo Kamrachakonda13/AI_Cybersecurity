@@ -28,8 +28,8 @@ Use it when the security objective matches **Content discovery** and the target 
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-feroxbuster --help
-feroxbuster --version
+Feroxbuster --help
+Feroxbuster --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

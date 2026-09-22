@@ -28,8 +28,8 @@ Use it when the security objective matches **Python security analysis** and the 
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-bandit --help
-bandit --version
+Bandit --help
+Bandit --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.

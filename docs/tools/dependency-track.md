@@ -28,8 +28,8 @@ Use it when the security objective matches **Advanced appsec capability: Depende
 Start with local discovery/help only on an enrolled worker:
 
 ```bash
-dependency-track --help
-dependency-track --version
+Dependency-Track --help
+Dependency-Track --version
 ```
 
 If the binary is not installed, use the VEYRA Tool Marketplace/install workflow rather than installing unapproved software manually. For SaaS/API-only capabilities, use the VEYRA connector/worker documented for that integration.
