@@ -1,5 +1,10 @@
 # VEYRA v2.7 — Per-Tool Help Catalog
 
+> **Note:** This is a historical snapshot from VEYRA v2.7. For current tool
+> documentation, see [`docs/tools/`](tools/) — auto-generated from the catalog
+> via `scripts/generate_tool_docs.py`.
+
+
 This file is the **human-readable companion to the 477-entry Tool Marketplace**. Every registered tool has a help object in the API and UI. The guidance is intentionally safe and educational: it explains what the tool is for, where it belongs in VEYRA, what evidence to expect, and how to use it within an authorized workflow. It does not provide attack recipes, credential-attack instructions, payloads, persistence, C2 or evasion instructions.
 
 **Catalog entries:** 477

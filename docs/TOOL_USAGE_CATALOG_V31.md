@@ -1,5 +1,10 @@
 # VEYRA v3.1 — Complete Tool-by-Tool Help & Operating Guide
 
+> **Note:** This is a historical snapshot from VEYRA v3.1. For current tool
+> documentation, see [`docs/tools/`](tools/) — auto-generated from the catalog
+> via `scripts/generate_tool_docs.py`.
+
+
 This is the team-facing operating manual for every tool/integration in the VEYRA catalog. It is intentionally written so a new analyst can answer five questions before touching a tool: **What is it? Why do we use it? What do I click in VEYRA? What can I safely start from the terminal? What evidence should I expect?**
 
 ## Non-negotiable execution model

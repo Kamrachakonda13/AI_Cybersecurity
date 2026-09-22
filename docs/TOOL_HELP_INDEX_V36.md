@@ -1,5 +1,10 @@
 # VEYRA v3.6 Tool Help Index
 
+> **Note:** This is a historical snapshot from VEYRA v3.6. For current tool
+> documentation, see [`docs/tools/`](tools/) — auto-generated from the catalog
+> via `scripts/generate_tool_docs.py`.
+
+
 **Documented tools/integrations: 588**
 
 Every registered capability has an individual guide with purpose, UI workflow, terminal starting point, evidence, remediation, verification and security boundaries.

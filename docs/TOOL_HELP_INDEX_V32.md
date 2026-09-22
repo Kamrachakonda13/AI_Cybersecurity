@@ -1,5 +1,10 @@
 # VEYRA v3.2 — Complete Tool Help Index
 
+> **Note:** This is a historical snapshot from VEYRA v3.2. For current tool
+> documentation, see [`docs/tools/`](tools/) — auto-generated from the catalog
+> via `scripts/generate_tool_docs.py`.
+
+
 **Registered tools/integrations: 577**
 
 Every entry below has an individual Markdown help file under `docs/tools/`. Each page contains purpose, when to use, UI workflow, terminal starting command, permissions, evidence, interpretation, remediation, verification and common mistakes.
