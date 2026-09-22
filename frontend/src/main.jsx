@@ -273,7 +273,62 @@ function SecurityWorkersView() {
 function App() {
   const [section, setSection] = useState('Overview');
   const [user, setUser] = useState(null);
-  useEffect(() => { const t = sessionStorage.getItem('VEYRA_user_token'); if (t) fetch(`${API}/api/auth/me`, { headers: { Authorization: `Bearer ${t}` } }).then(r => r.ok ? r.json() : null).then(setUser).catch(() => { }) }, []);
+  const clearSession = () => {
+    try { fetch(`${API}/api/auth/logout`, { method: 'POST', headers: { Authorization: `Bearer ${sessionStorage.getItem('VEYRA_user_token') || ''}` } }).catch(() => {}); } catch {}
+    sessionStorage.removeItem('VEYRA_user_token');
+    sessionStorage.removeItem('VEYRA_admin_token');
+    sessionStorage.removeItem('VEYRA_privileged_admin_token');
+    sessionStorage.removeItem('VEYRA_ai_token');
+    setUser(null);
+  };
+  useEffect(() => {
+    // Expire if returning from external site (back/forward after visiting other origin)
+    try {
+      if (document.referrer) {
+        const refOrigin = new URL(document.referrer).origin;
+        if (refOrigin !== window.location.origin) {
+          clearSession();
+          return;
+        }
+      }
+    } catch {}
+    const t = sessionStorage.getItem('VEYRA_user_token');
+    if (t) fetch(`${API}/api/auth/me`, { headers: { Authorization: `Bearer ${t}` } }).then(r => r.ok ? r.json() : null).then(setUser).catch(() => { })
+  }, []);
+  // Auto-expire when navigates to other website and returns (back/forward)
+  // - referrer check on mount covers back->external->forward (referrer is external origin)
+  // - visibility timer covers tab hidden >3s (external tab) without bfcache
+  // - pageshow persisted covers bfcache restore
+  // Refresh keeps session (referrer same-origin, visibility hidden <3s, new page reload cancels timer)
+  useEffect(() => {
+    let hideTimer = null;
+    const onHidden = () => {
+      hideTimer = setTimeout(() => {
+        if (document.visibilityState === 'hidden') clearSession();
+      }, 30000);
+    };
+    const onVisible = () => { if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; } };
+    const onPageShow = (e) => {
+      try {
+        if (e.persisted) clearSession();
+        if (document.referrer) {
+          const refOrigin = new URL(document.referrer).origin;
+          if (refOrigin !== window.location.origin) clearSession();
+        }
+      } catch {}
+    };
+    const onVisibility = () => {
+      if (document.visibilityState === 'hidden') onHidden();
+      else onVisible();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    window.addEventListener('pageshow', onPageShow);
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('pageshow', onPageShow);
+      if (hideTimer) clearTimeout(hideTimer);
+    };
+  }, []);
   const [adminToken, setAdminToken] = useState(() => sessionStorage.getItem('VEYRA_admin_token') || '');
   const [adminUnlocked, setAdminUnlocked] = useState(false);
   useEffect(() => { const t = sessionStorage.getItem('VEYRA_admin_token'); if (t) fetch(`${API}/api/admin/ethical-hacking/tools`, { headers: { 'X-VEYRA-Admin-Token': t } }).then(r => setAdminUnlocked(r.ok)).catch(() => setAdminUnlocked(false)) }, []);
