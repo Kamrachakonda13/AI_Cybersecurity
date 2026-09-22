@@ -22,7 +22,7 @@
  * ========================================================================== */
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Shield, LayoutDashboard, Network, Server, TriangleAlert, Cloud, Brain, Database, Users, ScrollText, Search, Activity, LockKeyhole, Globe, GitBranch, Radio, KeyRound, XCircle, Info, TerminalSquare, Bot, UserCog, ShieldCheck, PackageOpen } from 'lucide-react';
+import { Shield, LayoutDashboard, Network, Server, TriangleAlert, Cloud, Brain, Database, Users, ScrollText, Search, Activity, LockKeyhole, Globe, GitBranch, Radio, KeyRound, XCircle, Info, TerminalSquare, Bot, UserCog, ShieldCheck, PackageOpen, Loader2, BarChart2, Zap, Clock } from 'lucide-react';
 import './styles.css';
 import { V29Overview, WirelessDefenseView, AdversaryTimelineView, AdversaryInfrastructureView, AttributionView } from './v29.jsx';
 import { V3FabricView, V3GraphView, V3ReconstructionView, V3AIInvestigationView, V3ResponseView } from './v3.jsx';
@@ -84,7 +84,99 @@ function AdminEthicalHacking({ token, setToken, onUnlock }) {
           <button className="primary" onClick={stage}>Create job contract</button>
         </div>
       </Panel>
-      <Panel title={`Job queue (${jobs.length})`}><div className="table">{jobs.map(j => <div className="row" key={j.job_id}><div><b>{j.tool} · {j.target}</b><small>{j.status} · approval {j.approval_ticket}</small><small>Contract {j.contract_sha256?.slice(0, 16)}…</small></div><div style={{ display: 'flex', gap: 6 }}>{j.status === 'pending_approval' && <button onClick={() => action(j.job_id, 'approve')}>Approve</button>}{j.status === 'approved_for_worker' && <button className="primary" onClick={() => action(j.job_id, 'dispatch')}>Queue worker</button>}</div></div>)}{!jobs.length && <div className="empty">No governed jobs yet.</div>}</div></Panel>
+      <Panel title={`Job queue (${jobs.length})`}><div className="table">{jobs.map(j => {
+        const status = j.status || 'pending_approval';
+        const statusInfo = {
+          pending_approval: { label: 'Pending Approval', color: 'medium', action: 'approve', disabled: false },
+          approved_for_worker: { label: 'Approved for Worker', color: 'medium', action: 'dispatch', disabled: false },
+          queued_for_isolated_worker: { label: 'Queued for Isolated Worker', color: 'primary', action: null, disabled: false },
+          completed: { label: 'Completed', color: 'success', action: null, disabled: true },
+        }[status] || { label: status, color: 'medium', action: null, disabled: true };
+
+        const progressSteps = [
+          { id: 'step1', label: 'Stage Job', done: status !== 'pending_approval', current: status === 'pending_approval' },
+          { id: 'step2', label: 'Approve', done: status !== 'pending_approval' && status !== 'approved_for_worker', current: status === 'approved_for_worker' },
+          { id: 'step3', label: 'Queue Worker', done: status !== 'pending_approval' && status !== 'queued_for_isolated_worker', current: status === 'queued_for_isolated_worker' },
+          { id: 'step4', label: 'Completed', done: status === 'completed' },
+        ];
+
+        const stepElements = progressSteps.map((s, i) => {
+          const done = s.done;
+          const key = `progress-step-${s.id}-${j.job_id}`;
+          return <div key={key} style={{ display: 'inline-flex', alignItems: 'center', gap: 4, color: done ? 'green' : 'gray' }}>
+            <div style={{ width: 20, height: 20, borderRadius: 50, background: done ? 'green' : 'lightgray', flexShrink: 0 }} />
+            {i < progressSteps.length - 1 && <div style={{ width: 10, height: 2, background: 'lightgray' }} />}
+            <span style={{ fontSize: 11, marginLeft: 4 }}>{s.label}</span>
+          </div>;
+        });
+
+        const jobDetail = (
+          <div style={{ padding: '12px 18px', borderTop: '1px solid #304155', marginTop: '12px' }}>
+            <div style={{ display: 'grid', gap: 8, gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))' }}>
+              <div><b>Tool</b><small> {j.tool || '—'}</small></div>
+              <div><b>Target</b><small> {j.target || '—'}</small></div>
+              <div><b>Scope</b><small> {j.scope ? JSON.parse(j.scope).slice(0, 3).join(', ') + (JSON.parse(j.scope).length > 3 ? '…' : '') : '—'}</small></div>
+              <div><b>Approval Ticket</b><small> {j.approval_ticket || '—'}</small></div>
+              <div><b>Environment</b><small> {j.environment || '—'}</small></div>
+              <div><b>Purpose</b><small> {j.purpose || '—'}</small></div>
+            </div>
+          </div>
+        );
+
+        const investigationDetail = (
+          <div style={{ padding: '12px 18px', borderTop: '1px solid #304155', marginTop: '12px' }}>
+            <small>Investigation progress: {statusInfo.label}</small>
+            {status === 'completed' && (
+              <div style={{ marginTop: '8px', fontSize: 12 }}>
+                <b>Scan Results:</b> Evidence returned and normalized. SHA-256: {j.contract_sha256?.slice(0, 16)}…
+              </div>
+            )}
+          </div>
+        );
+
+        return (
+          <div className="row" key={j.job_id}>
+            <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: '8px' }}>
+                {stepElements}
+              </div>
+              <div>
+                <b>{j.tool} · {j.target}</b>
+                <span className={'badge ' + (statusInfo.color === 'success' ? 'success' : statusInfo.color === 'primary' ? 'primary' : 'medium')}>
+                  {status}
+                </span>
+              </div>
+              {statusInfo.action && (
+                <div style={{ marginTop: '4px' }}>
+                  {statusInfo.action === 'approve' && <button onClick={() => action(j.job_id, 'approve')}>Approve</button>}
+                  {statusInfo.action === 'dispatch' && <button className="primary" onClick={() => action(j.job_id, 'dispatch')}>Queue worker</button>}
+                </div>
+              )}
+              <div style={{ marginTop: '4px', fontSize: 12, color: ' #6f7d8d' }}>
+                Contract: {j.contract_sha256?.slice(0, 16)}…
+              </div>
+            </div>
+            <div style={{ padding: '12px 18px', borderTop: '1px solid #304155', marginTop: '12px', marginLeft: '16px' }}>
+              <div style={{ display: 'grid', gap: 8, gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))' }}>
+                <div><b>Tool</b><small> {j.tool || '—'}</small></div>
+                <div><b>Target</b><small> {j.target || '—'}</small></div>
+                <div><b>Scope</b><small> {j.scope ? JSON.parse(j.scope).slice(0, 3).join(', ') + (JSON.parse(j.scope).length > 3 ? '…' : '') : '—'}</small></div>
+                <div><b>Approval Ticket</b><small> {j.approval_ticket || '—'}</small></div>
+                <div><b>Environment</b><small> {j.environment || '—'}</small></div>
+                <div><b>Purpose</b><small> {j.purpose || '—'}</small></div>
+              </div>
+            </div>
+            <div style={{ padding: '12px 18px', borderTop: '1px solid #304155', marginTop: '12px', marginLeft: '16px' }}>
+              <small>Investigation progress: {statusInfo.label}</small>
+              {status === 'completed' && (
+                <div style={{ marginTop: '8px', fontSize: 12 }}>
+                  <b>Scan Results:</b> Evidence returned and normalized. SHA-256: {j.contract_sha256?.slice(0, 16)}…
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}{!jobs.length && <div className="empty">No governed jobs yet.</div>}</div></Panel>
       <Panel title={`Registered security tools (${tools.length})`}><div style={{ padding: '12px 18px' }}><input value={filter} onChange={e => setFilter(e.target.value)} placeholder="Filter tools, category or purpose" style={{ width: '100%' }} /></div><div className="table">{filtered.map(t => <div className="row" key={t.id}><div><b>{t.name}</b><small>{t.category} · {t.purpose}</small><small>Execution profile: {t.execution_profile} · access: {t.access_tier}</small></div><span className={'badge ' + (t.access_tier === 'privileged_admin' ? 'critical' : '')}>{t.access_tier === 'privileged_admin' ? 'PRIVILEGED ADMIN' : 'ADMIN'}</span></div>)}{!filtered.length && <div className="empty">No matching tools.</div>}</div></Panel>
     </>}
     <Panel title="Governance boundary"><div className="callout">High-impact tools require both the normal administrator token and a separate privileged-admin token. This includes exploit frameworks, credential-audit/authentication-testing tools, SQLMap, high-speed scanners and active fuzzers. Approval and isolated-worker controls still apply.</div><div className="table"><div className="row"><div><b>Scope</b><small>Explicit assets, networks, applications or lab targets only.</small></div></div><div className="row"><div><b>Approval</b><small>Every high-impact assessment carries an approval ticket and separate approval state.</small></div></div><div className="row"><div><b>Isolation</b><small>Exploit-validation and malware workflows use isolated workers.</small></div></div><div className="row"><div><b>Evidence</b><small>Workers return normalized evidence with provenance and SHA-256 artifact hashing.</small></div></div></div></Panel>

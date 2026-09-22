@@ -7,7 +7,7 @@ import base64, hashlib, hmac, os, secrets
 from datetime import datetime, timedelta, timezone
 from fastapi import HTTPException, Request
 from sqlalchemy.orm import Session
-from ..models import UserAccount, UserToolPermission, UserSession
+from ..models import UserAccount, UserToolPermission, UserSession, MfaChallenge
 
 SESSION_HOURS = int(os.getenv("VEYRA_SESSION_HOURS", "8"))
 PBKDF2_ROUNDS = 310_000
@@ -96,3 +96,41 @@ def grant_expiry(hours: float | None) -> datetime | None:
     if hours is None:
         return None
     return datetime.now(timezone.utc) + timedelta(hours=max(float(hours), 0.05))
+
+
+def create_mfa_challenge(db: Session, user: UserAccount, channel: str = "phone") -> MfaChallenge:
+    """Create an MFA OTP challenge for the user. OTP is generated and returned;
+    delivery (SMS/email) is handled by the caller."""
+    import string, random
+    otp = "".join(random.choices(string.digits, k=6))
+    otp_hash = hashlib.sha256(otp.encode()).hexdigest()
+    destination = (channel == "phone" and user.phone) or user.email or ""
+    masked = "****" + destination[-4:] if len(destination) >= 4 else "*****"
+    challenge = MfaChallenge(
+        user_id=user.id,
+        token_hash=hashlib.sha256(secrets.token_urlsafe(32).encode()).hexdigest(),
+        otp_hash=otp_hash,
+        channel=channel,
+        destination_masked=masked,
+        expires_at=datetime.now(timezone.utc) + timedelta(minutes=5),
+        attempts=0,
+    )
+    db.add(challenge)
+    db.commit()
+    return challenge
+
+
+def verify_mfa_otp(db: Session, token_hash: str, otp: str) -> bool:
+    """Verify an OTP against an active MFA challenge. Returns True if valid."""
+    import hashlib
+    otp_hash = hashlib.sha256(otp.encode()).hexdigest()
+    challenge = (
+        db.query(MfaChallenge)
+        .filter(MfaChallenge.token_hash == token_hash, MfaChallenge.expires_at > datetime.now(timezone.utc))
+        .first()
+    )
+    if not challenge or challenge.attempts >= 3:
+        return False
+    challenge.attempts += 1
+    db.commit()
+    return challenge.otp_hash == otp_hash

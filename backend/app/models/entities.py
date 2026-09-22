@@ -500,6 +500,7 @@ class UserAccount(Base):
     username: Mapped[str] = mapped_column(String(255), unique=True, index=True)
     display_name: Mapped[str] = mapped_column(String(255), default="")
     email: Mapped[str] = mapped_column(String(255), default="")
+    phone: Mapped[str] = mapped_column(String(32), default="")
     password_hash: Mapped[str] = mapped_column(Text)
     role: Mapped[str] = mapped_column(String(32), default="viewer", index=True)
     status: Mapped[str] = mapped_column(String(32), default="active")
@@ -507,6 +508,21 @@ class UserAccount(Base):
     must_change_password: Mapped[bool] = mapped_column(Boolean, default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
     last_login_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+
+class MfaChallenge(Base):
+    """Short-lived OTP challenge for phone/email MFA. OTP hash, 5-min TTL, 3 attempts."""
+    __tablename__ = "mfa_challenges"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    user_id: Mapped[int] = mapped_column(Integer, index=True)
+    token_hash: Mapped[str] = mapped_column(String(128), unique=True, index=True)
+    otp_hash: Mapped[str] = mapped_column(String(128))
+    channel: Mapped[str] = mapped_column(String(16), default="phone")
+    destination_masked: Mapped[str] = mapped_column(String(64), default="")
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    attempts: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+
 
 class UserToolPermission(Base):
     """Per-user tool entitlement: none, view, plan, or execute-request.

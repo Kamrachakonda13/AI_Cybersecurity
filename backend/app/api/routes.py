@@ -1530,6 +1530,11 @@ class LoginRequest(BaseModel):
     username: str = Field(min_length=1, max_length=255)
     password: str = Field(min_length=1, max_length=512)
 
+class MfaVerifyRequest(BaseModel):
+    username: str = Field(min_length=1, max_length=255)
+    token_hash: str = Field(min_length=1, max_length=255)
+    otp: str = Field(min_length=6, max_length=6)
+
 class PasswordChangeRequest(BaseModel):
     current_password: str = Field(min_length=1, max_length=512)
     new_password: str = Field(min_length=12, max_length=512)
@@ -1538,6 +1543,7 @@ class UserCreateRequest(BaseModel):
     username: str = Field(min_length=3, max_length=255)
     display_name: str = Field(min_length=1, max_length=255)
     email: str = ""
+    phone: str = ""
     password: str = Field(min_length=12, max_length=512)
     role: str = "viewer"
     mfa_required: bool = True
@@ -1546,6 +1552,7 @@ class UserCreateRequest(BaseModel):
 class UserUpdateRequest(BaseModel):
     display_name: str | None = None
     email: str | None = None
+    phone: str | None = None
     role: str | None = None
     status: str | None = None
     mfa_required: bool | None = None
@@ -1589,9 +1596,24 @@ def auth_login(req: LoginRequest, db: Session = Depends(get_db)):
     user = db.query(UserAccount).filter(UserAccount.username == req.username).first()
     if not user or user.status != "active" or not verify_password(req.password, user.password_hash):
         raise HTTPException(401, "Invalid username or password")
+    if user.mfa_required and user.phone:
+        challenge = create_mfa_challenge(db, user, channel="phone")
+        db.commit()
+        return {"token":None,"mfa_challenge":{"id":challenge.id,"token_hash":challenge.token_hash,"expires_at":challenge.expires_at.isofield(),"channel":"phone"},"user":{"id":user.id,"username":user.username,"display_name":user.display_name,"role":user.role,"must_change_password":user.must_change_password}}
     token = issue_session(db, user)
     db.add(AuditEvent(actor=user.username, action="login", target=user.username, outcome="success")); db.commit()
-    return {"token":token,"user":{"id":user.id,"username":user.username,"display_name":user.display_name,"role":user.role,"must_change_password":user.must_change_password}}
+    return {"token":token,"user":{"id":user.id,"username":user.username,"display_name":user.display_name,"role":user.role,"must_change_password":user.must_change_password,"mfa_challenged":False}}
+
+@router.post("/auth/mfa/verify")
+def auth_mfa_verify(req: MfaVerifyRequest, db: Session = Depends(get_db)):
+    from ..services.auth import verify_mfa_otp
+    result = verify_mfa_otp(db, req.token_hash, req.otp)
+    if not result:
+        raise HTTPException(401, "Invalid OTP or MFA challenge expired/exhausted")
+    user = db.query(UserAccount).filter(UserAccount.username == req.username).first()
+    token = issue_session(db, user)
+    db.add(AuditEvent(actor=user.username, action="login", target=user.username, outcome="success")); db.commit()
+    return {"token":token,"user":{"id":user.id,"username":user.username,"display_name":user.display_name,"role":user.role,"must_change_password":user.must_change_password,"mfa_challenged":True}}
 
 @router.post("/auth/logout")
 def auth_logout(request: Request, db: Session = Depends(get_db)):

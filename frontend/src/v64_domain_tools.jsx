@@ -101,7 +101,7 @@ export function V64DomainToolsView() {
       )}
       {runDialog && (
         <div className="overlay" onClick={() => setRunDialog(null)}><div className="modal" onClick={(e) => e.stopPropagation()} style={{ maxWidth: 640 }}>
-          <div className="modalhead"><div><b>{runDialog.name}</b><small>{runDialog.category} · {runDialog.purpose} · {runDialog.execution_profile} · {runDialog.access_tier}{runDialog.access_tier === 'privileged_admin' ? ' — needs privileged token Srivallilalitha84!' : ''}</small><small style={{ marginTop: 8, color: '#9eb8d4' }}>{runDialog.help?.safe_workflow || runDialog.help?.summary || ''}</small></div><button className="xbtn" onClick={() => setRunDialog(null)}>✕</button></div>
+          <div className="modalhead"><div><b>{runDialog.name}</b><small>{runDialog.category} · {runDialog.purpose} · {runDialog.execution_profile} · {runDialog.access_tier}{runDialog.access_tier === 'privileged_admin' ? ' — needs privileged token' : ''}</small><small style={{ marginTop: 8, color: '#9eb8d4' }}>{runDialog.help?.safe_workflow || runDialog.help?.summary || ''}</small></div><button className="xbtn" onClick={() => setRunDialog(null)}>✕</button></div>
           <div className="modalbody">
             <p><b>What to enter:</b></p>
             <p><b>Target</b> — the owned/authorized system under test. Examples: <code>10.10.20.17</code> (host), <code>http://lab-web:4101</code> (web/API), <code>lab-ad01</code> (AD), <code>prod-web-alb</code> (cloud). Must be in your approved scope — out-of-scope is blocked.</p>
@@ -114,7 +114,7 @@ export function V64DomainToolsView() {
               <input value={runScope} onChange={(e) => setRunScope(e.target.value)} placeholder="Scope — e.g. 10.10.20.0/24, lab" style={{ padding: '10px 12px', borderRadius: 7, border: '1px solid #263342', background: '#080d14', color: '#d9e2ed' }} />
               <div style={{ display: 'flex', gap: 8 }}><button className="primary" onClick={runTool}>Stage job (realtime via worker)</button><button onClick={() => setRunDialog(null)}>Cancel</button></div>
             </div>
-            <p style={{ color: '#667589', fontSize: 10 }}>Auth: uses your unlocked Admin <code>Anagha1620!</code> + Privileged <code>Srivallilalitha84!</code> + sudo Bearer. Passwords are <code>sudo / Skandapurvi1620!</code> for login only — not for Target. Target is an IP/host, not a password.</p>
+            <p style={{ color: '#667589', fontSize: 10 }}>Auth: uses your unlocked admin token + privileged admin token (if applicable) for tool execution. Passwords are for login only — not for target. Target is an IP/host, not a password.</p>
           </div>
         </div></div>
       )}
