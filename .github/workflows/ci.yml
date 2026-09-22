@@ -32,6 +32,18 @@ jobs:
       - name: Validate tool documentation
         run: PYTHONPATH=backend python scripts/validate_tool_documentation.py
 
+  docs-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install --upgrade pip
+      - run: pip install -r backend/requirements.txt
+      - name: Verify tool docs are in sync with catalog
+        run: PYTHONPATH=backend python scripts/generate_tool_docs.py --check
+
   frontend:
     runs-on: ubuntu-latest
     defaults:
