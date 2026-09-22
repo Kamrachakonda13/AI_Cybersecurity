@@ -63,7 +63,7 @@ export const NAV = [
 
 // Grouped by the 8 CISSP-style security domains (user request) + Platform/AI/Supply Chain
 export const GROUPED_NAV = [
-  ['PLATFORM', [
+  ['PLATFORM OVERVIEW', [
     ['Overview', LayoutDashboard],
     ['Domains & Tools', Globe],
     ['Agents', Bot],
@@ -127,7 +127,7 @@ export const GROUPED_NAV = [
     ['Team Security Academy', Brain],
     ['Documentation Hub', ScrollText],
   ]],
-  ['AI & Automation', [
+  ['9. AI & Automation', [
     ['AI Security', Brain],
     ['AI Ecosystem', Brain],
     ['VEYRA AI Applications', Brain],
@@ -137,7 +137,7 @@ export const GROUPED_NAV = [
     ['Agent Swarm Defense', Bot],
     ['VEYRA v5 Control Plane', ShieldCheck],
   ]],
-  ['Supply Chain & Workers', [
+  ['10. Supply Chain & Workers', [
     ['Supply Chain Runtime', ShieldCheck],
     ['Trusted Supply Chain', ShieldCheck],
     ['Tool Academy', Brain],
