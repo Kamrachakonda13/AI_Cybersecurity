@@ -3,6 +3,10 @@
 Covers: valid request, invalid JSON, unknown verifier, digest mismatch,
 placeholder verifier, and fail-closed behavior.
 """
+import pytest
+import jsonschema
+from pathlib import Path as _Path
+import json as _json
 import hashlib
 import json
 import os
@@ -111,3 +115,89 @@ def test_artifact_not_found(tmp_path):
     assert rc == 2
     assert out["status"] == "failed"
     assert out["reason"] == "artifact_not_found"
+
+
+# ---------------------------------------------------------------------------
+# JSON Schema validation
+# ---------------------------------------------------------------------------
+
+
+_SCHEMA_DIR = _Path(__file__).resolve(
+).parents[2] / "worker" / "v50" / "schema"
+
+
+def _load_schema(name: str) -> dict:
+    with open(_SCHEMA_DIR / name, encoding="utf-8") as f:
+        return _json.load(f)
+
+
+@pytest.fixture(scope="module")
+def response_schema() -> dict:
+    return _load_schema("response.schema.json")
+
+
+@pytest.fixture(scope="module")
+def request_schema() -> dict:
+    return _load_schema("request.schema.json")
+
+
+def _validate(schema: dict, instance: dict) -> None:
+    """Raise jsonschema.ValidationError with a clear message if invalid."""
+    jsonschema.validate(instance=instance, schema=schema)
+
+
+def test_request_schema_accepts_valid_request(tmp_path):
+    """The schema should accept what _req() produces."""
+    req = _req(tmp_path, ["aibom-validator"])
+    _validate(_load_schema("request.schema.json"), req)
+
+
+def test_request_schema_rejects_unknown_verifier(tmp_path):
+    """Schema should reject a verifier not in the allowlist."""
+    req = _req(tmp_path, ["nmap"])
+    with pytest.raises(jsonschema.ValidationError):
+        _validate(_load_schema("request.schema.json"), req)
+
+
+def test_request_schema_rejects_bad_digest(tmp_path):
+    """Schema should reject malformed sha256."""
+    req = _req(tmp_path, ["syft"])
+    req["expected_sha256"] = "not-a-hash"
+    with pytest.raises(jsonschema.ValidationError):
+        _validate(_load_schema("request.schema.json"), req)
+
+
+def test_receipt_response_validates_against_schema(tmp_path, response_schema):
+    """Any successful receipt must validate against response.schema.json."""
+    rc, out = _run(_req(tmp_path, ["aibom-validator"]))
+    # This is a receipt (has 'artifact' key), even if overall_status is 'failed'
+    # because the placeholder verifier returns 'not_implemented'.
+    assert "artifact" in out, out
+    _validate(response_schema, out)
+
+
+def test_error_response_validates_against_schema(response_schema):
+    """Any error response must also validate."""
+    p = subprocess.run(
+        [sys.executable, str(WORKER)],
+        input="not json",
+        capture_output=True,
+        text=True,
+    )
+    assert p.returncode == 2
+    out = _json.loads(p.stdout.strip())
+    _validate(response_schema, out)
+
+
+def test_missing_artifact_response_validates(tmp_path, response_schema):
+    """Missing artifact returns an error-form response — must validate."""
+    req = {
+        "worker_id": "w-test",
+        "release_id": "rel-test",
+        "artifact_path": str(tmp_path / "does-not-exist.bin"),
+        "expected_sha256": "0" * 64,
+        "verifiers": ["syft"],
+    }
+    rc, out = _run(req)
+    assert rc == 2
+    _validate(response_schema, out)

@@ -1,0 +1,146 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://veyra.dev/schemas/v50/response.schema.json",
+    "title": "VEYRA v5.0 Verification Response",
+    "oneOf": [
+        {
+            "$ref": "#/definitions/receipt"
+        },
+        {
+            "$ref": "#/definitions/error"
+        }
+    ],
+    "definitions": {
+        "receipt": {
+            "type": "object",
+            "required": [
+                "contract_version",
+                "worker_id",
+                "release_id",
+                "artifact",
+                "checks",
+                "overall_status",
+                "execution",
+                "evidence_sha256"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "contract_version": {
+                    "const": "5.0"
+                },
+                "worker_id": {
+                    "type": "string"
+                },
+                "release_id": {
+                    "type": "string"
+                },
+                "artifact": {
+                    "type": "object",
+                    "required": [
+                        "path",
+                        "observed_sha256",
+                        "expected_sha256",
+                        "digest_match"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "path": {
+                            "type": "string"
+                        },
+                        "observed_sha256": {
+                            "type": "string",
+                            "pattern": "^[0-9a-f]{64}$"
+                        },
+                        "expected_sha256": {
+                            "type": "string",
+                            "pattern": "^[0-9a-f]{64}$"
+                        },
+                        "digest_match": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "checks": {
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": {
+                        "type": "object",
+                        "required": [
+                            "status",
+                            "verifier"
+                        ],
+                        "properties": {
+                            "status": {
+                                "enum": [
+                                    "passed",
+                                    "failed",
+                                    "not_installed",
+                                    "not_implemented"
+                                ]
+                            },
+                            "verifier": {
+                                "type": "string"
+                            },
+                            "reason": {
+                                "type": "string"
+                            },
+                            "returncode": {
+                                "type": "integer"
+                            },
+                            "stdout_sha256": {
+                                "type": "string"
+                            },
+                            "stderr_sha256": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "overall_status": {
+                    "enum": [
+                        "healthy",
+                        "failed"
+                    ]
+                },
+                "execution": {
+                    "const": "managed_worker_only"
+                },
+                "evidence_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                }
+            }
+        },
+        "error": {
+            "type": "object",
+            "required": [
+                "contract_version",
+                "status",
+                "reason",
+                "execution"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "contract_version": {
+                    "const": "5.0"
+                },
+                "status": {
+                    "const": "failed"
+                },
+                "reason": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "execution": {
+                    "const": "managed_worker_only"
+                },
+                "worker_id": {
+                    "type": "string"
+                },
+                "release_id": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

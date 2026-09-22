@@ -28,6 +28,19 @@ no logs. Callers own persistence.
 | `cosign_key` | string | ⚠️ | Required if `"cosign"` in `verifiers` |
 | `cosign_bundle` | string | ⚠️ | Required if `"cosign"` in `verifiers` |
 
+## Machine-readable schemas
+
+The request and response shapes below are enforced by JSON Schemas:
+
+- **Request:** [`schema/request.schema.json`](schema/request.schema.json)
+- **Response:** [`schema/response.schema.json`](schema/response.schema.json)
+
+CI validates every worker response against the response schema (see
+`backend/tests/test_v50_worker.py`). If you change the worker's output shape,
+you **must** update the schema in the same commit — otherwise tests fail.
+
+The prose tables below describe the same contract in human-readable form.
+
 ## Response schema
 
 | Field | Type | Notes |
