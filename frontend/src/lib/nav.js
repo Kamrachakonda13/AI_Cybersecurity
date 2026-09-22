@@ -62,9 +62,9 @@ export const NAV = [
 ];
 
 // Grouped by the 8 CISSP-style security domains (user request) + Platform/AI/Supply Chain
+// Standalone PLATFORM OVERVIEW is rendered before groups (rename of Overview)
 export const GROUPED_NAV = [
-  ['PLATFORM OVERVIEW', [
-    ['Overview', LayoutDashboard],
+  ['PLATFORM', [
     ['Domains & Tools', Globe],
     ['Agents', Bot],
     ['Checklist Library', ScrollText],
