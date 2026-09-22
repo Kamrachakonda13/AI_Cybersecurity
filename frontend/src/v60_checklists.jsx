@@ -56,7 +56,7 @@ export function V60ChecklistsView() {
 
   return (
     <div className="content">
-      <h2>Checklist Library — 74 across 11 domains</h2>
+      <div className="sectionintro"><div><div className="eyebrow">GOVERNANCE · 8 DOMAINS</div><h2>Checklist Library</h2><p>74 checklists across 11 domains — approve essential tier, capture evidence, signed receipt.</p></div></div>
       <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
         <input placeholder="Search checklists…" value={q} onChange={(e) => setQ(e.target.value)} style={{ flex: 1, padding: 8, border: '1px solid #e5e7eb', borderRadius: 6 }} />
         <select value={domain} onChange={(e) => setDomain(e.target.value)} style={{ padding: 8, border: '1px solid #e5e7eb', borderRadius: 6 }}>

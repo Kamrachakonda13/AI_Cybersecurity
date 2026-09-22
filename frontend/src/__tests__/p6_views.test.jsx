@@ -40,7 +40,7 @@ describe('P6 views', () => {
   });
   it('V64DomainToolsView renders', async () => {
     const { container } = render(<V64DomainToolsView />);
-    expect(container.textContent).toContain('Security Domains');
+    expect(container.textContent).toContain('Domains & Tools');
   });
   it('V65AgentClassificationView renders', async () => {
     const { container } = render(<V65AgentClassificationView />);

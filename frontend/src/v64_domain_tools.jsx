@@ -35,40 +35,31 @@ export function V64DomainToolsView() {
 
   return (
     <div className="content">
-      <h2>Security Domains — Tool Segregation (8 domains)</h2>
-      <p style={{ fontSize: 12, color: '#6b7280', marginTop: -6 }}>Every tool is assigned to exactly one domain. Counts sum to 658. Vendors shown are the platforms referenced in the domain definition.</p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 12 }}>
+      <div className="sectionintro"><div><div className="eyebrow">PLATFORM · 8 SECURITY DOMAINS</div><h2>Domains & Tools</h2><p>Every tool is assigned to exactly one domain — counts sum to 658. Click a domain to drill into its tools.</p></div></div>
+      <div className="cards">
         {stats.map((s) => (
-          <div key={s.domain} onClick={() => open(s.domain)} style={{ border: selected === s.domain ? '2px solid #111827' : '1px solid #e5e7eb', borderRadius: 10, padding: 12, background: '#fff', cursor: 'pointer' }}>
+          <div key={s.domain} onClick={() => open(s.domain)} className={`card clickable ${selected === s.domain ? 'active' : ''}`} style={{ cursor: 'pointer' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{ fontSize: 16 }}>{DOMAIN_ICONS[s.domain] || '•'}</span>
               <StatusChip chip={s.count > 50 ? 'green' : s.count > 20 ? 'amber' : 'yellow'} />
             </div>
-            <div style={{ fontWeight: 700, marginTop: 6, fontSize: 13 }}>{s.domain}</div>
-            <div style={{ fontSize: 11, color: '#6b7280' }}>{s.count} tools · {Object.keys(s.categories).length} categories</div>
-            <div style={{ fontSize: 10, color: '#9ca3af', marginTop: 6, lineHeight: 1.4 }}>{s.vendors.slice(0, 4).join(' · ')}</div>
-            <div style={{ fontSize: 10, color: '#6b7280', marginTop: 6 }}>{Object.entries(s.categories).slice(0, 3).map(([k, v]) => `${k} ${v}`).join(' · ')}</div>
+            <strong style={{ fontSize: 13, marginTop: 6 }}>{s.domain}</strong>
+            <small>{s.count} tools · {Object.keys(s.categories).length} categories</small>
+            <small style={{ lineHeight: 1.4 }}>{s.vendors.slice(0, 4).join(' · ')}</small>
+            <small>{Object.entries(s.categories).slice(0, 3).map(([k, v]) => `${k} ${v}`).join(' · ')}</small>
           </div>
         ))}
       </div>
       {selected && (
-        <div style={{ marginTop: 16, border: '1px solid #e5e7eb', borderRadius: 10, padding: 12, background: '#fff' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <h3 style={{ margin: 0, fontSize: 14 }}>{selected} — {tools.length} tools</h3>
-            <input placeholder="Filter tools…" value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && open(selected)} style={{ padding: '6px 8px', border: '1px solid #e5e7eb', borderRadius: 6, fontSize: 12 }} />
-          </div>
-          <button onClick={() => open(selected)} style={{ marginTop: 8, padding: '6px 10px', borderRadius: 6, background: '#111827', color: '#fff', fontSize: 12 }}>Search</button>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 8, marginTop: 12, maxHeight: 420, overflow: 'auto' }}>
+        <section className="panel"><div className="panelhead"><h3>{selected} — {tools.length} tools</h3><span style={{ display: 'flex', gap: 8 }}><input placeholder="Filter…" value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && open(selected)} style={{ padding: '6px 8px', borderRadius: 6, border: '1px solid #263342', background: '#080d14', color: '#d9e2ed', fontSize: 11 }} /><button className="primary" onClick={() => open(selected)}>Search</button></span></div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 10, padding: 16, maxHeight: 420, overflow: 'auto' }}>
             {tools.slice(0, 200).map((t) => (
-              <div key={t.id} style={{ border: '1px solid #f3f4f6', borderRadius: 8, padding: 8, background: '#f9fafb' }}>
-                <div style={{ fontWeight: 600, fontSize: 12 }}>{t.name}</div>
-                <div style={{ fontSize: 10, color: '#6b7280' }}>{t.category}</div>
-                <div style={{ fontSize: 10, color: '#9ca3af', marginTop: 4, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{t.purpose}</div>
-                <div style={{ fontSize: 10, color: '#6b7280', marginTop: 4 }}>{t.execution_profile || t.access_tier}</div>
+              <div key={t.id} className="card" style={{ padding: 12 }}>
+                <b style={{ fontSize: 12 }}>{t.name}</b><small>{t.category}</small><small style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{t.purpose}</small><small>{t.execution_profile || t.access_tier}</small>
               </div>
             ))}
           </div>
-        </div>
+        </section>
       )}
     </div>
   );

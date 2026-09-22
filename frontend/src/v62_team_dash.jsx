@@ -31,7 +31,6 @@ export function V62TeamDashView() {
 
   const cur = TEAMS.find((t) => t.id === team) || TEAMS[0];
   const filtered = checklists.filter((c) => cur.domains.includes(c.domain));
-  // map run chip: completed -> green else amber
   const pieSegments = [
     { chip: 'green', value: runs.filter((r) => r.status === 'completed').length || 1 },
     { chip: 'amber', value: runs.filter((r) => r.status !== 'completed').length },
@@ -39,33 +38,28 @@ export function V62TeamDashView() {
 
   return (
     <div className="content">
-      <h2>Team Dashboards</h2>
-      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' }}>
+      <div className="sectionintro"><div><div className="eyebrow">TEAM OPERATIONS</div><h2>Team Dashboards</h2><p>Status chips + pie + sparkline per team — same Overview styling, drill into checklists.</p></div></div>
+      <div style={{ display: 'flex', gap: 6, marginBottom: 16, flexWrap: 'wrap' }}>
         {TEAMS.map((t) => (
-          <button key={t.id} onClick={() => setTeam(t.id)} style={{ padding: '6px 10px', borderRadius: 999, border: '1px solid #e5e7eb', background: team === t.id ? '#111827' : '#fff', color: team === t.id ? '#fff' : '#111827', fontSize: 12, cursor: 'pointer' }}>{t.label}</button>
+          <button key={t.id} onClick={() => setTeam(t.id)} className={team === t.id ? 'primary' : ''} style={{ padding: '7px 10px', borderRadius: 6, fontSize: 11 }}>{t.label}</button>
         ))}
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: 12 }}>
-        <div style={{ border: '1px solid #e5e7eb', borderRadius: 10, padding: 12, background: '#fff', textAlign: 'center' }}>
-          <div style={{ fontSize: 12, fontWeight: 700, color: '#374151' }}>{cur.label} — status</div>
-          <div style={{ marginTop: 8, display: 'flex', justifyContent: 'center' }}>
+      <div className="grid2">
+        <section className="panel"><div className="panelhead"><h3>{cur.label} — status</h3></div>
+          <div style={{ padding: 16, textAlign: 'center' }}>
             <StatusPie segments={pieSegments} size={120} />
+            <div style={{ marginTop: 12 }}><Sparkline data={runs.slice(0, 12).map((_, i) => (i * 7) % 10)} width={160} height={28} /></div>
+            <small style={{ color: '#778598' }}>{filtered.length} checklists · {runs.length} runs</small>
           </div>
-          <div style={{ marginTop: 8 }}>
-            <Sparkline data={runs.slice(0, 12).map((_, i) => (i * 7) % 10)} width={160} height={28} />
+        </section>
+        <section className="panel"><div className="panelhead"><h3>{cur.label} checklists</h3></div>
+          <div className="table">
+            {filtered.map((c) => (
+              <div key={c.id} className="row"><div><b>{c.name}</b><small>{c.category} · {c.cadence} · {c.tier}</small></div><StatusChip chip={c.tier === 'essential' ? 'red' : 'amber'} /></div>
+            ))}
+            {!filtered.length && <div className="empty">No checklists for this team filter</div>}
           </div>
-          <div style={{ fontSize: 11, color: '#6b7280', marginTop: 6 }}>{filtered.length} checklists · {runs.length} runs</div>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 10 }}>
-          {filtered.map((c) => (
-            <div key={c.id} style={{ border: '1px solid #e5e7eb', borderRadius: 10, padding: 10, background: '#fff' }}>
-              <div style={{ fontWeight: 600, fontSize: 13 }}>{c.name}</div>
-              <div style={{ fontSize: 11, color: '#6b7280' }}>{c.category} · {c.cadence} · {c.tier}</div>
-              <div style={{ marginTop: 6 }}><StatusChip chip={c.tier === 'essential' ? 'red' : 'amber'} /></div>
-            </div>
-          ))}
-          {filtered.length === 0 && <div style={{ fontSize: 12, color: '#6b7280' }}>No checklists for this team filter</div>}
-        </div>
+        </section>
       </div>
     </div>
   );

@@ -28,21 +28,17 @@ export function V65AgentClassificationView() {
 
   return (
     <div className="content">
-      <h2>Agents — Gen AI vs Agentic AI vs Internal Tool Agents</h2>
-      <p style={{ fontSize: 12, color: '#6b7280', marginTop: -6 }}>Why is an agent active? Classification uses recent operations + policy + traces. Active = event in last 24h or policy enabled. Read-only, no enforcement.</p>
-      <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+      <div className="sectionintro"><div><div className="eyebrow">AI · AGENT INTELLIGENCE</div><h2>Agents</h2><p>Why is an agent active? Classification uses recent operations + policy + traces. Active = event in last 24h or policy enabled.</p></div></div>
+      <div className="cards">
         {Object.entries(data.by_class).map(([k, v]) => (
-          <div key={k} style={{ border: '1px solid #e5e7eb', borderRadius: 999, padding: '6px 10px', background: '#fff', fontSize: 12, display: 'flex', gap: 6, alignItems: 'center' }}>
-            <StatusChip chip={CLASS_CHIP[k] || 'amber'} /> {k}: {v}
-          </div>
+          <div key={k} className="card"><small>{k}</small><strong>{v}</strong><StatusChip chip={CLASS_CHIP[k] || 'amber'} /></div>
         ))}
-        <div style={{ border: '1px solid #e5e7eb', borderRadius: 999, padding: '6px 10px', background: '#f9fafb', fontSize: 12 }}>Total {data.total_agents}</div>
+        <div className="card"><small>Total agents</small><strong>{data.total_agents}</strong></div>
       </div>
-      <div style={{ border: '1px solid #e5e7eb', borderRadius: 10, padding: 12, background: '#fff' }}>
-        <h3 style={{ margin: 0, fontSize: 13 }}>All agents (classified)</h3>
-        <div style={{ marginTop: 8, display: 'grid', gap: 8 }}>
+      <section className="panel"><div className="panelhead"><h3>All agents (classified)</h3></div>
+        <div className="table">
           {data.agents.slice(0, 30).map((a) => (
-            <div key={a.agent_id} onClick={() => openWhy(a.agent_id)} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 10px', border: '1px solid #f3f4f6', borderRadius: 8, background: selected === a.agent_id ? '#eff6ff' : '#f9fafb', cursor: 'pointer' }}>
+            <div key={a.agent_id} onClick={() => openWhy(a.agent_id)} className={`row clickable ${selected === a.agent_id ? 'active' : ''}`} style={{ cursor: 'pointer' }}>
               <div>
                 <div style={{ fontWeight: 600, fontSize: 12 }}>{a.agent_id}</div>
                 <div style={{ fontSize: 11, color: '#6b7280' }}>{a.classification} — {a.classification_reason}</div>
@@ -54,20 +50,15 @@ export function V65AgentClassificationView() {
               </div>
             </div>
           ))}
-          {data.agents.length === 0 && <div style={{ fontSize: 12, color: '#6b7280' }}>No agents observed yet — generate traffic via Tool Runner or AI Gateway /api/ai-gateway/evaluate.</div>}
+          {data.agents.length === 0 && <div className="empty">No agents observed yet — generate traffic via Tool Runner or AI Gateway /api/ai-gateway/evaluate.</div>}
         </div>
-      </div>
+      </section>
       {why && (
-        <div style={{ marginTop: 12, border: '1px solid #bfdbfe', borderRadius: 10, padding: 12, background: '#eff6ff' }}>
-          <h3 style={{ margin: 0, fontSize: 13 }}>Why is “{why.agent_id}” {why.is_active ? 'ACTIVE' : 'idle'}?</h3>
-          <div style={{ fontSize: 12, marginTop: 6, color: '#1e40af' }}>Classification: <b>{why.classification}</b> — {why.classification_reason}</div>
-          <ul style={{ fontSize: 12, marginTop: 8 }}>
+        <section className="panel"><div className="panelhead"><h3>Why is “{why.agent_id}” {why.is_active ? 'ACTIVE' : 'idle'}?</h3></div><div className="callout" style={{ margin: 16 }}><b>{why.classification}</b> — {why.classification_reason}</div><ul style={{ fontSize: 11, padding: '0 24px', color: '#9eb8d4' }}>
             {why.evidence.map((e, i) => <li key={i}>{e}</li>)}
-          </ul>
-          <div style={{ fontSize: 11, color: '#6b7280' }}>Risk {why.risk_score} · Recent ops: {(why.recent_ops || []).join(', ') || '—'} · Policy enabled: {String(why.policy.enabled)}</div>
-        </div>
+          </ul><div className="callout">Risk {why.risk_score} · Recent ops: {(why.recent_ops || []).join(', ') || '—'} · Policy enabled: {String(why.policy.enabled)}</div></section>
       )}
-      <div style={{ marginTop: 12, fontSize: 11, color: '#6b7280' }}>{data.note}</div>
+      <div className="helpbar">{data.note}</div>
     </div>
   );
 }

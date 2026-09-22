@@ -32,21 +32,20 @@ export function V63TrendsView() {
 
   return (
     <div className="content">
-      <h2>Trends — Posture over time, coverage, MTTR</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 12 }}>
+      <div className="sectionintro"><div><div className="eyebrow">POSTURE · TRENDS</div><h2>Trends</h2><p>Posture over time, coverage, MTTR and regressions — overview styling, sparkline + heatgrid.</p></div></div>
+      <div className="cards">
         <TrendCard title="Runs (14d)" value={runs.length} chip={runs.length ? 'green' : 'amber'} data={byDay} subtitle="Runs per day (real)" />
         <TrendCard title="Sensor events" value={events.length} chip={events.length ? 'green' : 'amber'} data={byDay.map((v) => v + 1)} subtitle="Ingest volume" />
         <TrendCard title="Coverage" value={`${cov}%`} chip={cov > 50 ? 'green' : 'yellow'} data={byDay} subtitle={`${trends?.coverage?.exercised || 0}/${trends?.coverage?.total_definitions || 74} exercised`} />
-        <TrendCard title="MTTR" value={mttrVal} chip={mttrChip} data={trends?.posture_series?.map((s) => s.runs) || [3, 5, 4, 6, 2]} subtitle={trends ? 'Mean from DB' : 'Requires P6-H history'} />
+        <TrendCard title="MTTR" value={mttrVal} chip={mttrChip} data={trends?.posture_series?.map((s) => s.runs) || [3, 5, 4, 6, 2]} subtitle={trends ? 'Mean from DB' : 'Requires history'} />
       </div>
-      {trends?.regressions?.length > 0 && <div style={{ marginTop: 8, padding: 8, background: '#fef2f2', border: '1px solid #fecaca', borderRadius: 6, fontSize: 12 }}>Regressions: {trends.regressions.map((r) => `${r.date} spike ${r.runs} vs avg ${r.avg}`).join(' · ')}</div>}
-      <div style={{ marginTop: 16, border: '1px solid #e5e7eb', borderRadius: 10, padding: 12, background: '#fff' }}>
-        <h3 style={{ margin: 0, fontSize: 13 }}>Coverage heatmap (last 42 runs)</h3>
-        <div style={{ marginTop: 8 }}>
+      {trends?.regressions?.length > 0 && <div className="callout">Regressions: {trends.regressions.map((r) => `${r.date} spike ${r.runs} vs avg ${r.avg}`).join(' · ')}</div>}
+      <section className="panel"><div className="panelhead"><h3>Coverage heatmap (last 42 runs)</h3></div>
+        <div style={{ padding: 16 }}>
           <HeatGrid cells={chips} columns={14} />
+          <div className="helpbar">Green = pass · Amber = warn — worst drives chip (red {' > '} semi_red {' > '} yellow {' > '} amber {' > '} green)</div>
         </div>
-        <div style={{ fontSize: 11, color: '#6b7280', marginTop: 6 }}>Green = pass · Amber = warn — worst drives chip (red {' > '} semi_red {' > '} yellow {' > '} amber {' > '} green)</div>
-      </div>
+      </section>
     </div>
   );
 }
