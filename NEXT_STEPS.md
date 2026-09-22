@@ -533,6 +533,8 @@ git log --oneline -3
 
 **Save it, commit it, and the next chat can pick up exactly where we left off.**
 
+**Frontend changes:** always run `cd frontend && npm run build` before committing. `npm test` (vitest) compiles per test file, but `npm run build` (rolldown) compiles everything — it catches duplicate declarations, unused imports, and module resolution errors that tests miss. Example: the P5-3 extraction of `sevHelp`/`why*` helpers initially left the old function definitions in `main.jsx`, causing 16 `PARSE_ERROR: Identifier already declared` errors that `npm test` missed entirely. CI runs `npm run build` in the `frontend` job — this class of error fails CI.
+
 ### ⚫ P2-7 — Deprecation tests (NOT PLANNED)
 
 **Status:** Not planned. Deprecated code doesn't need test coverage.

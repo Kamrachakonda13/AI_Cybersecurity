@@ -45,59 +45,6 @@ import { whyFinding, whyIdentity, whyCloud, whyPort, whyFlow, whySession } from 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 const nav = [['Overview', LayoutDashboard], ['Red Team', Radio], ['Blue Team', Shield], ['Security Graph', GitBranch], ['Security Operations', TriangleAlert], ['Network', Network], ['Offensive Security', Search], ['Forensics', Globe], ['Endpoint', Server], ['Cloud', Cloud], ['AI Security', Brain], ['Data Security', Database], ['Identity', Users], ['Governance', ScrollText], ['Security Fabric', GitBranch], ['Autonomous SOC', Activity], ['Detection Mesh', TriangleAlert], ['Intel Fusion', Globe], ['Pentest Agents', Bot], ['Tool Runner', TerminalSquare], ['User & Permissions', UserCog], ['My Password', KeyRound], ['Tool Academy', Brain], ['Tool Marketplace', PackageOpen], ['AI Ecosystem', Brain], ['Security Workers', Server], ['Adversary Intelligence', Globe], ['Wireless Defense', Radio], ['Attack Timeline', Activity], ['Infrastructure Investigation', Network], ['Attribution & Evidence', ShieldCheck], ['Full Security Fabric', Shield], ['Unified Security Graph', GitBranch], ['AI Attack Reconstruction', Activity], ['AI SOC Investigator', Brain], ['Governed Response & Recovery', ShieldCheck], ['Sudo Security Arsenal', ShieldCheck], ['Adversary Trace', Search], ['Team Security Academy', Brain], ['Security Readiness', ShieldCheck], ['Continuous Validation', ShieldCheck], ['Security Lifecycle', Activity], ['Security Radar', Search], ['Graph Intelligence', GitBranch], ['Posture Time Machine', Activity], ['AI Research Lab', Bot], ['Update Center', PackageOpen], ['Documentation Hub', ScrollText], ['Agent Swarm Defense', Bot], ['Supply Chain Runtime', ShieldCheck], ['Trusted Supply Chain', ShieldCheck], ['VEYRA AI Applications', Brain], ['VEYRA v5 Control Plane', ShieldCheck]];
 
-/* ---------- help text: why a severity / flag exists ---------- */
-const SEV_HELP = {
-  CRITICAL: 'CRITICAL (risk ≥ 80): internet-facing + high CVSS and/or CISA KEV + sensitive data or privileged access. Act first — validated exploit path likely exists.',
-  HIGH: 'HIGH (risk 60–79): strong risk combo (e.g. exposed service, CVSS 7+, over-privileged identity, public cloud). Fix in this cycle.',
-  MEDIUM: 'MEDIUM (risk 35–59): notable weakness without full exploit chain (e.g. missing header, anomalous session). Harden soon.',
-  LOW: 'LOW (risk < 35): hygiene issue (banner disclosure, minor misconfig). Fix opportunistically.'
-};
-const RISK_FORMULA = 'Risk = criticality×5 + CVSS×5 + exploitability×8 + 15 if exposed + privilege×4 + data-sensitivity×5 + threat×10 + anomaly×8 (capped 100). See backend/app/services/risk.py.';
-function sevHelp(s) { return SEV_HELP[s] || SEV_HELP.MEDIUM }
-
-function whyFinding(f) {
-  const r = [];
-  if (f.severity === 'CRITICAL') r.push('Score ≥ 80: combined worst factors.');
-  if (f.kev) r.push('CISA KEV: actively exploited in the wild.');
-  if (f.exposure) r.push('Internet-facing: reachable without prior foothold.');
-  if ((f.cvss || 0) >= 9) r.push(`CVSS ${f.cvss}: trivially exploitable, full impact.`);
-  else if ((f.cvss || 0) >= 7) r.push(`CVSS ${f.cvss}: high severity vuln.`);
-  if ((f.risk_score || 0) >= 60) r.push(`Risk ${f.risk_score}: above HIGH threshold.`);
-  if (!r.length) r.push('Baseline risk from asset criticality + data sensitivity.');
-  return r
-}
-function whyIdentity(x) {
-  const r = [];
-  if (x.privilege >= 5) r.push('P5: top privilege — full control if compromised.');
-  else if (x.privilege >= 4) r.push('P4+: can reach sensitive workloads.');
-  if (!x.mfa_enabled) r.push('MFA missing: single factor = easy takeover.');
-  if (x.identity_type === 'service') r.push('Service account: non-human, often over-scoped, no MFA.');
-  return r.length ? r : ['Standard privilege, MFA on.']
-}
-function whyCloud(c) {
-  const r = [];
-  if (c.public_exposure) r.push('PUBLIC: reachable from internet.');
-  if (/admin|excessive|internet-facing/i.test(c.misconfiguration || '')) r.push(`Dangerous misconfig: ${c.misconfiguration}.`);
-  if ((c.risk_score || 0) >= 60) r.push(`Risk ${c.risk_score}: HIGH band.`);
-  return r.length ? r : ['Private + no critical misconfig.']
-}
-function whyPort(p) {
-  if (!p.expected) return [`UNEXPECTED ${p.service} on ${p.host}:${p.port} — owned by ${p.user} via ${p.process} (PID ${p.pid}). Not in baseline: possible backdoor or drift.`];
-  return [`Expected baseline service ${p.service} on ${p.port}.`]
-}
-function whyFlow(f) {
-  if (f.risk_score >= 70) return [`Risk ${f.risk_score} ≥ 70: large/rare transfer (${f.bytes_out} bytes) to ${f.dst_ip}:${f.dst_port}. Possible exfil/lateral movement.`];
-  if (f.risk_score >= 50) return [`Risk ${f.risk_score}: elevated volume/destination. Review.`];
-  return ['Normal volume/destination.']
-}
-function whySession(s) {
-  const r = [];
-  if (s.privileged) r.push('PRIVILEGED session: can change security state.');
-  if (s.anomaly_score >= 0.7) r.push(`Anomaly ${s.anomaly_score}: unusual host/app/auth for ${s.username}.`);
-  if (/token|password-spray/i.test(s.auth_method || '')) r.push(`Weak auth: ${s.auth_method}.`);
-  return r.length ? r : ['Normal auth context.']
-}
-
 function AdminEthicalHacking({ token, setToken, onUnlock }) {
   const [tools, setTools] = useState([]), [jobs, setJobs] = useState([]), [msg, setMsg] = useState(''), [filter, setFilter] = useState('');
   const [privilegedToken, setPrivilegedToken] = useState(() => sessionStorage.getItem('VEYRA_privileged_admin_token') || '');
