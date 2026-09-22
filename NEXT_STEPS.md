@@ -277,16 +277,7 @@ Deferred from P1-1. Content:
 **Effort:** ~10 min
 **Risk:** Zero
 
----
-
-## 🟢 P2-7 — `backend/tests/test_v4x_deprecated.py`
-
-Deliberately skipped in P1. Tests verify v4.1/v4.2 emit `DeprecationWarning` and v5.0 does not.
-
-**Effort:** ~15 min
-**Risk:** Zero
-
----
+Refer to the P2-7 in the bottom
 
 ## 🎯 Recommended Order
 
@@ -302,7 +293,7 @@ Deliberately skipped in P1. Tests verify v4.1/v4.2 emit `DeprecationWarning` and
 7. **P2-6** — `DEPRECATION.md`
 
 ### Optional
-8. **P2-7** — Deprecation tests
+8. ~~**P2-7** — Deprecation tests~~ (not planned; see P2-7 section below)
 
 ---
 
@@ -534,10 +525,52 @@ git log --oneline -3
 **Summary of what this covers:**
 - Full P0/P1 recap for context
 - **P2-0 frontend audit** as the first task (with detailed 10-step procedure, endpoint matrix, search patterns, and deliverable format)
-- P2-1 through P2-7 with effort/risk
+- P2-1 through P2-6 with effort/risk (P2-7 not planned)
 - Environment quirks learned last session
 - Restart instructions for the next chat
 - Quick-reference file map
 - Open questions to resolve
 
 **Save it, commit it, and the next chat can pick up exactly where we left off.**
+
+### ⚫ P2-7 — Deprecation tests (NOT PLANNED)
+
+**Status:** Not planned. Deprecated code doesn't need test coverage.
+
+**Rationale:**
+- We manually verified (via `python -W always::DeprecationWarning worker/v41/... --help`) that the warnings fire correctly.
+- The warning is **informational**, not a contract — no downstream code depends on it firing.
+- Testing deprecated code creates a maintenance obligation: when v6.0 removes v4.x, the tests must be removed too.
+- Adding tests to deprecated code **encourages** keeping it around longer. We want the opposite.
+
+If the deprecation warning ever becomes a strict contract, revisit this decision.
+
+---
+
+## ✅ P2 Session Recap (2026-09-22)
+
+**P2 was completed in a single working session.** All items except P2-7 (not planned) were delivered.
+
+| Item | Commit(s) | Summary |
+|---|---|---|
+| **P2-0** Frontend audit | `8730a57`, `23cec73` | Found and fixed extra `))` in `main.jsx` nav array (blocking build). Synced `package-lock.json` to 5.0.0. Frontend build now passes: 1863 modules, 431 kB. |
+| **P2-1** Docs generator | `d153edc`, `1e98819` | Wrote `scripts/generate_tool_docs.py`. Regenerated 297 stale docs. Added `docs-drift` CI job. |
+| **P2-2** Validator cross-check | `86d35a6` | Validator now compares 4 header fields (Category, Purpose, VEYRA access, Execution boundary) against the catalog. 0 drift across 587 tools. |
+| **P2-3** v5.0 JSON schema | `9b1f775` | Created `worker/v50/schema/{request,response}.schema.json`. Added 6 tests. Schema validation caught a real bug (missing `worker_id`/`release_id` in error responses). |
+| **P2-4** Historical notes | `eb80cc5` | Marked 5 dated catalog files as historical. Wrote idempotent `scripts/add_historical_notes.py`. |
+| **P2-5** docs/tools/README.md index | `c1d9d14` | Generator now emits a 777-line browsable index (587 tools, 61 categories). |
+| **P2-6** DEPRECATION.md | `beb74d5` | 118-line migration guide for v4.1/v4.2 workers. |
+| **P2-7** Deprecation tests | — | Not planned (see rationale in P2-7 section). |
+
+**Session outcome:**
+- Tests: 104 → **110** (6 new schema validation tests)
+- Commits: 18 → **28**
+- CI: all 4 jobs green (backend, docs, docs-drift, frontend)
+- Tool docs: 587 generated + verified, 0 drift
+- Frontend: build green
+
+**Next phase:** P3 (not yet scoped). Candidates:
+- Restore `docs/FRONTEND_BACKEND_CONTRACT_AUDIT.md` as a permanent artifact.
+- Investigate the untested `v50_trust_control_plane.py` service.
+- Review `backend/app/services/` for other untested modules.
+- Evaluate frontend test coverage.
