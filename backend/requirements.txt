@@ -7,7 +7,6 @@ sqlalchemy>=2.0
 psycopg[binary]>=3.2
 httpx>=0.28
 python-multipart>=0.0.18
-pytest>=8.0
 jsonschema>=4.0.0
 alembic>=1.16
 cryptography>=46.0
