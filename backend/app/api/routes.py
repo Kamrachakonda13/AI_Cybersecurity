@@ -2674,10 +2674,11 @@ def v60_run_checklist(checklist_id: str, req: ChecklistRunRequest, request: Requ
         if req.evidence:
             db.add(ChecklistResult(result_id="res_" + _uuid.uuid4().hex[:16], run_id=prow.run_id, checklist_id=checklist_id, check_name="evidence", status="pass", evidence_json=json.dumps(req.evidence, sort_keys=True)))
             db.commit()
-        # attach receipt
+        # attach receipt — align payload status with persisted run (completed) for UI clarity
         create_receipt(db, prow.run_id, payload)
         payload["run_id"] = prow.run_id
         payload["receipt_sha256"] = payload.get("event_sha256", "")
+        payload["status"] = prow.status  # completed (stub) — no shell/network/DB writes beyond this record
         # wire alerts (P6-G) — best-effort, never fails the run
         try:
             from app.services.alerts import notify_checklist_run

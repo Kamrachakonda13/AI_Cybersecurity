@@ -40,7 +40,8 @@ export function V60ChecklistsView() {
     });
     const j = await r.json();
     if (r.ok) {
-      setRunMsg(`Run ${j.run_id}: ${j.status} — receipt ${j.receipt_sha256 ? j.receipt_sha256.slice(0, 12) : ''}… evidence & signed receipt stored.`);
+      const isStub = j.notes && j.notes.includes('no actions');
+      setRunMsg(`Run ${j.run_id}: ${j.status}${isStub ? ' (recorded — no actions executed, governance stub)' : ''} — receipt ${j.receipt_sha256 ? j.receipt_sha256.slice(0, 12) : j.payload_sha256 ? j.payload_sha256.slice(0, 12) : ''}… evidence & signed receipt stored.`);
       try {
         const det = await fetch(`${API}/api/v60/runs/${j.run_id}`).then((x) => x.json());
         setReceipt(det);
