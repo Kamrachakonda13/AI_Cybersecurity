@@ -76,3 +76,9 @@ backend/coverage.xml
 backend/htmlcov/
 backend/.coverage
 frontend/coverage/
+
+# ---------- SBOM outputs ----------
+backend-sbom.json
+frontend-sbom.json
+sbom/
+*-sbom.json
