@@ -5,7 +5,7 @@ const auth=()=>({Authorization:`Bearer ${sessionStorage.getItem('VEYRA_user_toke
 export function V39AutonomousExposureValidationView(){
  const [d,setD]=useState(null),[cases,setCases]=useState([]),[agent,setAgent]=useState(''),[result,setResult]=useState(null),[msg,setMsg]=useState('');
  const load=()=>Promise.all([fetch(`${API}/api/v39/exposure/overview`,{headers:auth()}).then(r=>r.json()),fetch(`${API}/api/v39/rogue-agents/cases`,{headers:auth()}).then(r=>r.json())]).then(([a,b])=>{setD(a);setCases(b.cases||[])}).catch(e=>setMsg(e.message));
- useEffect(load,[]);
+ useEffect(()=>{load()},[]);
  const investigate=async()=>{setMsg('');setResult(null);if(!agent.trim())return setMsg('Enter an enrolled/observed agent identity.');try{const r=await fetch(`${API}/api/v39/rogue-agents/investigate`,{method:'POST',headers:auth(),body:JSON.stringify({agent_id:agent.trim()})});const j=await r.json();if(!r.ok)throw new Error(j.detail||'investigation failed');setResult(j);load()}catch(e){setMsg(e.message)}};
  const s=d?.risk_summary||{};
  return <div className="content">
