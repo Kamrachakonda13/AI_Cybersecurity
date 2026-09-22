@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """VEYRA v5.0 canonical managed-worker verifier.
 
-The authoritative verification worker for VEYRA v5.0+. Supersedes:
-    - worker/v41/veyra_verify_artifact.py  (deprecated)
-    - worker/v42/veyra_trusted_verifier.py (deprecated)
+The authoritative verification worker for VEYRA v5.0+. Replaces the removed
+worker/v41 and worker/v42 implementations:
+    - worker/v41/veyra_verify_artifact.py  (removed in v5.0)
+    - worker/v42/veyra_trusted_verifier.py (removed in v5.0)
+
+See docs/archive/DEPRECATION.md for the historical migration guide.
+...
 
 Design principles
 -----------------

@@ -33,4 +33,4 @@ jobs:
         with:
           python-version: '3.13'
       - name: Byte-compile backend and workers
-        run: python -m compileall -q backend/app worker/v41 worker/v42 worker/v50
+        run: python -m compileall -q backend/app worker/v50
