@@ -37,16 +37,8 @@ REQUIRED_KEYS = frozenset({
 
 CHIP_STATES = ("green", "amber", "yellow", "semi_red", "red")
 
-# Domains intentionally declared but not yet populated in P4-3a.
-DEFERRED_DOMAINS = frozenset({
-    "governance",
-    "supply_chain",
-    "red_team",
-    "blue_team",
-})
-
 # Expected snapshot for P4-3a. Bump when entries are added.
-EXPECTED_COUNT = 40
+EXPECTED_COUNT = 61
 EXPECTED_PER_DOMAIN = {
     "live_monitoring": 8,
     "identity": 6,
@@ -55,6 +47,10 @@ EXPECTED_PER_DOMAIN = {
     "cloud_container": 5,
     "ai_agent": 6,
     "dfir": 5,
+    "governance": 6,
+    "supply_chain": 5,
+    "red_team": 5,
+    "blue_team": 5,
 }
 
 
@@ -178,11 +174,13 @@ def test_per_domain_counts_match_snapshot():
     assert dict(actual) == EXPECTED_PER_DOMAIN
 
 
-def test_deferred_domains_are_exactly_the_declared_but_unpopulated_ones():
+def test_all_declared_domains_are_populated():
     populated = {c["domain"] for c in CHECKLISTS}
     declared = set(DOMAINS)
     assert populated <= declared
-    assert declared - populated == DEFERRED_DOMAINS
+    assert declared - populated == set(), (
+        f"declared but unpopulated: {declared - populated}"
+    )
 
 
 def test_no_orphan_domains():
