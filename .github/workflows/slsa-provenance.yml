@@ -41,7 +41,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      sha256: ${{ steps.hash.outputs.sha256 }}
+      base64-subjects: ${{ steps.hash.outputs.base64_subjects }}
     steps:
       - uses: actions/checkout@v4
 
@@ -83,15 +83,18 @@ jobs:
           cd ..
           echo "tarball=${TARBALL}" >> "$GITHUB_OUTPUT"
 
-      - name: Compute SHA-256 hash
+      - name: Compute SHA-256 hash (SLSA format)
         id: hash
         run: |
           set -euo pipefail
           REF="${GITHUB_REF_NAME:-manual}"
           TARBALL="veyra-v5.0-${REF}.tar.gz"
-          HASH=$(sha256sum "$TARBALL" | awk '{print $1}')
-          echo "${HASH}  ${TARBALL}" > veyra-v5.0.sha256
+          # SLSA generator expects `<sha256>  <filename>` lines, base64-encoded.
+          sha256sum "$TARBALL" > veyra-v5.0.sha256
+          HASH=$(awk '{print $1}' veyra-v5.0.sha256)
+          BASE64_SUBJECTS=$(base64 -w0 < veyra-v5.0.sha256)
           echo "sha256=${HASH}" >> "$GITHUB_OUTPUT"
+          echo "base64_subjects=${BASE64_SUBJECTS}" >> "$GITHUB_OUTPUT"
 
       - name: Upload build artifact (tarball + hash)
         uses: actions/upload-artifact@v4
@@ -114,7 +117,7 @@ jobs:
       contents: write
     uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
     with:
-      base64-subjects: ${{ needs.build.outputs.sha256 }}
+      base64-subjects: ${{ needs.build.outputs.base64_subjects }}
       upload-assets: false
       provenance-name: veyra-v5.0.intoto.jsonl
 
