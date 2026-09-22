@@ -1035,6 +1035,144 @@ class DigitalTwinScenario(Base):
     evidence_sha256: Mapped[str] = mapped_column(String(64), default="")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
 
+class ChecklistDefinition(Base):
+    """Persisted mirror of a checklist registry entry — versioned, auditable.
+
+    The registry (`checklist_registry.py`) remains the source of truth.
+    This table materializes each entry so runs can FK to a stable definition
+    and so drift between code and DB is detectable. Seed on startup.
+    """
+    __tablename__ = "checklist_definitions"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    checklist_id: Mapped[str] = mapped_column(String(128), unique=True, index=True)
+    domain: Mapped[str] = mapped_column(String(64), index=True)
+    category: Mapped[str] = mapped_column(String(128))
+    name: Mapped[str] = mapped_column(String(255))
+    purpose: Mapped[str] = mapped_column(Text, default="")
+    owner_role: Mapped[str] = mapped_column(String(32), default="analyst")
+    cadence: Mapped[str] = mapped_column(String(32), default="daily")
+    scope: Mapped[str] = mapped_column(String(255), default="")
+    tier: Mapped[str] = mapped_column(String(32), default="recommended")
+    evidence_json: Mapped[str] = mapped_column(Text, default="[]")
+    remediation: Mapped[str] = mapped_column(Text, default="")
+    status_chip_rule: Mapped[str] = mapped_column(Text, default="")
+    boundary: Mapped[str] = mapped_column(Text, default="")
+    version: Mapped[str] = mapped_column(String(32), default="1.0")
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now, onupdate=now)
+
+
+class ChecklistRun(Base):
+    """A single invocation of a checklist — governed, audit-logged.
+
+    Status lifecycle: pending -> running -> completed | failed.
+    P6-A runs are persisted as `completed` with stub evidence until real
+    worker execution lands in P6-F. Every run FK's to ChecklistDefinition.
+    """
+    __tablename__ = "checklist_runs"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    run_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    checklist_id: Mapped[str] = mapped_column(String(128), index=True)
+    requested_by: Mapped[str] = mapped_column(String(255), default="console-user")
+    parameters_json: Mapped[str] = mapped_column(Text, default="{}")
+    status: Mapped[str] = mapped_column(String(32), default="pending", index=True)
+    requested_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    notes: Mapped[str] = mapped_column(Text, default="")
+
+
+class ChecklistResult(Base):
+    """Per-check evidence within a run.
+
+    One row per logical check/evidence item. The worst `status` drives the
+    status-chip colour (red > semi_red > yellow > amber > green).
+    """
+    __tablename__ = "checklist_results"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    result_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    run_id: Mapped[str] = mapped_column(String(64), index=True)
+    checklist_id: Mapped[str] = mapped_column(String(128), index=True)
+    check_name: Mapped[str] = mapped_column(String(255))
+    status: Mapped[str] = mapped_column(String(32), default="pass", index=True)
+    evidence_json: Mapped[str] = mapped_column(Text, default="{}")
+    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+
+
+class ChecklistReceipt(Base):
+    """Signed receipt for a completed run — integrity anchor.
+
+    `payload_sha256` = SHA-256 of the canonical result payload.
+    `signature` is HMAC with VEYRA_WORKER_SIGNING_SECRET when configured,
+    otherwise the sha256 itself (still integrity-checked).
+    """
+    __tablename__ = "checklist_receipts"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    receipt_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    run_id: Mapped[str] = mapped_column(String(64), index=True)
+    checklist_id: Mapped[str] = mapped_column(String(128), index=True)
+    payload_json: Mapped[str] = mapped_column(Text, default="{}")
+    payload_sha256: Mapped[str] = mapped_column(String(64), index=True, default="")
+    signature: Mapped[str] = mapped_column(String(128), default="")
+    signer: Mapped[str] = mapped_column(String(255), default="veyra-control-plane")
+    signed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+
+
+# ---------------------------------------------------------------------------
+# P6-B — Live sensor telemetry
+# ---------------------------------------------------------------------------
+class LiveSensorEvent(Base):
+    """Normalized event from any sensor (Wi-Fi, Ethernet, device join/drop).
+
+    Every event has provenance + SHA-256 for audit. Token-gated ingest only.
+    """
+    __tablename__ = "live_sensor_events"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    event_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    sensor_type: Mapped[str] = mapped_column(String(32), index=True)
+    sensor_id: Mapped[str] = mapped_column(String(128), default="unknown")
+    event_type: Mapped[str] = mapped_column(String(64), index=True)
+    severity: Mapped[str] = mapped_column(String(32), default="INFO")
+    payload_json: Mapped[str] = mapped_column(Text, default="{}")
+    provenance: Mapped[str] = mapped_column(String(255), default="")
+    event_sha256: Mapped[str] = mapped_column(String(64), index=True, default="")
+    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now, index=True)
+
+
+class NetworkBaseline(Base):
+    """Approved, versioned baseline for a scope (wifi_radio, switch_ports, etc).
+
+    Only approved baselines are authoritative. Drift = current vs approved.
+    """
+    __tablename__ = "network_baselines"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    baseline_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    scope: Mapped[str] = mapped_column(String(64), index=True)
+    version: Mapped[str] = mapped_column(String(32), default="1.0")
+    owner: Mapped[str] = mapped_column(String(255), default="security_operator")
+    snapshot_json: Mapped[str] = mapped_column(Text, default="{}")
+    snapshot_sha256: Mapped[str] = mapped_column(String(64), default="")
+    approved: Mapped[bool] = mapped_column(Boolean, default=False)
+    approved_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+
+
+class DropEvent(Base):
+    """Connection drop / link-down event with root-cause hypotheses."""
+    __tablename__ = "drop_events"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    drop_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    link_id: Mapped[str] = mapped_column(String(255), index=True)
+    link_type: Mapped[str] = mapped_column(String(32), default="wifi", index=True)
+    drop_time: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    recovery_time: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    diagnosis_json: Mapped[str] = mapped_column(Text, default="{}")
+    hypotheses_json: Mapped[str] = mapped_column(Text, default="[]")
+    resolved: Mapped[bool] = mapped_column(Boolean, default=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+
+
 class AIApplicationRun(Base):
     __tablename__ = "ai_application_runs"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)

@@ -37,17 +37,17 @@ REQUIRED_KEYS = frozenset({
 
 CHIP_STATES = ("green", "amber", "yellow", "semi_red", "red")
 
-# Expected snapshot for P4-3a. Bump when entries are added.
-EXPECTED_COUNT = 61
+# Expected snapshot for P6 (74 after network/cloud hardening). Bump when entries are added.
+EXPECTED_COUNT = 74
 EXPECTED_PER_DOMAIN = {
     "live_monitoring": 8,
     "identity": 6,
-    "endpoint": 5,
-    "network_defense": 5,
-    "cloud_container": 5,
+    "endpoint": 7,
+    "network_defense": 9,
+    "cloud_container": 10,
     "ai_agent": 6,
     "dfir": 5,
-    "governance": 6,
+    "governance": 8,
     "supply_chain": 5,
     "red_team": 5,
     "blue_team": 5,

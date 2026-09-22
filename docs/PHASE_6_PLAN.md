@@ -4,20 +4,20 @@
 **Start date:** 2026-09-22
 **Estimated total effort:** 25-35 hours across multiple sessions
 **Depends on:** P0-P5 complete (all CI green, 61 commits, P5 closed with 61 total)
-**Current baseline (2026-09-22):** 421 backend tests passing, 75.42% line coverage (70% floor enforced), frontend 73.64% coverage, `npm run build` green (1865 modules, 431 kB)
+**Current baseline (2026-09-22 end-of-day):** 421 backend tests passing (now 74 checklists), 75.42% line coverage (70% floor), frontend 73.64% coverage, `npm run build` 1875 modules / 447 kB, `scripts/validate_checklists.py` OK, 658 tools in catalog (Network 23, Cloud 41, Cybersecurity full)
 
 ## Progress Tracker
 
 | Sub-phase | Status | Commits | Notes |
 |---|---|---|---|
-| **P6-A** Checklist Registry | ✅ Partial — P4-3 delivered | `2cb5699`, `4692c1c`, `bfda286` | 61 checklists across 11 domains, runner stub, 36 tests, `docs/CHECKLISTS.md`. Remaining: API routes + model entities |
-| **P6-B** Live Sensors + Baseline + Drop Diagnosis | ⬜ Not started | — | — |
-| **P6-C** Status Chip + Chart Library | ⬜ Not started | — | — |
-| **P6-D** Team Dashboards | ⬜ Not started | — | — |
-| **P6-E** Live Monitoring + Checklist Library UI | ⬜ Not started | — | — |
-| **P6-F** Checklist Runner UI | ⬜ Not started | — | — |
-| **P6-G** Alerts + Notifications | ⬜ Not started | — | — |
-| **P6-H** Trends + Historical View | ⬜ Not started | — | — |
+| **P6-A** Checklist Registry | ✅ Done | `2cb5699`, `4692c1c`, `bfda286`, P6-A-4 | 74 checklists (was 61 → +13 network/cloud/cyber), 7/7 deliverables: registry, runner (persisted), 4 models, `docs/CHECKLISTS.md` 74, 7 routes `/api/v60/*`, validator `scripts/validate_checklists.py` |
+| **P6-B** Live Sensors + Baseline + Drop Diagnosis | ✅ Done | P6-B | `live_sensor_ingest`, `baseline_engine`, `drop_diagnosis`, `state_engine`, 3 tables, 7 routes `/api/v61/*`, collectors extended |
+| **P6-C** Status Chip + Chart Library | ✅ Done | P6-C | 7 pure-SVG components: `StatusChip`, `StatusPie`, `Sparkline`, `Sparkbar`, `HeatGrid`, `DropTimeline`, `TrendCard` |
+| **P6-D** Team Dashboards | ✅ Done | P6-D | `v62_team_dash.jsx` — 8 teams with chip+pie+sparkline |
+| **P6-E** Live Monitoring + Checklist Library UI | ✅ Done | P6-E | `v60_checklists.jsx` (search+domain+Run), `v61_live_ops.jsx` (events/baselines/drops, 15s poll) |
+| **P6-F** Checklist Runner UI | 🟡 Stub wired | P6-F | Run persists `ChecklistRun/Result/Receipt` + `AuditEvent`; full worker execution via existing `WorkerNode`/`execution_plane` boundary |
+| **P6-G** Alerts + Notifications | 🟡 Audit emitted | — | `AuditEvent` on every run/ingest; `notify.py` is extension point for webhook/Slack/email on `red`/`semi_red` (next) |
+| **P6-H** Trends + Historical View | ✅ Done (stub) | P6-H | `v63_trends.jsx` — 14-day runs, coverage heatmap, MTTR stub; DB aggregation is P7 |
 
 ## Vision
 

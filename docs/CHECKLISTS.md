@@ -1,6 +1,6 @@
 # VEYRA Checklist Registry
 
-**Total:** 61 checklists across 11 domains.  
+**Total:** 74 checklists across 11 domains.  
 **Source of truth:** `backend/app/services/checklist_registry.py`  
 **Chip states:** green → amber → yellow → semi_red → red (worst result in a run wins)
 
@@ -12,16 +12,16 @@ Adding a checklist: edit the Python module, then run `pytest backend/tests/servi
 |---|---|---|---|---|
 | live_monitoring | 8 | 5 | 3 | 0 |
 | identity | 6 | 3 | 3 | 0 |
-| endpoint | 5 | 4 | 1 | 0 |
-| network_defense | 5 | 2 | 3 | 0 |
-| cloud_container | 5 | 3 | 2 | 0 |
+| endpoint | 7 | 5 | 2 | 0 |
+| network_defense | 9 | 4 | 5 | 0 |
+| cloud_container | 10 | 5 | 5 | 0 |
 | ai_agent | 6 | 4 | 2 | 0 |
 | dfir | 5 | 2 | 3 | 0 |
-| governance | 6 | 3 | 3 | 0 |
+| governance | 8 | 4 | 4 | 0 |
 | supply_chain | 5 | 5 | 0 | 0 |
 | red_team | 5 | 3 | 2 | 0 |
 | blue_team | 5 | 3 | 2 | 0 |
-| **Total** | **61** | **37** | **24** | **0** |
+| **Total** | **74** | **43** | **31** | **0** |
 
 ## Domains
 
@@ -49,7 +49,7 @@ Adding a checklist: edit the Python module, then run `pytest backend/tests/servi
 | `service-account-review` | Service account review | security_admin | weekly | recommended |
 | `token-expiry` | Long-lived token audit | security_admin | weekly | recommended |
 
-### endpoint (5)
+### endpoint (7)
 
 | ID | Name | Owner | Cadence | Tier |
 |---|---|---|---|---|
@@ -58,8 +58,10 @@ Adding a checklist: edit the Python module, then run `pytest backend/tests/servi
 | `endpoint-usb-dlp` | USB & DLP event review | security_operator | daily | essential |
 | `endpoint-edr-health` | EDR/AV health | security_operator | daily | essential |
 | `endpoint-autorun-review` | Autorun / startup review | analyst | daily | recommended |
+| `vulnerability-scan-coverage` | Vuln scan coverage | security_operator | weekly | essential |
+| `edr-signature-freshness` | EDR signature freshness | security_operator | daily | recommended |
 
-### network_defense (5)
+### network_defense (9)
 
 | ID | Name | Owner | Cadence | Tier |
 |---|---|---|---|---|
@@ -68,8 +70,12 @@ Adding a checklist: edit the Python module, then run `pytest backend/tests/servi
 | `tls-cert-expiry` | TLS certificate expiry | security_operator | daily | essential |
 | `network-segmentation-check` | Network segmentation check | analyst | daily | recommended |
 | `flow-baseline-drift` | Flow baseline drift | analyst | hourly | recommended |
+| `firewall-rule-audit` | Firewall rule audit | security_operator | weekly | essential |
+| `waf-health-check` | WAF health check | security_operator | daily | recommended |
+| `vpc-flow-log-coverage` | VPC flow log coverage | security_operator | weekly | essential |
+| `network-acl-review` | Network ACL review | analyst | weekly | recommended |
 
-### cloud_container (5)
+### cloud_container (10)
 
 | ID | Name | Owner | Cadence | Tier |
 |---|---|---|---|---|
@@ -78,6 +84,11 @@ Adding a checklist: edit the Python module, then run `pytest backend/tests/servi
 | `container-image-digest` | Container image digest pinning | security_operator | daily | recommended |
 | `k8s-rbac-baseline` | Kubernetes RBAC baseline | security_operator | weekly | recommended |
 | `secret-scan-repo` | Secret scan in repos | security_operator | realtime | essential |
+| `cloudtrail-coverage` | CloudTrail / audit log coverage | security_operator | daily | essential |
+| `encryption-at-rest-audit` | Encryption-at-rest audit | security_operator | weekly | essential |
+| `key-rotation-audit` | Key rotation audit | security_admin | monthly | recommended |
+| `workload-identity-audit` | Workload identity audit | security_admin | weekly | recommended |
+| `cis-benchmark-scan` | CIS benchmark scan | analyst | weekly | recommended |
 
 ### ai_agent (6)
 
@@ -100,7 +111,7 @@ Adding a checklist: edit the Python module, then run `pytest backend/tests/servi
 | `timeline-completeness` | Timeline completeness | analyst | daily | recommended |
 | `hash-verification` | Evidence hash verification | analyst | weekly | essential |
 
-### governance (6)
+### governance (8)
 
 | ID | Name | Owner | Cadence | Tier |
 |---|---|---|---|---|
@@ -110,6 +121,8 @@ Adding a checklist: edit the Python module, then run `pytest backend/tests/servi
 | `evidence-retention-check` | Evidence retention compliance | analyst | monthly | recommended |
 | `third-party-risk-review` | Third-party risk review | security_admin | monthly | essential |
 | `board-reporting-freshness` | Board & exec reporting freshness | sudo | monthly | recommended |
+| `phishing-simulation-results` | Phishing simulation results | security_operator | monthly | recommended |
+| `backup-restore-test` | Backup restore test | security_operator | monthly | essential |
 
 ### supply_chain (5)
 
@@ -140,4 +153,3 @@ Adding a checklist: edit the Python module, then run `pytest backend/tests/servi
 | `tabletop-cadence` | Tabletop exercise cadence | security_operator | monthly | recommended |
 | `purple-feedback-loop` | Purple-team feedback loop | analyst | weekly | recommended |
 | `mttd-mttr-tracking` | MTTD / MTTR tracking | security_operator | weekly | essential |
-

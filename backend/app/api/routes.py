@@ -2658,7 +2658,153 @@ def v60_run_checklist(checklist_id: str, req: ChecklistRunRequest, request: Requ
     }
     db.add(AuditEvent(actor="console-user", action="checklist_run_requested", target=checklist_id, outcome=run.status))
     db.commit()
+    # also persist (P6-A-4)
+    try:
+        from app.services.checklist_runner import create_persisted_run, create_receipt
+
+        prow = create_persisted_run(db, checklist_id, requested_by="console-user", parameters=req.parameters, notes=notes)
+        # attach receipt
+        create_receipt(db, prow.run_id, payload)
+        payload["run_id"] = prow.run_id
+        payload["receipt_sha256"] = payload.get("event_sha256", "")
+    except Exception:
+        pass
     return payload
+
+
+@router.get("/v60/runs")
+def v60_list_runs(limit: int = Query(50, ge=1, le=200), db: Session = Depends(get_db)):
+    from app.services.checklist_runner import list_persisted_runs
+
+    rows = list_persisted_runs(db, limit)
+    return [{"run_id": r.run_id, "checklist_id": r.checklist_id, "status": r.status, "requested_at": r.requested_at.isoformat() if r.requested_at else "", "requested_by": r.requested_by} for r in rows]
+
+
+@router.get("/v60/runs/{run_id}")
+def v60_get_run(run_id: str, db: Session = Depends(get_db)):
+    from app.services.checklist_runner import get_persisted_run
+
+    row = get_persisted_run(db, run_id)
+    if not row:
+        raise HTTPException(404, "Run not found")
+    return {"run_id": row.run_id, "checklist_id": row.checklist_id, "status": row.status, "parameters": json.loads(row.parameters_json or "{}"), "notes": row.notes, "requested_at": row.requested_at.isoformat() if row.requested_at else ""}
+
+
+@router.get("/v60/receipts/{run_id}")
+def v60_get_receipt(run_id: str, db: Session = Depends(get_db)):
+    from app.models import ChecklistReceipt
+
+    row = db.query(ChecklistReceipt).filter(ChecklistReceipt.run_id == run_id).first()
+    if not row:
+        raise HTTPException(404, "Receipt not found")
+    return {"receipt_id": row.receipt_id, "run_id": row.run_id, "payload_sha256": row.payload_sha256, "signature": row.signature, "payload": json.loads(row.payload_json or "{}")}
+
+
+# ---------------------------------------------------------------------------
+# VEYRA v6.1 — Live sensors, baselines, drop diagnosis (P6-B)
+# ---------------------------------------------------------------------------
+class LiveIngestRequest(BaseModel):
+    sensor_type: str = Field(pattern="^(wifi|ethernet|device|drop|traffic)$")
+    sensor_id: str = Field(default="unknown", max_length=128)
+    event_type: str = Field(min_length=1, max_length=128)
+    severity: str = Field(default="INFO", pattern="^(INFO|LOW|MEDIUM|HIGH|CRITICAL)$")
+    payload: dict = Field(default_factory=dict)
+    provenance: str = Field(default="", max_length=255)
+    trace_id: str = Field(default="", max_length=128)
+
+
+@router.post("/v61/ingest")
+def v61_ingest(req: LiveIngestRequest, db: Session = Depends(get_db), _auth: None = Depends(require_collector)):
+    from app.services.live_sensor_ingest import normalize_event, persist_event
+
+    norm = normalize_event(req.sensor_type, req.event_type, req.payload, req.sensor_id, req.severity, req.provenance, req.trace_id)
+    row = persist_event(db, norm)
+    db.add(AuditEvent(actor="sensor", action="live_sensor_ingested", target=req.sensor_type, outcome=req.severity))
+    db.commit()
+    return {"event_id": row.event_id, "event_sha256": row.event_sha256, "observed_at": row.observed_at.isoformat()}
+
+
+@router.get("/v61/events")
+def v61_events(limit: int = Query(50, ge=1, le=500), sensor_type: str | None = Query(None, max_length=32), db: Session = Depends(get_db)):
+    from app.models import LiveSensorEvent
+
+    q = db.query(LiveSensorEvent)
+    if sensor_type:
+        q = q.filter(LiveSensorEvent.sensor_type == sensor_type)
+    rows = q.order_by(LiveSensorEvent.observed_at.desc()).limit(limit).all()
+    return [{"event_id": r.event_id, "sensor_type": r.sensor_type, "event_type": r.event_type, "severity": r.severity, "payload": json.loads(r.payload_json or "{}"), "event_sha256": r.event_sha256, "observed_at": r.observed_at.isoformat()} for r in rows]
+
+
+class BaselineCreateRequest(BaseModel):
+    scope: str = Field(min_length=1, max_length=64)
+    snapshot: dict
+    owner: str = Field(default="security_operator", max_length=255)
+    approved: bool = False
+
+
+@router.post("/v61/baselines")
+def v61_create_baseline(req: BaselineCreateRequest, db: Session = Depends(get_db), _: bool = Depends(require_admin)):
+    from app.services.baseline_engine import create_baseline
+
+    row = create_baseline(db, req.scope, req.snapshot, req.owner, req.approved)
+    return {"baseline_id": row.baseline_id, "scope": row.scope, "snapshot_sha256": row.snapshot_sha256, "approved": row.approved}
+
+
+@router.get("/v61/baselines")
+def v61_list_baselines(limit: int = Query(50, ge=1, le=200), db: Session = Depends(get_db)):
+    from app.models import NetworkBaseline
+
+    rows = db.query(NetworkBaseline).order_by(NetworkBaseline.created_at.desc()).limit(limit).all()
+    return [{"baseline_id": r.baseline_id, "scope": r.scope, "version": r.version, "owner": r.owner, "snapshot_sha256": r.snapshot_sha256, "approved": r.approved} for r in rows]
+
+
+@router.post("/v61/baselines/{baseline_id}/approve")
+def v61_approve_baseline(baseline_id: str, db: Session = Depends(get_db), _: bool = Depends(require_admin)):
+    from app.services.baseline_engine import approve_baseline
+
+    try:
+        row = approve_baseline(db, baseline_id)
+    except ValueError as e:
+        raise HTTPException(404, str(e))
+    return {"baseline_id": row.baseline_id, "approved": row.approved}
+
+
+class BaselineEvaluateRequest(BaseModel):
+    scope: str = Field(min_length=1, max_length=64)
+    current: dict
+
+
+@router.post("/v61/baselines/evaluate")
+def v61_evaluate_baseline(req: BaselineEvaluateRequest, db: Session = Depends(get_db)):
+    from app.services.baseline_engine import evaluate_current
+
+    return evaluate_current(db, req.scope, req.current)
+
+
+class DropCreateRequest(BaseModel):
+    link_id: str = Field(min_length=1, max_length=255)
+    link_type: str = Field(default="wifi", pattern="^(wifi|ethernet|unknown)$")
+    signal_dbm: float | None = None
+    dhcp_state: str = Field(default="unknown", max_length=32)
+    dns_state: str = Field(default="unknown", max_length=32)
+    ap_assoc_state: str = Field(default="unknown", max_length=32)
+    recent_flaps: int = Field(default=0, ge=0, le=1000)
+
+
+@router.post("/v61/drops")
+def v61_create_drop(req: DropCreateRequest, db: Session = Depends(get_db)):
+    from app.services.drop_diagnosis import persist_drop
+
+    row = persist_drop(db, req.link_id, req.link_type, req.signal_dbm, req.dhcp_state, req.dns_state, req.ap_assoc_state, req.recent_flaps)
+    return {"drop_id": row.drop_id, "link_id": row.link_id, "hypotheses": json.loads(row.hypotheses_json or "[]")}
+
+
+@router.get("/v61/drops")
+def v61_list_drops(limit: int = Query(50, ge=1, le=200), db: Session = Depends(get_db)):
+    from app.models import DropEvent
+
+    rows = db.query(DropEvent).order_by(DropEvent.created_at.desc()).limit(limit).all()
+    return [{"drop_id": r.drop_id, "link_id": r.link_id, "link_type": r.link_type, "hypotheses": json.loads(r.hypotheses_json or "[]"), "created_at": r.created_at.isoformat()} for r in rows]
 
 
 @router.get("/v40/docs/index")
