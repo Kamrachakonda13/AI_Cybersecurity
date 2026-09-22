@@ -66,7 +66,7 @@ function AdminEthicalHacking({ token, setToken, onUnlock }) {
   const isPrivileged = !!privilegedToken;
   const filtered = tools.filter(t => !filter || `${t.name} ${t.category} ${t.purpose}`.toLowerCase().includes(filter.toLowerCase()));
   return <div className={isPrivileged ? 'content privileged-admin' : 'content'}>
-    {isPrivileged && <div className="privileged-banner"><span>🔐</span> Privileged admin session active — light purple theme · high-impact tools unlocked (isolated workers, exploit validation, credential audits)</div>}
+    {isPrivileged && <div className="privileged-banner" style={{ justifyContent: 'center', textAlign: 'center', fontWeight: 800, fontSize: 14, letterSpacing: 0.6 }}><span>🔐</span> Privileged admin session active</div>}
     <Panel title="Administrator — Ethical Hacking Control Plane">
       <div className="callout"><b>{isPrivileged ? 'PRIVILEGED ADMIN.' : 'ADMIN ONLY.'}</b> This console governs authorized assessments. The API never exposes an unrestricted shell and never launches security-tool commands.</div>
       <div style={{ display: 'flex', gap: 8, padding: '12px 18px', flexWrap: 'wrap' }}><input type="password" value={token} onChange={e => setToken(e.target.value)} placeholder="VEYRA admin token" style={{ minWidth: 260 }} /><input type="password" value={privilegedToken} onChange={e => { setPrivilegedToken(e.target.value); sessionStorage.setItem('VEYRA_privileged_admin_token', e.target.value) }} placeholder="Privileged admin token (high-impact tools)" style={{ minWidth: 300 }} /><button className="primary" onClick={unlock}>Unlock admin tools</button><button onClick={clear}>Clear</button></div>
