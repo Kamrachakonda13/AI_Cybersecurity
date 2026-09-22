@@ -675,3 +675,84 @@ If the deprecation warning ever becomes a strict contract, revisit this decision
 | P5-8 | SBOM generation for backend + frontend | 30 min | 🟡 |
 | P5-9 | SLSA provenance attestation | 1 hr | 🟡 |
 | P5-10 | Add `docs/tools/README.md` to handoff docs | 5 min | 🟢 |
+
+---
+
+## ✅ P5 Session Recap (2026-09-22 — extended)
+
+**Phase 5 completed.** All 9 items delivered across SBOM, SLSA provenance, frontend tests, and worker cleanup.
+
+### What was delivered
+
+| Item | Commit | Summary |
+|---|---|---|
+| **P5-4** | `48da6b9` | Consolidated `README.md` — v5.0 header, CI/test/coverage badges, testing section; removed duplicate `README_V5.md` |
+| **P5-7** | `20ed0ce` | CI now uploads `backend-coverage` and `frontend-coverage` as downloadable artifacts |
+| **P5-2** | `3f3913e` | Enforced 70% backend coverage floor in `.coveragerc` (`fail_under = 70`) |
+| **P5-5** | `5c647f9` | `fabric.py` coverage raised from 28% → **82%** (+23 tests) |
+| **P5-1** | multiple | Frontend component tests: **0 → 71.42%** coverage, +176 tests across 6 batches, **4 real React bugs caught** |
+| **P5-8** | `cfabce2`, `85cc6a0` | CycloneDX SBOM generation in CI — **76 backend + 165 frontend components** |
+| **P5-9** | `dca4629` | **SLSA Level 3** signed provenance attestation with Rekor transparency log |
+| **P5-6** | `525588c` | Removed deprecated `worker/v41` and `worker/v42`; archived `DEPRECATION.md` |
+| **P5-3** | `0d076d7` | Extracted `severity.js` and `why.js` from `main.jsx` into testable modules (+33 tests) |
+
+### Session metrics
+
+- **Commits:** 40 → **61** (+21)
+- **Backend tests:** 365 → **385**
+- **Frontend tests:** 0 → **176**
+- **Total tests:** 365 → **561**
+- **Frontend coverage:** 0% → **71.42%**
+- **Backend coverage:** 75% (with 70% floor)
+- **CI jobs:** 7 → **9** (added `sbom` and `slsa-provenance`)
+- **Workers:** v41 + v42 + v50 → **v50 only**
+- **Supply chain:** SBOM (241 components) + SLSA Level 3 provenance + secret scanning + coverage thresholds
+
+### Real bugs found by tests
+
+Frontend component tests found the same React `useEffect(load, [])` bug in **four** components (where `load` returns a Promise, causing `TypeError: destroy is not a function` on unmount):
+1. `AttributionView` (`v29.jsx`) — fixed in `00cd3ed`
+2. `V40AgentSwarmDefenseView` (`v40.jsx`) — fixed in `3c7eacb`
+3. `V38AutonomousExposureValidationView` (`v39.jsx`) — fixed in `3c7eacb`
+4. `SoarPanel` (`main.jsx`) — fixed in `3c7eacb`
+
+**All four would have shipped to production with runtime errors.** Fixed and locked in with regression tests.
+
+### Supply-chain security posture
+
+| Layer | Tool | Artifact |
+|---|---|---|
+| **SBOM** | CycloneDX (`cyclonedx-bom`, `@cyclonedx/cyclonedx-npm`) | `backend-sbom.json` (76 components), `frontend-sbom.json` (165 components) |
+| **SLSA** | `slsa-framework/slsa-github-generator@v2.1.0` | `veyra-v5.0.intoto.jsonl` (Level 3 signed) |
+| **Secret scan** | gitleaks | Runs on every push/PR |
+| **Coverage** | pytest-cov (backend), @vitest/coverage-v8 (frontend) | Enforced thresholds + uploaded artifacts |
+| **CI gates** | 9 jobs across 4 workflows | All green |
+
+### Frontend test coverage progression
+
+| Stage | All files | Tests |
+|---|---|---|
+| Session start | 0% | 17 (structural) |
+| After v3/v42 | 7.65% | 33 |
+| After v29 | 15.28% | 52 |
+| After v50 | 26.75% | 68 |
+| After v32-v37 | 43.47% | 94 |
+| After v31/v40 | 61.74% | 125 |
+| After v38/v39 | 71.42% | 143 |
+| After lib extraction | **~75%+** | **176** |
+
+### What's next — Phase 6 candidates
+
+| # | Item | Effort | Notes |
+|---|---|---|---|
+| P6-1 | Frontend coverage threshold (enforce 65% floor in CI) | 15 min | Mirror backend's 70% floor |
+| P6-2 | Extract more `main.jsx` logic (nav array, modal state) | 1-2 hr | Continue the P5-3 pattern |
+| P6-3 | Frontend router (replace `section === 'X' ? ... : ...` chain) | 2-4 hr | Refactor monolith into routed views |
+| P6-4 | End-to-end tests (Playwright) | 2-4 hr | Test full user flows in a real browser |
+| P6-5 | Performance profiling + optimization | 2-3 hr | If the app feels slow |
+| P6-6 | User-facing documentation (not contributor) | 1-2 hr | Onboarding guide, feature tour |
+| P6-7 | SBOM vulnerability scanning (grype against generated SBOMs) | 30 min | Add to CI, report findings |
+| P6-8 | Container image scanning (Trivy on worker/v50 Dockerfile) | 30 min | Add to supply-chain gates |
+| P6-9 | Branch protection + required reviews | 15 min | Before making repo private |
+
+**Deferred to end-of-project (unchanged):** frontend contract audit doc, historical-snapshot notes, removal of one-off scripts, end-to-end docs polish.
