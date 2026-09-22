@@ -1,0 +1,166 @@
+# VEYRA SLSA Level 3 provenance attestation.
+#
+# Produces a signed, tamper-evident record of how a release artifact was built,
+# including:
+#   - the source commit
+#   - the GitHub Actions build workflow and runner
+#   - hashes of every input artifact
+#
+# Triggers:
+#   - workflow_dispatch  (manual run)
+#   - push tags matching v*  (release tags)
+#
+# The provenance file (.intoto.jsonl) can be verified by any consumer using
+# `slsa-verifier`:
+#
+#   slsa-verifier verify-artifact veyra-v5.0-<ref>.tar.gz \
+#     --provenance-path veyra-v5.0.intoto.jsonl \
+#     --source-uri github.com/Kamrachakonda13/veyra
+
+name: SLSA provenance
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+concurrency:
+  group: slsa-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  id-token: write       # required for OIDC signing
+  actions: read
+
+jobs:
+  # -----------------------------------------------------------------------
+  # Step 1 — build the release artifact and compute its hash.
+  # -----------------------------------------------------------------------
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      sha256: ${{ steps.hash.outputs.sha256 }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm ci
+          npm run build
+
+      - name: Assemble release directory
+        run: |
+          set -euo pipefail
+          mkdir -p release/veyra
+          cp -r frontend/dist release/veyra/frontend-dist
+          cp -r backend release/veyra/backend
+          cp -r worker release/veyra/worker
+          cp -r docs/tools release/veyra/tool-docs
+          cp backend/requirements.txt release/veyra/backend-requirements.txt
+          cp frontend/package-lock.json release/veyra/frontend-package-lock.json
+          cp README.md release/veyra/README.md
+          # Remove caches
+          find release/veyra -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+          find release/veyra -type d -name node_modules -exec rm -rf {} + 2>/dev/null || true
+
+      - name: Package tarball
+        id: package
+        run: |
+          set -euo pipefail
+          REF="${GITHUB_REF_NAME:-manual}"
+          TARBALL="veyra-v5.0-${REF}.tar.gz"
+          cd release
+          tar -czf "../${TARBALL}" veyra
+          cd ..
+          echo "tarball=${TARBALL}" >> "$GITHUB_OUTPUT"
+
+      - name: Compute SHA-256 hash
+        id: hash
+        run: |
+          set -euo pipefail
+          REF="${GITHUB_REF_NAME:-manual}"
+          TARBALL="veyra-v5.0-${REF}.tar.gz"
+          HASH=$(sha256sum "$TARBALL" | awk '{print $1}')
+          echo "${HASH}  ${TARBALL}" > veyra-v5.0.sha256
+          echo "sha256=${HASH}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload build artifact (tarball + hash)
+        uses: actions/upload-artifact@v4
+        with:
+          name: veyra-release
+          path: |
+            veyra-v5.0-*.tar.gz
+            veyra-v5.0.sha256
+          retention-days: 90
+          if-no-files-found: error
+
+  # -----------------------------------------------------------------------
+  # Step 2 — generate SLSA Level 3 provenance for the tarball.
+  # -----------------------------------------------------------------------
+  provenance:
+    needs: [build]
+    permissions:
+      actions: read
+      id-token: write
+      contents: write
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
+    with:
+      base64-subjects: ${{ needs.build.outputs.sha256 }}
+      upload-assets: false
+      provenance-name: veyra-v5.0.intoto.jsonl
+
+  # -----------------------------------------------------------------------
+  # Step 3 — package the provenance as a downloadable CI artifact.
+  # -----------------------------------------------------------------------
+  upload-provenance:
+    needs: [provenance]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download provenance
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.provenance.outputs.provenance-name }}
+
+      - name: Upload provenance as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: veyra-provenance
+          path: ${{ needs.provenance.outputs.provenance-name }}
+          retention-days: 90
+          if-no-files-found: error
+
+  # -----------------------------------------------------------------------
+  # Step 4 — printable summary in the workflow run view.
+  # -----------------------------------------------------------------------
+  summarize:
+    needs: [build, provenance]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job summary
+        run: |
+          {
+            echo "## SLSA Level 3 provenance"
+            echo ""
+            echo "**Artifact:** \`veyra-v5.0-${GITHUB_REF_NAME:-manual}.tar.gz\`"
+            echo ""
+            echo "**SHA-256:** \`${{ needs.build.outputs.sha256 }}\`"
+            echo ""
+            echo "**Provenance:** \`${{ needs.provenance.outputs.provenance-name }}\`"
+            echo ""
+            echo "### Verify"
+            echo ""
+            echo '```bash'
+            echo "slsa-verifier verify-artifact veyra-v5.0-${GITHUB_REF_NAME:-manual}.tar.gz \\"
+            echo "  --provenance-path ${{ needs.provenance.outputs.provenance-name }} \\"
+            echo "  --source-uri github.com/Kamrachakonda13/veyra"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
