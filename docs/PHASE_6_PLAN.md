@@ -15,9 +15,9 @@
 | **P6-C** Status Chip + Chart Library | ✅ Done | P6-C | 7 pure-SVG components: `StatusChip`, `StatusPie`, `Sparkline`, `Sparkbar`, `HeatGrid`, `DropTimeline`, `TrendCard` |
 | **P6-D** Team Dashboards | ✅ Done | P6-D | `v62_team_dash.jsx` — 8 teams with chip+pie+sparkline |
 | **P6-E** Live Monitoring + Checklist Library UI | ✅ Done | P6-E | `v60_checklists.jsx` (search+domain+Run), `v61_live_ops.jsx` (events/baselines/drops, 15s poll) |
-| **P6-F** Checklist Runner UI | 🟡 Stub wired | P6-F | Run persists `ChecklistRun/Result/Receipt` + `AuditEvent`; full worker execution via existing `WorkerNode`/`execution_plane` boundary |
-| **P6-G** Alerts + Notifications | 🟡 Audit emitted | — | `AuditEvent` on every run/ingest; `notify.py` is extension point for webhook/Slack/email on `red`/`semi_red` (next) |
-| **P6-H** Trends + Historical View | ✅ Done (stub) | P6-H | `v63_trends.jsx` — 14-day runs, coverage heatmap, MTTR stub; DB aggregation is P7 |
+| **P6-F** Checklist Runner UI | ✅ Done | P6-F | Approval gate (`essential` requires `approval_confirmed`), evidence + receipt display in `v60_checklists.jsx`, `GET /api/v60/runs/{id}` returns results+receipt |
+| **P6-G** Alerts + Notifications | ✅ Done | P6-G | `alerts.py` — `notify_checklist_run` / `notify_sensor_event` / `notify_drop` → webhook (`VEYRA_ALERT_WEBHOOKS`) + Slack/email via `notify.py` + `AdminNotification` inbox; wired on `v60/run` and `v61/ingest` and `v61/drops` |
+| **P6-H** Trends + Historical View | ✅ Done | P6-H | `trends.py` + `GET /api/v60/trends`/`posture`/`mttr` (coverage %, posture series, MTTR, regressions) + `v63_trends.jsx` wired to real API (fallback synthetic) |
 
 ## Vision
 

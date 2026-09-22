@@ -44,8 +44,11 @@ describe('main.jsx structural invariants', () => {
     });
 
     it('declares a nav array with the VEYRA v5 Control Plane section', () => {
-        expect(MAIN_SRC).toMatch(/const nav\s*=\s*\[/);
-        expect(MAIN_SRC).toMatch(/'VEYRA v5 Control Plane'/);
+        // nav extracted to lib/nav.js in P7 — main.jsx imports NAV
+        const navSrc = readFileSync(resolve(__dirname, '..', 'lib', 'nav.js'), 'utf8');
+        expect(MAIN_SRC).toMatch(/NAV/);
+        expect(navSrc).toMatch(/'VEYRA v5 Control Plane'/);
+        expect(navSrc).toMatch(/Checklist Library/);
     });
 
     it('declares the API base from VITE_API_URL or localhost', () => {

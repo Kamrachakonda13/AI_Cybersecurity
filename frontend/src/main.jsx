@@ -43,11 +43,12 @@ import { V60ChecklistsView } from './v60_checklists.jsx';
 import { V61LiveOpsView } from './v61_live_ops.jsx';
 import { V62TeamDashView } from './v62_team_dash.jsx';
 import { V63TrendsView } from './v63_trends.jsx';
+import { NAV } from './lib/nav.js';
 import { SEV_HELP, RISK_FORMULA, sevHelp } from './lib/severity.js';
 import { whyFinding, whyIdentity, whyCloud, whyPort, whyFlow, whySession } from './lib/why.js';
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-const nav = [['Overview', LayoutDashboard], ['Checklist Library', ScrollText], ['Live Operations', Radio], ['Team Dashboards', Users], ['Trends', Activity], ['Red Team', Radio], ['Blue Team', Shield], ['Security Graph', GitBranch], ['Security Operations', TriangleAlert], ['Network', Network], ['Offensive Security', Search], ['Forensics', Globe], ['Endpoint', Server], ['Cloud', Cloud], ['AI Security', Brain], ['Data Security', Database], ['Identity', Users], ['Governance', ScrollText], ['Security Fabric', GitBranch], ['Autonomous SOC', Activity], ['Detection Mesh', TriangleAlert], ['Intel Fusion', Globe], ['Pentest Agents', Bot], ['Tool Runner', TerminalSquare], ['User & Permissions', UserCog], ['My Password', KeyRound], ['Tool Academy', Brain], ['Tool Marketplace', PackageOpen], ['AI Ecosystem', Brain], ['Security Workers', Server], ['Adversary Intelligence', Globe], ['Wireless Defense', Radio], ['Attack Timeline', Activity], ['Infrastructure Investigation', Network], ['Attribution & Evidence', ShieldCheck], ['Full Security Fabric', Shield], ['Unified Security Graph', GitBranch], ['AI Attack Reconstruction', Activity], ['AI SOC Investigator', Brain], ['Governed Response & Recovery', ShieldCheck], ['Sudo Security Arsenal', ShieldCheck], ['Adversary Trace', Search], ['Team Security Academy', Brain], ['Security Readiness', ShieldCheck], ['Continuous Validation', ShieldCheck], ['Security Lifecycle', Activity], ['Security Radar', Search], ['Graph Intelligence', GitBranch], ['Posture Time Machine', Activity], ['AI Research Lab', Bot], ['Update Center', PackageOpen], ['Documentation Hub', ScrollText], ['Agent Swarm Defense', Bot], ['Supply Chain Runtime', ShieldCheck], ['Trusted Supply Chain', ShieldCheck], ['VEYRA AI Applications', Brain], ['VEYRA v5 Control Plane', ShieldCheck]];
+const nav = NAV;
 
 function AdminEthicalHacking({ token, setToken, onUnlock }) {
   const [tools, setTools] = useState([]), [jobs, setJobs] = useState([]), [msg, setMsg] = useState(''), [filter, setFilter] = useState('');

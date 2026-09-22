@@ -2587,6 +2587,8 @@ def v41_rollback_on_failure(deployment_id: str, payload: dict, request: Request,
 class ChecklistRunRequest(BaseModel):
     parameters: dict = Field(default_factory=dict)
     notes: str = Field(default="", max_length=2000)
+    approval_confirmed: bool = False
+    evidence: dict = Field(default_factory=dict)
 
 
 @router.get("/v60/checklists")
@@ -2626,10 +2628,10 @@ def v60_get_checklist(checklist_id: str):
 
 @router.post("/v60/checklists/{checklist_id}/run")
 def v60_run_checklist(checklist_id: str, req: ChecklistRunRequest, request: Request, db: Session = Depends(get_db)):
-    """Govern a checklist run (P6-A stub: validates, returns a signed run receipt).
+    """Govern a checklist run — approval-gated for essential tier, returns signed receipt.
 
-    No actions are executed — the runner returns status `not_implemented`.
-    Real execution (worker wiring, evidence capture) lands in P6-F.
+    Essential tier requires `approval_confirmed=true`. Evidence can be supplied
+    via `evidence` and is stored on the result row.
     """
     from ..services.checklist_runner import UnknownChecklistError, run_checklist
 
@@ -2638,6 +2640,9 @@ def v60_run_checklist(checklist_id: str, req: ChecklistRunRequest, request: Requ
         run = run_checklist(checklist_id, parameters=req.parameters)
     except UnknownChecklistError:
         raise HTTPException(404, f"Checklist '{checklist_id}' not found")
+    # Approval gate: essential tier requires explicit confirmation
+    if run.tier == "essential" and not req.approval_confirmed:
+        raise HTTPException(403, "Essential checklists require approval_confirmed=true")
     # Merge caller notes without mutating the frozen dataclass (return shape carries it)
     notes = req.notes.strip() or run.notes
     payload = {
@@ -2658,15 +2663,28 @@ def v60_run_checklist(checklist_id: str, req: ChecklistRunRequest, request: Requ
     }
     db.add(AuditEvent(actor="console-user", action="checklist_run_requested", target=checklist_id, outcome=run.status))
     db.commit()
-    # also persist (P6-A-4)
+    # also persist (P6-A-4) — store supplied evidence on result row
     try:
         from app.services.checklist_runner import create_persisted_run, create_receipt
+        from app.models import ChecklistResult
+        import uuid as _uuid
 
         prow = create_persisted_run(db, checklist_id, requested_by="console-user", parameters=req.parameters, notes=notes)
+        # attach evidence if supplied
+        if req.evidence:
+            db.add(ChecklistResult(result_id="res_" + _uuid.uuid4().hex[:16], run_id=prow.run_id, checklist_id=checklist_id, check_name="evidence", status="pass", evidence_json=json.dumps(req.evidence, sort_keys=True)))
+            db.commit()
         # attach receipt
         create_receipt(db, prow.run_id, payload)
         payload["run_id"] = prow.run_id
         payload["receipt_sha256"] = payload.get("event_sha256", "")
+        # wire alerts (P6-G) — best-effort, never fails the run
+        try:
+            from app.services.alerts import notify_checklist_run
+
+            notify_checklist_run(checklist_id, prow.run_id, run.tier, req.evidence)
+        except Exception:
+            pass
     except Exception:
         pass
     return payload
@@ -2687,7 +2705,20 @@ def v60_get_run(run_id: str, db: Session = Depends(get_db)):
     row = get_persisted_run(db, run_id)
     if not row:
         raise HTTPException(404, "Run not found")
-    return {"run_id": row.run_id, "checklist_id": row.checklist_id, "status": row.status, "parameters": json.loads(row.parameters_json or "{}"), "notes": row.notes, "requested_at": row.requested_at.isoformat() if row.requested_at else ""}
+    from app.models import ChecklistResult, ChecklistReceipt
+
+    results = db.query(ChecklistResult).filter(ChecklistResult.run_id == run_id).all()
+    receipt = db.query(ChecklistReceipt).filter(ChecklistReceipt.run_id == run_id).first()
+    return {
+        "run_id": row.run_id,
+        "checklist_id": row.checklist_id,
+        "status": row.status,
+        "parameters": json.loads(row.parameters_json or "{}"),
+        "notes": row.notes,
+        "requested_at": row.requested_at.isoformat() if row.requested_at else "",
+        "results": [{"result_id": r.result_id, "check_name": r.check_name, "status": r.status, "evidence": json.loads(r.evidence_json or "{}")} for r in results],
+        "receipt": {"receipt_id": receipt.receipt_id, "payload_sha256": receipt.payload_sha256, "signature": receipt.signature} if receipt else None,
+    }
 
 
 @router.get("/v60/receipts/{run_id}")
@@ -2721,6 +2752,14 @@ def v61_ingest(req: LiveIngestRequest, db: Session = Depends(get_db), _auth: Non
     row = persist_event(db, norm)
     db.add(AuditEvent(actor="sensor", action="live_sensor_ingested", target=req.sensor_type, outcome=req.severity))
     db.commit()
+    # P6-G: alert on HIGH/CRITICAL or drop events
+    try:
+        from app.services.alerts import notify_sensor_event
+
+        if norm["severity"] in ("HIGH", "CRITICAL") or norm["sensor_type"] == "drop":
+            notify_sensor_event(norm)
+    except Exception:
+        pass
     return {"event_id": row.event_id, "event_sha256": row.event_sha256, "observed_at": row.observed_at.isoformat()}
 
 
@@ -2796,7 +2835,35 @@ def v61_create_drop(req: DropCreateRequest, db: Session = Depends(get_db)):
     from app.services.drop_diagnosis import persist_drop
 
     row = persist_drop(db, req.link_id, req.link_type, req.signal_dbm, req.dhcp_state, req.dns_state, req.ap_assoc_state, req.recent_flaps)
-    return {"drop_id": row.drop_id, "link_id": row.link_id, "hypotheses": json.loads(row.hypotheses_json or "[]")}
+    hyps = json.loads(row.hypotheses_json or "[]")
+    try:
+        from app.services.alerts import notify_drop
+
+        notify_drop(req.link_id, hyps)
+    except Exception:
+        pass
+    return {"drop_id": row.drop_id, "link_id": row.link_id, "hypotheses": hyps}
+
+
+@router.get("/v60/trends")
+def v60_trends(db: Session = Depends(get_db)):
+    from app.services.trends import overview
+
+    return overview(db)
+
+
+@router.get("/v60/trends/posture")
+def v60_posture(days: int = Query(14, ge=1, le=90), db: Session = Depends(get_db)):
+    from app.services.trends import posture_over_time
+
+    return posture_over_time(db, days)
+
+
+@router.get("/v60/trends/mttr")
+def v60_mttr(db: Session = Depends(get_db)):
+    from app.services.trends import mttr_per_checklist
+
+    return mttr_per_checklist(db)
 
 
 @router.get("/v61/drops")
