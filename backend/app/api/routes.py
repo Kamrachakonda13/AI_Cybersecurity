@@ -2874,6 +2874,70 @@ def v61_list_drops(limit: int = Query(50, ge=1, le=200), db: Session = Depends(g
     return [{"drop_id": r.drop_id, "link_id": r.link_id, "link_type": r.link_type, "hypotheses": json.loads(r.hypotheses_json or "[]"), "created_at": r.created_at.isoformat()} for r in rows]
 
 
+# ---------------------------------------------------------------------------
+# Domain segregation (8 CISSP domains) + Agent classification
+# ---------------------------------------------------------------------------
+@router.get("/domains/overview")
+def domains_overview():
+    from app.services.domain_catalog import domain_stats, all_tools
+
+    return {"domains": domain_stats(all_tools())}
+
+
+@router.get("/domains/{domain_name}/tools")
+def domain_tools(domain_name: str, q: str | None = Query(None, max_length=128), limit: int = Query(200, ge=1, le=500)):
+    from app.services.domain_catalog import segregate_tools, all_tools, DOMAINS_8
+
+    # Normalize: accept slug or exact label
+    label = domain_name
+    # allow slug like network-security
+    slug_map = {d.lower().replace(" ", "-").replace("&", "").replace(",", "").replace("  ", "-"): d for d in DOMAINS_8}
+    # simpler: case-insensitive match
+    for d in DOMAINS_8:
+        if d.lower() == domain_name.lower() or d.lower().replace(" ", "-") == domain_name.lower() or d.lower().replace(" & ", "-").replace(", ", "-") == domain_name.lower():
+            label = d
+            break
+        if domain_name.lower() in d.lower().replace(" ", "-"):
+            # fallback slug
+            pass
+    # also try slug_map
+    if domain_name.lower() in slug_map:
+        label = slug_map[domain_name.lower()]
+
+    from app.services.domain_catalog import DOMAINS_8 as _D
+
+    if label not in _D:
+        raise HTTPException(404, f"Unknown domain '{domain_name}'. Expected one of {', '.join(_D)}")
+
+    by = segregate_tools(all_tools())
+    items = by[label]
+    if q:
+        ql = q.lower()
+        items = [t for t in items if ql in t.get("name", "").lower() or ql in t.get("category", "").lower()]
+    items = items[:limit]
+    return {"domain": label, "count": len(items), "tools": items}
+
+
+@router.get("/agents/classification")
+def agents_classification(db: Session = Depends(get_db)):
+    from app.services.agent_classification import overview
+
+    return overview(db)
+
+
+@router.get("/agents/{agent_id}/why-active")
+def agent_why_active(agent_id: str, db: Session = Depends(get_db)):
+    from app.services.agent_classification import why_active, classify_agent
+
+    # 404 if no trace at all
+    from app.models import AgentRuntimeEvent, AgentPolicy, PentestAgentPlan
+
+    has = db.query(AgentRuntimeEvent).filter(AgentRuntimeEvent.agent_id == agent_id).first() or db.query(AgentPolicy).filter(AgentPolicy.agent_id == agent_id).first() or db.query(PentestAgentPlan).filter(PentestAgentPlan.agent_id == agent_id).first()
+    if not has:
+        raise HTTPException(404, f"Agent '{agent_id}' not found")
+    return why_active(agent_id, db)
+
+
 @router.get("/v40/docs/index")
 def v40_docs_index(request: Request, db: Session = Depends(get_db)):
     """Hydejack-inspired documentation index: markdown-first, searchable, printable."""

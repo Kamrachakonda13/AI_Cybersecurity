@@ -1,6 +1,8 @@
 import { LayoutDashboard, Network, Server, TriangleAlert, Cloud, Brain, Database, Users, ScrollText, Search, Activity, LockKeyhole, Globe, GitBranch, Radio, KeyRound, TerminalSquare, Bot, UserCog, ShieldCheck, PackageOpen, Shield } from 'lucide-react';
 export const NAV = [
   ['Overview', LayoutDashboard],
+  ['Domains & Tools', Globe],
+  ['Agents', Bot],
   ['Checklist Library', ScrollText],
   ['Live Operations', Radio],
   ['Team Dashboards', Users],

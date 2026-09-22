@@ -49,6 +49,8 @@ describe('main.jsx structural invariants', () => {
         expect(MAIN_SRC).toMatch(/NAV/);
         expect(navSrc).toMatch(/'VEYRA v5 Control Plane'/);
         expect(navSrc).toMatch(/Checklist Library/);
+        expect(navSrc).toMatch(/Domains & Tools/);
+        expect(navSrc).toMatch(/Agents/);
     });
 
     it('declares the API base from VITE_API_URL or localhost', () => {
