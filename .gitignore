@@ -70,3 +70,9 @@ artifacts/
 tmp/
 VEYRA_v*_FINAL.sha256
 VEYRA_v*_FINAL.zip
+
+# ---------- Coverage outputs ----------
+backend/coverage.xml
+backend/htmlcov/
+backend/.coverage
+frontend/coverage/

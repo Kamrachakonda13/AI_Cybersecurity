@@ -11,10 +11,18 @@ export default defineConfig({
         exclude: ['node_modules', 'dist'],
         reporters: ['default'],
         coverage: {
-            enabled: false,
-            reporter: ['text', 'html'],
+            provider: 'v8',
+            enabled: false, // opt-in via `npm run test:coverage`
+            reporter: ['text', 'html', 'lcov'],
             include: ['src/**/*.{js,jsx}'],
-            exclude: ['src/__tests__/**'],
+            exclude: [
+                'src/__tests__/**',
+                'src/main.jsx', // monolithic entry — not currently unit-tested
+                '**/*.config.js',
+            ],
+            // Don't fail by default — report first, then set thresholds.
+            // To enforce a threshold, uncomment:
+            // thresholds: { lines: 80, functions: 80, branches: 80, statements: 80 },
         },
     },
 });

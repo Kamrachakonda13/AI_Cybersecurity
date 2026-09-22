@@ -1,0 +1,38 @@
+[run]
+# Measure coverage on the app package only — not tests, not scripts.
+source = app
+
+# Skip files that are pure data / constants / one-liners
+omit =
+    app/__init__.py
+    app/db.py
+    app/models/__init__.py
+    */__pycache__/*
+    */tests/*
+    */.venv/*
+
+[report]
+# Show lines that weren't covered (helps identify gaps)
+show_missing = True
+
+# Strip project root from paths in the report
+[html]
+directory = htmlcov
+
+[paths]
+source =
+    app
+    */site-packages
+
+# Don't fail by default — we report first, then set thresholds.
+# To enforce a threshold, uncomment:
+# fail_under = 90
+
+# Exclude lines that don't need coverage
+exclude_lines =
+    pragma: no cover
+    if TYPE_CHECKING:
+    if __name__ == .__main__.:
+    raise NotImplementedError
+    pass
+    \.\.\.
