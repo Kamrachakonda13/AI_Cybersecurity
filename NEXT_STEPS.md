@@ -574,3 +574,32 @@ If the deprecation warning ever becomes a strict contract, revisit this decision
 - Investigate the untested `v50_trust_control_plane.py` service.
 - Review `backend/app/services/` for other untested modules.
 - Evaluate frontend test coverage.
+
+---
+
+## ✅ P3 Session Recap (2026-09-22)
+
+**P3 focused on backend test coverage for untested service modules.**
+
+| Item | Commit | Tests Added | Summary |
+|---|---|---|---|
+| **P3-A** | `5f0b7fe` | 8 | `v40_verification_adapters.py` — registry + inventory + structural no-shell guard |
+| **P3-B** | `18dacbe` | 20 | `security_readiness.py` — control domains, exercises, documentation readiness |
+| **P3-C** | `cd1288e` | 43 | `v50_ai_applications.py` — six apps, RAG primitive, catalog, governance markers |
+| **P3-D** | `97c9f43` | 40 | `extended_catalog.py` — registry shape, help builder, install manifest, P0/P1 regressions |
+
+**Session outcome:**
+- Tests: 110 → **221** (+111)
+- Commits: 24 → **28**
+- Untested services closed: 4 of 11
+
+**Backend test coverage is now complete for the security-critical surface.** Remaining untested services are lower-risk utilities (`notify.py`, `tool_forms.py`, `v36_security_radar.py`, `v38_ai_endpoint_radar.py`, `v29_adversary.py`, `response_mesh.py`, `ai_cutting_edge_2026.py`).
+
+**Next phase candidates:**
+
+| # | Item | Effort | Notes |
+|---|---|---|---|
+| P4-1 | Remaining backend coverage (7 services) | 1-2 hr | Batch tests for the remaining untested modules |
+| P4-2 | Frontend test infrastructure | 1-2 hr | Zero frontend tests today; add vitest + testing-library + smoke tests |
+| P4-3 | Push to GitHub | 15 min | Never pushed; four CI jobs would run end-to-end |
+| P4-4 | Container/infra review of `worker/v50/` | 30 min | Isolation, resource limits, network policy |
