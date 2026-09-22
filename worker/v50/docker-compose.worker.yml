@@ -1,0 +1,61 @@
+# VEYRA v5.0 managed-worker deployment overlay.
+#
+# This is an opt-in overlay for the main docker-compose.yml. It runs the
+# verification worker as an isolated, hardened container — separate from the
+# control plane. In production, run this on worker-only hosts, not alongside
+# the backend/frontend services.
+#
+# Build:
+#   docker build -t veyra-worker-v50:5.0 ./worker/v50
+#
+# Run the full stack including the worker:
+#   docker compose \
+#     -f docker-compose.yml \
+#     -f worker/v50/docker-compose.worker.yml \
+#     --profile worker up
+#
+# Run just the worker (no control plane):
+#   docker compose -f worker/v50/docker-compose.worker.yml --profile worker up
+
+name: veyra-worker
+
+services:
+  worker-v50:
+    image: veyra-worker-v50:5.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # The worker reads JSON from stdin and writes JSON to stdout.
+    # It does not stay running — it's a one-shot verifier.
+    # Use `docker compose run --rm veyra-worker` to invoke it with stdin.
+    stdin_open: true
+    tty: false
+    # Hardening flags
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    # No network access — verifier binaries run locally in the image.
+    # If you must allow egress for a specific verifier (e.g. TUF client
+    # fetching a repository), attach a dedicated internal network and
+    # whitelist destinations at the host firewall.
+    network_mode: none
+    # Resource limits
+    mem_limit: 256m
+    memswap_limit: 256m
+    cpus: 0.5
+    pids_limit: 100
+    # Artifacts to verify should be mounted read-only. Example:
+    # volumes:
+    #   - /srv/veyra/artifacts:/work:ro
+    # The worker image contains the ALLOWED_VERIFIERS binaries only.
+    # Verifier binaries (cosign, syft, grype, etc.) must be baked in
+    # at image-build time — see Dockerfile and SECURITY.md.
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+    profiles:
+      - worker

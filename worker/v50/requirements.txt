@@ -1,0 +1,20 @@
+# VEYRA v5.0 managed-worker verifier — Python dependencies.
+#
+# This worker intentionally has ZERO third-party Python dependencies.
+# It uses only the Python standard library:
+#   argparse, hashlib, json, shutil, subprocess, sys, pathlib, typing
+#
+# Rationale:
+#   - Smaller attack surface (no transitive dependencies to audit)
+#   - Reproducible builds (no pip resolution at build time)
+#   - Faster cold start
+#
+# If you need to add a dependency, first ask:
+#   - Is it required, or can stdlib do the job?
+#   - Does it have a security review / SBOM?
+#   - Can it run without network access at import time?
+#
+# Add entries below with pinned versions.
+#
+# Example:
+#   some-package==1.2.3
