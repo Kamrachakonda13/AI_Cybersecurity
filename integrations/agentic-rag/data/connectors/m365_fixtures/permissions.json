@@ -1,0 +1,14 @@
+{
+  "m365:teams-file-q3planning": [
+    {"principal_type": "group", "principal_id": "product-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "all-employees@acme.com", "access": "read"}
+  ],
+  "m365:teams-file-security-retro": [
+    {"principal_type": "group", "principal_id": "security-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "executive-team@acme.com", "access": "read"}
+  ],
+  "m365:teams-file-platform-sync": [
+    {"principal_type": "group", "principal_id": "platform-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "sre-team@acme.com", "access": "read"}
+  ]
+}

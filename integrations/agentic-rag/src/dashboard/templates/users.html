@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Users{% endblock %}
+{% block page_title %}Users{% endblock %}
+{% block page_subtitle %}{{ users|length }} simulated users · effective access computed against the current index{% endblock %}
+
+{% block content %}
+
+<div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+    <table class="min-w-full divide-y divide-slate-200">
+        <thead class="bg-slate-50">
+            <tr>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">User</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Role</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Clearance</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Teams</th>
+                <th class="px-4 py-3 text-right text-xs font-medium text-slate-500 uppercase">Accessible chunks</th>
+                <th class="px-4 py-3 text-right text-xs font-medium text-slate-500 uppercase"></th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+            {% for u in users %}
+            <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 text-sm font-medium text-slate-900">{{ u.user_id }}</td>
+                <td class="px-4 py-3">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium
+                        {% if u.role == 'csuite' %}bg-purple-100 text-purple-800
+                        {% elif u.role == 'manager' %}bg-blue-100 text-blue-800
+                        {% elif u.role == 'senior' %}bg-emerald-100 text-emerald-800
+                        {% else %}bg-slate-100 text-slate-700{% endif %}">
+                        {{ u.role }}
+                    </span>
+                </td>
+                <td class="px-4 py-3">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium
+                        {% if u.clearance == 'PUBLIC' %}bg-blue-100 text-blue-800
+                        {% elif u.clearance == 'INTERNAL' %}bg-amber-100 text-amber-800
+                        {% elif u.clearance == 'CONFIDENTIAL' %}bg-red-100 text-red-800
+                        {% elif u.clearance == 'RESTRICTED' %}bg-purple-100 text-purple-800
+                        {% else %}bg-slate-100 text-slate-800{% endif %}">
+                        {{ u.clearance }}
+                    </span>
+                </td>
+                <td class="px-4 py-3 text-xs text-slate-600">{{ u.teams|join(', ') }}</td>
+                <td class="px-4 py-3 text-right text-sm">
+                    <span class="font-semibold text-slate-900">{{ u.accessible_chunks }}</span>
+                    <span class="text-xs text-slate-400">/{{ u.total_chunks }}</span>
+                </td>
+                <td class="px-4 py-3 text-right">
+                    <a href="/dashboard/users/{{ u.user_id }}" class="text-xs font-medium text-blue-600 hover:text-blue-800">View &rarr;</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

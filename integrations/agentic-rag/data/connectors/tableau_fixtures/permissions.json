@@ -1,0 +1,14 @@
+{
+  "tableau:workbook-financial-close": [
+    {"principal_type": "group", "principal_id": "finance-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "executive-team@acme.com", "access": "read"}
+  ],
+  "tableau:workbook-supply-chain": [
+    {"principal_type": "group", "principal_id": "ops-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "finance-team@acme.com", "access": "read"}
+  ],
+  "tableau:workbook-hr-headcount": [
+    {"principal_type": "group", "principal_id": "hr-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "executive-team@acme.com", "access": "read"}
+  ]
+}

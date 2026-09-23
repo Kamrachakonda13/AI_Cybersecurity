@@ -1,0 +1,14 @@
+{
+  "jira:issue-ENG-4521": [
+    {"principal_type": "group", "principal_id": "engineering@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "security-team@acme.com", "access": "read"}
+  ],
+  "jira:issue-ENG-4102": [
+    {"principal_type": "group", "principal_id": "engineering@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "sre-team@acme.com", "access": "read"}
+  ],
+  "jira:issue-OPS-2891": [
+    {"principal_type": "group", "principal_id": "sre-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "engineering@acme.com", "access": "read"}
+  ]
+}

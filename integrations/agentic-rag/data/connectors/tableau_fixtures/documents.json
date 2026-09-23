@@ -1,0 +1,46 @@
+{
+  "value": [
+    {
+      "id": "tableau:workbook-financial-close",
+      "title": "Financial Close Dashboard",
+      "name": "financial_close_dashboard.md",
+      "mime_type": "text/markdown",
+      "size": 570,
+      "created_at": "2026-04-10T08:00:00Z",
+      "last_modified": "2026-09-10T09:00:00Z",
+      "owner": "finance-team@acme.com",
+      "collection": "site-finance",
+      "site_id": "site-finance-001",
+      "content_fixture_path": "test_corpus/tableau/financial_close_dashboard.md",
+      "source_url": "https://tableau.acme.com/#/site/finance/workbooks/financial-close"
+    },
+    {
+      "id": "tableau:workbook-supply-chain",
+      "title": "Supply Chain Operations View",
+      "name": "supply_chain_view.md",
+      "mime_type": "text/markdown",
+      "size": 580,
+      "created_at": "2026-03-05T11:00:00Z",
+      "last_modified": "2026-09-09T14:20:00Z",
+      "owner": "ops-team@acme.com",
+      "collection": "site-operations",
+      "site_id": "site-operations-001",
+      "content_fixture_path": "test_corpus/tableau/supply_chain_view.md",
+      "source_url": "https://tableau.acme.com/#/site/operations/workbooks/supply-chain"
+    },
+    {
+      "id": "tableau:workbook-hr-headcount",
+      "title": "HR Headcount Analysis",
+      "name": "hr_headcount_analysis.md",
+      "mime_type": "text/markdown",
+      "size": 590,
+      "created_at": "2026-02-20T13:00:00Z",
+      "last_modified": "2026-09-08T08:15:00Z",
+      "owner": "hr-analytics@acme.com",
+      "collection": "site-hr",
+      "site_id": "site-hr-001",
+      "content_fixture_path": "test_corpus/tableau/hr_headcount_analysis.md",
+      "source_url": "https://tableau.acme.com/#/site/hr/workbooks/headcount"
+    }
+  ]
+}

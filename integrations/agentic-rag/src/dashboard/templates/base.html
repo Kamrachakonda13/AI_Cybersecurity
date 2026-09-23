@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}RAG Admin{% endblock %} · Enterprise Knowledge Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .nav-link.active { background-color: rgb(30 58 138); color: white; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<div class="flex h-screen overflow-hidden">
+
+    <aside class="w-64 bg-slate-900 text-white flex flex-col">
+        <div class="p-4 border-b border-slate-700">
+            <h1 class="text-lg font-semibold">RAG Admin</h1>
+            <p class="text-xs text-slate-400 mt-1">Enterprise Knowledge Assistant</p>
+        </div>
+
+        <nav class="flex-1 p-2 space-y-1 overflow-y-auto">
+            <a href="/dashboard" class="nav-link {% if active_page == 'overview' %}active{% endif %} block px-3 py-2 rounded text-sm hover:bg-slate-800 transition">Overview</a>
+            <a href="/dashboard/sources" class="nav-link {% if active_page == 'sources' %}active{% endif %} block px-3 py-2 rounded text-sm hover:bg-slate-800 transition">Sources</a>
+            <a href="/dashboard/chunks" class="nav-link {% if active_page == 'chunks' %}active{% endif %} block px-3 py-2 rounded text-sm hover:bg-slate-800 transition">Chunks</a>
+            <a href="/dashboard/permissions" class="nav-link {% if active_page == 'permissions' %}active{% endif %} block px-3 py-2 rounded text-sm hover:bg-slate-800 transition">Permissions</a>
+            <a href="/dashboard/users" class="nav-link {% if active_page == 'users' %}active{% endif %} block px-3 py-2 rounded text-sm hover:bg-slate-800 transition">Users</a>
+            <a href="/dashboard/duplicates" class="nav-link {% if active_page == 'duplicates' %}active{% endif %} block px-3 py-2 rounded text-sm hover:bg-slate-800 transition">Duplicates</a>
+            <a href="/dashboard/pipeline" class="nav-link {% if active_page == 'pipeline' %}active{% endif %} block px-3 py-2 rounded text-sm hover:bg-slate-800 transition">Pipeline</a>
+            <a href="/dashboard/metrics" class="nav-link {% if active_page == 'metrics' %}active{% endif %} block px-3 py-2 rounded text-sm hover:bg-slate-800 transition">Metrics</a>
+            <a href="/dashboard/security" class="nav-link {% if active_page == 'security' %}active{% endif %} block px-3 py-2 rounded text-sm hover:bg-slate-800 transition">Security</a>
+            <a href="/dashboard/architecture" class="nav-link {% if active_page == 'architecture' %}active{% endif %} block px-3 py-2 rounded text-sm hover:bg-slate-800 transition">Architecture</a>
+        </nav>
+
+        <div class="border-t border-slate-700">
+            <div class="p-3 text-xs text-slate-400 border-b border-slate-800">
+                <div>API: <span class="text-emerald-400">connected</span></div>
+                <div class="mt-1">v1.0 · Phase 7</div>
+            </div>
+
+            {# ── 7.22 — signed-in user chip + sign-out ── #}
+            <div class="p-3">
+                {% set cu = request.state.current_user if request.state and request.state.current_user else None %}
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs font-semibold text-white shrink-0">
+                        {{ (cu.user_id[0] | upper) if cu and cu.user_id else '?' }}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="text-xs font-medium text-white truncate">
+                            {{ cu.user_id if cu else 'Guest' }}
+                        </div>
+                        <div class="text-[10px] text-slate-400 uppercase tracking-wide">
+                            {{ cu.role if cu else '' }}
+                        </div>
+                    </div>
+                </div>
+                <a href="/dashboard/logout"
+                   class="block w-full text-center px-3 py-2 rounded text-xs font-medium bg-slate-800 hover:bg-rose-600 text-slate-300 hover:text-white transition">
+                    Sign out
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto min-h-0">
+        <header class="bg-white border-b border-slate-200 px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-xl font-semibold text-slate-900">{% block page_title %}Overview{% endblock %}</h2>
+                    <p class="text-sm text-slate-500 mt-0.5">{% block page_subtitle %}{% endblock %}</p>
+                </div>
+                <div class="text-xs text-slate-500">
+                    {% block header_extra %}{% endblock %}
+                </div>
+            </div>
+        </header>
+
+        <div class="p-6">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+</div>
+
+<script>
+    // 7.22 — bfcache guard.
+    // If the browser restores this page from its in-memory snapshot
+    // (which happens on back/forward navigation), force a real reload.
+    // The server will 307 to /dashboard/login if the session is gone.
+    window.addEventListener('pageshow', function (event) {
+        if (event.persisted || performance.getEntriesByType('navigation')[0]?.type === 'back_forward') {
+            window.location.reload();
+        }
+    });
+</script>
+</body>
+</html>

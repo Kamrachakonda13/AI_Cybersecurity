@@ -1,0 +1,35 @@
+{
+    "connector_type": "ms_graph",
+    "display_name": "Microsoft 365 (Graph API)",
+    "tenant_id": "acme",
+    "client": "fixture",
+    "real_client": {
+        "tenant_id_env": "MS_GRAPH_TENANT_ID",
+        "client_id_env": "MS_GRAPH_CLIENT_ID",
+        "client_secret_env": "MS_GRAPH_CLIENT_SECRET"
+    },
+    "fixture_client": {
+        "fixtures_dir": "data/connectors/ms_graph_fixtures",
+        "content_root": "."
+    },
+    "team_mapping": {
+        "default_team": "platform",
+        "default_clearance": "INTERNAL",
+        "default_share_scope": "team",
+        "users": {
+            "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com": {
+                "team": "platform",
+                "clearance": "INTERNAL",
+                "share_scope": "org"
+            },
+            "John@kamrachakondaoutlook.onmicrosoft.com": {
+                "team": "sre",
+                "clearance": "INTERNAL",
+                "share_scope": [
+                    "platform",
+                    "sre"
+                ]
+            }
+        }
+    }
+}

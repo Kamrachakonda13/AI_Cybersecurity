@@ -1,0 +1,13 @@
+{
+  "conf:page-platform-overview": [
+    {"principal_type": "group", "principal_id": "all-employees@acme.com", "access": "read"}
+  ],
+  "conf:page-postmortem-template": [
+    {"principal_type": "group", "principal_id": "sre-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "engineering@acme.com", "access": "read"}
+  ],
+  "conf:page-api-deprecation": [
+    {"principal_type": "group", "principal_id": "all-employees@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "external-partners@acme.com", "access": "read"}
+  ]
+}

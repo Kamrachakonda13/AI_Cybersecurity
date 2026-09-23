@@ -1,0 +1,31 @@
+{
+  "connector_type": "local_fs",
+  "display_name": "Local Filesystem (dev corpus)",
+  "tenant_id": "acme",
+  "roots": [
+    {
+      "path": "test_corpus/platform",
+      "owner_team": "platform",
+      "clearance_level": "INTERNAL",
+      "share_scope": "org"
+    },
+    {
+      "path": "test_corpus/sre",
+      "owner_team": "sre",
+      "clearance_level": "INTERNAL",
+      "share_scope": ["platform", "security", "sre"]
+    },
+    {
+      "path": "test_corpus/security",
+      "owner_team": "security",
+      "clearance_level": "CONFIDENTIAL",
+      "share_scope": "team"
+    },
+    {
+      "path": "test_corpus/public",
+      "owner_team": "marketing",
+      "clearance_level": "PUBLIC",
+      "share_scope": "org"
+    }
+  ]
+}

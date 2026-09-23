@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}{{ source.name }}{% endblock %}
+{% block page_title %}{{ source.name }}{% endblock %}
+{% block page_subtitle %}{{ source.source_system }} · {{ source.document_count }} documents{% endblock %}
+
+{% block header_extra %}
+<a href="/dashboard/sources" class="text-xs font-medium text-blue-600 hover:text-blue-800">&larr; Back to sources</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+        <div class="text-xs font-medium text-slate-500 uppercase tracking-wide">Documents</div>
+        <div class="mt-2 text-3xl font-bold text-slate-900">{{ source.document_count }}</div>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+        <div class="text-xs font-medium text-slate-500 uppercase tracking-wide">Clearance levels</div>
+        <div class="mt-2 flex flex-wrap gap-1">
+            {% for level, count in source.clearances.items() %}
+            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium
+                {% if level == 'PUBLIC' %}bg-blue-100 text-blue-800
+                {% elif level == 'INTERNAL' %}bg-amber-100 text-amber-800
+                {% elif level == 'CONFIDENTIAL' %}bg-red-100 text-red-800
+                {% elif level == 'RESTRICTED' %}bg-purple-100 text-purple-800
+                {% else %}bg-slate-100 text-slate-800{% endif %}">
+                {{ level }} {{ count }}
+            </span>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+        <div class="text-xs font-medium text-slate-500 uppercase tracking-wide">Teams</div>
+        <div class="mt-2 flex flex-wrap gap-1">
+            {% for team, count in source.teams.items() %}
+            <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700">
+                {{ team }} {{ count }}
+            </span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+    <div class="px-5 py-4 border-b border-slate-200">
+        <h3 class="text-sm font-semibold text-slate-900">Documents</h3>
+        <p class="text-xs text-slate-500 mt-0.5">Showing up to 100 documents</p>
+    </div>
+    <table class="min-w-full divide-y divide-slate-200">
+        <thead class="bg-slate-50">
+            <tr>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Title</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Source ID</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Clearance</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Owner team</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Share scope</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+            {% for d in documents %}
+            <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 text-sm text-slate-900">{{ d.title or '(untitled)' }}</td>
+                <td class="px-4 py-3 text-xs text-slate-500 font-mono">{{ d.source_id[-60:] }}</td>
+                <td class="px-4 py-3">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium
+                        {% if d.clearance_level == 'PUBLIC' %}bg-blue-100 text-blue-800
+                        {% elif d.clearance_level == 'INTERNAL' %}bg-amber-100 text-amber-800
+                        {% elif d.clearance_level == 'CONFIDENTIAL' %}bg-red-100 text-red-800
+                        {% elif d.clearance_level == 'RESTRICTED' %}bg-purple-100 text-purple-800
+                        {% else %}bg-slate-100 text-slate-800{% endif %}">
+                        {{ d.clearance_level }}
+                    </span>
+                </td>
+                <td class="px-4 py-3 text-sm text-slate-600">{{ d.owner_team }}</td>
+                <td class="px-4 py-3 text-xs text-slate-500">
+                    {% if d.share_scope is string %}
+                        {{ d.share_scope }}
+                    {% else %}
+                        {{ d.share_scope }}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

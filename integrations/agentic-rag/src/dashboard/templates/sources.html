@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Sources{% endblock %}
+{% block page_title %}Sources{% endblock %}
+{% block page_subtitle %}{{ sources|length }} connectors · {{ total_docs }} total documents{% endblock %}
+
+{% block content %}
+
+<div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+    <table class="min-w-full divide-y divide-slate-200">
+        <thead class="bg-slate-50">
+            <tr>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Status</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Connector</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Source system</th>
+                <th class="px-4 py-3 text-right text-xs font-medium text-slate-500 uppercase tracking-wider">Documents</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Clearances</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Teams</th>
+                <th class="px-4 py-3 text-right text-xs font-medium text-slate-500 uppercase tracking-wider">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 bg-white">
+            {% for s in sources %}
+            <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3">
+                    <span class="w-2 h-2 rounded-full inline-block {% if s.status == 'loaded' %}bg-emerald-500{% else %}bg-red-500{% endif %}"></span>
+                </td>
+                <td class="px-4 py-3">
+                    <div class="text-sm font-medium text-slate-900">{{ s.name }}</div>
+                    {% if s.error %}
+                    <div class="text-xs text-red-500">{{ s.error }}</div>
+                    {% endif %}
+                </td>
+                <td class="px-4 py-3 text-sm text-slate-600">{{ s.source_system }}</td>
+                <td class="px-4 py-3 text-sm text-right text-slate-900 font-semibold">{{ s.document_count }}</td>
+                <td class="px-4 py-3">
+                    <div class="flex flex-wrap gap-1">
+                        {% for level, count in s.clearances.items() %}
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium
+                            {% if level == 'PUBLIC' %}bg-blue-100 text-blue-800
+                            {% elif level == 'INTERNAL' %}bg-amber-100 text-amber-800
+                            {% elif level == 'CONFIDENTIAL' %}bg-red-100 text-red-800
+                            {% elif level == 'RESTRICTED' %}bg-purple-100 text-purple-800
+                            {% else %}bg-slate-100 text-slate-800{% endif %}">
+                            {{ level }} {{ count }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                </td>
+                <td class="px-4 py-3">
+                    <div class="flex flex-wrap gap-1">
+                        {% for team, count in s.teams.items() %}
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700">
+                            {{ team }} {{ count }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                </td>
+                <td class="px-4 py-3 text-right">
+                    {% if s.status == 'loaded' %}
+                    <a href="/dashboard/sources/{{ s.name }}" class="text-xs font-medium text-blue-600 hover:text-blue-800">View &rarr;</a>
+                    {% else %}
+                    <span class="text-xs text-slate-400">unavailable</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

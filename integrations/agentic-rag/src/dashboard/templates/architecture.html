@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+
+{% block title %}Architecture{% endblock %}
+{% block page_title %}Architecture{% endblock %}
+{% block page_subtitle %}How the six phases compose into a single retrieval system{% endblock %}
+
+{% block content %}
+
+<!-- ============================================================ -->
+<!-- Section 1 — The six-phase stack                              -->
+<!-- ============================================================ -->
+<div class="mb-8">
+    <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4">The six-phase stack</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+        <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-slate-400">PHASE 1</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-blue-50 text-blue-700">Foundation</span>
+            </div>
+            <h4 class="text-base font-semibold text-slate-900">Vector RAG</h4>
+            <p class="text-sm text-slate-600 mt-2">Paragraph chunking, MiniLM embeddings, pgvector + HNSW, grounded generation.</p>
+            <div class="mt-3 pt-3 border-t border-slate-100 text-xs">
+                <div class="text-slate-500">Hit Rate @ 3</div>
+                <div class="text-slate-900 font-semibold text-lg">91.67%</div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-slate-400">PHASE 2</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-emerald-50 text-emerald-700">Security</span>
+            </div>
+            <h4 class="text-base font-semibold text-slate-900">Hybrid + RBAC</h4>
+            <p class="text-sm text-slate-600 mt-2">BM25 + vectors merged with RRF, cross-encoder rerank, clearance filter at the SQL layer, JWT, audit log.</p>
+            <div class="mt-3 pt-3 border-t border-slate-100 text-xs">
+                <div class="text-slate-500">Hit Rate @ 3</div>
+                <div class="text-slate-900 font-semibold text-lg">100.00% <span class="text-emerald-600 text-sm">+8.33 pp</span></div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-slate-400">PHASE 3</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-purple-50 text-purple-700">Relationships</span>
+            </div>
+            <h4 class="text-base font-semibold text-slate-900">Graph RAG</h4>
+            <p class="text-sm text-slate-600 mt-2">LLM entity extraction into Neo4j, Cypher multi-hop traversal, query router that dispatches by intent.</p>
+            <div class="mt-3 pt-3 border-t border-slate-100 text-xs">
+                <div class="text-slate-500">Multi-hop accuracy</div>
+                <div class="text-slate-900 font-semibold text-lg">100% on relationship queries</div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-slate-400">PHASE 4</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-amber-50 text-amber-700">Autonomy</span>
+            </div>
+            <h4 class="text-base font-semibold text-slate-900">Agentic RAG</h4>
+            <p class="text-sm text-slate-600 mt-2">ReAct loop with five tools, token metering, per-tool timeouts, Dockerized with a metrics endpoint.</p>
+            <div class="mt-3 pt-3 border-t border-slate-100 text-xs">
+                <div class="text-slate-500">Tool routing</div>
+                <div class="text-slate-900 font-semibold text-lg">5/5</div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-slate-400">PHASE 5</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-rose-50 text-rose-700">High stakes</span>
+            </div>
+            <h4 class="text-base font-semibold text-slate-900">Security RAG</h4>
+            <p class="text-sm text-slate-600 mt-2">CISA KEV + MITRE ATT&amp;CK corpus, confidence gate (score + coverage), terminal refusal on failure.</p>
+            <div class="mt-3 pt-3 border-t border-slate-100 text-xs">
+                <div class="text-slate-500">Sensitivity / Specificity</div>
+                <div class="text-slate-900 font-semibold text-lg">100% / 100%</div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-slate-400">PHASE 6</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-700">Enterprise</span>
+            </div>
+            <h4 class="text-base font-semibold text-slate-900">Ingestion Fabric</h4>
+            <p class="text-sm text-slate-600 mt-2">12 connectors, cross-source dedup, incremental sync, federated search with five-dimension ACLs.</p>
+            <div class="mt-3 pt-3 border-t border-slate-100 text-xs">
+                <div class="text-slate-500">Csuite cross-silo rate</div>
+                <div class="text-slate-900 font-semibold text-lg">100%</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- Section 2 — Request flow                                     -->
+<!-- ============================================================ -->
+<div class="mb-8">
+    <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4">Request flow</h3>
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
+        <div class="flex flex-wrap items-center gap-3 text-sm">
+
+            <div class="px-3 py-2 rounded bg-slate-100 text-slate-700 font-medium">Client query</div>
+            <span class="text-slate-300">→</span>
+
+            <div class="px-3 py-2 rounded bg-purple-50 text-purple-700 font-medium">Router <span class="text-purple-400 text-xs">(intent)</span></div>
+            <span class="text-slate-300">→</span>
+
+            <div class="px-3 py-2 rounded bg-blue-50 text-blue-700 font-medium">Hybrid retrieval <span class="text-blue-400 text-xs">(vector + BM25 + RRF)</span></div>
+            <span class="text-slate-300">→</span>
+
+            <div class="px-3 py-2 rounded bg-blue-50 text-blue-700 font-medium">Cross-encoder rerank</div>
+            <span class="text-slate-300">→</span>
+
+            <div class="px-3 py-2 rounded bg-rose-50 text-rose-700 font-medium">Confidence gate <span class="text-rose-400 text-xs">(score + coverage)</span></div>
+            <span class="text-slate-300">→</span>
+
+            <div class="px-3 py-2 rounded bg-emerald-50 text-emerald-700 font-medium">Groq LLM <span class="text-emerald-400 text-xs">(grounded)</span></div>
+            <span class="text-slate-300">→</span>
+
+            <div class="px-3 py-2 rounded bg-slate-100 text-slate-700 font-medium">Audit log</div>
+
+        </div>
+        <p class="text-xs text-slate-500 mt-4">
+            The confidence gate is <span class="font-semibold text-slate-700">terminal</span> — a refusal stops the loop instead of allowing the agent to find a way to answer.
+        </p>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- Section 3 — Component map                                    -->
+<!-- ============================================================ -->
+<div class="mb-8">
+    <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4">Component map</h3>
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+        <table class="min-w-full divide-y divide-slate-200">
+            <thead class="bg-slate-50">
+                <tr>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Component</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Role</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Why this choice</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-sm">
+                <tr>
+                    <td class="px-4 py-3 font-mono text-slate-900">pgvector</td>
+                    <td class="px-4 py-3 text-slate-700">Vector store with HNSW index</td>
+                    <td class="px-4 py-3 text-slate-600">SQL filtering lets ACLs be enforced at query time, not post-retrieval</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-3 font-mono text-slate-900">Neo4j 5.24</td>
+                    <td class="px-4 py-3 text-slate-700">Entity graph for relationship queries</td>
+                    <td class="px-4 py-3 text-slate-600">Multi-hop traversal is a graph operation, not a vector one</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-3 font-mono text-slate-900">Groq <span class="text-slate-400">gpt-oss-20b</span></td>
+                    <td class="px-4 py-3 text-slate-700">Grounded generation</td>
+                    <td class="px-4 py-3 text-slate-600">Free tier, fast, adequate for grounded answers</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-3 font-mono text-slate-900">MiniLM-L6-v2</td>
+                    <td class="px-4 py-3 text-slate-700">Embeddings (384-dim, local)</td>
+                    <td class="px-4 py-3 text-slate-600">Zero cost, no API dependency for a baseline</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-3 font-mono text-slate-900">MinIO</td>
+                    <td class="px-4 py-3 text-slate-700">S3-compatible object store</td>
+                    <td class="px-4 py-3 text-slate-600">Real S3 interface without cloud dependencies</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-3 font-mono text-slate-900">FastAPI</td>
+                    <td class="px-4 py-3 text-slate-700">API + HTML dashboard</td>
+                    <td class="px-4 py-3 text-slate-600">Same service serves /ask, /admin/*, and /dashboard/*</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-3 font-mono text-slate-900">Docker Compose</td>
+                    <td class="px-4 py-3 text-slate-700">Four-container stack</td>
+                    <td class="px-4 py-3 text-slate-600">Reproducible: postgres, neo4j, minio, api</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- Section 4 — Design trade-offs                                -->
+<!-- ============================================================ -->
+<div class="mb-8">
+    <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4">Design trade-offs</h3>
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+        <table class="min-w-full divide-y divide-slate-200">
+            <thead class="bg-slate-50">
+                <tr>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Decision</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Choice</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Alternative</th>
+                    <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Reason</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-sm">
+                <tr>
+                    <td class="px-4 py-3 text-slate-900">Chunk size</td>
+                    <td class="px-4 py-3 text-slate-700">400 / 50 overlap</td>
+                    <td class="px-4 py-3 text-slate-500">Sentence or document</td>
+                    <td class="px-4 py-3 text-slate-600">Balances context preservation with embedding focus</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-3 text-slate-900">Vector store</td>
+                    <td class="px-4 py-3 text-slate-700">pgvector + HNSW</td>
+                    <td class="px-4 py-3 text-slate-500">FAISS</td>
+                    <td class="px-4 py-3 text-slate-600">Persistence and SQL filtering; simpler ops</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-3 text-slate-900">ACL enforcement</td>
+                    <td class="px-4 py-3 text-slate-700">At query (SQL WHERE)</td>
+                    <td class="px-4 py-3 text-slate-500">Post-retrieval filter</td>
+                    <td class="px-4 py-3 text-slate-600">Unauthorized content never enters the retrieval layer</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-3 text-slate-900">Refusal</td>
+                    <td class="px-4 py-3 text-slate-700">Terminal, on confidence failure</td>
+                    <td class="px-4 py-3 text-slate-500">Best-effort answer</td>
+                    <td class="px-4 py-3 text-slate-600">In security, a hallucinated mitigation is worse than no answer</td>
+                </tr>
+                <tr>
+                    <td class="px-4 py-3 text-slate-900">Retrieval merge</td>
+                    <td class="px-4 py-3 text-slate-700">RRF (k=60)</td>
+                    <td class="px-4 py-3 text-slate-500">Score averaging</td>
+                    <td class="px-4 py-3 text-slate-600">Rank-based fusion is robust to score-scale mismatch</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

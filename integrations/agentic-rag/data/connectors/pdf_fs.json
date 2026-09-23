@@ -1,0 +1,13 @@
+{
+  "connector_type": "pdf_fs",
+  "display_name": "PDF Documents (local)",
+  "tenant_id": "acme",
+  "roots": [
+    {
+      "path": "test_corpus/pdfs",
+      "owner_team": "operations",
+      "clearance_level": "INTERNAL",
+      "share_scope": "org"
+    }
+  ]
+}

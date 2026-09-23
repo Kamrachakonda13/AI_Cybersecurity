@@ -1,0 +1,15 @@
+{
+    "value": [
+        {
+            "id": "drive-kam-0001",
+            "driveType": "personal",
+            "owner": {
+                "user": {
+                    "id": "user-kam-0001",
+                    "displayName": "Kam Rachakonda",
+                    "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            }
+        }
+    ]
+}

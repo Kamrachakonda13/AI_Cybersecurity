@@ -1,0 +1,46 @@
+{
+  "value": [
+    {
+      "id": "slack:thread-inc-2026-09-14",
+      "title": "Platform Incident #inc-2026-09-14",
+      "name": "platform_incident_thread.md",
+      "mime_type": "text/markdown",
+      "size": 590,
+      "created_at": "2026-09-14T09:15:00Z",
+      "last_modified": "2026-09-14T10:30:00Z",
+      "owner": "sre-team@acme.com",
+      "collection": "channel-platform-incidents",
+      "channel": "#platform-incidents",
+      "content_fixture_path": "test_corpus/slack/platform_incident_thread.md",
+      "source_url": "https://acme.slack.com/archives/C01234/p1694688000"
+    },
+    {
+      "id": "slack:thread-onboarding",
+      "title": "New Engineer Onboarding Questions",
+      "name": "onboarding_questions.md",
+      "mime_type": "text/markdown",
+      "size": 480,
+      "created_at": "2026-09-10T14:02:00Z",
+      "last_modified": "2026-09-10T14:20:00Z",
+      "owner": "platform-team@acme.com",
+      "collection": "channel-team-platform",
+      "channel": "#team-platform",
+      "content_fixture_path": "test_corpus/slack/onboarding_questions.md",
+      "source_url": "https://acme.slack.com/archives/C05678/p1694346000"
+    },
+    {
+      "id": "slack:thread-observability",
+      "title": "Observability Vendor Discussion",
+      "name": "observability_discussion.md",
+      "mime_type": "text/markdown",
+      "size": 520,
+      "created_at": "2026-09-12T11:20:00Z",
+      "last_modified": "2026-09-12T11:47:00Z",
+      "owner": "sre-team@acme.com",
+      "collection": "channel-sre",
+      "channel": "#sre",
+      "content_fixture_path": "test_corpus/slack/observability_discussion.md",
+      "source_url": "https://acme.slack.com/archives/C09999/p1694520000"
+    }
+  ]
+}

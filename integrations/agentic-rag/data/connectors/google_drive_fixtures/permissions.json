@@ -1,0 +1,33 @@
+{
+    "gdrive:doc-product-roadmap": [
+        {
+            "principal_type": "group",
+            "principal_id": "product-team@acme.com",
+            "access": "read"
+        },
+        {
+            "principal_type": "user",
+            "principal_id": "pm-alice@acme.com",
+            "access": "read"
+        },
+        {
+            "principal_type": "team",
+            "principal_id": "sre",
+            "access": "read"
+        }
+    ],
+    "gdrive:doc-customer-feedback": [
+        {
+            "principal_type": "group",
+            "principal_id": "product-team@acme.com",
+            "access": "read"
+        }
+    ],
+    "gdrive:doc-competitive": [
+        {
+            "principal_type": "team",
+            "principal_id": "executive",
+            "access": "read"
+        }
+    ]
+}

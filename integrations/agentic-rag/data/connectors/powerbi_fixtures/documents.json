@@ -1,0 +1,46 @@
+{
+    "value": [
+        {
+            "id": "powerbi:report-sales-dashboard",
+            "title": "Sales Performance Dashboard",
+            "name": "sales_dashboard.md",
+            "mime_type": "text/markdown",
+            "size": 620,
+            "created_at": "2026-06-01T09:00:00Z",
+            "last_modified": "2026-09-11T15:00:00Z",
+            "owner": "sales-ops@acme.com",
+            "collection": "workspace-sales",
+            "workspace_id": "workspace-sales-001",
+            "content_fixture_path": "test_corpus/powerbi/sales_dashboard.md",
+            "source_url": "https://app.powerbi.com/groups/workspace-sales-001/reports/report-sales-dashboard"
+        },
+        {
+            "id": "powerbi:report-churn",
+            "title": "Customer Churn Analysis Report",
+            "name": "customer_churn_report.md",
+            "mime_type": "text/markdown",
+            "size": 605,
+            "created_at": "2026-05-15T14:00:00Z",
+            "last_modified": "2026-09-08T10:30:00Z",
+            "owner": "analytics-team@acme.com",
+            "collection": "workspace-analytics",
+            "workspace_id": "workspace-analytics-001",
+            "content_fixture_path": "test_corpus/powerbi/customer_churn_report.md",
+            "source_url": "https://app.powerbi.com/groups/workspace-analytics-001/reports/report-churn"
+        },
+        {
+            "id": "powerbi:report-marketing",
+            "title": "Marketing Attribution Model",
+            "name": "marketing_attribution.md",
+            "mime_type": "text/markdown",
+            "size": 590,
+            "created_at": "2026-07-20T11:00:00Z",
+            "last_modified": "2026-09-09T16:45:00Z",
+            "owner": "marketing-ops@acme.com",
+            "collection": "workspace-marketing",
+            "workspace_id": "workspace-marketing-001",
+            "content_fixture_path": "test_corpus/powerbi/marketing_attribution.md",
+            "source_url": "https://app.powerbi.com/groups/workspace-marketing-001/reports/report-marketing"
+        }
+    ]
+}

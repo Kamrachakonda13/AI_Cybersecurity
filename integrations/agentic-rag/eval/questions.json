@@ -1,0 +1,77 @@
+[
+    {
+        "question": "How many failed login attempts trigger a lockout?",
+        "expected_chunk_ids": [
+            "sample_001_0001"
+        ]
+    },
+    {
+        "question": "What is the minimum password length?",
+        "expected_chunk_ids": [
+            "sample_001_0000"
+        ]
+    },
+    {
+        "question": "How long are revoked API keys still valid?",
+        "expected_chunk_ids": [
+            "sample_001_0001",
+            "sample_001_0002"
+        ]
+    },
+    {
+        "question": "What is the base delay for exponential backoff?",
+        "expected_chunk_ids": [
+            "sample_002_0000"
+        ]
+    },
+    {
+        "question": "How are idempotency keys used in POST requests?",
+        "expected_chunk_ids": [
+            "sample_002_0001",
+            "sample_002_0002"
+        ]
+    },
+    {
+        "question": "When does the circuit breaker open?",
+        "expected_chunk_ids": [
+            "sample_002_0002"
+        ]
+    },
+    {
+        "question": "How long is user data retained after account closure?",
+        "expected_chunk_ids": [
+            "sample_003_0000"
+        ]
+    },
+    {
+        "question": "What encryption is used for backups at rest?",
+        "expected_chunk_ids": [
+            "sample_003_0001"
+        ]
+    },
+    {
+        "question": "How quickly must deletion requests be processed?",
+        "expected_chunk_ids": [
+            "sample_003_0002"
+        ]
+    },
+    {
+        "question": "What is the response SLA for P2 alerts?",
+        "expected_chunk_ids": [
+            "sample_004_0001"
+        ]
+    },
+    {
+        "question": "How often does synthetic monitoring run?",
+        "expected_chunk_ids": [
+            "sample_004_0002"
+        ]
+    },
+    {
+        "question": "What is the blue-green deployment traffic ramp?",
+        "expected_chunk_ids": [
+            "sample_005_0000",
+            "sample_005_0001"
+        ]
+    }
+]

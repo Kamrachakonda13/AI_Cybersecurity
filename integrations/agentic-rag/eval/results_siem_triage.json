@@ -1,0 +1,313 @@
+{
+  "records": [
+    {
+      "incident_id": "i-0001",
+      "size": 8,
+      "severity": "CRITICAL",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.92,
+      "reason": "Multiple high/critical alerts (root access, macro, C2, encoded PowerShell) indicate likely compromise."
+    },
+    {
+      "incident_id": "i-0002",
+      "size": 1,
+      "severity": "LOW",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "SUPPRESS",
+      "confidence": 0.8,
+      "reason": "Single low\u2011severity successful login from a new device, no other suspicious activity."
+    },
+    {
+      "incident_id": "i-0005",
+      "size": 1,
+      "severity": "MEDIUM",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "SUPPRESS",
+      "confidence": 0.8,
+      "reason": "Single medium\u2011severity failed login alert without additional evidence of compromise."
+    },
+    {
+      "incident_id": "i-0007",
+      "size": 1,
+      "severity": "LOW",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "SUPPRESS",
+      "confidence": 0.95,
+      "reason": "Single low\u2011severity internal SSH from management subnet, typical admin activity."
+    },
+    {
+      "incident_id": "i-0008",
+      "size": 1,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Critical alert: root account accessed from a new IP, indicating potential compromise."
+    },
+    {
+      "incident_id": "i-0009",
+      "size": 1,
+      "severity": "LOW",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "SUPPRESS",
+      "confidence": 0.95,
+      "reason": "Single low\u2011severity admin tool process enumeration, no malicious indicators."
+    },
+    {
+      "incident_id": "i-0011",
+      "size": 1,
+      "severity": "MEDIUM",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.7,
+      "reason": "[severity floor] MEDIUM incident; LLM suppress confidence 0.70 below floor 0.75. Original: Single medium-level data exfil alert without corroborating high-severity events; likely benign or false posit"
+    },
+    {
+      "incident_id": "i-0014",
+      "size": 8,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Multiple critical alerts show credential dumping, root access from new IP, MFA disabled, and C2 activity\u2014clear malicious behavior."
+    },
+    {
+      "incident_id": "i-0015",
+      "size": 1,
+      "severity": "LOW",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "SUPPRESS",
+      "confidence": 0.95,
+      "reason": "Single low\u2011severity login from a known service account, likely a scheduled job, no evidence of malicious activity."
+    },
+    {
+      "incident_id": "i-0020",
+      "size": 1,
+      "severity": "MEDIUM",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "SUPPRESS",
+      "confidence": 0.8,
+      "reason": "Single medium\u2011severity unsigned binary write to system32, no high\u2011severity alerts; likely benign or false positive."
+    },
+    {
+      "incident_id": "i-0021",
+      "size": 1,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Single critical credential dumping alert indicates likely attacker activity."
+    },
+    {
+      "incident_id": "i-0022",
+      "size": 1,
+      "severity": "LOW",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "SUPPRESS",
+      "confidence": 0.95,
+      "reason": "Single low\u2011severity login from a known service account, likely scheduled backup activity."
+    },
+    {
+      "incident_id": "i-0023",
+      "size": 1,
+      "severity": "MEDIUM",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "SUPPRESS",
+      "confidence": 0.8,
+      "reason": "Only one medium\u2011severity port scan alert; no high/critical alerts or clear malicious pattern."
+    },
+    {
+      "incident_id": "i-0024",
+      "size": 1,
+      "severity": "MEDIUM",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.7,
+      "reason": "[severity floor] MEDIUM incident; LLM suppress confidence 0.70 below floor 0.75. Original: Only one medium\u2011severity IDP alert from a service account; no high/critical alerts or clear malicious pattern"
+    },
+    {
+      "incident_id": "i-0030",
+      "size": 7,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Multiple high/critical alerts (MFA disabled, C2 connection, macro, impossible travel) indicate likely attacker activity."
+    },
+    {
+      "incident_id": "i-0032",
+      "size": 7,
+      "severity": "CRITICAL",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Multiple high/critical alerts show privilege removal, data exfiltration, and C2 activity, indicating real attacker behavior."
+    },
+    {
+      "incident_id": "i-0037",
+      "size": 1,
+      "severity": "CRITICAL",
+      "ground_truth": "FALSE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.9,
+      "reason": "Critical alert shows MFA disabled for a privileged account, indicating a likely compromise that requires immediate investigation."
+    },
+    {
+      "incident_id": "i-0040",
+      "size": 1,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Critical alert shows MFA disabled for a privileged user, indicating a likely compromise that requires immediate investigation."
+    },
+    {
+      "incident_id": "i-0045",
+      "size": 1,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Critical alert shows MFA disabled for a privileged user, indicating a likely compromise that requires immediate investigation."
+    },
+    {
+      "incident_id": "i-0050",
+      "size": 1,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.9,
+      "reason": "Critical alert shows MFA disabled for a privileged user, indicating a likely compromise that requires immediate investigation."
+    },
+    {
+      "incident_id": "i-0051",
+      "size": 1,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Single critical credential dumping alert indicates likely attacker activity on srv-24."
+    },
+    {
+      "incident_id": "i-0054",
+      "size": 7,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Multiple critical alerts (root access, credential dumping, bucket policy change) indicate a likely compromise and data exfiltration attempt."
+    },
+    {
+      "incident_id": "i-0056",
+      "size": 8,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.92,
+      "reason": "Critical root access, bucket policy change, data exfil, and unsigned binary indicate likely malicious activity."
+    },
+    {
+      "incident_id": "i-0062",
+      "size": 1,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Critical root account access from a new IP suggests a likely compromise."
+    },
+    {
+      "incident_id": "i-0063",
+      "size": 6,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.92,
+      "reason": "Credential dumping tool and multiple encoded PowerShell commands suggest attacker activity."
+    },
+    {
+      "incident_id": "i-0065",
+      "size": 5,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Multiple high/critical alerts (credential dumping, macro execution, impossible travel, outbound C2) indicate likely malicious activity."
+    },
+    {
+      "incident_id": "i-0067",
+      "size": 5,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.9,
+      "reason": "Multiple high/critical alerts show root access from new IP, impossible travel, encoded PowerShell, and macro activity\u2014indicative of credential compromise and malicious use."
+    },
+    {
+      "incident_id": "i-0077",
+      "size": 1,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.9,
+      "reason": "Single critical credential dumping alert indicates likely attacker activity."
+    },
+    {
+      "incident_id": "i-0078",
+      "size": 1,
+      "severity": "CRITICAL",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.9,
+      "reason": "Root account accessed from a new IP, a high\u2011risk indicator of possible compromise."
+    },
+    {
+      "incident_id": "i-0079",
+      "size": 7,
+      "severity": "HIGH",
+      "ground_truth": "TRUE_POSITIVE",
+      "decision": "ESCALATE",
+      "confidence": 0.95,
+      "reason": "Encoded PowerShell, outbound C2, system32 writes, and data exfil signals likely attacker activity."
+    }
+  ],
+  "summary": {
+    "total_incidents": 30,
+    "tp_total": 18,
+    "fp_total": 12,
+    "tp_escalated": 17,
+    "fp_escalated": 5,
+    "tp_suppressed": 1,
+    "fp_suppressed": 7,
+    "recall": 0.9444,
+    "precision": 0.7727,
+    "fp_reduction_rate": 0.5833,
+    "false_negative_rate": 0.0556,
+    "baseline_escalations": 30,
+    "new_escalations": 22,
+    "escalations_removed": 8,
+    "estimated_hours_saved_per_week": 0.67
+  },
+  "incidents_meta": {
+    "total_incidents": 30,
+    "total_alerts": 88,
+    "size_distribution": {
+      "1": 20,
+      "5": 2,
+      "6": 1,
+      "7": 4,
+      "8": 3
+    },
+    "singletons": 20,
+    "multi_alert": 10,
+    "severity_distribution": {
+      "CRITICAL": 19,
+      "LOW": 5,
+      "MEDIUM": 5,
+      "HIGH": 1
+    },
+    "subset": "stratified_30_of_119",
+    "total_available": 119
+  },
+  "complete": true
+}

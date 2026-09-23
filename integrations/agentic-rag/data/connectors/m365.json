@@ -1,0 +1,48 @@
+{
+  "connector_type": "m365",
+  "display_name": "Microsoft 365 (fixture, Teams focus)",
+  "tenant_id": "acme",
+  "fixture_client": {
+    "fixtures_dir": "data/connectors/m365_fixtures",
+    "content_root": "."
+  },
+  "team_mapping": {
+    "default_team": "unknown",
+    "default_clearance": "INTERNAL",
+    "default_share_scope": "team",
+    "owners": {
+      "product-team@acme.com": {
+        "team": "product",
+        "clearance": "INTERNAL",
+        "share_scope": "org"
+      },
+      "security-team@acme.com": {
+        "team": "security",
+        "clearance": "CONFIDENTIAL",
+        "share_scope": ["security", "executive"]
+      },
+      "platform-team@acme.com": {
+        "team": "platform",
+        "clearance": "INTERNAL",
+        "share_scope": ["platform", "sre"]
+      }
+    }
+  },
+  "collection_governance": {
+    "teams-product-channel": {
+      "team": "product",
+      "clearance": "INTERNAL",
+      "share_scope": "org"
+    },
+    "teams-security-channel": {
+      "team": "security",
+      "clearance": "CONFIDENTIAL",
+      "share_scope": ["security", "executive"]
+    },
+    "teams-platform-channel": {
+      "team": "platform",
+      "clearance": "INTERNAL",
+      "share_scope": ["platform", "sre"]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "summary": {
+    "classifier": "embedding",
+    "total_injections": 18,
+    "total_benign": 239,
+    "tp": 18,
+    "fn": 0,
+    "fp": 0,
+    "tn": 239,
+    "detection_rate": 1.0,
+    "false_positive_rate": 0.0,
+    "precision": 1.0,
+    "accuracy": 1.0,
+    "per_category": {
+      "direct_override": {
+        "caught": 4,
+        "total": 4
+      },
+      "encoded": {
+        "caught": 1,
+        "total": 1
+      },
+      "indirect_injection": {
+        "caught": 1,
+        "total": 1
+      },
+      "jailbreak_framing": {
+        "caught": 2,
+        "total": 2
+      },
+      "role_play": {
+        "caught": 6,
+        "total": 6
+      },
+      "system_prompt_extraction": {
+        "caught": 4,
+        "total": 4
+      }
+    }
+  },
+  "missed": [],
+  "false_positives": []
+}
