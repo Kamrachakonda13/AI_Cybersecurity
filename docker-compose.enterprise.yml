@@ -1,4 +1,8 @@
 services:
+  postgres:
+    ports: !override
+      - "5434:5432"
+
   backend:
     environment:
       AGENTIC_RAG_URL: http://agentic-rag:8000
