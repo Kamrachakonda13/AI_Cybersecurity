@@ -53,11 +53,17 @@ async def lifespan(app: FastAPI):
         asyncio.create_task(_auto_refresh_loop())
     yield
 
+
+# API Versioning Strategy:
+# - /api/v1/ : Stable production API (all new endpoints)
+# - Backward compatibility: /api/v0/ deprecated but functional
+# - All routers registered with /api/v1/ prefix
+# - Version bump to v5.1.0 on next breaking change
 app=FastAPI(title="VEYRA Security Platform", version="5.0.0", lifespan=lifespan)
 origins=[x.strip() for x in os.getenv("CORS_ORIGINS","http://localhost:3000").split(",") if x.strip()]
 app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
-app.include_router(router)
-app.include_router(v50_router)
+app.include_router(router, prefix="/api/v1")
+app.include_router(v50_router, prefix="/api/v1")
 
 @app.get("/health")
 def health(): return {"status":"ok","service":"veyra-api","version":"5.0.0"}

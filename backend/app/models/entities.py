@@ -13,7 +13,7 @@ Help — how this file fits together:
 """
 from datetime import datetime, timezone
 import uuid
-from sqlalchemy import String, Integer, Float, Boolean, DateTime, Text
+from sqlalchemy import String, Integer, Float, Boolean, DateTime, Text, UUID
 from sqlalchemy.orm import Mapped, mapped_column
 from ..db import Base
 
@@ -285,6 +285,7 @@ class SecurityToolJob(Base):
     status: Mapped[str] = mapped_column(String(32), default="pending_approval")
     contract_sha256: Mapped[str] = mapped_column(String(64), default="")
     actor: Mapped[str] = mapped_column(String(255), default="admin")
+    tenant_id: Mapped[UUID] = mapped_column(UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
     params: Mapped[str] = mapped_column(Text, default="{}")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
     approved_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
@@ -503,6 +504,7 @@ class UserAccount(Base):
     phone: Mapped[str] = mapped_column(String(32), default="")
     password_hash: Mapped[str] = mapped_column(Text)
     role: Mapped[str] = mapped_column(String(32), default="viewer", index=True)
+    tenant_id: Mapped[UUID] = mapped_column(UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
     status: Mapped[str] = mapped_column(String(32), default="active")
     mfa_required: Mapped[bool] = mapped_column(Boolean, default=True)
     must_change_password: Mapped[bool] = mapped_column(Boolean, default=True)
@@ -608,6 +610,7 @@ class WorkerNode(Base):
     name: Mapped[str] = mapped_column(String(255), default="")
     kind: Mapped[str] = mapped_column(String(64), default="kali")
     platform: Mapped[str] = mapped_column(String(128), default="kali-linux-amd64")
+    tenant_id: Mapped[UUID] = mapped_column(UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
     status: Mapped[str] = mapped_column(String(32), default="pending")
     version: Mapped[str] = mapped_column(String(64), default="2.8.0")
     capabilities_json: Mapped[str] = mapped_column(Text, default="[]")
@@ -696,6 +699,7 @@ class ToolDefinition(Base):
     update_channel: Mapped[str] = mapped_column(String(32), default="stable")
     pin_mode: Mapped[str] = mapped_column(String(32), default="floating")
     status: Mapped[str] = mapped_column(String(32), default="active")
+    tenant_id: Mapped[UUID] = mapped_column(UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now, onupdate=now)
 
