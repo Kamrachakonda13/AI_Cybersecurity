@@ -60,3 +60,18 @@ def ask(req: AskRequest, request: Request, _: bool = Depends(require_admin)):
 @router.get("/connectors")
 def connectors(_: bool = Depends(require_admin)):
     return _request("GET", "/admin/connectors")
+
+
+@router.get("/sync-state")
+def sync_state(_: bool = Depends(require_admin)):
+    return _request("GET", "/admin/sync-state")
+
+
+@router.get("/duplicates")
+def duplicates(_: bool = Depends(require_admin)):
+    return _request("GET", "/admin/duplicates")
+
+
+@router.get("/sources/{name}")
+def source_detail(name: str, _: bool = Depends(require_admin)):
+    return _request("GET", f"/admin/sources/{name}")
