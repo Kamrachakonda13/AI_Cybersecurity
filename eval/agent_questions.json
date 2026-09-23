@@ -1,0 +1,32 @@
+[
+    {
+        "question": "How many failed login attempts trigger a lockout?",
+        "expected_tool": "retrieve",
+        "expected_chunk_ids": [
+            "sample_001_0001"
+        ]
+    },
+    {
+        "question": "What does billing-service depend on?",
+        "expected_tool": "graph_query",
+        "expected_chunk_ids": []
+    },
+    {
+        "question": "What does analytics-service transitively depend on?",
+        "expected_tool": "graph_query",
+        "expected_chunk_ids": []
+    },
+    {
+        "question": "What is 15 * 24 + 7?",
+        "expected_tool": "calculate",
+        "expected_chunk_ids": []
+    },
+    {
+        "question": "How long are revoked API keys still valid?",
+        "expected_tool": "retrieve",
+        "expected_chunk_ids": [
+            "sample_001_0001",
+            "sample_001_0002"
+        ]
+    }
+]

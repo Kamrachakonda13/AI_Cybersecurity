@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}Overview{% endblock %}
+{% block page_title %}Overview{% endblock %}
+{% block page_subtitle %}System-wide summary of the enterprise RAG pipeline{% endblock %}
+
+{% block content %}
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+        <div class="text-xs font-medium text-slate-500 uppercase tracking-wide">Sources</div>
+        <div class="mt-2 text-3xl font-bold text-slate-900">{{ stats.total_sources }}</div>
+        <div class="mt-1 text-xs text-slate-500">{{ stats.loaded_sources }} loaded · {{ stats.failed_sources }} failed</div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+        <div class="text-xs font-medium text-slate-500 uppercase tracking-wide">Documents</div>
+        <div class="mt-2 text-3xl font-bold text-slate-900">{{ stats.total_documents }}</div>
+        <div class="mt-1 text-xs text-slate-500">across all connectors</div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+        <div class="text-xs font-medium text-slate-500 uppercase tracking-wide">Chunks indexed</div>
+        <div class="mt-2 text-3xl font-bold text-slate-900">{{ stats.total_chunks }}</div>
+        <div class="mt-1 text-xs text-slate-500">{{ stats.active_chunks }} active · {{ stats.deleted_chunks }} deleted</div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200 p-5">
+        <div class="text-xs font-medium text-slate-500 uppercase tracking-wide">Duplicate groups</div>
+        <div class="mt-2 text-3xl font-bold text-slate-900">{{ stats.duplicate_groups }}</div>
+        <div class="mt-1 text-xs text-slate-500">cross-source matches</div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+
+    <div class="lg:col-span-2 bg-white rounded-lg shadow-sm border border-slate-200">
+        <div class="px-5 py-4 border-b border-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900">Connectors</h3>
+            <p class="text-xs text-slate-500 mt-0.5">Status of each data source</p>
+        </div>
+        <div class="divide-y divide-slate-100">
+            {% for c in connectors %}
+            <div class="px-5 py-3 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="w-2 h-2 rounded-full {% if c.status == 'loaded' %}bg-emerald-500{% else %}bg-red-500{% endif %}"></span>
+                    <div>
+                        <div class="text-sm font-medium text-slate-900">{{ c.name }}</div>
+                        <div class="text-xs text-slate-500">{{ c.source_system }}</div>
+                    </div>
+                </div>
+                <div class="text-sm text-slate-700">
+                    {% if c.document_count is not none %}
+                    <span class="font-semibold">{{ c.document_count }}</span>
+                    <span class="text-xs text-slate-500">docs</span>
+                    {% else %}
+                    <span class="text-xs text-red-500">{{ c.error or 'failed' }}</span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm border border-slate-200">
+        <div class="px-5 py-4 border-b border-slate-200">
+            <h3 class="text-sm font-semibold text-slate-900">Sync state</h3>
+            <p class="text-xs text-slate-500 mt-0.5">Incremental indexing</p>
+        </div>
+        <div class="p-5 space-y-3">
+            <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Indexed documents</span>
+                <span class="font-semibold text-slate-900">{{ sync_state.documents_indexed }}</span>
+            </div>
+            <div class="flex justify-between text-sm">
+                <span class="text-slate-600">Total chunks</span>
+                <span class="font-semibold text-slate-900">{{ sync_state.total_chunks }}</span>
+            </div>
+            <div class="pt-3 border-t border-slate-100">
+                <a href="/dashboard/pipeline" class="text-xs text-blue-600 hover:text-blue-800 font-medium">View pipeline controls &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white rounded-lg shadow-sm border border-slate-200">
+    <div class="px-5 py-4 border-b border-slate-200">
+        <h3 class="text-sm font-semibold text-slate-900">Defense layers</h3>
+        <p class="text-xs text-slate-500 mt-0.5">Safety controls active in this pipeline</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+        <div class="p-5">
+            <div class="text-xs font-medium text-emerald-600 uppercase">L1 · Active</div>
+            <div class="mt-2 font-semibold text-sm text-slate-900">Input guardrail</div>
+            <div class="mt-1 text-xs text-slate-500">Blocks prompt injection patterns</div>
+        </div>
+        <div class="p-5">
+            <div class="text-xs font-medium text-emerald-600 uppercase">L2 · Active</div>
+            <div class="mt-2 font-semibold text-sm text-slate-900">PII detection</div>
+            <div class="mt-1 text-xs text-slate-500">Masks email, phone, SSN, card</div>
+        </div>
+        <div class="p-5">
+            <div class="text-xs font-medium text-emerald-600 uppercase">L3 · Active</div>
+            <div class="mt-2 font-semibold text-sm text-slate-900">Confidence gate</div>
+            <div class="mt-1 text-xs text-slate-500">Refuses weak retrieval</div>
+        </div>
+        <div class="p-5">
+            <div class="text-xs font-medium text-emerald-600 uppercase">L4 · Active</div>
+            <div class="mt-2 font-semibold text-sm text-slate-900">Hallucination check</div>
+            <div class="mt-1 text-xs text-slate-500">NLI verification of answers</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

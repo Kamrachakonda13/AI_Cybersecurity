@@ -1,0 +1,122 @@
+[
+  {
+    "source": "auth-service",
+    "target": "identity-database",
+    "type": "DEPENDS_ON",
+    "source_chunk": "sample_006_0000",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "auth-service",
+    "target": "internal",
+    "type": "CLASSIFIED_AS",
+    "source_chunk": "sample_006_0000",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "billing-service",
+    "target": "auth-service",
+    "type": "DEPENDS_ON",
+    "source_chunk": "sample_006_0001",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "billing-service",
+    "target": "ledger-database",
+    "type": "DEPENDS_ON",
+    "source_chunk": "sample_006_0001",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "analytics-service",
+    "target": "billing-service",
+    "type": "DEPENDS_ON",
+    "source_chunk": "sample_006_0002",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "analytics-service",
+    "target": "internal-warehouse",
+    "type": "DEPENDS_ON",
+    "source_chunk": "sample_006_0002",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "notification-service",
+    "target": "auth-service",
+    "type": "DEPENDS_ON",
+    "source_chunk": "sample_006_0003",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "notification-service",
+    "target": "message-queue",
+    "type": "DEPENDS_ON",
+    "source_chunk": "sample_006_0003",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "notification-service",
+    "target": "standard-retry-policy",
+    "type": "USES_POLICY",
+    "source_chunk": "sample_006_0003",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "auth-service",
+    "target": "standard-retry-policy",
+    "type": "USES_POLICY",
+    "source_chunk": "sample_006_0003",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "billing-service",
+    "target": "standard-retry-policy",
+    "type": "USES_POLICY",
+    "source_chunk": "sample_006_0003",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "analytics-service",
+    "target": "standard-retry-policy",
+    "type": "USES_POLICY",
+    "source_chunk": "sample_006_0003",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "docs-service",
+    "target": "standard-retry-policy",
+    "type": "USES_POLICY",
+    "source_chunk": "sample_006_0003",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "billing-service",
+    "target": "data-retention-policy",
+    "type": "USES_POLICY",
+    "source_chunk": "sample_006_0003",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  },
+  {
+    "source": "analytics-service",
+    "target": "data-retention-policy",
+    "type": "USES_POLICY",
+    "source_chunk": "sample_006_0003",
+    "clearance_level": "INTERNAL",
+    "tenant_id": "acme"
+  }
+]

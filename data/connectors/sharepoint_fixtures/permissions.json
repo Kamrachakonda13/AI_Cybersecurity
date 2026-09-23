@@ -1,0 +1,17 @@
+{
+  "sp:doc-onboarding": [
+    {"principal_type": "group", "principal_id": "hr-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "all-employees@acme.com", "access": "read"}
+  ],
+  "sp:doc-sec-policy": [
+    {"principal_type": "group", "principal_id": "security-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "all-employees@acme.com", "access": "read"}
+  ],
+  "sp:doc-vendor": [
+    {"principal_type": "group", "principal_id": "security-team@acme.com", "access": "read"}
+  ],
+  "sp:doc-sre-runbook": [
+    {"principal_type": "group", "principal_id": "sre-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "engineering@acme.com", "access": "read"}
+  ]
+}

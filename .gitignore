@@ -1,0 +1,29 @@
+venv/
+.venv/
+__pycache__/
+.env
+data/clean/
+*.pyc
+.DS_Store
+data/sync_state.db
+data/sync_state.db-journal
+data/traces.jsonl
+*.tgz
+*.bak
+*.bak[0-9]
+*.bak[0-9]*
+*.html.bak*
+*.py.bak*
+data/pipeline_runs.jsonl
+data/sample_company.db
+data/chunks_original.json.bak
+promptfoo/node_modules/
+
+# Phase 5/9 — security corpus (public data, ~50MB, fetched by script)
+data/security/attack.json
+data/security/kev.json
+data/security/security_corpus.json
+
+# Phase 9 — runtime logs and caches
+data/security/blocked.jsonl
+data/security/training_embeddings.npz

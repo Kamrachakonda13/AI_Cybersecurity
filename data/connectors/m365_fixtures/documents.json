@@ -1,0 +1,46 @@
+{
+  "value": [
+    {
+      "id": "m365:teams-file-q3planning",
+      "title": "Q3 Planning Notes",
+      "name": "q3_planning_notes.md",
+      "mime_type": "text/markdown",
+      "size": 375,
+      "created_at": "2026-07-05T10:00:00Z",
+      "last_modified": "2026-09-02T14:30:00Z",
+      "owner": "product-team@acme.com",
+      "collection": "teams-product-channel",
+      "channel": "Product Planning",
+      "content_fixture_path": "test_corpus/m365/q3_planning_notes.md",
+      "source_url": "https://teams.microsoft.com/l/channel/19%3Aabc/product-planning"
+    },
+    {
+      "id": "m365:teams-file-security-retro",
+      "title": "Security Incident Retrospective",
+      "name": "security_incident_retro.md",
+      "mime_type": "text/markdown",
+      "size": 465,
+      "created_at": "2026-08-14T11:00:00Z",
+      "last_modified": "2026-09-07T09:15:00Z",
+      "owner": "security-team@acme.com",
+      "collection": "teams-security-channel",
+      "channel": "Security Incidents",
+      "content_fixture_path": "test_corpus/m365/security_incident_retro.md",
+      "source_url": "https://teams.microsoft.com/l/channel/19%3Adef/security-incidents"
+    },
+    {
+      "id": "m365:teams-file-platform-sync",
+      "title": "Platform Sync Notes",
+      "name": "platform_sync_notes.md",
+      "mime_type": "text/markdown",
+      "size": 380,
+      "created_at": "2026-08-20T13:00:00Z",
+      "last_modified": "2026-09-09T16:00:00Z",
+      "owner": "platform-team@acme.com",
+      "collection": "teams-platform-channel",
+      "channel": "Platform Sync",
+      "content_fixture_path": "test_corpus/m365/platform_sync_notes.md",
+      "source_url": "https://teams.microsoft.com/l/channel/19%3Aghi/platform-sync"
+    }
+  ]
+}

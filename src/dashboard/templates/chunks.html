@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}Chunks{% endblock %}
+{% block page_title %}Chunks{% endblock %}
+{% block page_subtitle %}{{ total }} chunks indexed across {{ sources|length }} sources{% endblock %}
+
+{% block content %}
+
+<!-- Filter bar -->
+<form method="get" action="/dashboard/chunks"
+      class="bg-white rounded-lg shadow-sm border border-slate-200 p-4 mb-4">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-3 items-end">
+
+        <div class="md:col-span-2">
+            <label class="block text-xs font-medium text-slate-600 mb-1">Search content</label>
+            <input type="text" name="q" value="{{ filters.q or '' }}"
+                   placeholder="Search chunks..."
+                   class="w-full px-3 py-2 text-sm border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+            <label class="block text-xs font-medium text-slate-600 mb-1">Source</label>
+            <select name="source" class="w-full px-3 py-2 text-sm border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">All</option>
+                {% for s in sources %}
+                <option value="{{ s }}" {% if filters.source == s %}selected{% endif %}>{{ s }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-xs font-medium text-slate-600 mb-1">Clearance</label>
+            <select name="clearance" class="w-full px-3 py-2 text-sm border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">All</option>
+                {% for c in ['PUBLIC', 'INTERNAL', 'CONFIDENTIAL', 'RESTRICTED'] %}
+                <option value="{{ c }}" {% if filters.clearance == c %}selected{% endif %}>{{ c }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="flex gap-2">
+            <button type="submit" class="flex-1 px-3 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700">
+                Filter
+            </button>
+            <a href="/dashboard/chunks" class="px-3 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded hover:bg-slate-200">
+                Clear
+            </a>
+        </div>
+    </div>
+</form>
+
+<!-- Summary line -->
+<div class="mb-3 text-xs text-slate-500">
+    Showing {{ chunks|length }} of {{ total }} chunks
+    {% if filters.q or filters.source or filters.clearance or filters.team %}
+    · filtered by
+    {% if filters.q %}q="{{ filters.q }}"{% endif %}
+    {% if filters.source %}source={{ filters.source }}{% endif %}
+    {% if filters.clearance %}clearance={{ filters.clearance }}{% endif %}
+    {% if filters.team %}team={{ filters.team }}{% endif %}
+    {% endif %}
+</div>
+
+<!-- Chunks table -->
+<div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+    <table class="min-w-full divide-y divide-slate-200">
+        <thead class="bg-slate-50">
+            <tr>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Chunk ID</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Source</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Content preview</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Clearance</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Team</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Alts</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+            {% for c in chunks %}
+            <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 text-xs font-mono text-slate-600">{{ c.id }}</td>
+                <td class="px-4 py-3 text-xs">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700">
+                        {{ c.source_system or 'legacy' }}
+                    </span>
+                </td>
+                <td class="px-4 py-3 text-xs text-slate-700 max-w-md">
+                    {{ c.content_preview[:150] }}{% if c.content_preview|length > 150 %}...{% endif %}
+                </td>
+                <td class="px-4 py-3">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium
+                        {% if c.clearance_level == 'PUBLIC' %}bg-blue-100 text-blue-800
+                        {% elif c.clearance_level == 'INTERNAL' %}bg-amber-100 text-amber-800
+                        {% elif c.clearance_level == 'CONFIDENTIAL' %}bg-red-100 text-red-800
+                        {% elif c.clearance_level == 'RESTRICTED' %}bg-purple-100 text-purple-800
+                        {% else %}bg-slate-100 text-slate-800{% endif %}">
+                        {{ c.clearance_level or 'UNKNOWN' }}
+                    </span>
+                </td>
+                <td class="px-4 py-3 text-xs text-slate-600">{{ c.owner_team or 'unknown' }}</td>
+                <td class="px-4 py-3 text-xs text-slate-500">
+                    {% if c.alternate_sources and c.alternate_sources|length > 0 %}
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-indigo-100 text-indigo-800">
+                        +{{ c.alternate_sources|length }}
+                    </span>
+                    {% else %}
+                    <span class="text-slate-300">—</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Pagination -->
+{% if total > chunks|length %}
+<div class="mt-4 flex justify-center gap-2">
+    {% if offset > 0 %}
+    <a href="?{{ query_string }}&offset={{ offset - limit }}"
+       class="px-3 py-1.5 text-sm bg-white border border-slate-300 rounded hover:bg-slate-50">
+        ← Previous
+    </a>
+    {% endif %}
+    {% if offset + limit < total %}
+    <a href="?{{ query_string }}&offset={{ offset + limit }}"
+       class="px-3 py-1.5 text-sm bg-white border border-slate-300 rounded hover:bg-slate-50">
+        Next →
+    </a>
+    {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}

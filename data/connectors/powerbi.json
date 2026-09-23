@@ -1,0 +1,68 @@
+{
+    "connector_type": "powerbi",
+    "display_name": "Power BI (fixture)",
+    "tenant_id": "acme",
+    "fixture_client": {
+        "fixtures_dir": "data/connectors/powerbi_fixtures",
+        "content_root": "."
+    },
+    "team_mapping": {
+        "default_team": "unknown",
+        "default_clearance": "INTERNAL",
+        "default_share_scope": "team",
+        "owners": {
+            "sales-ops@acme.com": {
+                "team": "sales",
+                "clearance": "INTERNAL",
+                "share_scope": [
+                    "sales",
+                    "executive"
+                ]
+            },
+            "analytics-team@acme.com": {
+                "team": "analytics",
+                "clearance": "INTERNAL",
+                "share_scope": [
+                    "analytics",
+                    "product",
+                    "executive"
+                ]
+            },
+            "marketing-ops@acme.com": {
+                "team": "marketing",
+                "clearance": "INTERNAL",
+                "share_scope": [
+                    "marketing",
+                    "executive"
+                ]
+            }
+        }
+    },
+    "collection_governance": {
+        "workspace-sales": {
+            "team": "sales",
+            "clearance": "INTERNAL",
+            "share_scope": [
+                "sales",
+                "executive"
+            ]
+        },
+        "workspace-analytics": {
+            "team": "analytics",
+            "clearance": "INTERNAL",
+            "share_scope": [
+                "analytics",
+                "product",
+                "executive"
+            ]
+        },
+        "workspace-marketing": {
+            "team": "marketing",
+            "clearance": "INTERNAL",
+            "share_scope": [
+                "marketing",
+                "executive"
+            ]
+        }
+    }
+}

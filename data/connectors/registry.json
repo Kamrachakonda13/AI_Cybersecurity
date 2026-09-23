@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "tenant_id": "acme",
+  "connectors": [
+    {
+      "name": "local_fs",
+      "config": "data/connectors/local_fs.json"
+    },
+    {
+      "name": "s3",
+      "config": "data/connectors/s3.json"
+    },
+    {
+      "name": "ms_graph",
+      "config": "data/connectors/ms_graph.json"
+    },
+    {
+      "name": "google_drive",
+      "config": "data/connectors/google_drive.json"
+    },
+    {
+      "name": "sharepoint",
+      "config": "data/connectors/sharepoint.json"
+    },
+    {
+      "name": "m365",
+      "config": "data/connectors/m365.json"
+    },
+    {
+      "name": "powerbi",
+      "config": "data/connectors/powerbi.json"
+    },
+    {
+      "name": "tableau",
+      "config": "data/connectors/tableau.json"
+    },
+    {
+      "name": "confluence",
+      "config": "data/connectors/confluence.json"
+    },
+    {
+      "name": "jira",
+      "config": "data/connectors/jira.json"
+    },
+    {
+      "name": "slack",
+      "config": "data/connectors/slack.json"
+    },
+    {
+      "name": "notion",
+      "config": "data/connectors/notion.json"
+    },
+    {
+      "name": "pdf_fs",
+      "config": "data/connectors/pdf_fs.json"
+    }
+  ]
+}

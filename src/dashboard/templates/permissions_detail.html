@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}{{ team }} → {{ source }}{% endblock %}
+{% block page_title %}{{ team }} → {{ source }}{% endblock %}
+{% block page_subtitle %}{{ chunks|length }} accessible chunks in this source{% endblock %}
+
+{% block header_extra %}
+<a href="/dashboard/permissions" class="text-xs font-medium text-blue-600 hover:text-blue-800">&larr; Back to matrix</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+    <table class="min-w-full divide-y divide-slate-200">
+        <thead class="bg-slate-50">
+            <tr>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Chunk ID</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Content preview</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Clearance</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Owner team</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-slate-500 uppercase">Share scope</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+            {% for c in chunks %}
+            <tr class="hover:bg-slate-50">
+                <td class="px-4 py-3 text-xs font-mono text-slate-600">{{ c.id }}</td>
+                <td class="px-4 py-3 text-xs text-slate-700 max-w-lg">
+                    {{ c.content_preview[:180] }}{% if c.content_preview|length > 180 %}...{% endif %}
+                </td>
+                <td class="px-4 py-3">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium
+                        {% if c.clearance_level == 'PUBLIC' %}bg-blue-100 text-blue-800
+                        {% elif c.clearance_level == 'INTERNAL' %}bg-amber-100 text-amber-800
+                        {% elif c.clearance_level == 'CONFIDENTIAL' %}bg-red-100 text-red-800
+                        {% elif c.clearance_level == 'RESTRICTED' %}bg-purple-100 text-purple-800
+                        {% else %}bg-slate-100 text-slate-800{% endif %}">
+                        {{ c.clearance_level or 'UNKNOWN' }}
+                    </span>
+                </td>
+                <td class="px-4 py-3 text-xs text-slate-600">{{ c.owner_team or 'unknown' }}</td>
+                <td class="px-4 py-3 text-xs text-slate-500">{{ c.share_scope }}</td>
+            </tr>
+            {% endfor %}
+            {% if not chunks %}
+            <tr>
+                <td colspan="5" class="px-4 py-8 text-center text-sm text-slate-500">
+                    No accessible chunks for this team and source.
+                </td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

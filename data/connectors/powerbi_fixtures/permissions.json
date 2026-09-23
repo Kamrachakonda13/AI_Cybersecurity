@@ -1,0 +1,38 @@
+{
+    "powerbi:report-sales-dashboard": [
+        {
+            "principal_type": "group",
+            "principal_id": "sales-team@acme.com",
+            "access": "read"
+        },
+        {
+            "principal_type": "group",
+            "principal_id": "executive-team@acme.com",
+            "access": "read"
+        }
+    ],
+    "powerbi:report-churn": [
+        {
+            "principal_type": "group",
+            "principal_id": "analytics-team@acme.com",
+            "access": "read"
+        },
+        {
+            "principal_type": "group",
+            "principal_id": "product-team@acme.com",
+            "access": "read"
+        }
+    ],
+    "powerbi:report-marketing": [
+        {
+            "principal_type": "group",
+            "principal_id": "marketing-team@acme.com",
+            "access": "read"
+        },
+        {
+            "principal_type": "group",
+            "principal_id": "executive-team@acme.com",
+            "access": "read"
+        }
+    ]
+}

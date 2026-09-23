@@ -1,0 +1,67 @@
+[
+  {
+    "id": "auth-service",
+    "type": "Service",
+    "name": "auth-service"
+  },
+  {
+    "id": "billing-service",
+    "type": "Service",
+    "name": "billing-service"
+  },
+  {
+    "id": "docs-service",
+    "type": "Service",
+    "name": "docs-service"
+  },
+  {
+    "id": "analytics-service",
+    "type": "Service",
+    "name": "analytics-service"
+  },
+  {
+    "id": "notification-service",
+    "type": "Service",
+    "name": "notification-service"
+  },
+  {
+    "id": "identity-database",
+    "type": "Database",
+    "name": "Identity Database"
+  },
+  {
+    "id": "internal",
+    "type": "Policy",
+    "name": "INTERNAL"
+  },
+  {
+    "id": "ledger-database",
+    "type": "Database",
+    "name": "Ledger Database"
+  },
+  {
+    "id": "object-storage",
+    "type": "Store",
+    "name": "Object Storage"
+  },
+  {
+    "id": "internal-warehouse",
+    "type": "Database",
+    "name": "internal Warehouse"
+  },
+  {
+    "id": "message-queue",
+    "type": "Component",
+    "name": "Message Queue"
+  },
+  {
+    "id": "standard-retry-policy",
+    "type": "Policy",
+    "name": "standard retry policy"
+  },
+  {
+    "id": "data-retention-policy",
+    "type": "Policy",
+    "name": "data retention policy"
+  }
+]

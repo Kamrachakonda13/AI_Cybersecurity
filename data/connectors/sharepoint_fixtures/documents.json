@@ -1,0 +1,60 @@
+{
+  "value": [
+    {
+      "id": "sp:doc-onboarding",
+      "title": "Employee Onboarding Playbook",
+      "name": "onboarding_playbook.md",
+      "mime_type": "text/markdown",
+      "size": 380,
+      "created_at": "2026-07-01T09:00:00Z",
+      "last_modified": "2026-09-10T10:30:00Z",
+      "owner": "hr-team@acme.com",
+      "collection": "hr-site",
+      "site_id": "acme.sharepoint.com,hr-site",
+      "content_fixture_path": "test_corpus/sharepoint/onboarding_playbook.md",
+      "source_url": "https://acme.sharepoint.com/sites/hr/Shared Documents/onboarding_playbook.md"
+    },
+    {
+      "id": "sp:doc-sec-policy",
+      "title": "Information Security Policy",
+      "name": "security_policy.md",
+      "mime_type": "text/markdown",
+      "size": 420,
+      "created_at": "2026-05-15T14:00:00Z",
+      "last_modified": "2026-09-06T16:20:00Z",
+      "owner": "security-team@acme.com",
+      "collection": "security-site",
+      "site_id": "acme.sharepoint.com,security-site",
+      "content_fixture_path": "test_corpus/sharepoint/security_policy.md",
+      "source_url": "https://acme.sharepoint.com/sites/security/Shared Documents/security_policy.md"
+    },
+    {
+      "id": "sp:doc-vendor",
+      "title": "Vendor Security Assessment Template",
+      "name": "vendor_assessment.md",
+      "mime_type": "text/markdown",
+      "size": 425,
+      "created_at": "2026-06-20T11:00:00Z",
+      "last_modified": "2026-09-01T13:45:00Z",
+      "owner": "security-team@acme.com",
+      "collection": "security-site",
+      "site_id": "acme.sharepoint.com,security-site",
+      "content_fixture_path": "test_corpus/sharepoint/vendor_assessment.md",
+      "source_url": "https://acme.sharepoint.com/sites/security/Shared Documents/vendor_assessment.md"
+    },
+    {
+      "id": "sp:doc-sre-runbook",
+      "title": "SRE Deployment Runbook (copy)",
+      "name": "sre_deployment_runbook.md",
+      "mime_type": "text/markdown",
+      "size": 750,
+      "created_at": "2026-09-15T08:00:00Z",
+      "last_modified": "2026-09-18T09:30:00Z",
+      "owner": "sre-team@acme.com",
+      "collection": "sre-site",
+      "site_id": "acme.sharepoint.com,sre-site",
+      "content_fixture_path": "test_corpus/sharepoint/sre_deployment_runbook.md",
+      "source_url": "https://acme.sharepoint.com/sites/sre/Shared Documents/sre_deployment_runbook.md"
+    }
+  ]
+}

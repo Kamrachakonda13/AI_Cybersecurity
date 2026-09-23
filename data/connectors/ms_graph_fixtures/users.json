@@ -1,0 +1,16 @@
+{
+    "value": [
+        {
+            "id": "user-kam-0001",
+            "displayName": "Kam Rachakonda",
+            "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com",
+            "mail": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+        },
+        {
+            "id": "user-john-0002",
+            "displayName": "John",
+            "userPrincipalName": "John@kamrachakondaoutlook.onmicrosoft.com",
+            "mail": "John@kamrachakondaoutlook.onmicrosoft.com"
+        }
+    ]
+}

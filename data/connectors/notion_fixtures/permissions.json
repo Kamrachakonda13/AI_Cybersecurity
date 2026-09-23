@@ -1,0 +1,14 @@
+{
+  "notion:page-engineering-handbook": [
+    {"principal_type": "group", "principal_id": "all-employees@acme.com", "access": "read"}
+  ],
+  "notion:page-product-requirements": [
+    {"principal_type": "group", "principal_id": "product-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "engineering@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "executive-team@acme.com", "access": "read"}
+  ],
+  "notion:page-meeting-notes-sept": [
+    {"principal_type": "group", "principal_id": "platform-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "sre-team@acme.com", "access": "read"}
+  ]
+}

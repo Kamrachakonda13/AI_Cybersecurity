@@ -1,0 +1,48 @@
+{
+  "connector_type": "sharepoint",
+  "display_name": "SharePoint (fixture)",
+  "tenant_id": "acme",
+  "fixture_client": {
+    "fixtures_dir": "data/connectors/sharepoint_fixtures",
+    "content_root": "."
+  },
+  "team_mapping": {
+    "default_team": "unknown",
+    "default_clearance": "INTERNAL",
+    "default_share_scope": "team",
+    "owners": {
+      "hr-team@acme.com": {
+        "team": "hr",
+        "clearance": "INTERNAL",
+        "share_scope": "org"
+      },
+      "security-team@acme.com": {
+        "team": "security",
+        "clearance": "CONFIDENTIAL",
+        "share_scope": ["security", "executive"]
+      },
+      "sre-team@acme.com": {
+        "team": "sre",
+        "clearance": "INTERNAL",
+        "share_scope": ["sre", "engineering"]
+      }
+    }
+  },
+  "collection_governance": {
+    "hr-site": {
+      "team": "hr",
+      "clearance": "INTERNAL",
+      "share_scope": "org"
+    },
+    "security-site": {
+      "team": "security",
+      "clearance": "CONFIDENTIAL",
+      "share_scope": ["security", "executive"]
+    },
+    "sre-site": {
+      "team": "sre",
+      "clearance": "INTERNAL",
+      "share_scope": ["sre", "engineering"]
+    }
+  }
+}

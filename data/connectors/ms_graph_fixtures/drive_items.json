@@ -1,0 +1,132 @@
+{
+    "value": [
+        {
+            "id": "item-0001",
+            "name": "platform_architecture.md",
+            "size": 458,
+            "file": {
+                "mimeType": "text/markdown"
+            },
+            "fileSystemInfo": {
+                "createdDateTime": "2026-08-01T10:00:00Z",
+                "lastModifiedDateTime": "2026-09-10T14:30:00Z"
+            },
+            "parentReference": {
+                "driveId": "drive-kam-0001",
+                "path": "/drive/root:"
+            },
+            "createdBy": {
+                "user": {
+                    "id": "user-kam-0001",
+                    "displayName": "Kam Rachakonda",
+                    "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            },
+            "lastModifiedBy": {
+                "user": {
+                    "id": "user-kam-0001",
+                    "displayName": "Kam Rachakonda",
+                    "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            },
+            "content_fixture_path": "test_corpus/onedrive/platform_architecture.md",
+            "webUrl": "https://kamrachakondaoutlook-my.sharepoint.com/personal/kam_rachakonda/Documents/platform_architecture.md"
+        },
+        {
+            "id": "item-0002",
+            "name": "onboarding_guide.md",
+            "size": 421,
+            "file": {
+                "mimeType": "text/markdown"
+            },
+            "fileSystemInfo": {
+                "createdDateTime": "2026-07-15T09:00:00Z",
+                "lastModifiedDateTime": "2026-09-05T11:20:00Z"
+            },
+            "parentReference": {
+                "driveId": "drive-kam-0001",
+                "path": "/drive/root:"
+            },
+            "createdBy": {
+                "user": {
+                    "id": "user-kam-0001",
+                    "displayName": "Kam Rachakonda",
+                    "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            },
+            "lastModifiedBy": {
+                "user": {
+                    "id": "user-kam-0001",
+                    "displayName": "Kam Rachakonda",
+                    "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            },
+            "content_fixture_path": "test_corpus/onedrive/onboarding_guide.md",
+            "webUrl": "https://kamrachakondaoutlook-my.sharepoint.com/personal/kam_rachakonda/Documents/onboarding_guide.md"
+        },
+        {
+            "id": "item-0003",
+            "name": "cost_optimization.md",
+            "size": 360,
+            "file": {
+                "mimeType": "text/markdown"
+            },
+            "fileSystemInfo": {
+                "createdDateTime": "2026-06-20T15:00:00Z",
+                "lastModifiedDateTime": "2026-09-01T08:45:00Z"
+            },
+            "parentReference": {
+                "driveId": "drive-kam-0001",
+                "path": "/drive/root:"
+            },
+            "createdBy": {
+                "user": {
+                    "id": "user-john-0002",
+                    "displayName": "John",
+                    "userPrincipalName": "John@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            },
+            "lastModifiedBy": {
+                "user": {
+                    "id": "user-john-0002",
+                    "displayName": "John",
+                    "userPrincipalName": "John@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            },
+            "content_fixture_path": "test_corpus/onedrive/cost_optimization.md",
+            "webUrl": "https://kamrachakondaoutlook-my.sharepoint.com/personal/kam_rachakonda/Documents/cost_optimization.md"
+        },
+        {
+            "id": "item-0004",
+            "name": "api_design_principles.md",
+            "size": 415,
+            "file": {
+                "mimeType": "text/markdown"
+            },
+            "fileSystemInfo": {
+                "createdDateTime": "2026-05-10T12:00:00Z",
+                "lastModifiedDateTime": "2026-08-28T16:00:00Z"
+            },
+            "parentReference": {
+                "driveId": "drive-kam-0001",
+                "path": "/drive/root:"
+            },
+            "createdBy": {
+                "user": {
+                    "id": "user-kam-0001",
+                    "displayName": "Kam Rachakonda",
+                    "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            },
+            "lastModifiedBy": {
+                "user": {
+                    "id": "user-kam-0001",
+                    "displayName": "Kam Rachakonda",
+                    "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            },
+            "content_fixture_path": "test_corpus/onedrive/api_design_principles.md",
+            "webUrl": "https://kamrachakondaoutlook-my.sharepoint.com/personal/kam_rachakonda/Documents/api_design_principles.md"
+        }
+    ]
+}

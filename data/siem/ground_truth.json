@@ -1,0 +1,38 @@
+{
+  "total_alerts": 200,
+  "label_distribution": {
+    "FALSE_POSITIVE": 83,
+    "TRUE_POSITIVE": 117
+  },
+  "source_distribution": {
+    "idp": 62,
+    "edr": 62,
+    "firewall": 53,
+    "cloud": 23
+  },
+  "severity_distribution": {
+    "LOW": 36,
+    "HIGH": 73,
+    "CRITICAL": 37,
+    "MEDIUM": 54
+  },
+  "rule_distribution": {
+    "IDP-0099": 14,
+    "EDR-2001": 15,
+    "EDR-9001": 11,
+    "FW-0021": 22,
+    "CLD-3001": 14,
+    "IDP-0007": 16,
+    "EDR-1042": 11,
+    "FW-0099": 11,
+    "IDP-0011": 21,
+    "FW-0102": 10,
+    "IDP-0020": 11,
+    "EDR-4102": 12,
+    "FW-0044": 10,
+    "CLD-3010": 9,
+    "EDR-3310": 13
+  },
+  "true_positive_rate": 0.585,
+  "generated_with_seed": 20260920
+}

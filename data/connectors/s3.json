@@ -1,0 +1,28 @@
+{
+  "connector_type": "s3",
+  "display_name": "Company S3 (MinIO dev)",
+  "tenant_id": "acme",
+  "region": "us-east-1",
+  "access_key_env": "MINIO_ACCESS_KEY",
+  "secret_key_env": "MINIO_SECRET_KEY",
+  "buckets": [
+    {
+      "name": "company-docs",
+      "owner_team": "data-platform",
+      "clearance_level": "INTERNAL",
+      "share_scope": "org",
+      "prefix_governance": {
+        "analytics/": {
+          "owner_team": "analytics",
+          "clearance_level": "INTERNAL",
+          "share_scope": ["data-platform", "analytics", "product"]
+        },
+        "data-platform/": {
+          "owner_team": "data-platform",
+          "clearance_level": "INTERNAL",
+          "share_scope": "org"
+        }
+      }
+    }
+  ]
+}

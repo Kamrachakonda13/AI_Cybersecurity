@@ -1,0 +1,75 @@
+{
+    "item-0001": [
+        {
+            "id": "perm-0001-read",
+            "roles": [
+                "read"
+            ],
+            "grantedToV2": {
+                "user": {
+                    "id": "user-kam-0001",
+                    "displayName": "Kam Rachakonda",
+                    "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            }
+        }
+    ],
+    "item-0002": [
+        {
+            "id": "perm-0002-read",
+            "roles": [
+                "read"
+            ],
+            "grantedToV2": {
+                "user": {
+                    "id": "user-kam-0001",
+                    "displayName": "Kam Rachakonda",
+                    "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            }
+        },
+        {
+            "id": "perm-0002-read-john",
+            "roles": [
+                "read"
+            ],
+            "grantedToV2": {
+                "user": {
+                    "id": "user-john-0002",
+                    "displayName": "John",
+                    "userPrincipalName": "John@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            }
+        }
+    ],
+    "item-0003": [
+        {
+            "id": "perm-0003-read",
+            "roles": [
+                "read"
+            ],
+            "grantedToV2": {
+                "user": {
+                    "id": "user-kam-0001",
+                    "displayName": "Kam Rachakonda",
+                    "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            }
+        }
+    ],
+    "item-0004": [
+        {
+            "id": "perm-0004-read",
+            "roles": [
+                "read"
+            ],
+            "grantedToV2": {
+                "user": {
+                    "id": "user-kam-0001",
+                    "displayName": "Kam Rachakonda",
+                    "userPrincipalName": "kam.rachakonda@kamrachakondaoutlook.onmicrosoft.com"
+                }
+            }
+        }
+    ]
+}

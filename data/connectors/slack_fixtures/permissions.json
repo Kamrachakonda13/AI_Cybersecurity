@@ -1,0 +1,12 @@
+{
+  "slack:thread-inc-2026-09-14": [
+    {"principal_type": "group", "principal_id": "sre-team@acme.com", "access": "read"},
+    {"principal_type": "group", "principal_id": "engineering@acme.com", "access": "read"}
+  ],
+  "slack:thread-onboarding": [
+    {"principal_type": "group", "principal_id": "all-employees@acme.com", "access": "read"}
+  ],
+  "slack:thread-observability": [
+    {"principal_type": "group", "principal_id": "sre-team@acme.com", "access": "read"}
+  ]
+}
