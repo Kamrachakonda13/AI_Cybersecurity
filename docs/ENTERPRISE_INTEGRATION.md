@@ -20,6 +20,13 @@ The VEYRA console remains at `http://localhost:3000`. The optional RAG service
 is exposed at `http://localhost:8100`; its private databases use separate host
 ports so they do not collide with VEYRA's PostgreSQL service.
 
+The native RAG dashboard is at `http://localhost:8100/dashboard/login`. Its
+development login defaults to `admin` / `changeme`; set
+`AGENTIC_RAG_DASHBOARD_USERS` in `.env` to replace it, for example:
+`admin:replace-this-password:admin:acme`. The Compose override initializes the
+RAG PostgreSQL schema on a fresh volume and preserves the dashboard metadata
+columns required by the chunks, permissions, and users pages.
+
 Without the enterprise override, VEYRA still runs independently. The
 Enterprise Intelligence view reports the RAG service as unavailable rather
 than bypassing authentication or executing local tools.

@@ -24,6 +24,7 @@ services:
       MINIO_ACCESS_KEY: minioadmin
       MINIO_SECRET_KEY: minioadmin
       JWT_SECRET: ${AGENTIC_RAG_JWT_SECRET:?Set AGENTIC_RAG_JWT_SECRET in .env}
+      DASHBOARD_USERS: ${AGENTIC_RAG_DASHBOARD_USERS:-admin:changeme:admin:acme}
     ports:
       - "8100:8000"
     depends_on:
@@ -45,6 +46,7 @@ services:
       - "5433:5432"
     volumes:
       - rag_pgdata:/var/lib/postgresql/data
+      - ./integrations/agentic-rag/src/schema.sql:/docker-entrypoint-initdb.d/01-rag-schema.sql:ro
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U raguser -d ragdb" ]
       interval: 5s
