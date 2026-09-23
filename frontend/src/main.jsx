@@ -46,6 +46,7 @@ import { V63TrendsView } from './v63_trends.jsx';
 import { V64DomainToolsView } from './v64_domain_tools.jsx';
 import { V65AgentClassificationView } from './v65_agent_classification.jsx';
 import { EnterpriseIntelligenceView } from './enterprise_intelligence.jsx';
+import { SecureCodeShareView, SecureCodeShareComposer } from './secure_code_share.jsx';
 import { NAV, GROUPED_NAV } from './lib/nav.js';
 import { SEV_HELP, RISK_FORMULA, sevHelp } from './lib/severity.js';
 import { whyFinding, whyIdentity, whyCloud, whyPort, whyFlow, whySession } from './lib/why.js';
@@ -67,7 +68,7 @@ function AdminEthicalHacking({ token, setToken, onUnlock }) {
   const isPrivileged = !!privilegedToken;
   const filtered = tools.filter(t => !filter || `${t.name} ${t.category} ${t.purpose}`.toLowerCase().includes(filter.toLowerCase()));
   return <div className={isPrivileged ? 'content privileged-admin' : 'content'}>
-    {isPrivileged && <div className="privileged-banner" style={{ justifyContent: 'center', textAlign: 'center', fontWeight: 800, fontSize: 14, letterSpacing: 0.6 }}><span>🔐</span> Privileged admin session active</div>}
+    {isPrivileged && <><div className="privileged-banner" style={{ justifyContent: 'center', textAlign: 'center', fontWeight: 800, fontSize: 14, letterSpacing: 0.6 }}><span>🔐</span> Privileged admin session active</div><SecureCodeShareComposer /></>}
     <Panel title="Administrator — Ethical Hacking Control Plane">
       <div className="callout"><b>{isPrivileged ? 'PRIVILEGED ADMIN.' : 'ADMIN ONLY.'}</b> This console governs authorized assessments. The API never exposes an unrestricted shell and never launches security-tool commands.</div>
       <div style={{ display: 'flex', gap: 8, padding: '12px 18px', flexWrap: 'wrap' }}><input type="password" value={token} onChange={e => setToken(e.target.value)} placeholder="VEYRA admin token" style={{ minWidth: 260 }} /><input type="password" value={privilegedToken} onChange={e => { setPrivilegedToken(e.target.value); sessionStorage.setItem('VEYRA_privileged_admin_token', e.target.value) }} placeholder="Privileged admin token (high-impact tools)" style={{ minWidth: 300 }} /><button className="primary" onClick={unlock}>Unlock admin tools</button><button onClick={clear}>Clear</button></div>
@@ -440,6 +441,7 @@ function App() {
   const toggle = (g) => setCollapsed((s) => ({ ...s, [g]: !s[g] }));
   const go = (s) => { setDrill(null); setSel(null); setSection(s) };
   const logout = async () => { try { await fetch(`${API}/api/auth/logout`, { method: 'POST', headers: { Authorization: `Bearer ${sessionStorage.getItem('VEYRA_user_token')}` } }) } catch { } sessionStorage.removeItem('VEYRA_user_token'); setUser(null) };
+  if (window.location.pathname.startsWith('/secure-code/')) return <SecureCodeShareView />;
   if (!user) return <LoginView onLogin={setUser} />;
   return <div className="app"><aside style={{ overflowY: 'auto', overflowX: 'hidden' }}><div className="brand"><div className="logo"><Shield size={20} /></div><div><b>VEYRA</b><span>Autonomous Security Intelligence</span></div></div><div className="tenant">ENTERPRISE TENANT<strong>ACME SECURITY</strong></div><button className={section === 'Overview' ? 'nav active' : 'nav'} onClick={() => go('Overview')} style={{ fontWeight: 700, background: section === 'Overview' ? '#132033' : 'transparent' }}><LayoutDashboard size={16} /><span>PLATFORM OVERVIEW</span></button>{GROUPED_NAV.map(([group, items]) => {
     // PLATFORM group renders without header — its 6 items are direct children of PLATFORM OVERVIEW

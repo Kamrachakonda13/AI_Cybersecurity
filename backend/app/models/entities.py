@@ -17,7 +17,9 @@ from sqlalchemy import String, Integer, Float, Boolean, DateTime, Text, UUID
 from sqlalchemy.orm import Mapped, mapped_column
 from ..db import Base
 
+
 def now(): return datetime.now(timezone.utc)
+
 
 class Asset(Base):
     """Monitored host/workload. `criticality` 1–5 feeds risk directly; `external_exposure` seeds graph attack paths."""
@@ -30,7 +32,9 @@ class Asset(Base):
     criticality: Mapped[int] = mapped_column(Integer, default=3)
     owner: Mapped[str] = mapped_column(String(255), default="Unassigned")
     external_exposure: Mapped[bool] = mapped_column(Boolean, default=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class Service(Base):
     """Listening port on an asset with process/user attribution. `expected=False` means baseline drift (backdoor suspect)."""
@@ -45,6 +49,7 @@ class Service(Base):
     user: Mapped[str] = mapped_column(String(128), default="unknown")
     expected: Mapped[bool] = mapped_column(Boolean, default=True)
 
+
 class Identity(Base):
     """Human/service account. `privilege` 4–5 = can reach sensitive workloads; `mfa_enabled=False` doubles takeover risk."""
     __tablename__ = "identities"
@@ -56,26 +61,32 @@ class Identity(Base):
     status: Mapped[str] = mapped_column(String(32), default="active")
     owner: Mapped[str] = mapped_column(String(255), default="")
 
+
 class SessionEvent(Base):
     """Authenticated session: who (`username`) reached which asset, how, and how anomalous (`anomaly_score` ≥ 0.7 = critical)."""
     __tablename__ = "sessions"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     username: Mapped[str] = mapped_column(String(255), index=True)
-    asset_id: Mapped[int | None] = mapped_column(Integer, nullable=True, index=True)
+    asset_id: Mapped[int | None] = mapped_column(
+        Integer, nullable=True, index=True)
     source_ip: Mapped[str] = mapped_column(String(64))
     application: Mapped[str] = mapped_column(String(255))
     auth_method: Mapped[str] = mapped_column(String(64), default="SSO")
     privileged: Mapped[bool] = mapped_column(Boolean, default=False)
     anomaly_score: Mapped[float] = mapped_column(Float, default=0)
     status: Mapped[str] = mapped_column(String(32), default="active")
-    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    started_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class NetworkFlow(Base):
     """One observed connection. `risk_score` ≥ 70 = possible exfil/lateral movement; feeds graph `flow` edges."""
     __tablename__ = "network_flows"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    src_asset_id: Mapped[int | None] = mapped_column(Integer, nullable=True, index=True)
-    dst_asset_id: Mapped[int | None] = mapped_column(Integer, nullable=True, index=True)
+    src_asset_id: Mapped[int | None] = mapped_column(
+        Integer, nullable=True, index=True)
+    dst_asset_id: Mapped[int | None] = mapped_column(
+        Integer, nullable=True, index=True)
     src_ip: Mapped[str] = mapped_column(String(64))
     dst_ip: Mapped[str] = mapped_column(String(64))
     dst_port: Mapped[int] = mapped_column(Integer)
@@ -83,7 +94,9 @@ class NetworkFlow(Base):
     bytes_out: Mapped[int] = mapped_column(Integer, default=0)
     action: Mapped[str] = mapped_column(String(32), default="allow")
     risk_score: Mapped[float] = mapped_column(Float, default=0)
-    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    observed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class ThreatIntel(Base):
     """Intel record (CISA KEV CVE or MITRE ATT&CK technique). `exploited=True` raises the `threat` term in risk scoring."""
@@ -96,7 +109,9 @@ class ThreatIntel(Base):
     severity: Mapped[str] = mapped_column(String(32), default="MEDIUM")
     exploited: Mapped[bool] = mapped_column(Boolean, default=False)
     description: Mapped[str] = mapped_column(Text, default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class CloudResource(Base):
     """Cloud inventory row (manual/API-ingested; live CSPM adapters are future work). `public_exposure` = directly reachable."""
@@ -110,6 +125,7 @@ class CloudResource(Base):
     misconfiguration: Mapped[str] = mapped_column(String(255), default="")
     risk_score: Mapped[float] = mapped_column(Float, default=0)
 
+
 class AIAsset(Base):
     """AI app/agent/vector-DB. `exposure=internet` + tool permissions = prompt-injection/data-egress surface; graph links agents to vector stores via `retrieves` edges."""
     __tablename__ = "ai_assets"
@@ -121,6 +137,7 @@ class AIAsset(Base):
     exposure: Mapped[str] = mapped_column(String(64), default="internal")
     risk_score: Mapped[float] = mapped_column(Float, default=0)
     approval_boundary: Mapped[bool] = mapped_column(Boolean, default=True)
+
 
 class Finding(Base):
     """Scored weakness on an asset. `severity`/`risk_score` come from `services/risk`; `kev`/`exposure` explain WHY it is critical."""
@@ -136,7 +153,9 @@ class Finding(Base):
     risk_score: Mapped[float] = mapped_column(Float, default=0)
     status: Mapped[str] = mapped_column(String(32), default="open")
     description: Mapped[str] = mapped_column(Text, default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class Incident(Base):
     """SOC case needing a human decision. Status stays `open` until triaged; every response needs approval (Governance view)."""
@@ -147,7 +166,9 @@ class Incident(Base):
     status: Mapped[str] = mapped_column(String(32), default="open")
     asset: Mapped[str] = mapped_column(String(255), default="Unknown")
     summary: Mapped[str] = mapped_column(Text, default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AuditEvent(Base):
     """Immutable audit trail: every ingestion, assessment, triage and analysis writes one row. Never delete in production."""
@@ -157,7 +178,9 @@ class AuditEvent(Base):
     action: Mapped[str] = mapped_column(String(255))
     target: Mapped[str] = mapped_column(String(255), default="")
     outcome: Mapped[str] = mapped_column(String(32), default="success")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class Device(Base):
     """Endpoint inventory heartbeat — YOUR OWN managed/lab devices only.
@@ -173,7 +196,9 @@ class Device(Base):
     os: Mapped[str] = mapped_column(String(128), default="")
     owner: Mapped[str] = mapped_column(String(255), default="")
     source: Mapped[str] = mapped_column(String(64), default="collector")
-    last_seen: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    last_seen: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class DnsQuery(Base):
     """DNS-metadata only (domain queried, NOT page content) — own network, consented."""
@@ -183,7 +208,9 @@ class DnsQuery(Base):
     domain: Mapped[str] = mapped_column(String(255), index=True)
     query_type: Mapped[str] = mapped_column(String(16), default="A")
     hits: Mapped[int] = mapped_column(Integer, default=1)
-    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    observed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class LoginAttempt(Base):
     """Auth outcomes on YOUR OWN systems — detects password-spray / brute force."""
@@ -194,7 +221,9 @@ class LoginAttempt(Base):
     hostname: Mapped[str] = mapped_column(String(255), default="")
     success: Mapped[bool] = mapped_column(Boolean, default=False)
     method: Mapped[str] = mapped_column(String(64), default="password")
-    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    observed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class CveRecord(Base):
     """Normalized CVE from live CISA KEV / NVD feeds (`services/threatintel.py`).
@@ -211,7 +240,9 @@ class CveRecord(Base):
     kev: Mapped[bool] = mapped_column(Boolean, default=False)
     published: Mapped[str] = mapped_column(String(32), default="")
     source: Mapped[str] = mapped_column(String(32), default="CISA/NVD")
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class UsbEvent(Base):
     """USB device connect/block on a managed host (from endpoint agent heartbeat or ingest).
@@ -224,7 +255,9 @@ class UsbEvent(Base):
     device: Mapped[str] = mapped_column(String(255), default="")
     serial: Mapped[str] = mapped_column(String(128), default="")
     action: Mapped[str] = mapped_column(String(32), default="connect")
-    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    observed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class DlpEvent(Base):
     """Data-loss-prevention signal: sensitive file observed leaving its boundary.
@@ -239,7 +272,9 @@ class DlpEvent(Base):
     filepath: Mapped[str] = mapped_column(String(512), default="")
     classification: Mapped[str] = mapped_column(String(32), default="internal")
     action: Mapped[str] = mapped_column(String(32), default="allowed")
-    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    observed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class RetrievalEvent(Base):
     """AI retrieval audit: which agent read which vector store, for which tenant, and whether policy allowed it.
@@ -253,7 +288,9 @@ class RetrievalEvent(Base):
     tenant: Mapped[str] = mapped_column(String(255), default="")
     doc_class: Mapped[str] = mapped_column(String(32), default="internal")
     allowed: Mapped[bool] = mapped_column(Boolean, default=True)
-    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    observed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class SoarRun(Base):
     """SOAR playbook execution with approval boundary.
@@ -268,7 +305,8 @@ class SoarRun(Base):
     status: Mapped[str] = mapped_column(String(32), default="pending_approval")
     actor: Mapped[str] = mapped_column(String(255), default="analyst")
     result: Mapped[str] = mapped_column(Text, default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
 
 
 class SecurityToolJob(Base):
@@ -285,16 +323,21 @@ class SecurityToolJob(Base):
     status: Mapped[str] = mapped_column(String(32), default="pending_approval")
     contract_sha256: Mapped[str] = mapped_column(String(64), default="")
     actor: Mapped[str] = mapped_column(String(255), default="admin")
-    tenant_id: Mapped[UUID] = mapped_column(UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
+    tenant_id: Mapped[UUID] = mapped_column(
+        UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
     params: Mapped[str] = mapped_column(Text, default="{}")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    approved_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    approved_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+
 
 class SecurityEvidence(Base):
     """Normalized evidence returned by an isolated worker; preserves provenance/hash."""
     __tablename__ = "security_evidence"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    artifact_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    artifact_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     job_id: Mapped[str] = mapped_column(String(64), index=True)
     sha256: Mapped[str] = mapped_column(String(64), index=True)
     source: Mapped[str] = mapped_column(String(255), default="isolated-worker")
@@ -304,7 +347,9 @@ class SecurityEvidence(Base):
     result_type: Mapped[str] = mapped_column(String(64), default="normalized")
     summary: Mapped[str] = mapped_column(Text, default="")
     data: Mapped[str] = mapped_column(Text, default="{}")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class DiscoveredHost(Base):
     """Observed LAN/Wi-Fi neighbour (NOT an enrolled agent).
@@ -322,9 +367,12 @@ class DiscoveredHost(Base):
     hostname: Mapped[str] = mapped_column(String(255), default="")
     vendor: Mapped[str] = mapped_column(String(128), default="Unknown")
     source: Mapped[str] = mapped_column(String(64), default="agent-discover")
-    first_seen: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    last_seen: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    first_seen: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    last_seen: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
     trusted: Mapped[bool] = mapped_column(Boolean, default=False)
+
 
 class AgentRuntimeEvent(Base):
     """Runtime telemetry/event envelope for internal agents, GenAI calls, MCP and A2A."""
@@ -339,7 +387,9 @@ class AgentRuntimeEvent(Base):
     policy_decision: Mapped[str] = mapped_column(String(32), default="allow")
     risk_score: Mapped[float] = mapped_column(Float, default=0)
     event_json: Mapped[str] = mapped_column(Text, default="{}")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AgentPolicy(Base):
     """Deterministic runtime policy for an internal agent; LLMs never author policy."""
@@ -347,11 +397,14 @@ class AgentPolicy(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     agent_id: Mapped[str] = mapped_column(String(255), unique=True, index=True)
     allowed_tools: Mapped[str] = mapped_column(Text, default="[]")
-    allowed_operations: Mapped[str] = mapped_column(Text, default='["chat","retrieval","plan"]')
+    allowed_operations: Mapped[str] = mapped_column(
+        Text, default='["chat","retrieval","plan"]')
     max_risk_score: Mapped[float] = mapped_column(Float, default=60)
     require_human_approval: Mapped[bool] = mapped_column(Boolean, default=True)
     enabled: Mapped[bool] = mapped_column(Boolean, default=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class UnifiedSecurityEvent(Base):
     """Cross-plane normalized event used by the VEYRA Security Fabric."""
@@ -367,17 +420,22 @@ class UnifiedSecurityEvent(Base):
     risk_score: Mapped[float] = mapped_column(Float, default=0)
     severity: Mapped[str] = mapped_column(String(32), default="INFO")
     payload: Mapped[str] = mapped_column(Text, default="{}")
-    event_sha256: Mapped[str] = mapped_column(String(64), index=True, default="")
-    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    event_sha256: Mapped[str] = mapped_column(
+        String(64), index=True, default="")
+    observed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class InvestigationCase(Base):
     """AI-assisted investigation case. AI proposes reasoning; policy/approval remain authoritative."""
     __tablename__ = "investigation_cases"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     case_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
-    trigger_event_id: Mapped[str] = mapped_column(String(64), default="", index=True)
+    trigger_event_id: Mapped[str] = mapped_column(
+        String(64), default="", index=True)
     title: Mapped[str] = mapped_column(String(255))
-    status: Mapped[str] = mapped_column(String(32), default="evidence_preserved")
+    status: Mapped[str] = mapped_column(
+        String(32), default="evidence_preserved")
     severity: Mapped[str] = mapped_column(String(32), default="MEDIUM")
     risk_score: Mapped[float] = mapped_column(Float, default=0)
     confidence: Mapped[float] = mapped_column(Float, default=0)
@@ -385,21 +443,27 @@ class InvestigationCase(Base):
     hypothesis: Mapped[str] = mapped_column(Text, default="")
     evidence_json: Mapped[str] = mapped_column(Text, default="[]")
     actions_json: Mapped[str] = mapped_column(Text, default="[]")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class InvestigationEvidence(Base):
     """Evidence reference attached to a case; content stays normalized/provenance-aware."""
     __tablename__ = "investigation_evidence"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    evidence_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    evidence_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     case_id: Mapped[str] = mapped_column(String(64), index=True)
     source_type: Mapped[str] = mapped_column(String(64))
     source_ref: Mapped[str] = mapped_column(String(255), default="")
     sha256: Mapped[str] = mapped_column(String(64), default="")
     summary: Mapped[str] = mapped_column(Text, default="")
     supports: Mapped[bool] = mapped_column(Boolean, default=True)
-    collected_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    collected_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class InvestigationApproval(Base):
     """Human approval checkpoint before a consequential SOAR action."""
@@ -411,8 +475,11 @@ class InvestigationApproval(Base):
     status: Mapped[str] = mapped_column(String(32), default="pending")
     actor: Mapped[str] = mapped_column(String(255), default="")
     reason: Mapped[str] = mapped_column(Text, default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    decided_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    decided_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+
 
 class InvestigationStep(Base):
     """Deterministic state transition log for the autonomous SOC pipeline."""
@@ -422,7 +489,9 @@ class InvestigationStep(Base):
     step: Mapped[str] = mapped_column(String(64))
     status: Mapped[str] = mapped_column(String(32), default="completed")
     summary: Mapped[str] = mapped_column(Text, default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class DetectionRule(Base):
     """Deterministic detection rule. LLMs may explain matches but never author enforcement."""
@@ -435,7 +504,9 @@ class DetectionRule(Base):
     min_risk_score: Mapped[float] = mapped_column(Float, default=60)
     enabled: Mapped[bool] = mapped_column(Boolean, default=True)
     action: Mapped[str] = mapped_column(String(64), default="investigate")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class ResponseAction(Base):
     """Governed response action request and verification state; no direct side effects in POC."""
@@ -446,37 +517,47 @@ class ResponseAction(Base):
     action: Mapped[str] = mapped_column(String(128))
     target: Mapped[str] = mapped_column(String(255), default="")
     status: Mapped[str] = mapped_column(String(32), default="pending_approval")
-    verification_status: Mapped[str] = mapped_column(String(32), default="not_started")
+    verification_status: Mapped[str] = mapped_column(
+        String(32), default="not_started")
     approval_id: Mapped[int | None] = mapped_column(Integer, nullable=True)
     evidence_sha256: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    verified_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    verified_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
 
 
 class AttributionHypothesis(Base):
     """Evidence-backed attribution hypothesis; never an asserted actor identity."""
     __tablename__ = "attribution_hypotheses"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    hypothesis_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    hypothesis_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     case_id: Mapped[str] = mapped_column(String(64), index=True)
     label: Mapped[str] = mapped_column(String(128))
     confidence: Mapped[float] = mapped_column(Float, default=0)
     supporting_json: Mapped[str] = mapped_column(Text, default="[]")
     contradicting_json: Mapped[str] = mapped_column(Text, default="[]")
-    assessment: Mapped[str] = mapped_column(String(64), default="hypothesis_only")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    assessment: Mapped[str] = mapped_column(
+        String(64), default="hypothesis_only")
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class IntelEnrichment(Base):
     """Immutable-ish summary of local TI/ATT&CK/ATLAS enrichment for a case."""
     __tablename__ = "intel_enrichments"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    enrichment_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    enrichment_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     case_id: Mapped[str] = mapped_column(String(64), index=True)
     framework: Mapped[str] = mapped_column(String(64))
     reference: Mapped[str] = mapped_column(String(128))
     summary: Mapped[str] = mapped_column(Text, default="")
     evidence_sha256: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class PentestAgentPlan(Base):
     """AI-generated, human-governed pentest plan. Stores plan/evidence metadata, not shell commands."""
@@ -490,9 +571,12 @@ class PentestAgentPlan(Base):
     environment: Mapped[str] = mapped_column(String(32), default="lab")
     approval_ticket: Mapped[str] = mapped_column(String(128), default="")
     chain_json: Mapped[str] = mapped_column(Text, default="[]")
-    status: Mapped[str] = mapped_column(String(64), default="awaiting_worker_approval")
+    status: Mapped[str] = mapped_column(
+        String(64), default="awaiting_worker_approval")
     plan_sha256: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class UserAccount(Base):
     """Console login account. Exactly one account may have role='sudo'."""
@@ -504,12 +588,15 @@ class UserAccount(Base):
     phone: Mapped[str] = mapped_column(String(32), default="")
     password_hash: Mapped[str] = mapped_column(Text)
     role: Mapped[str] = mapped_column(String(32), default="viewer", index=True)
-    tenant_id: Mapped[UUID] = mapped_column(UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
+    tenant_id: Mapped[UUID] = mapped_column(
+        UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
     status: Mapped[str] = mapped_column(String(32), default="active")
     mfa_required: Mapped[bool] = mapped_column(Boolean, default=True)
     must_change_password: Mapped[bool] = mapped_column(Boolean, default=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    last_login_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    last_login_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
 
 
 class MfaChallenge(Base):
@@ -517,13 +604,15 @@ class MfaChallenge(Base):
     __tablename__ = "mfa_challenges"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     user_id: Mapped[int] = mapped_column(Integer, index=True)
-    token_hash: Mapped[str] = mapped_column(String(128), unique=True, index=True)
+    token_hash: Mapped[str] = mapped_column(
+        String(128), unique=True, index=True)
     otp_hash: Mapped[str] = mapped_column(String(128))
     channel: Mapped[str] = mapped_column(String(16), default="phone")
     destination_masked: Mapped[str] = mapped_column(String(64), default="")
     expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     attempts: Mapped[int] = mapped_column(Integer, default=0)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
 
 
 class UserToolPermission(Base):
@@ -539,17 +628,24 @@ class UserToolPermission(Base):
     tool_id: Mapped[str] = mapped_column(String(255), index=True)
     level: Mapped[str] = mapped_column(String(32), default="none")
     granted_by: Mapped[str] = mapped_column(String(255), default="sudo")
-    expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    expires_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class UserSession(Base):
     __tablename__ = "user_sessions"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     user_id: Mapped[int] = mapped_column(Integer, index=True)
-    token_hash: Mapped[str] = mapped_column(String(128), unique=True, index=True)
+    token_hash: Mapped[str] = mapped_column(
+        String(128), unique=True, index=True)
     expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
-    revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    revoked_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class ToolAccessRequest(Base):
     """Non-sudo request for tool rights. Sudo approves with a time-boxed grant
@@ -557,7 +653,8 @@ class ToolAccessRequest(Base):
     server-side; every transition is audit-logged."""
     __tablename__ = "tool_access_requests"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    request_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    request_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     user_id: Mapped[int] = mapped_column(Integer, index=True)
     username: Mapped[str] = mapped_column(String(255), default="", index=True)
     tool_id: Mapped[str] = mapped_column(String(255), index=True)
@@ -565,24 +662,49 @@ class ToolAccessRequest(Base):
     level: Mapped[str] = mapped_column(String(32), default="plan")
     reason: Mapped[str] = mapped_column(Text, default="")
     duration_hours: Mapped[float] = mapped_column(Float, default=2.0)
-    status: Mapped[str] = mapped_column(String(32), default="pending", index=True)
+    status: Mapped[str] = mapped_column(
+        String(32), default="pending", index=True)
     decided_by: Mapped[str] = mapped_column(String(255), default="")
-    decided_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    decided_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AdminNotification(Base):
     """In-app copy of every outbound admin email (approval requests, decisions).
     Guarantees the sudo inbox works even when no SMTP server is configured."""
     __tablename__ = "admin_notifications"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    to_role: Mapped[str] = mapped_column(String(32), default="sudo", index=True)
+    to_role: Mapped[str] = mapped_column(
+        String(32), default="sudo", index=True)
     to_email: Mapped[str] = mapped_column(String(255), default="")
     subject: Mapped[str] = mapped_column(String(255), default="")
     body: Mapped[str] = mapped_column(Text, default="")
     channel: Mapped[str] = mapped_column(String(32), default="log")
-    status: Mapped[str] = mapped_column(String(32), default="queued", index=True)
+    status: Mapped[str] = mapped_column(
+        String(32), default="queued", index=True)
     related_id: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
+
+class SecureCodeShare(Base):
+    """Single-use privileged code handoff; plaintext codes never persist."""
+    __tablename__ = "secure_code_shares"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    token_hash: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
+    code_ciphertext: Mapped[str] = mapped_column(Text)
+    recipient_hint: Mapped[str] = mapped_column(String(255), default="")
+    created_by: Mapped[str] = mapped_column(String(255), default="sudo")
+    expires_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), index=True)
+    consumed_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class WifiNetwork(Base):
     """Observed nearby Wi-Fi network metadata from an enrolled local sensor."""
@@ -595,7 +717,9 @@ class WifiNetwork(Base):
     band: Mapped[str] = mapped_column(String(32), default="")
     signal_dbm: Mapped[float | None] = mapped_column(Float, nullable=True)
     source: Mapped[str] = mapped_column(String(64), default="local-sensor")
-    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    observed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class WorkerNode(Base):
     """Managed security worker registered to an VEYRA tenant.
@@ -606,16 +730,22 @@ class WorkerNode(Base):
     """
     __tablename__ = "worker_nodes"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    worker_id: Mapped[str] = mapped_column(String(128), unique=True, index=True)
+    worker_id: Mapped[str] = mapped_column(
+        String(128), unique=True, index=True)
     name: Mapped[str] = mapped_column(String(255), default="")
     kind: Mapped[str] = mapped_column(String(64), default="kali")
-    platform: Mapped[str] = mapped_column(String(128), default="kali-linux-amd64")
-    tenant_id: Mapped[UUID] = mapped_column(UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
+    platform: Mapped[str] = mapped_column(
+        String(128), default="kali-linux-amd64")
+    tenant_id: Mapped[UUID] = mapped_column(
+        UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
     status: Mapped[str] = mapped_column(String(32), default="pending")
     version: Mapped[str] = mapped_column(String(64), default="2.8.0")
     capabilities_json: Mapped[str] = mapped_column(Text, default="[]")
-    last_heartbeat: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    last_heartbeat: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class WorkerToolInstall(Base):
     """Tool inventory reported by a managed worker.
@@ -632,20 +762,27 @@ class WorkerToolInstall(Base):
     binary_path: Mapped[str] = mapped_column(String(512), default="")
     checksum: Mapped[str] = mapped_column(String(128), default="")
     sbom_ref: Mapped[str] = mapped_column(String(255), default="")
-    last_verified_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    last_verified_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class PostureSnapshot(Base):
     """Point-in-time posture snapshot for temporal drift and remediation proof."""
     __tablename__ = "posture_snapshots"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    snapshot_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    snapshot_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     scope: Mapped[str] = mapped_column(String(128), default="tenant")
     posture_score: Mapped[float] = mapped_column(Float, default=0)
     risk_score: Mapped[float] = mapped_column(Float, default=0)
     inventory_json: Mapped[str] = mapped_column(Text, default="{}")
-    hash_sha256: Mapped[str] = mapped_column(String(64), index=True, default="")
-    captured_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    hash_sha256: Mapped[str] = mapped_column(
+        String(64), index=True, default="")
+    captured_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class PostureChange(Base):
     """Normalized before/after posture change with deterministic attribution."""
@@ -660,7 +797,9 @@ class PostureChange(Base):
     severity: Mapped[str] = mapped_column(String(32), default="INFO")
     summary: Mapped[str] = mapped_column(Text, default="")
     evidence_json: Mapped[str] = mapped_column(Text, default="[]")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class RogueAgentCase(Base):
     """Defensive rogue-agent investigation record.
@@ -675,15 +814,19 @@ class RogueAgentCase(Base):
     confidence: Mapped[float] = mapped_column(Float, default=0)
     agent_identity: Mapped[str] = mapped_column(String(255), default="unknown")
     suspected_user: Mapped[str] = mapped_column(String(255), default="unknown")
-    suspected_endpoint: Mapped[str] = mapped_column(String(255), default="unknown")
-    suspected_provider: Mapped[str] = mapped_column(String(128), default="unknown")
+    suspected_endpoint: Mapped[str] = mapped_column(
+        String(255), default="unknown")
+    suspected_provider: Mapped[str] = mapped_column(
+        String(128), default="unknown")
     root_cause: Mapped[str] = mapped_column(Text, default="")
     first_seen: Mapped[str] = mapped_column(String(64), default="")
     last_seen: Mapped[str] = mapped_column(String(64), default="")
     evidence_json: Mapped[str] = mapped_column(Text, default="[]")
     timeline_json: Mapped[str] = mapped_column(Text, default="[]")
     recommended_actions_json: Mapped[str] = mapped_column(Text, default="[]")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class ToolDefinition(Base):
     """Durable supply-chain identity for a catalog tool."""
@@ -693,27 +836,34 @@ class ToolDefinition(Base):
     name: Mapped[str] = mapped_column(String(255), default="")
     category: Mapped[str] = mapped_column(String(128), default="Security")
     purpose: Mapped[str] = mapped_column(Text, default="")
-    upstream_source: Mapped[str] = mapped_column(String(128), default="approved-package-source")
+    upstream_source: Mapped[str] = mapped_column(
+        String(128), default="approved-package-source")
     resolver_kind: Mapped[str] = mapped_column(String(64), default="package")
     maturity: Mapped[str] = mapped_column(String(32), default="stable")
     update_channel: Mapped[str] = mapped_column(String(32), default="stable")
     pin_mode: Mapped[str] = mapped_column(String(32), default="floating")
     status: Mapped[str] = mapped_column(String(32), default="active")
-    tenant_id: Mapped[UUID] = mapped_column(UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now, onupdate=now)
+    tenant_id: Mapped[UUID] = mapped_column(
+        UUID(as_uuid=True), nullable=False, default=lambda: uuid.uuid4())
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now, onupdate=now)
+
 
 class ToolRelease(Base):
     """Immutable release metadata; bytes are fetched only by managed workers/artifact infrastructure."""
     __tablename__ = "tool_releases"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    release_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    release_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     tool_id: Mapped[str] = mapped_column(String(255), index=True)
     version: Mapped[str] = mapped_column(String(128), default="")
     channel: Mapped[str] = mapped_column(String(32), default="candidate")
     artifact_uri: Mapped[str] = mapped_column(Text, default="")
     artifact_digest: Mapped[str] = mapped_column(String(160), default="")
-    artifact_sha256: Mapped[str] = mapped_column(String(64), default="", index=True)
+    artifact_sha256: Mapped[str] = mapped_column(
+        String(64), default="", index=True)
     signature: Mapped[str] = mapped_column(Text, default="")
     signature_required: Mapped[bool] = mapped_column(Boolean, default=True)
     provenance_uri: Mapped[str] = mapped_column(Text, default="")
@@ -722,31 +872,41 @@ class ToolRelease(Base):
     sbom_required: Mapped[bool] = mapped_column(Boolean, default=True)
     license: Mapped[str] = mapped_column(String(128), default="unknown")
     source_commit: Mapped[str] = mapped_column(String(128), default="")
-    verification_status: Mapped[str] = mapped_column(String(32), default="candidate", index=True)
+    verification_status: Mapped[str] = mapped_column(
+        String(32), default="candidate", index=True)
     verification_errors: Mapped[str] = mapped_column(Text, default="[]")
-    health_status: Mapped[str] = mapped_column(String(32), default="unknown", index=True)
+    health_status: Mapped[str] = mapped_column(
+        String(32), default="unknown", index=True)
     notes: Mapped[str] = mapped_column(Text, default="")
-    discovered_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    discovered_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class ToolArtifact(Base):
     """Artifact Vault index. The production vault should be immutable object storage."""
     __tablename__ = "tool_artifacts"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    artifact_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    artifact_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     release_id: Mapped[str] = mapped_column(String(64), index=True)
     storage_uri: Mapped[str] = mapped_column(Text, default="")
     digest: Mapped[str] = mapped_column(String(160), default="")
     sha256: Mapped[str] = mapped_column(String(64), default="", index=True)
-    signature_status: Mapped[str] = mapped_column(String(32), default="pending")
-    provenance_status: Mapped[str] = mapped_column(String(32), default="pending")
+    signature_status: Mapped[str] = mapped_column(
+        String(32), default="pending")
+    provenance_status: Mapped[str] = mapped_column(
+        String(32), default="pending")
     sbom_status: Mapped[str] = mapped_column(String(32), default="pending")
     immutable: Mapped[bool] = mapped_column(Boolean, default=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class ToolUpdatePolicy(Base):
     __tablename__ = "tool_update_policies"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    policy_id: Mapped[str] = mapped_column(String(64), unique=True, index=True, default=lambda: "pol_"+uuid.uuid4().hex[:16])
+    policy_id: Mapped[str] = mapped_column(String(
+        64), unique=True, index=True, default=lambda: "pol_"+uuid.uuid4().hex[:16])
     tool_id: Mapped[str] = mapped_column(String(255), unique=True, index=True)
     channel: Mapped[str] = mapped_column(String(32), default="stable")
     pin_mode: Mapped[str] = mapped_column(String(32), default="floating")
@@ -756,27 +916,38 @@ class ToolUpdatePolicy(Base):
     critical_override: Mapped[bool] = mapped_column(Boolean, default=True)
     require_canary: Mapped[bool] = mapped_column(Boolean, default=True)
     canary_percent: Mapped[int] = mapped_column(Integer, default=10)
-    maintenance_window: Mapped[str] = mapped_column(String(128), default="weekly")
+    maintenance_window: Mapped[str] = mapped_column(
+        String(128), default="weekly")
     freeze_reason: Mapped[str] = mapped_column(Text, default="")
-    frozen_until: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now, onupdate=now)
+    frozen_until: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now, onupdate=now)
+
 
 class ToolDeployment(Base):
     __tablename__ = "tool_deployments"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    deployment_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    deployment_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     tool_id: Mapped[str] = mapped_column(String(255), index=True)
     release_id: Mapped[str] = mapped_column(String(64), index=True)
     worker_id: Mapped[str] = mapped_column(String(128), index=True)
-    operation: Mapped[str] = mapped_column(String(32), default="install_or_update")
+    operation: Mapped[str] = mapped_column(
+        String(32), default="install_or_update")
     target_version: Mapped[str] = mapped_column(String(128), default="")
-    state: Mapped[str] = mapped_column(String(32), default="planned", index=True)
+    state: Mapped[str] = mapped_column(
+        String(32), default="planned", index=True)
     force: Mapped[bool] = mapped_column(Boolean, default=False)
     manifest_json: Mapped[str] = mapped_column(Text, default="{}")
-    manifest_sha256: Mapped[str] = mapped_column(String(64), default="", index=True)
+    manifest_sha256: Mapped[str] = mapped_column(
+        String(64), default="", index=True)
     worker_receipt_json: Mapped[str] = mapped_column(Text, default="{}")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    completed_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+
 
 class ToolHealthCheck(Base):
     __tablename__ = "tool_health_checks"
@@ -788,22 +959,31 @@ class ToolHealthCheck(Base):
     checks_json: Mapped[str] = mapped_column(Text, default="[]")
     evidence_sha256: Mapped[str] = mapped_column(String(64), default="")
     notes: Mapped[str] = mapped_column(Text, default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    completed_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+
 
 class SupplyChainAttestation(Base):
     __tablename__ = "supply_chain_attestations"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    attestation_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    attestation_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     release_id: Mapped[str] = mapped_column(String(64), index=True)
-    kind: Mapped[str] = mapped_column(String(64), default="verification", index=True)
+    kind: Mapped[str] = mapped_column(
+        String(64), default="verification", index=True)
     predicate_type: Mapped[str] = mapped_column(Text, default="")
     subject_digest: Mapped[str] = mapped_column(String(160), default="")
     issuer: Mapped[str] = mapped_column(String(255), default="")
-    evidence_sha256: Mapped[str] = mapped_column(String(64), default="", index=True)
+    evidence_sha256: Mapped[str] = mapped_column(
+        String(64), default="", index=True)
     payload_json: Mapped[str] = mapped_column(Text, default="{}")
-    verification_status: Mapped[str] = mapped_column(String(32), default="pending")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    verification_status: Mapped[str] = mapped_column(
+        String(32), default="pending")
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class ToolCanaryCohort(Base):
     __tablename__ = "tool_canary_cohorts"
@@ -815,14 +995,18 @@ class ToolCanaryCohort(Base):
     percent: Mapped[int] = mapped_column(Integer, default=10)
     state: Mapped[str] = mapped_column(String(32), default="planned")
     result_json: Mapped[str] = mapped_column(Text, default="{}")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    evaluated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    evaluated_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+
 
 class AISupplyChainAsset(Base):
     __tablename__ = "ai_supply_chain_assets"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     asset_id: Mapped[str] = mapped_column(String(128), unique=True, index=True)
-    asset_type: Mapped[str] = mapped_column(String(64), default="model", index=True)
+    asset_type: Mapped[str] = mapped_column(
+        String(64), default="model", index=True)
     name: Mapped[str] = mapped_column(String(255), default="")
     version: Mapped[str] = mapped_column(String(128), default="")
     digest: Mapped[str] = mapped_column(String(160), default="")
@@ -832,44 +1016,60 @@ class AISupplyChainAsset(Base):
     policy_status: Mapped[str] = mapped_column(String(32), default="pending")
     trust_status: Mapped[str] = mapped_column(String(32), default="untrusted")
     metadata_json: Mapped[str] = mapped_column(Text, default="{}")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AgentCircuitBreaker(Base):
     __tablename__ = "agent_circuit_breakers"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    breaker_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    breaker_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     agent_id: Mapped[str] = mapped_column(String(255), index=True)
     scope: Mapped[str] = mapped_column(String(64), default="agent")
     state: Mapped[str] = mapped_column(String(32), default="armed")
     reason: Mapped[str] = mapped_column(Text, default="")
-    activated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    released_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    activated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    released_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+
 
 class AgentContainmentPolicy(Base):
     """AI-swarm containment posture: egress, identity velocity and emergency stop controls."""
     __tablename__ = "agent_containment_policies"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     policy_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
-    name: Mapped[str] = mapped_column(String(255), default="Default Agent Containment")
-    egress_mode: Mapped[str] = mapped_column(String(32), default="deny_by_default")
+    name: Mapped[str] = mapped_column(
+        String(255), default="Default Agent Containment")
+    egress_mode: Mapped[str] = mapped_column(
+        String(32), default="deny_by_default")
     allowed_destinations_json: Mapped[str] = mapped_column(Text, default="[]")
-    service_account_velocity_threshold: Mapped[int] = mapped_column(Integer, default=120)
-    website_collaboration_detection: Mapped[bool] = mapped_column(Boolean, default=True)
+    service_account_velocity_threshold: Mapped[int] = mapped_column(
+        Integer, default=120)
+    website_collaboration_detection: Mapped[bool] = mapped_column(
+        Boolean, default=True)
     emergency_stop: Mapped[bool] = mapped_column(Boolean, default=False)
-    require_human_approval_for_external_action: Mapped[bool] = mapped_column(Boolean, default=True)
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now, onupdate=now)
+    require_human_approval_for_external_action: Mapped[bool] = mapped_column(
+        Boolean, default=True)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now, onupdate=now)
+
 
 class AIAssetTrustRecord(Base):
     __tablename__ = "ai_asset_trust_records"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    record_id: Mapped[str] = mapped_column(String(64), unique=True, index=True, default=lambda: "ait_"+uuid.uuid4().hex[:16])
+    record_id: Mapped[str] = mapped_column(String(
+        64), unique=True, index=True, default=lambda: "ait_"+uuid.uuid4().hex[:16])
     asset_id: Mapped[str] = mapped_column(String(128), index=True)
     trust_score: Mapped[float] = mapped_column(Float, default=0)
     trust_status: Mapped[str] = mapped_column(String(32), default="untrusted")
     gates_json: Mapped[str] = mapped_column(Text, default="{}")
     missing_json: Mapped[str] = mapped_column(Text, default="[]")
     evidence_sha256: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AIBOMRecord(Base):
     __tablename__ = "ai_bom_records"
@@ -878,8 +1078,11 @@ class AIBOMRecord(Base):
     root_asset_id: Mapped[str] = mapped_column(String(128), index=True)
     format: Mapped[str] = mapped_column(String(64), default="VEYRA-AIBOM-1.0")
     document_json: Mapped[str] = mapped_column(Text, default="{}")
-    document_sha256: Mapped[str] = mapped_column(String(64), default="", index=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    document_sha256: Mapped[str] = mapped_column(
+        String(64), default="", index=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class TrustGraphNode(Base):
     __tablename__ = "trust_graph_nodes"
@@ -890,7 +1093,9 @@ class TrustGraphNode(Base):
     trust_status: Mapped[str] = mapped_column(String(32), default="untrusted")
     trust_score: Mapped[float] = mapped_column(Float, default=0)
     metadata_json: Mapped[str] = mapped_column(Text, default="{}")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class TrustGraphEdge(Base):
     __tablename__ = "trust_graph_edges"
@@ -901,34 +1106,43 @@ class TrustGraphEdge(Base):
     relationship: Mapped[str] = mapped_column(String(64), default="depends_on")
     policy_status: Mapped[str] = mapped_column(String(32), default="pending")
     metadata_json: Mapped[str] = mapped_column(Text, default="{}")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AgentTrajectory(Base):
     __tablename__ = "agent_trajectories"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    trajectory_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    trajectory_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     agent_id: Mapped[str] = mapped_column(String(255), index=True)
     status: Mapped[str] = mapped_column(String(32), default="pending")
     score: Mapped[float] = mapped_column(Float, default=0)
     events_json: Mapped[str] = mapped_column(Text, default="[]")
     violations_json: Mapped[str] = mapped_column(Text, default="[]")
     evidence_sha256: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class TrustDecisionRecord(Base):
     __tablename__ = "trust_decision_records"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    decision_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    decision_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     subject_id: Mapped[str] = mapped_column(String(255), index=True)
     decision: Mapped[str] = mapped_column(String(32), default="deny")
     reason: Mapped[str] = mapped_column(Text, default="")
     evidence_sha256: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class RuntimeAttestation(Base):
     __tablename__ = "runtime_attestations"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    attestation_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    attestation_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     subject_id: Mapped[str] = mapped_column(String(255), index=True)
     workload_identity: Mapped[str] = mapped_column(String(255), default="")
     artifact_digest: Mapped[str] = mapped_column(String(160), default="")
@@ -936,20 +1150,26 @@ class RuntimeAttestation(Base):
     behavior_hash: Mapped[str] = mapped_column(String(64), default="")
     status: Mapped[str] = mapped_column(String(32), default="pending")
     evidence_json: Mapped[str] = mapped_column(Text, default="{}")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class SignedMandate(Base):
     __tablename__ = "signed_mandates"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    mandate_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    mandate_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     principal: Mapped[str] = mapped_column(String(255), index=True)
     delegate: Mapped[str] = mapped_column(String(255), index=True)
     allowed_tools_json: Mapped[str] = mapped_column(Text, default="[]")
     constraints_json: Mapped[str] = mapped_column(Text, default="{}")
     signature: Mapped[str] = mapped_column(Text, default="")
     status: Mapped[str] = mapped_column(String(32), default="pending")
-    expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    expires_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AgentIdentityAuthority(Base):
     __tablename__ = "agent_identity_authorities"
@@ -960,10 +1180,13 @@ class AgentIdentityAuthority(Base):
     credential_ref: Mapped[str] = mapped_column(String(512), default="")
     authority_json: Mapped[str] = mapped_column(Text, default="{}")
     delegation_chain_json: Mapped[str] = mapped_column(Text, default="[]")
-    expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    expires_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
     status: Mapped[str] = mapped_column(String(32), default="active")
     evidence_sha256: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AgentControlPolicy(Base):
     __tablename__ = "agent_control_policies"
@@ -972,14 +1195,18 @@ class AgentControlPolicy(Base):
     name: Mapped[str] = mapped_column(String(255), default="")
     policy_json: Mapped[str] = mapped_column(Text, default="{}")
     policy_hash: Mapped[str] = mapped_column(String(64), default="")
-    enforcement_mode: Mapped[str] = mapped_column(String(32), default="approval_required")
+    enforcement_mode: Mapped[str] = mapped_column(
+        String(32), default="approval_required")
     status: Mapped[str] = mapped_column(String(32), default="active")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AgentGatewayPolicy(Base):
     __tablename__ = "agent_gateway_policies"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    gateway_id: Mapped[str] = mapped_column(String(128), unique=True, index=True)
+    gateway_id: Mapped[str] = mapped_column(
+        String(128), unique=True, index=True)
     agent_id: Mapped[str] = mapped_column(String(255), index=True)
     allowed_tools_json: Mapped[str] = mapped_column(Text, default="[]")
     allowed_destinations_json: Mapped[str] = mapped_column(Text, default="[]")
@@ -988,12 +1215,15 @@ class AgentGatewayPolicy(Base):
     transaction_limit: Mapped[float] = mapped_column(Float, default=0)
     require_approval: Mapped[bool] = mapped_column(Boolean, default=True)
     status: Mapped[str] = mapped_column(String(32), default="active")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class MCPTrustFingerprint(Base):
     __tablename__ = "mcp_trust_fingerprints"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    server_id: Mapped[str] = mapped_column(String(255), unique=True, index=True)
+    server_id: Mapped[str] = mapped_column(
+        String(255), unique=True, index=True)
     version: Mapped[str] = mapped_column(String(128), default="")
     publisher: Mapped[str] = mapped_column(String(255), default="")
     fingerprint_sha256: Mapped[str] = mapped_column(String(64), default="")
@@ -1002,12 +1232,15 @@ class MCPTrustFingerprint(Base):
     endpoint_hash: Mapped[str] = mapped_column(String(64), default="")
     status: Mapped[str] = mapped_column(String(32), default="trusted")
     drift_type: Mapped[str] = mapped_column(String(64), default="none")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AgentMemoryTrustRecord(Base):
     __tablename__ = "agent_memory_trust_records"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    memory_id: Mapped[str] = mapped_column(String(128), unique=True, index=True)
+    memory_id: Mapped[str] = mapped_column(
+        String(128), unique=True, index=True)
     agent_id: Mapped[str] = mapped_column(String(255), index=True)
     owner: Mapped[str] = mapped_column(String(255), default="")
     classification: Mapped[str] = mapped_column(String(64), default="internal")
@@ -1015,12 +1248,15 @@ class AgentMemoryTrustRecord(Base):
     provenance: Mapped[str] = mapped_column(Text, default="")
     poisoning_score: Mapped[float] = mapped_column(Float, default=0)
     status: Mapped[str] = mapped_column(String(32), default="pending")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AgentTransactionAssessment(Base):
     __tablename__ = "agent_transaction_assessments"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    transaction_id: Mapped[str] = mapped_column(String(128), unique=True, index=True)
+    transaction_id: Mapped[str] = mapped_column(
+        String(128), unique=True, index=True)
     agent_id: Mapped[str] = mapped_column(String(255), index=True)
     target: Mapped[str] = mapped_column(String(512), default="")
     amount: Mapped[float] = mapped_column(Float, default=0)
@@ -1028,7 +1264,9 @@ class AgentTransactionAssessment(Base):
     decision: Mapped[str] = mapped_column(String(32), default="deny")
     reasons_json: Mapped[str] = mapped_column(Text, default="[]")
     evidence_sha256: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class AgentBehaviorBaseline(Base):
     __tablename__ = "agent_behavior_baselines"
@@ -1040,12 +1278,15 @@ class AgentBehaviorBaseline(Base):
     transaction_ceiling: Mapped[float] = mapped_column(Float, default=0)
     action_sequence_hash: Mapped[str] = mapped_column(String(64), default="")
     baseline_hash: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class DigitalTwinScenario(Base):
     __tablename__ = "digital_twin_scenarios"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    scenario_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    scenario_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     root_subject: Mapped[str] = mapped_column(String(255), index=True)
     nodes_json: Mapped[str] = mapped_column(Text, default="[]")
     edges_json: Mapped[str] = mapped_column(Text, default="[]")
@@ -1053,7 +1294,9 @@ class DigitalTwinScenario(Base):
     risk_score: Mapped[float] = mapped_column(Float, default=0)
     containment_options_json: Mapped[str] = mapped_column(Text, default="[]")
     evidence_sha256: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+
 
 class ChecklistDefinition(Base):
     """Persisted mirror of a checklist registry entry — versioned, auditable.
@@ -1064,7 +1307,8 @@ class ChecklistDefinition(Base):
     """
     __tablename__ = "checklist_definitions"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    checklist_id: Mapped[str] = mapped_column(String(128), unique=True, index=True)
+    checklist_id: Mapped[str] = mapped_column(
+        String(128), unique=True, index=True)
     domain: Mapped[str] = mapped_column(String(64), index=True)
     category: Mapped[str] = mapped_column(String(128))
     name: Mapped[str] = mapped_column(String(255))
@@ -1079,8 +1323,10 @@ class ChecklistDefinition(Base):
     boundary: Mapped[str] = mapped_column(Text, default="")
     version: Mapped[str] = mapped_column(String(32), default="1.0")
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now, onupdate=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now, onupdate=now)
 
 
 class ChecklistRun(Base):
@@ -1094,12 +1340,17 @@ class ChecklistRun(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     run_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
     checklist_id: Mapped[str] = mapped_column(String(128), index=True)
-    requested_by: Mapped[str] = mapped_column(String(255), default="console-user")
+    requested_by: Mapped[str] = mapped_column(
+        String(255), default="console-user")
     parameters_json: Mapped[str] = mapped_column(Text, default="{}")
-    status: Mapped[str] = mapped_column(String(32), default="pending", index=True)
-    requested_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    status: Mapped[str] = mapped_column(
+        String(32), default="pending", index=True)
+    requested_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    started_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+    completed_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
     notes: Mapped[str] = mapped_column(Text, default="")
 
 
@@ -1117,7 +1368,8 @@ class ChecklistResult(Base):
     check_name: Mapped[str] = mapped_column(String(255))
     status: Mapped[str] = mapped_column(String(32), default="pass", index=True)
     evidence_json: Mapped[str] = mapped_column(Text, default="{}")
-    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    observed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
 
 
 class ChecklistReceipt(Base):
@@ -1129,14 +1381,18 @@ class ChecklistReceipt(Base):
     """
     __tablename__ = "checklist_receipts"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    receipt_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    receipt_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     run_id: Mapped[str] = mapped_column(String(64), index=True)
     checklist_id: Mapped[str] = mapped_column(String(128), index=True)
     payload_json: Mapped[str] = mapped_column(Text, default="{}")
-    payload_sha256: Mapped[str] = mapped_column(String(64), index=True, default="")
+    payload_sha256: Mapped[str] = mapped_column(
+        String(64), index=True, default="")
     signature: Mapped[str] = mapped_column(String(128), default="")
-    signer: Mapped[str] = mapped_column(String(255), default="veyra-control-plane")
-    signed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    signer: Mapped[str] = mapped_column(
+        String(255), default="veyra-control-plane")
+    signed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
 
 
 # ---------------------------------------------------------------------------
@@ -1156,8 +1412,10 @@ class LiveSensorEvent(Base):
     severity: Mapped[str] = mapped_column(String(32), default="INFO")
     payload_json: Mapped[str] = mapped_column(Text, default="{}")
     provenance: Mapped[str] = mapped_column(String(255), default="")
-    event_sha256: Mapped[str] = mapped_column(String(64), index=True, default="")
-    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now, index=True)
+    event_sha256: Mapped[str] = mapped_column(
+        String(64), index=True, default="")
+    observed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now, index=True)
 
 
 class NetworkBaseline(Base):
@@ -1167,15 +1425,19 @@ class NetworkBaseline(Base):
     """
     __tablename__ = "network_baselines"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    baseline_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    baseline_id: Mapped[str] = mapped_column(
+        String(64), unique=True, index=True)
     scope: Mapped[str] = mapped_column(String(64), index=True)
     version: Mapped[str] = mapped_column(String(32), default="1.0")
-    owner: Mapped[str] = mapped_column(String(255), default="security_operator")
+    owner: Mapped[str] = mapped_column(
+        String(255), default="security_operator")
     snapshot_json: Mapped[str] = mapped_column(Text, default="{}")
     snapshot_sha256: Mapped[str] = mapped_column(String(64), default="")
     approved: Mapped[bool] = mapped_column(Boolean, default=False)
-    approved_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    approved_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
 
 
 class DropEvent(Base):
@@ -1184,13 +1446,17 @@ class DropEvent(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     drop_id: Mapped[str] = mapped_column(String(64), unique=True, index=True)
     link_id: Mapped[str] = mapped_column(String(255), index=True)
-    link_type: Mapped[str] = mapped_column(String(32), default="wifi", index=True)
-    drop_time: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
-    recovery_time: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    link_type: Mapped[str] = mapped_column(
+        String(32), default="wifi", index=True)
+    drop_time: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
+    recovery_time: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True)
     diagnosis_json: Mapped[str] = mapped_column(Text, default="{}")
     hypotheses_json: Mapped[str] = mapped_column(Text, default="[]")
     resolved: Mapped[bool] = mapped_column(Boolean, default=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
 
 
 class AIApplicationRun(Base):
@@ -1202,4 +1468,5 @@ class AIApplicationRun(Base):
     request_json: Mapped[str] = mapped_column(Text, default="{}")
     result_json: Mapped[str] = mapped_column(Text, default="{}")
     evidence_sha256: Mapped[str] = mapped_column(String(64), default="")
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=now)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=now)
