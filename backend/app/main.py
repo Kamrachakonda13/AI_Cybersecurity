@@ -61,9 +61,9 @@ async def lifespan(app: FastAPI):
 
 
 # API Versioning Strategy:
-# - /api/v1/ : Stable production API (all new endpoints)
-# - Backward compatibility: /api/v0/ deprecated but functional
-# - All routers registered with /api/v1/ prefix
+# - /api/ : existing console contract retained for frontend compatibility
+# - /api/v1/ : versioned alias for API consumers
+# - Both surfaces resolve to the same governed handlers during migration
 # - Version bump to v5.1.0 on next breaking change
 app = FastAPI(title="VEYRA Security Platform",
               version="5.0.0", lifespan=lifespan)
@@ -71,8 +71,11 @@ origins = [x.strip() for x in os.getenv(
     "CORS_ORIGINS", "http://localhost:3000").split(",") if x.strip()]
 app.add_middleware(CORSMiddleware, allow_origins=origins,
                    allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+app.include_router(router)
 app.include_router(router, prefix="/api/v1")
+app.include_router(v50_router, prefix="/api")
 app.include_router(v50_router, prefix="/api/v1")
+app.include_router(enterprise_rag_router, prefix="/api")
 app.include_router(enterprise_rag_router, prefix="/api/v1")
 
 
