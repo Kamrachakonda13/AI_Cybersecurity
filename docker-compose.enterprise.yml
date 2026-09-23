@@ -1,0 +1,86 @@
+services:
+  backend:
+    environment:
+      AGENTIC_RAG_URL: http://agentic-rag:8000
+      AGENTIC_RAG_TOKEN: ${AGENTIC_RAG_TOKEN:-}
+    depends_on:
+      agentic-rag:
+        condition: service_started
+
+  agentic-rag:
+    build:
+      context: ./integrations/agentic-rag
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: postgresql://raguser:ragpass@rag-postgres:5432/ragdb
+      NEO4J_URI: bolt://rag-neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ragpassword
+      MINIO_ENDPOINT: http://rag-minio:9000
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+      JWT_SECRET: ${AGENTIC_RAG_JWT_SECRET:?Set AGENTIC_RAG_JWT_SECRET in .env}
+    ports:
+      - "8100:8000"
+    depends_on:
+      rag-postgres:
+        condition: service_healthy
+      rag-neo4j:
+        condition: service_healthy
+      rag-minio:
+        condition: service_healthy
+    restart: unless-stopped
+
+  rag-postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: raguser
+      POSTGRES_PASSWORD: ragpass
+      POSTGRES_DB: ragdb
+    ports:
+      - "5433:5432"
+    volumes:
+      - rag_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U raguser -d ragdb" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  rag-neo4j:
+    image: neo4j:5.24-community
+    environment:
+      NEO4J_AUTH: neo4j/ragpassword
+      NEO4J_PLUGINS: '["apoc"]'
+    ports:
+      - "7475:7474"
+      - "7688:7687"
+    volumes:
+      - rag_neo4jdata:/data
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:7474 || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  rag-minio:
+    image: quay.io/minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9010:9000"
+      - "9011:9001"
+    volumes:
+      - rag_miniodata:/data
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  rag_pgdata:
+  rag_neo4jdata:
+  rag_miniodata:

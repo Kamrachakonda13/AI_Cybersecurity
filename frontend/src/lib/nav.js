@@ -58,6 +58,7 @@ export const NAV = [
   ['Supply Chain Runtime', ShieldCheck],
   ['Trusted Supply Chain', ShieldCheck],
   ['VEYRA AI Applications', Brain],
+  ['Enterprise Intelligence', Brain],
   ['VEYRA v5 Control Plane', ShieldCheck],
 ];
 
@@ -131,6 +132,7 @@ export const GROUPED_NAV = [
     ['AI Security', Brain],
     ['AI Ecosystem', Brain],
     ['VEYRA AI Applications', Brain],
+    ['Enterprise Intelligence', Brain],
     ['AI Research Lab', Bot],
     ['AI Attack Reconstruction', Activity],
     ['AI SOC Investigator', Brain],

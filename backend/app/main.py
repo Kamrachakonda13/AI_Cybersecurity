@@ -24,12 +24,15 @@ from .models import *
 from .services.seed import seed, seed_identity
 from .api.routes import router
 from .api.v50_routes import router as v50_router
+from .api.enterprise_rag import router as enterprise_rag_router
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Startup: create tables, seed demo data, optionally start KEV auto-refresh loop."""
     Base.metadata.create_all(bind=engine)
     # POC schema compatibility: add newer columns to existing SQLite/Postgres databases.
+
     def _ensure_columns(table: str, columns: dict[str, str]):
         try:
             insp = inspect(engine)
@@ -37,17 +40,20 @@ async def lifespan(app: FastAPI):
             for name, ddl_type in columns.items():
                 if name not in existing:
                     with engine.begin() as conn:
-                        conn.execute(text(f"ALTER TABLE {table} ADD COLUMN {name} {ddl_type}"))
+                        conn.execute(
+                            text(f"ALTER TABLE {table} ADD COLUMN {name} {ddl_type}"))
         except Exception:
             pass
     _ensure_columns("discovered_hosts", {"trusted": "BOOLEAN DEFAULT FALSE"})
-    _ensure_columns("user_tool_permissions", {"expires_at": "TIMESTAMP WITH TIME ZONE"})
+    _ensure_columns("user_tool_permissions", {
+                    "expires_at": "TIMESTAMP WITH TIME ZONE"})
     _ensure_columns("security_tool_jobs", {"params": "TEXT DEFAULT '{}'"})
-    db=SessionLocal()
+    db = SessionLocal()
     try:
         seed(db)
         seed_identity(db)
-    finally: db.close()
+    finally:
+        db.close()
     if os.getenv("THREATINTEL_AUTO_REFRESH", "false").lower() == "true":
         from .services.threatintel import _auto_refresh_loop
         asyncio.create_task(_auto_refresh_loop())
@@ -59,11 +65,17 @@ async def lifespan(app: FastAPI):
 # - Backward compatibility: /api/v0/ deprecated but functional
 # - All routers registered with /api/v1/ prefix
 # - Version bump to v5.1.0 on next breaking change
-app=FastAPI(title="VEYRA Security Platform", version="5.0.0", lifespan=lifespan)
-origins=[x.strip() for x in os.getenv("CORS_ORIGINS","http://localhost:3000").split(",") if x.strip()]
-app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+app = FastAPI(title="VEYRA Security Platform",
+              version="5.0.0", lifespan=lifespan)
+origins = [x.strip() for x in os.getenv(
+    "CORS_ORIGINS", "http://localhost:3000").split(",") if x.strip()]
+app.add_middleware(CORSMiddleware, allow_origins=origins,
+                   allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 app.include_router(router, prefix="/api/v1")
 app.include_router(v50_router, prefix="/api/v1")
+app.include_router(enterprise_rag_router, prefix="/api/v1")
+
 
 @app.get("/health")
-def health(): return {"status":"ok","service":"veyra-api","version":"5.0.0"}
+def health(): return {"status": "ok",
+                      "service": "veyra-api", "version": "5.0.0"}
